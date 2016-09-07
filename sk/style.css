@@ -1,0 +1,61 @@
+.touxiang{
+  /*头像格式*/
+ border-radius: 50%;
+ /*设置圆角*/
+}
+/*段子格式*/
+.duanzi{
+  /*首页缩进*/
+display: inline-block;
+  text-indent: 2em;
+  text-align: left;
+  margin: 50px 50px;
+}
+.shipin{
+  width: 400px;
+  height: 400px;
+  
+}
+.mp3{
+  display: inline-block;
+  margin: 20px;
+
+}
+.mianmian{
+  border-radius: 30%;
+}
+.GGG{
+  border-radius: 20%;
+}
+img{
+  /*设置图面之间的间距*/
+  margin-top: 20px;
+  width: 80%;
+
+}
+.luanshuo p{
+  display: inline-block;
+  text-indent:2em;
+  margin: 15px 15px;
+}
+/*每一个section的样式*/
+section{
+  border-style: solid;
+  border-width: 5px;
+  margin: 15px 15px;
+}
+/*body 的整体样式 */
+body{
+  margin: 30px;
+  background-color: white;
+  color: #333333;
+  text-align: center;
+  border-style: dashed;
+  border-color: forestgreen;
+
+}
+.timu{
+font-size: 20px;
+color: #A22751;
+
+}
