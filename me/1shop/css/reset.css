@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+}
+
+ul,li,dl,dt,dd{
+	list-style:none;
+}
+
+a{
+	text-decoration:none;
+}
+
+div,span,p,a,strong,dl,dt,dd,ul,li,a{
+	font-size:12px;
+	font-family:"Arial";
+	color:#333;
+}
+
+input,button{
+	outline:none;
+}
+
+
+
+
+/*清浮动*/
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  zoom: 1;
+  }
+
+
+@font-face {font-family: 'iconfont';
+    src: url('../iconfont/iconfont.eot');
+    src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'), 
+    url('../iconfont/iconfont.woff') format('woff'), 
+    url('../iconfont/iconfont.ttf') format('truetype'),
+    url('../iconfont/iconfont.svg#iconfont') format('svg'); 
+}

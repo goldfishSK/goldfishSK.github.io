@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>分类列表</title>
+    <link rel="stylesheet" href="css/mobile_hd_v1.0.min.css" />
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/index_v1.2.min.css" />
+    <script type="text/javascript">
+        var search = {
+            init: function() {
+                var h = $(".hd_comm"),
+                    s = $(".search_area"),
+                    icon = $(".top_nav li").first();
+                icon.click(function() {
+                    h.hide();
+                    s.show();
+                    $("#top_search input").css({
+                        height: '31px'
+                    })
+                    $("#top_search input[type=submit]").css({
+                        height: '33px',
+                        backgroundPosition: '0 -76px',
+                        marginLeft: 0
+                    })
+                    $(".dd_hd").css({
+                        padding: '5px 0',
+                        zIndex: '9999',
+                        position: 'absolute',
+                        height: 'auto',
+                        width: '100%'
+                    });
+                    $("#keyword").focus();
+                    search.windownbg();
+                    var html = document.documentElement;
+                    var size = window.innerHeight;
+                    html.style.height = (size + size) + "px";
+                    window.setTimeout(function() {
+                        if (window.pageYOffset == 0) {
+                            window.scrollTo(0, 0);
+                        }
+                        html.style.height = (window.innerHeight) + "px";
+                    }, 0);
+                })
+            },
+            windownbg: function() {
+                var htmlStr = "<div id=\"windownbg\" style=\"height:" + $(document).height() + "px;filter:alpha(opacity=70);opacity:0.7;z-index: 999;background:#000;position:absolute;top:0;left:0;width:100%;display:none\"></div>";
+                $("body").append(htmlStr);
+                $("#windownbg").fadeIn();
+                $("#windownbg").click(function() {
+                    $(".search_area").hide();
+                    $(".hd_comm").show();
+                    $("#top_search input,.dd_hd").attr('style', '');
+                    $(this).remove();
+                })
+            }
+        }
+        $(function() {
+            search.init();
+        })
+        var html = document.documentElement;
+        var size = window.innerHeight;
+        html.style.height = (size + size) + "px";
+        window.setTimeout(function() {
+            if (window.pageYOffset == 0) {
+                window.scrollTo(0, 0);
+            }
+            html.style.height = (window.innerHeight) + "px";
+        }, 0);
+    </script>
+</head>
+
+<body>
+    <div class="downloadbar hidden">
+        <ul>
+            <li><a href="#" class="btn1">当当购物</a></li>
+            <li><a href="#" class="btn2">当当读书</a></li>
+        </ul>
+        <a href="#" class="closebtn"></a>
+    </div>
+    <header class="dd_hd" id="hometop">
+        <div class="hd_comm">
+            <div class="fl">
+                <a href="index.html"><span class="dd_logo"></span></a>
+            </div>
+            <div class="fr">
+                <ul class="top_nav">
+                    <li><a href="#"><span class="dd_search">搜索</span></a></li>
+                    <li><a href="fenlie.html"><span class="dd_category">分类</span></a></li>
+                    <li><a href="#"><span class="dd_cart">购物车</span></a></li>
+                    <li><a href="#"><span class="dd_my">我的当当</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="search_area hidden">
+            <div class="search_field" id="top_search">
+                <form method="get" action='search.php' target="_parent" id="search_form">
+                    <input type="text" name="keyword" id="keyword" class="keyword2" />
+                    <input type="hidden" value="all_search" name="action">
+                    <input type="hidden" value="0" name="cid">
+                    <input type="hidden" value="f0ffa4124eb66c0c" name="sid">
+                    <input type="submit" value="" />
+                </form>
+                <div class="suggest"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- nav begin -->
+    <nav class="clearfix">
+        <div class="dd_nav">
+            <ul>
+
+                <li class="ddn_index"><span><a href="index.html">首页</a></span></li>
+                <li class="ddn_category"><span class="nav_current">分类</span></li>
+                <li class="ddn_box"><span><a href="#">百宝箱</a></span></li>
+
+            </ul>
+        </div>
+    </nav>
+    <!-- nav begin -->
+
+
+    <section>
+        <div class="tab_index_catetory">
+            <ul>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>图书</h3>
+                        <span>青春|小说|文学</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>音乐</h3>
+                        <span>华语|欧美|日韩</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>影视</h3>
+                        <span>电影|电视剧|卡通</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html2">
+                    <li class="tab_cat_item">
+                        <h3>孕婴服饰</h3>
+                        <span>产后瘦身|防辐射服|婴儿</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>母婴用品</h3>
+                        <span>防尿|奶粉|喂养</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>童装童鞋</h3>
+                        <span>宝宝鞋|亲子装</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>玩具</h3>
+                        <span>益智|毛绒|遥控</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>时尚美妆</h3>
+                        <span>面膜|防晒|沐浴</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>家居家纺</h3>
+                        <span>床品|毛毯|收纳</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>家具家装</h3>
+                        <span>时尚家饰|灯具|厨卫洁具</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>服装</h3>
+                        <span>T恤|防晒衫|袜子</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>鞋靴</h3>
+                        <span>凉鞋|帆布鞋|正装鞋</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>箱包皮具</h3>
+                        <span>女包|钱包|旅行箱</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>珠宝饰品</h3>
+                        <span>项链|钻石|黄金</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>礼品乐器</h3>
+                        <span>鲜花|绿植|吉他</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>手表眼镜</h3>
+                        <span>瑞士表|偏光镜</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>运动户外</h3>
+                        <span>健身|野营|望远镜</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>营养/保健/成人</h3>
+                        <span>按摩器|康复护理|成人</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>食品</h3>
+                        <span>冲调|特产|休闲零食</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>手机通讯</h3>
+                        <span>手机|电池|充电器|保护套</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>电脑办公</h3>
+                        <span>笔记本|移动硬盘|路由器</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>数码影音</h3>
+                        <span>相机|耳机|MP3/MP4</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>家用电器</h3>
+                        <span>厨房电器|生活电器</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>大家电</h3>
+                        <span>电视|洗衣机|冰箱</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>汽车用品</h3>
+                        <span>导航|车饰|养护耗材</span>
+                    </li>
+                </a>
+                <a href="chanpinfenlei.html">
+                    <li class="tab_cat_item">
+                        <h3>当当优品</h3>
+                        <span>自有品牌|鞋靴箱包|服装内衣</span>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="ft">
+        <div class="search_ft">
+            <form id="search_form" method="get" action='search.php' target="_parent" onSubmit="return submit_search();">
+                <input name="keyword" id="keyword" type="text" value="请输入商品名称" onKeyDown="this.style.color='#404040'" onBlur="if(this.value==''){this.value='请输入商品名称';this.style.color='#b6b7b9';}" onFocus="if(this.value!='请输入商品名称'){this.style.color='#404040';}else{this.value='';this.style.color='#404040'}"
+                />
+                <input type="submit" value="" />
+                <input type="hidden" value="all_search" name="action">
+                <input type="hidden" value="0" name="cid">
+                <input type="hidden" value="f0ffa4124eb66c0c" name="sid">
+            </form>
+        </div>
+        <script type="text/javascript">
+            function submit_search() {
+                if ($('#keyword').val() == "请输入商品名称") {
+                    $('#keyword').val(null);
+                }
+                return true;
+            }
+        </script>
+        <script type="text/javascript" src="js/suggest.js"></script>
+        <script type="text/javascript">
+            new Suggest({
+                operator: ".keyword2",
+                defaultVal: "",
+                hasFocus: false,
+                formEl: "#search_form"
+            });
+        </script>
+        <div class="ft_nav">
+            <p>
+                <span><a href="#">精简版</a></span>
+                <span class="site_now"><a href="#">触屏版</a></span>
+                <span><a href="#">电脑版</a></span>
+            </p>
+            <p>
+                <span><a href="#">提建议</a></span>
+                <span><a href="#">客&nbsp;&nbsp;&nbsp;&nbsp;服</a></span>
+                <span><a href="#">帮&nbsp;&nbsp;&nbsp;&nbsp;助</a></span>
+            </p>
+        </div>
+        <div class="status_bar">
+            <div class="fl"><a href="#">登陆</a><a href="#" class="quit" style="margin-left: 20px;">注册</a></div>
+            <div class="fr"><a href="#hometop"><span class="goto_top">TOP</span></a></div>
+        </div>
+        <div class="copyright">
+            <p></p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="js/global.min.js"></script>
+    <script type="text/javascript" src="js/common.min.js"></script>
+    <div class="suggest" id="footer_suggest"></div>
+</body>
+
+</html>
