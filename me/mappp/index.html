@@ -25,15 +25,7 @@
         var zuobiao = new Object;
         var yonghu = new Object;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-        // 根据IP定位拿到城市
->>>>>>> origin/master
-=======
-        // 根据IP定位拿到城市
->>>>>>> origin/master
         var map = new BMap.Map("allmap");
         var point = new BMap.Point(116.331398, 39.897445);
         map.centerAndZoom(point, 12);
@@ -41,26 +33,12 @@
         map.setCurrentCity(myCity); // 设置地图显示的城市 此项是必须设置的
         map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
         //  地图初始化
-<<<<<<< HEAD
-<<<<<<< HEAD
         // 根据IP定位拿到城市
         // function myFun(result) {
         //     var cityName = result.name;
         //     map.setCenter(cityName);
         //     // alert("当前定位城市:" + cityName);
         // }
-=======
-=======
->>>>>>> origin/master
-        function myFun(result) {
-            var cityName = result.name;
-            map.setCenter(cityName);
-            // alert("当前定位城市:" + cityName);
-        }
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 
 
         //  拿到用户的浏览器定位地址
@@ -87,15 +65,7 @@
 
         //   在地图上获取目的地的地图标识
         var myCity = new BMap.LocalCity();
-<<<<<<< HEAD
-<<<<<<< HEAD
         // myCity.get(myFun);
-=======
-        myCity.get(myFun);
->>>>>>> origin/master
-=======
-        myCity.get(myFun);
->>>>>>> origin/master
         var local = new BMap.LocalSearch(map, {
             renderOptions: {
                 map: map
