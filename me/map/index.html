@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body,
+        html,
+        #allmap {
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=TWHo27fBCFbLyVnha515wCu9BRPvOuUT"></script>
+    <title>地图展示</title>
+</head>
+
+<body>
+    <div id="allmap"></div>
+    <script type="text/javascript">
+        var zuobiao = new Object;
+        var yonghu = new Object;
+
+
+        var map = new BMap.Map("allmap");
+        var point = new BMap.Point(116.331398, 39.897445);
+        map.centerAndZoom(point, 12);
+        map.addControl(new BMap.MapTypeControl()); //添加地图类型控件
+        map.setCurrentCity(myCity); // 设置地图显示的城市 此项是必须设置的
+        map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+        //  地图初始化
+        // 根据IP定位拿到城市
+        // function myFun(result) {
+        //     var cityName = result.name;
+        //     map.setCenter(cityName);
+        //     // alert("当前定位城市:" + cityName);
+        // }
+
+
+        //  拿到用户的浏览器定位地址
+        var geolocation = new BMap.Geolocation();
+        geolocation.getCurrentPosition(function(r) {
+            if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+                var mk = new BMap.Marker(r.point);
+                map.addOverlay(mk);
+                map.panTo(r.point);
+                yonghu.jingdu = r.point.lng;
+                yonghu.weidu = r.point.lat;
+                alert('用户的坐标：' + r.point.lng + yonghu.jingdu + ',' + r.point.lat + yonghu.weidu);
+
+
+            } else {
+                alert('failed' + this.getStatus());
+            }
+        }, {
+            enableHighAccuracy: true
+        });
+
+
+
+
+        //   在地图上获取目的地的地图标识
+        var myCity = new BMap.LocalCity();
+        // myCity.get(myFun);
+        var local = new BMap.LocalSearch(map, {
+            renderOptions: {
+                map: map
+            }
+        });
+        local.search("西安北苑地铁口");
+
+
+
+
+        // 用户经纬度
+        var geoc = new BMap.Geocoder();
+        map.addEventListener("click", function(e) {
+            zuobiao.jingdu = e.point.lng;
+            zuobiao.weidu = e.point.lat;
+            alert("体验店的坐标" + e.point.lng + zuobiao.jingdu + "," + e.point.lat + zuobiao.weidu);
+            console.log("体验店的坐标是" + zuobiao.jingdu, zuobiao.weidu);
+
+            //  点击获得经纬度转文字  
+            var pt = e.point;
+            geoc.getLocation(pt, function(rs) {
+                var addComp = rs.addressComponents;
+                alert("您要去的地址是" + addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+                console.log("您要去的地址是" + addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+            });
+
+
+            //   路线导航      
+            var p2 = new BMap.Point(zuobiao.jingdu, zuobiao.weidu);
+            var p1 = new BMap.Point(yonghu.jingdu, yonghu.weidu);
+            console.log("p1p2的值" + p1, p2);
+            var driving = new BMap.DrivingRoute(map, {
+                renderOptions: {
+                    map: map,
+                    autoViewport: true
+                }
+            }, 3000);
+            driving.search(p1, p2);
+        });
+
+        console.log("拿到用户和体验店的坐标" + zuobiao, yonghu), 3000;
+
+        //  根据体验店的坐标反查文字坐标    
+
+
+
+
+
+
+
+
+        // alert("点击您想要去的体验店");
+    </script>
+
+</body>
+
+</html>
