@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link href="css/style.css" rel="stylesheet">-->
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        body {
+            height: 100%;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        p {
+            color: #000;
+            font-size: 15px;
+            text-align: center;
+            line-height: 36px;
+            border-bottom: 1px solid yellow;
+        }
+        
+        h4 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>测一下的你的反应</h4>
+    <div class="demo" style="height: 200px;width: 200px;background-color: red;margin:20% auto;">
+        <p class="_p">当这个颜色变成绿色的时候点击它 测一下你的反应延迟</p>
+    </div>
+    <script>
+        var colo = $(".demo").css("background-color");
+        var _x;
+        var _y;
+        red();
+        var _back = colo;
+
+
+        function red() {
+            setTimeout(function() {
+                _x = new Date();
+                $(".demo").css("background-color", "green");
+                _back = $(".demo").css("background-color");
+            }, 2654)
+            getTime();
+
+            function getTime() {
+
+
+
+                $(".demo").click(function() {
+                    if (_x == undefined) {
+                        alert("时间还没开始");
+                    } else {
+
+                        _y = new Date();
+                        var _p = $("._p")
+                        _p.text("你的反应延迟是" + (_y - _x) + "ms");
+                    }
+
+
+                });
+
+
+
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>
