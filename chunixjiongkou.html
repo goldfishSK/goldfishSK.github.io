@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang='zh'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta content='width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport'>
+    <meta content='yes' name='apple-mobile-web-app-capable'>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'>
+    <meta content='telephone=no' name='format-detection'>
+    <meta content='email=no' name='format-detection'>
+    <title>捶你胸口</title>
+    <!--<link rel='stylesheet' href='style.css'>
+    -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        img {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 90%;
+            height: 400px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="a100.jpg" alt="" id="changeImg">
+
+
+    <audio id="audio" src="chuinixiongkou.mp3" style="opacity:0" preload="auto" controls hidden="true" />
+
+    <script>
+        var myAuto = document.getElementById('audio');
+        myAuto.play();
+        var i = 0;
+        var img = document.getElementById("changeImg");
+
+        setInterval(function() {
+            i++;
+            if (i % 2 == 0) {
+                img.src = "a100.jpg";
+            }
+            if (i % 2 == 1) {
+                img.src = "a101.jpg";
+            }
+            if (i >= 42) {
+                img.src = "a101.jpg";
+            }
+        }, 1500);
+    </script>
+</body>
+
+</html>
