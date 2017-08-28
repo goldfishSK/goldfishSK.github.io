@@ -469,6 +469,7 @@ a {
     background: #fff;
     padding-bottom: 6px;
     z-index: 333;
+    border-bottom: 1px solid #DDDDDD;
 }
 .footer{
 	width: 100%;
@@ -479,10 +480,10 @@ a {
 	font-size: 15px;
 }
 .leabel{
-	    display: inline-block;
+	  
+       display: inline-block;
+    width: 100px;
     position: absolute;
-    width: 80px;
-    margin-top: -204px;
-    margin-left: 22px;
-    z-index: 1;
+    margin: 0 auto;
+    margin-left: 2px;
 }
