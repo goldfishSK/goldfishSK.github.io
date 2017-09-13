@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang='zh'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta content='width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport'>
+    <meta content='yes' name='apple-mobile-web-app-capable'>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'>
+    <meta content='telephone=no' name='format-detection'>
+    <meta content='email=no' name='format-detection'>
+    <title></title>
+    <!--<link rel='stylesheet' href='style.css'>
+    s-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .banner {
+            width: 100%;
+            position: relative;
+            height: 300px;
+        }
+        
+        .banner .swipe {
+            overflow: hidden;
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .banner .swipe-wrap {
+            overflow: hidden;
+            position: relative;
+            list-style: none;
+        }
+        
+        .banner .swipe-wrap li {
+            float: left;
+            position: relative;
+        }
+        
+        .banner img {
+            width: 100%;
+            vertical-align: middle;
+            height: 300px;
+        }
+        
+        .banner .slide-trigger {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: 10;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -moz-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        .banner .slide-trigger li {
+            width: 7px;
+            height: 7px;
+            background: #FFF;
+            margin: 5px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+        }
+        
+        .banner .slide-trigger .cur {
+            background: #2fc7c9;
+        }
+        
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+        }
+        
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        
+        .slide_down a {
+            position: absolute;
+            z-index: 10;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            border: none;
+            background: none;
+        }
+        
+        .slide_down a:first-child {
+            right: 10px;
+        }
+        
+        .slide_down a:last-child {
+            left: 10px
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 使用的时候修改 banner 的宽高  img的宽高   后跟content直接使用-->
+
+
+    <div class="banner">
+        <div id="slider" class="swipe">
+            <ul class="swipe-wrap">
+                <li>
+                    <a href="javascript:void(0)">
+                        <img src="sa.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <img src="sa.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <img src="sa.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <img src="sa.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <img src="sa.jpg">
+                    </a>
+                </li>
+            </ul>
+            <ul class="slide-trigger">
+                <li class="cur"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="slide_down">
+
+                <a onclick='mySwipe.prev()'>❯</a>
+                <a onclick='mySwipe.next()'>❮</a>
+
+            </div>
+        </div>
+    </div>
+    <div id="demo" style="height: 80px;width: 100%;background: #000;">
+
+    </div>
+
+
+    <script src="zepto.js">
+    </script>
+    <script src="touch.js"></script>
+    <script src="swipe.js"></script>
+    <script>
+        var slider = $('#slider');
+        slider.find(".slide-trigger").find("li").eq(0).addClass("cur");
+
+        window.mySwipe = new Swipe(document.getElementById('slider'), {
+            speed: 400,
+            auto: 3000,
+            callback: function(index, elem) {
+                slider.find(".slide-trigger").find("li").eq(index).addClass("cur").siblings().removeClass("cur");
+                console.log(slider.find(".slide-trigger").find("li").eq(index).addClass("cur").siblings())
+
+            }
+        });
+        $(".slide_down a").css({
+            top: $(".swipe-wrap").height() / 2 - $(".slide_down button").height() / 2
+        })
+        $("#demo").tap(function() {
+            alert("tap")
+        })
+        $("#demo").click(function() {
+            alert("click")
+        })
+    </script>
+</body>
+
+</html>
