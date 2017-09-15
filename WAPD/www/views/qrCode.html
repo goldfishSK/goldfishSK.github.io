@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title>我的邀请</title>
+		<link rel="stylesheet" href="../css/init.css" />
+		<link rel="stylesheet" href="../css/qrCode.css" />
+		<script type="text/javascript" src="../js/qrCode.js">
+		</script>
+		<style type="text/css">
+			@font-face {
+				font-family: "iconfont";
+				src: url('../icon/iconfont.eot');
+				/* IE9*/
+				src: url('../icon/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../icon/iconfont.woff') format('woff'), /* chrome, firefox */
+				url('../icon/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+				url('../icon/iconfont.svg#iconfont') format('svg');
+				/* iOS 4.1- */
+			}
+			
+			.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 16px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="content" >
+
+			<div id="qrcode">
+
+			</div>
+
+			<h3>长按可以保存图片到本机</h3>
+			<h3> <a href="" onclick="historys()">点击回到上一页</a></h3>
+
+		</div>
+		<div class="head_nav">
+			<span class="head_span"><img src="../img/logo.png" alt=""></span>
+			<h3 class="head_h3">商家中心</h3>
+
+		</div>
+		<script type="text/javascript">
+			var qrcode = new QRCode(document.getElementById("qrcode"), {
+				width: 150, //设置宽高
+				height: 150
+			});
+			qrcode.makeCode("http://www.quanmingwang.com/");
+		</script>
+		<script type="text/javascript">
+			function historys() {
+				history.back();
+			}
+		</script>
+	</body>
+
+</html>

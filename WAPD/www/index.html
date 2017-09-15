@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="email=no" name="format-detection">
+	<link rel="stylesheet" href="css/init.css">
+	<link href="css/style.css" rel="stylesheet">
+	<style>
+		@font-face {
+			font-family: "iconfont";
+			src: url('icon/iconfont.eot');
+			/* IE9*/
+			src: url('icon/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+			url('icon/iconfont.woff') format('woff'), /* chrome, firefox */
+			url('icon/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+			url('icon/iconfont.svg#iconfont') format('svg');
+			/* iOS 4.1- */
+		}
+
+		.iconfont {
+			font-family: "iconfont" !important;
+			font-size: 16px;
+			font-style: normal;
+			-webkit-font-smoothing: antialiased;
+			-webkit-text-stroke-width: 0.2px;
+			-moz-osx-font-smoothing: grayscale;
+		}
+
+		@media screen and (max-width:322px) {
+			.badage {
+				margin-left: 52px;
+			}
+		}
+
+		@media screen and (min-width:380px) and (max-width:415px) {
+			.badage {
+				margin-left: 70px;
+			}
+		}
+@media screen and (min-width:441px) and (max-width:620px) {
+			.badage {
+				margin-left: 96px;
+			}
+			.rz_span {
+				line-height: 45px;
+			}
+			.li_sp {
+				line-height: 40px;
+			}
+		}
+		@media screen and (min-width:630px) and (max-width:770px) {
+			.badage {
+				margin-left: 96px;
+			}
+			.rz_span {
+				line-height: 45px;
+			}
+			.li_sp {
+				line-height: 40px;
+			}
+		}
+        @media screen and (min-width:771px) and (max-width:999px) {
+			.badage {
+				margin-left: 96px;
+			}
+			.rz_span {
+				line-height: 45px;
+			}
+			.li_sp {
+				line-height: 40px;
+			}
+		}
+		@media screen and (min-width:1000px) {
+			.badage {
+				margin-left: 96px;
+			}
+			.rz_span {
+				line-height: 50px;
+			}
+			.li_sp {
+				line-height: 40px;
+			}
+			.bg_head {
+				left: 47%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="head_nav">
+		<span class="head_span"><img src="img/logo.png" alt=""></span>
+		<h3 class="head_h3">商家中心</h3>
+	</div>
+	<div style="height: 60px;width: 100%;background: #f3f3f3"></div>
+	<div class="us_bg">
+		<div class="bg_head"> <span class="bg_span">Francies</span></div>
+	</div>
+	<div class="us_dd">
+		<ul class="us_ul ">
+			<!-- 分店  -->
+			<li class="us_li dd_ul_li1">
+				<span class="li_sp sp_lft">全部订单</span>
+				<span class="li_sp sp_right"><a href="views/dingdan.html">我的订单管理<i class="iconfont">&#xe62a;</i></a></span>
+			</li>
+			<li class="us_li ul_li_sp">
+
+				<span class="_li_sp">
+                 <i class="iconfont _span_i">&#xe61e;</i><span class="badage">99</span>
+				<span class="_li_span">已完成</span>
+				</span>
+
+				<span class="_li_sp"><i class="iconfont _span_i">&#xe6a3;</i><span class="badage">99</span>
+				<span class="_li_span">发货中</span></span>
+				<span class="_li_sp"><i class="iconfont _span_i">&#xe603;</i><span class="badage">99</span>
+				<span class="_li_span">未付款</span></span>
+				<span class="_li_sp"><i class="iconfont _span_i">&#xe601;</i><span class="badage">99</span>
+				<span class="_li_span">未完成</span></span>
+			</li>
+			<!--  厂家入驻商  -->
+			<li class="us_li dd_ul_li3">
+				<span class="li_sp sp_lft">商品管理</span>
+				<span class="li_sp sp_right"><a href="views/dingdan.html">我的宝贝管理<i class="iconfont">&#xe62a;</i></a></span>
+			</li>
+			<li class="us_li ul_li_sp">
+
+				<span class="_li_sp">
+                 <i class="iconfont _span_i">&#xe607;</i><span class="badage">99</span>
+				<span class="_li_span">出售中</span></span>
+				<span class="_li_sp"><i class="iconfont _span_i" style="font-size:26px !important">&#xe67b;</i><span class="badage">99</span>
+				<span class="_li_span">审核中</span></span>
+				<span class="_li_sp"><i class="iconfont _span_i" style="font-size:19px !important" >&#xe50b;</i><span class="badage">99</span>
+				<span class="_li_span">已下架</span></span>
+				<span class="_li_sp"><i class="iconfont _span_i" style="color:#5d5d5d;">&#xea30;</i>
+				<span class="_li_span">发布宝贝</span></span>
+			</li>
+			<!-- 入驻商功能   -->
+			
+			<!-- 体验店功能  -->
+			<li class="us_li rz_li">
+				<a href="./views/usermenu.html"> <span class="rz_span"><i class="iconfont rz_span_i">&#xe600;</i>我的会员 <i class="iconfont rz_span_i_right">&#xe62a;</i></span></a>
+			</li>
+			<!--  入驻商&体验店功能  -->
+			<li class="us_li rz_li2">
+				<span class="rz_span"><i class="iconfont rz_span_i">&#xe641;</i>我的收益 <i class="iconfont rz_span_i_right">&#xe62a;</i></span>
+			</li>
+			<!-- 体验店功能  -->
+			<li class="us_li rz_li2">
+				<a href="./views/user2.html"><span class="rz_span"><i class="iconfont rz_span_i">&#xe604;</i>注册会员 <i class="iconfont rz_span_i_right">&#xe62a;</i></span></a>
+			</li>
+			<!-- 入驻商 & 体验店功能  -->
+			<li class="us_li rz_li2">
+				<span class="rz_span"><i class="iconfont rz_span_i">&#xe728;</i>收益提现 <i class="iconfont rz_span_i_right">&#xe62a;</i></span>
+			</li>
+			<!-- 市场部功能  -->
+			<li class="us_li rz_li2">
+				<a href="./views/brance.html"><span class="rz_span"><i class="iconfont rz_span_i">&#xe503;</i>分店注册 <i class="iconfont rz_span_i_right">&#xe62a;</i></span></a>
+			</li>
+			<!-- 体验店功能  -->
+			<li class="us_li rz_li2">
+				<a href="./views/qrCode.html"><span class="rz_span"><i class="iconfont rz_span_i">&#xe64c;</i>我的推荐码 <i class="iconfont rz_span_i_right">&#xe62a;</i></span></a>
+			</li>
+			<!--   -->
+			 <li class="us_li rz_li2">
+				<a href="./views/fdsubmit.html"><span class="rz_span"><i class="iconfont rz_span_i">&#xe600;</i>分店认证 <i class="iconfont rz_span_i_right">&#xe62a;</i></span></a>
+			</li> 
+		</ul>
+	</div>
+
+	
+	<script>
+		
+	</script>
+</body>
+
+</html>

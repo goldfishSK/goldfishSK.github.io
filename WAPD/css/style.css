@@ -1,0 +1,1078 @@
+body {
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+
+/* 头部样式 */
+
+.head_d {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 333;
+    height: 40px;
+}
+
+.head_d a {
+    display: inline-block;
+    height: 100%;
+    z-index: 333;
+}
+
+.head_d a img {
+    display: block;
+    height: 30px;
+    z-index: 333;
+    margin-top: 5px;
+    margin-left: 8px;
+}
+
+.nav_left {
+    display: inline-block;
+    float: right;
+    height: 30px;
+    border: 0;
+    padding: 0px;
+    /* width: 51%; */
+    min-width: 220px;
+    font-size: 15px;
+    border-radius: 18px 18px 18px 18px;
+    margin-top: 5px;
+    text-indent: 10px;
+}
+
+.headinput {
+    display: block;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 40px;
+    left: 0;
+}
+
+.zhe {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    /*background: rgb(255, 34, 51);*/
+    z-index: 0;
+}
+
+.zai {
+    display: block;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+}
+
+.one_admin {
+    display: block;
+}
+
+.one_admin ul {
+    display: block;
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding-bottom: 5px;
+    background-color: #fff;
+}
+
+.one_admin ul li {
+    display: inline-block;
+    width: 18%;
+}
+
+.one_admin ul li a {
+    display: block;
+    text-align: center;
+    color: #333;
+}
+
+.one_admin ul li a img {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.one_admin ul li a span {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/*第一个广告 */
+
+.adviet {
+    width: 100%;
+}
+
+.adviet img {
+    width: 100%;
+}
+
+
+/* 下面是粘贴的 */
+
+
+/* 品牌推荐  */
+
+.there {
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.there dl {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid orange;
+}
+
+.there dl dt {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.there dl img {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+}
+
+.there dl dd {
+    width: 50%;
+    float: left;
+}
+
+.there dl dd span {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.there ul {
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid #eeeeee;
+}
+
+.there ul li {
+    width: 49.6%;
+    overflow: hidden;
+    float: left;
+    border-bottom: 1px solid orange;
+    border-left: 1px solid orange;
+}
+
+.there ul li img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* 每日必看  */
+
+.four {
+    margin-top: 15px;
+}
+
+.four_nav {
+    display: inline-block;
+    float: left;
+    height: 30px;
+    width: 27%;
+}
+
+.four_title {
+    display: block;
+    line-height: 30px;
+    width: 100%;
+    text-align: right;
+    border-left: 4px solid red;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+}
+
+.four_title_right {
+    display: inline-block;
+    float: right;
+    height: 40px;
+}
+
+.four_more {
+    display: inline-block;
+    float: right;
+    line-height: 30px;
+    font-size: 17px;
+}
+
+.four_text {
+    display: inline-block;
+    float: right;
+    line-height: 30px;
+    font-size: 17px;
+}
+
+.four_head {
+    height: 30px;
+}
+
+
+/*four 商品展示*/
+
+
+/* 家具推荐  */
+
+.fitment {
+    /*height: 4rem;*/
+    margin: 0 auto;
+    text-align: center;
+}
+
+.fitment_recommend {
+    /*height: 6rem;*/
+    text-align: center;
+}
+
+.fitment_recommend h2 {
+    line-height: 30px;
+    margin: 0 auto;
+    font-size: 19px;
+    font-weight: 700;
+    padding-bottom: 3px;
+}
+
+.fitment_show {
+    background-color: #fff;
+}
+
+.fitment_show_left {
+    display: inline-block;
+    float: left;
+    width: 49.6%;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    border-right: 1px solid #c6c6c6;
+}
+
+.fitment_show ul {
+    display: block;
+    width: 100%;
+    list-style: none;
+    float: left;
+}
+
+.fitment_show ul li {
+    display: inline-block;
+    width: 49.9%;
+    float: left;
+    overflow: hidden;
+}
+
+.fitment_show ul li a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+.fitment_show ul li a h3 {
+    display: block;
+    font-size: 15px;
+    color: #000;
+    font-weight: 600;
+    line-height: 2rem;
+    padding-top: 1rem;
+}
+
+.fitment_show ul li a p {
+    display: block;
+    line-height: 30px;
+    height: 30px;
+    overflow: hidden;
+    font-size: 15px;
+    text-align: center;
+    color: #F7A945;
+}
+
+.fitment_show ul li a span {
+    font-size: 16px;
+    color: #ff0000;
+    float: left;
+}
+
+.fitment_show ul li img {
+    display: block;
+    width: 100%;
+}
+
+.fitment_show_right {
+    display: inline-block;
+    width: 49.9%;
+}
+
+.fitment_down {
+    display: block;
+    background-color: #fff;
+    width: 100%;
+    float: left;
+    text-align: left;
+    margin-top: -4px;
+    overflow: hidden;
+    z-index: 333;
+}
+
+.fitment_down ul {
+    display: block;
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #c6c6c6;
+    border-top: 1px solid #c6c6c6;
+}
+
+.fitment_down ul li {
+    display: inline-block;
+    width: 24.6%;
+    float: left;
+    height: auto;
+    border-right: 1px solid #c6c6c6;
+}
+
+.fitment_down ul li:last-child {
+    float: right;
+}
+
+.fitment_down ul li a {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+}
+
+.fitment_down ul li a p {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.fitment_down ul li a span {
+    display: block;
+    width: 100%;
+}
+
+.fitment_down ul li a img {
+    display: block;
+    width: 80%;
+}
+
+
+/*  墙地材料 */
+
+.material {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+}
+
+.material .material_head {
+    display: block;
+    width: 100%;
+    float: left;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #c6c6c6;
+    padding-top: 5px;
+}
+
+.material_head ul {
+    display: block;
+    width: 100%;
+    float: left;
+}
+
+.material_head ul li {
+    display: inline-block;
+    list-style: none;
+    float: left;
+    width: 49%;
+    text-align: right;
+    padding-left: 0.5%;
+}
+
+.material_head ul li img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.meterial_head_li {
+    margin-left: 0.2rem;
+}
+
+.meterial_cont {
+    display: block;
+    width: 100%;
+}
+
+.meterial_cont a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+
+.meterial_cont ul {
+    display: block;
+    width: 100%;
+    list-style: none;
+}
+
+.meterial_cont ul li {
+    display: inline-block;
+    width: 23.8%;
+}
+
+.meterial_cont ul li img {
+    display: block;
+    width: 100%;
+}
+
+.ial_cont_li_div {
+    display: block;
+    width: 100%;
+    height: 7rem;
+    text-align: center;
+}
+
+.ial_cont_li_div strong {
+    font-size: 17px;
+}
+
+.ial_cont_li a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+
+.ial_cont_li_div p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 15px;
+    color: #9B9B9B;
+    font-size: 14px;
+}
+
+.ial_cont_li_div span {
+    color: red;
+    font-size: 15px;
+    line-height: 15px;
+    text-align: left;
+    float: left;
+}
+
+.cont_li_span {
+    width: 100%;
+    height: 15px;
+}
+
+.head_float_p {
+    display: block;
+    position: absolute;
+    text-align: left;
+    font-family: "微软雅黑";
+    width: 49%;
+}
+
+.head_float_p h3 {
+    display: block;
+    line-height: 17px;
+}
+
+.head_float_p p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 50%;
+    line-height: 15px;
+    font-size: 12px;
+    color: blueviolet;
+}
+
+.head_float_p span {
+    display: block;
+    color: red;
+    font-size: 14px;
+}
+
+
+/* 第二个轮播图 */
+
+.box a {
+    display: inline-block;
+    width: 32%;
+}
+
+.box a img {
+    display: block;
+    width: 100%;
+    margin-top: 4%;
+}
+
+.box a img:first-child {
+    margin-left: 1%;
+}
+
+
+/*下面4个*/
+
+.meter_recommend h2 {
+    line-height: 30px;
+    margin: 0 auto;
+    font-size: 19px;
+    font-weight: 700;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+.son_oen {
+    display: block;
+    width: 100%;
+}
+
+.son_oen ul {
+    width: 100%;
+    list-style: none;
+    float: left;
+    margin: 0;
+    border-top: 1px solid #c6c6c6;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.son_oen ul li {
+    display: inline-block;
+    width: 32.1%;
+    /*border-right: 1px solid #c6c6c6;*/
+}
+
+.son_oen ul li img {
+    display: block;
+    width: 100%;
+}
+
+.son_one_top {
+    display: block;
+    width: 100%;
+}
+
+.son_one_top strong {
+    display: block;
+    width: 100%;
+    text-align: center;
+    /* padding-top: 1.3rem; */
+    font-size: 17px;
+    line-height: 20px;
+}
+
+.son_one_top span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    color: #9b9b9b;
+    line-height: 20px;
+}
+
+
+/* 广告层 */
+
+.advert {
+    display: block;
+    width: 100%;
+    padding-bottom: 10px;
+    background-color: #fff;
+    padding-top: 10px;
+}
+
+.advert img {
+    display: block;
+    width: 100%;
+}
+
+
+/* 家具 */
+
+.furn h2 {
+    line-height: 40px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.furniture {
+    display: block;
+    width: 100%;
+    height: 300px;
+    padding-top: 10px;
+    background-color: #fff;
+}
+
+.furniture .furnitrure_left {
+    display: inline-block;
+    width: 49.8%;
+    float: left;
+}
+
+.furnitrure_left img {
+    display: block;
+    width: 100%;
+}
+
+.furnitrure_right {
+    display: inline-block;
+    float: right;
+    width: 49.8%;
+}
+
+.furnitrure_right img {
+    display: block;
+    width: 100%;
+}
+
+.furniture .furn_down {
+    display: block;
+    width: 100%;
+}
+
+.furn_down ul {
+    display: block;
+    width: 100%;
+    list-style: none;
+    float: left;
+    background-color: #fff;
+    text-align: center;
+}
+
+.furn_down ul li {
+    display: inline-block;
+    width: 32%;
+    border-right: 1px solid #c6c6c6;
+    overflow: hidden;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.furn_down ul li img {
+    display: block;
+    width: 100%;
+}
+
+
+/* brand   */
+
+.brand {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.brand-head {
+    height: 40px;
+    padding-bottom: 10px;
+}
+
+.brand .slider {
+    background: #fff;
+}
+
+.brand-nav {
+    display: inline-block;
+    float: left;
+    height: 40px;
+}
+
+.brand_title {
+        display: block;
+    line-height: 30px;
+    width: 25%;
+    float: left;
+    text-align: right;
+    border-left: 3px solid red;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 5px 0px;
+}
+
+.brand_title_right {
+    display: inline-block;
+    float: right;
+    height: 40px;
+}
+
+.brand_title_right a {
+    text-decoration: none;
+    color: #000;
+}
+
+.brand_more {
+    display: inline-block;
+    float: right;
+    line-height: 40px;
+    font-size: 17px;
+}
+
+.brand_text {
+    display: inline-block;
+    float: right;
+    line-height: 40px;
+    font-size: 16px;
+}
+
+
+/*秒杀样式*/
+
+.timer {
+    color: red;
+    display: block;
+    position: relative;
+    clear: both;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    top: -5px;
+}
+
+.timer span {
+    display: inline-block !important;
+    font-size: 14px;
+    width: 10% !important;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+}
+
+.mui-slider-indicator .mui-active.mui-indicator {
+    background-color: #FF4C4C;
+    opacity: 0.8;
+}
+
+.mui-slider-indicator .mui-indicator {
+    background-color: #FFFDFD;
+    opacity: 0.5;
+}
+
+
+/* 插件CSS */
+
+
+/*
+ | ------------------------------------------
+ | Glide styles
+ | ------------------------------------------
+ | Here are slider styles
+ | 
+*/
+
+.slider {
+    position: relative;
+    width: 100%;
+    /*height: 420px;*/
+    overflow: hidden;
+}
+
+.slides {
+    height: 100%;
+    /* Simple clear fix */
+    overflow: hidden;
+    /**	
+		 * Prevent blinking issue
+		 * Not tested. Experimental.
+		 */
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    /**
+		 * Here is CSS transitions 
+		 * responsible for slider animation in modern broswers
+		 */
+    -webkit-transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    -moz-transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    -ms-transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    -o-transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+.slide {
+    height: 100%;
+    float: left;
+    clear: none;
+}
+
+.slider-arrows {}
+
+.slider-arrow {
+    position: absolute;
+    display: block;
+    margin-bottom: -20px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    background-color: #333;
+    background-color: rgba(50, 50, 50, .3);
+    border-radius: 50%;
+}
+
+.slider-arrow--right {
+    bottom: 62%;
+    right: 20px;
+}
+
+.slider-arrow--left {
+    bottom: 62%;
+    left: 20px;
+}
+
+.slider-nav {
+    position: absolute;
+    bottom: 30px;
+}
+
+.slider-nav__item {
+    width: 12px;
+    height: 12px;
+    float: left;
+    clear: none;
+    display: block;
+    margin: 0 5px;
+    background: #fff;
+}
+
+.slider-nav__item:hover {
+    background: #ccc;
+}
+
+.slider-nav__item--current {
+    background: #ccc;
+}
+
+#twoSlider .box ul {
+    display: block;
+}
+
+#twoSlider .box ul li {
+    display: inline-block;
+    width: 32%;
+}
+
+#twoSlider .box ul li a {
+    display: block;
+    width: 100%;
+}
+
+#twoSlider .box ul li a img {
+    display: block;
+    width: 100%;
+}
+
+.haed_nav {
+    display: block;
+    width: 100%;
+    height: 44px;
+}
+
+.mui-bar {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.mui-bar:first-child {
+    background-color: rgba(252, 6, 6, 0.65) !important;
+}
+
+.head_sousuo {
+    display: inline-block;
+    background: url(../img/sousuo.png) no-repeat;
+    width: 30px;
+    height: 30px;
+    float: right;
+    position: absolute;
+    right: 0%;
+    top: 7px;
+    background-size: 25px 25px;
+}
+
+.slider10 .arrowsWrapper a:first-child {
+    top: 11%;
+}
+
+.slider10 .arrowsWrapper a:last-child {
+    top: 11%;
+}
+
+.baner_img {
+    width: 100%;
+    height: 150px;
+}
+
+.slider10 {
+    overflow: hidden;
+    background: #fff;
+}
+
+.contnet {
+    /*padding-top: 40px;*/
+}
+
+
+/*  底部底部底部 */
+
+.footer {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    height: 44px;
+    z-index: 333;
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.footer ul {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.footer ul li {
+    display: inline-block;
+    width: 18.8%;
+    height: 44px;
+    background-color: #fff;
+}
+
+.footer ul li a {
+    display: block;
+    text-align: center;
+    color: #333;
+}
+
+.footer ul li a i {
+    display: block;
+    font-size: 21px;
+}
+
+.footer ul li a span {
+    display: block;
+    font-size: 13px;
+}
+
+
+/*  backtop*/
+
+.backtop {
+    display: none;
+    width: 35px;
+    height: 35px;
+    position: fixed;
+    bottom: 70px;
+    right: 30px;
+}
+
+.backtop img {
+    display: block;
+    width: 35px;
+    height: 35px;
+}
+
+
+/*  猜你喜欢0*/
+
+.gueeslick {
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    padding-bottom: 45px;
+}
+
+.gue_ul {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.gu_li {
+    display: inline-block;
+    width: 49%;
+    background: #f2f2f2;
+    margin-top: 10px;
+}
+
+.guli_a {
+    display: block;
+    width: 100%;
+}
+
+.gul_div {
+    width: 100%;
+    overflow: hidden;
+}
+
+.guld_img {
+    display: block;
+    width: 100%;
+}
+
+.gur_p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-indent: 10px;
+    font-size: 14px;
+}
+
+.gurp_p {
+    text-align: left;
+    text-indent: 10px;
+    color: #FF4E4E;
+}
+
+.gur_con {
+    width: 100%;
+    text-align: center;
+}
+
+.gur_con span {
+    display: block;
+    background: #e6e6e6;
+    width: 30%;
+    z-index: 333;
+    margin: 0 auto;
+    position: relative;
+}
+
+.gurs_d {
+    width: 100%;
+    height: 1px;
+    position: relative;
+    margin-top: -10px;
+    background: #cbcbcb;
+}

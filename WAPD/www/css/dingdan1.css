@@ -1,0 +1,84 @@
+.ddcon {
+    width: 100%;
+    margin-top: 80px;
+    background: #fff;
+}
+
+.ddcon_ul,
+.ddcon_li {
+    display: block;
+    width: 99.8%;
+    margin: 0 auto;
+}
+
+.ddcon_li {
+    border-top: 1px solid #c6c6c6;
+    border-right: 1px solid #c6c6c6;
+}
+
+.ddcon_li:last-child {
+    border-bottom: 1px solid #c6c6c6;
+    height: 29px;
+}
+
+.con_sp {
+    display: inline-block;
+    width: 32%;
+    text-align: center;
+    border-left: 1px solid #c6c6c6;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.ddcon_li .con_sp:first-child {
+    text-decoration: underline;
+}
+
+body {
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.head_nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    padding-top: 20px;
+    height: 40px;
+    background: #f2f2f2;
+    width: 100%;
+    text-align: center;
+    min-width: 320px;
+    max-width: 640px;
+}
+
+.head_span {
+    display: inline-block;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 10px;
+    z-index: 333;
+    position: relative;
+}
+
+.head_h3 {
+    display: inline-block;
+    height: 40px;
+    font-size: 19px;
+    line-height: 40px;
+    color: #333;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+}
+.ddcon_li:first-child .con_sp:first-child{
+    text-decoration: none;
+}

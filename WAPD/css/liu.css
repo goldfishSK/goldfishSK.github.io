@@ -1,0 +1,128 @@
+body {
+    height: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+}
+
+a {
+    color: #333;
+}
+
+.head_nav {
+    width: 100%;
+    height: 44px;
+    border-bottom: 1px solid #C6C6C6;
+    text-align: center;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 333;
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.hn_s {
+    display: inline-block;
+    float: left;
+    text-indent: 10px;
+}
+
+.hns_i {
+    height: 44px;
+    line-height: 44px;
+}
+
+.hns_h4 {
+    display: inline-block;
+    margin: 0 auto;
+    height: 44px;
+    width: 150px;
+    text-align: center;
+    line-height: 44px;
+    text-indent: -10px;
+}
+
+.leamsg {
+    margin-top: 54px;
+    background: #fff;
+}
+
+.meamsg_left {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    float: left;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.meamsg_right {
+    display: inline-block;
+    width: 80%;
+    text-align: center;
+    float: right;
+}
+
+.meamsg_right ul {
+    display: block;
+    width: 100%;
+}
+
+.meamsg_right ul li {
+    display: inline-block;
+    width: 27%;
+    border: 1px solid #c6c6c6;
+    margin: 8px 8px 4px 0px;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+.text_con {
+    display: inline-block;
+    border: 1px solid #c6c6c6;
+    width: 96%;
+    text-align: left;
+    font-size: 15px;
+    min-height: 140px;
+    line-height: 26px;
+    margin-top: 17px;
+    margin-left: 2%;
+    text-indent: 17px;
+}
+
+.em_span {
+    display: inline-block;
+    width: 15%;
+    text-align: right;
+    height: 35px;
+    line-height: 35px;
+}
+
+.em_input {
+    display: inline-block;
+    width: 53%;
+    margin-left: 10px;
+    height: 25px;
+    line-height: 25px;
+    border: 0;
+}
+
+.btn {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    background: #ff2233;
+    border: 0;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 19px;
+    border-radius: 4px;
+}
+
+#images {
+    margin-left: 10px;
+}

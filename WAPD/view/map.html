@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=TWHo27fBCFbLyVnha515wCu9BRPvOuUT"></script>
+		<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+		<style>
+			@font-face {
+				font-family: "iconfont";
+				src: url('../icon/iconfont.eot');
+				/* IE9*/
+				src: url('../icon/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../icon/iconfont.woff') format('woff'), /* chrome, firefox */
+				url('../icon/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+				url('../icon/iconfont.svg#iconfont') format('svg');
+				/* iOS 4.1- */
+			}
+			
+			.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 16px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				height: 100%;
+				font-family: "微软雅黑";
+			}
+			
+			a {
+				text-decoration: none;
+				color: #000;
+			}
+			
+			.haed_nav {
+				display: block;
+				position: fixed;
+				top: 0;
+				height: 60px;
+				width: 100%;
+				text-align: center;
+				background-color: #efefef;
+			}
+			
+			.back {
+				display: block;
+				position: absolute;
+				line-height: 60px;
+				margin-left: 1rem;
+			}
+			
+			.head_title {
+				display: inline-block;
+				height: 60px;
+				line-height: 60px;
+			}
+			
+			.head_right {
+				display: inline-block;
+				float: right;
+				height: 60px;
+				line-height: 50px;
+				margin-right: 1rem;
+			}
+			
+			#l-map {
+				height: 300px;
+				width: 100%;
+			}
+			
+			#r-result,
+			#r-result table {
+				width: 100%;
+			}
+			
+			#allmap {
+				width: 100%;
+				height: 1000px;
+				overflow: hidden;
+				margin: 0;
+				font-family: "微软雅黑";
+			}
+			
+			#l-map {
+				height: 300px;
+				width: 100%;
+			}
+			
+			#r-result,
+			#r-result table {
+				width: 100%;
+			}
+			/*地图展示结束*/
+			
+			.fication {
+				display: block;
+				width: 100%;
+				text-align: center;
+			}
+			
+			.fication ul {
+				display: block;
+				width: 100%;
+				text-align: left;
+			}
+			
+			.fication ul li {
+				display: inline-block;
+				width: 20%;
+				margin: 3% 6.5%;
+			}
+			
+			.fication ul li a {
+				display: block;
+				width: 130px;
+				height: 50px;
+				line-height: 50px;
+				color: #fff;
+				text-align: center;
+				border-radius: 5px;
+				font-size: 1.5rem;
+				background-color: #EF4F4F;
+			}
+			
+			#l-map {
+				display: none;
+				height: 500px;
+				width: 100%;
+			}
+			/*  地图倒计时 */
+			
+			.alert-box {
+				display: none;
+				position: absolute;
+				margin: 96px auto 0;
+				padding: 180px 85px 22px;
+				border-radius: 10px 10px 0 0;
+				background: #FFF;
+				box-shadow: 5px 9px 17px rgba(102, 102, 102, 0.75);
+				width: 286px;
+				color: #FFF;
+				text-align: center;
+				z-index: 999;
+				top: 10%;
+				left: 25%;
+			}
+			
+			.alert-circle {
+				position: absolute;
+				top: -50px;
+				left: 111px;
+			}
+			
+			.alert-sec-circle {
+				stroke-dasharray: 735;
+				transition: stroke-dashoffset 1s linear;
+			}
+			
+			.alert-sec-unit {
+				font-size: 34px;
+			}
+			
+			.alert-sec-text {
+				position: absolute;
+				top: 11px;
+				left: 190px;
+				width: 76px;
+				color: #000;
+				font-size: 68px;
+			}
+			
+			.alert-body {
+				margin: 35px 0;
+			}
+			
+			.alert-head {
+				color: #242424;
+				font-size: 28px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="haed_nav">
+			<a href="../tiyan.html"><span class="back"><i class="iconfont">&#xe65e;</i></span></a>
+			<span class="head_title">体验馆</span>
+			<span class="head_right"><i class="iconfont" style="font-size: 1.5rem;">&#xe637;</i></span>
+		</div>
+		<div style="width: 100%;display: block;height: 60px;"></div>
+
+		<div id="allmap">
+
+		</div>
+		<!--// 倒计时加载地图-->
+		<div id="js-alert-box" class="alert-box">
+			<svg class="alert-circle" width="234" height="234">
+				<circle cx="117" cy="117" r="108" fill="#FFF" stroke="#43AEFA" stroke-width="17"></circle>
+				<circle id="js-sec-circle" class="alert-sec-circle" cx="117" cy="117" r="108" fill="transparent" stroke="#F4F1F1" stroke-width="18" transform="rotate(-90 117 117)"></circle>
+				<text class="alert-sec-unit" x="82" y="172" fill="#BDBDBD">secs</text>
+			</svg>
+			<div id="js-sec-text" class="alert-sec-text"></div>
+			<div class="alert-body">
+				<div id="js-alert-head" class="alert-head">
+				</div>
+			</div>
+		</div>
+		<div class="fication">
+			<ul>
+				<li class="walk" onclick="walk()">
+					<a href="wark.html">步行规划</a>
+				</li>
+				<li class="drice">
+					<a href="zoom.html" onclick="drice()">驾车规划</a>
+				</li>
+				<li class="transit" onclick="transit()">
+					<a href="transit.html">公交规划</a>
+				</li>
+			</ul>
+		</div>
+
+		<script type="text/javascript">
+		</script>
+		<script>
+			var yonghuzuobiao = new Object();
+			var tiyandian = new Object();
+			var yonghuzuobiaoname = new Object();
+			var tiyandianname = new Object();
+			var yonghudizhinameed = new String();
+			var tiyandiandizhinameed = new String();
+
+			var geoc = new BMap.Geocoder();
+			var yhgeco = new BMap.Geocoder();
+
+			var tiyandianmingzi = String(localStorage.hallname);
+
+			// 根据IP定位拿到城市
+			var map = new BMap.Map("allmap");
+			var point = new BMap.Point(116.331398, 39.897445);
+			map.centerAndZoom(point, 12);
+			map.addControl(new BMap.MapTypeControl()); //添加地图类型控件
+			map.setCurrentCity(myCity); // 设置地图显示的城市 此项是必须设置的
+			map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+
+			//  地图初始化 转到当前城市
+			function myFun(result) {
+				var cityName = result.name;
+				map.setCenter(cityName);
+				// alert("当前定位城市:" + cityName);
+			}
+			var myCity = new BMap.LocalCity();
+			myCity.get(myFun);
+			//  拿到用户的浏览器定位地址
+			var geolocation = new BMap.Geolocation();
+			geolocation.getCurrentPosition(function(r) {
+				if(this.getStatus() == BMAP_STATUS_SUCCESS) {
+					var mk = new BMap.Marker(r.point);
+					map.addOverlay(mk);
+					map.panTo(r.point);
+
+					yonghuzuobiao.jingdu = r.point.lng;
+					yonghuzuobiao.weidu = r.point.lat;
+					localStorage.yhjd = String(yonghuzuobiao.jingdu).trim();
+					localStorage.yhwd = String(yonghuzuobiao.weidu).trim();
+
+					//  拿到用户坐标赋值给name
+					yonghuzuobiaoname = r.point;
+
+					console.log("拿到用户坐标" + yonghuzuobiao.jingdu, yonghuzuobiao.weidu);
+					// alert('您的位置：' + r.point.lng + ',' + r.point.lat);
+
+					//   
+
+					alert("点击你想要去的体验店");
+					over();
+					//   在地图上获取目的地的地图标识
+					//   拿到体验店地址名称 关键词索引搜索地址
+					var local = new BMap.LocalSearch(map, {
+						renderOptions: {
+							map: map
+						}
+					});
+
+					jQuery.trim(tiyandianmingzi);
+					var strr = tiyandianmingzi.trim();
+
+					local.search(strr), 2000;
+					console.log("上一个页面传进来体验店的名字是" + tiyandianmingzi);
+
+					//  用户点击去到的体验店地址
+					map.addEventListener("click", function(e) {
+						tiyandian.jingdu = e.point.lng;
+						tiyandian.weidu = e.point.lat;
+						tiyandianname = e.point;
+						localStorage.tyjd = String(tiyandian.jingdu).trim();
+						localStorage.tywd = String(tiyandian.weidu).trim();
+
+						// alert(e.point.lng + "," + e.point.lat);
+						// alert("体验店的经纬度是:" + tiyandian.jingdu, tiyandian.weidu);
+						console.log("拿到体验店的经纬度" + tiyandian.jingdu, tiyandian.weidu);
+
+						//   根据起点终点的经纬度查询驾车导航
+
+						var p2 = new BMap.Point(tiyandian.jingdu, tiyandian.weidu);
+						var p1 = new BMap.Point(yonghuzuobiao.jingdu, yonghuzuobiao.weidu);
+
+						var driving = new BMap.DrivingRoute(map, {
+							renderOptions: {
+								map: map,
+								autoViewport: true
+							}
+						});
+						driving.search(p1, p2), 2000;
+
+						//  中文地址名称
+						geoc.getLocation(tiyandianname, function(rs) {
+							var addComp = rs.addressComponents;
+							// alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+							console.log("体验店名字是" + addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+
+							tiyandiandizhinameed = addComp.province + addComp.city + addComp.district + addComp.street + addComp.streetNumber;
+							console.log("刚才拿到的地址是" + tiyandiandizhinameed);
+
+							localStorage.setname = String(tiyandiandizhinameed).trim();
+
+							// getdiring(tiyandiandizhinameed, yonghudizhinameed);
+						});
+						yhgeco.getLocation(yonghuzuobiaoname, function(rs) {
+							var addComp = rs.addressComponents;
+							// alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+							yonghudizhinameed = addComp.province + addComp.city + addComp.district + addComp.street + addComp.streetNumber;
+							console.log("用户的地址名字是" + addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+							console.log("用户地址名字组合后是" + yonghudizhinameed);
+							localStorage.getname = String(yonghudizhinameed).trim();
+
+						});
+
+					});
+
+				} else {
+					alert('failed' + this.getStatus());
+				}
+			}, {
+				enableHighAccuracy: true
+			});
+
+			function walk() {
+				var one = yonghudizhinameed.trim();
+				var two = tiyandiandizhinameed.trim();
+				var map = new BMap.Map("allmap");
+				map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
+				var walking = new BMap.WalkingRoute(map, {
+					renderOptions: {
+						map: map,
+						autoViewport: true
+					}
+				});
+				walking.search(one, two);
+			}
+		</script>
+		<script>
+			function alertSet(e) {
+				document.getElementById("js-alert-box").style.display = "block",
+					document.getElementById("js-alert-head").innerHTML = e;
+				var t = 7,
+					n = document.getElementById("js-sec-circle");
+				document.getElementById("js-sec-text").innerHTML = t,
+					setInterval(function() {
+							if(0 == t) {
+								// location.href = "#"; //#时间到后跳转地址
+								document.getElementById("js-alert-head").innerHTML = "地图加载成功";
+
+							} else {
+								t -= 1,
+									document.getElementById("js-sec-text").innerHTML = t;
+								var e = Math.round(t / 10 * 735);
+								n.style.strokeDashoffset = e - 735
+							}
+						},
+						480);
+			}
+
+			function over() {
+				$("#js-alert-box").hide();
+			}
+		</script>
+		<script>
+			alertSet('地图加载中...');
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<link rel="stylesheet" href="../css/init.css">
+		<link href="../css/menu.css" rel="stylesheet">
+		<style>
+			@font-face {
+				font-family: "iconfont";
+				src: url('../icon/iconfont.eot');
+				/* IE9*/
+				src: url('../icon/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../icon/iconfont.woff') format('woff'), /* chrome, firefox */
+				url('../icon/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+				url('../icon/iconfont.svg#iconfont') format('svg');
+				/* iOS 4.1- */
+			}
+			
+			.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 16px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			
+			@media screen and (max-width:322px) {
+				.con_li {
+					font-size: 13px;
+				}
+			}
+			
+			@media screen and (min-width:630px) and (max-width:770px) {
+				.con_right_day,
+				.con_right,
+				.con_left,
+				.con_con_tit {
+					display: inline-block;
+					width: 32%;
+					line-height: 45px;
+					background: #fff;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="head_nav">
+			<span class="head_span iconfont" onclick="getBack();">&#xe628;</span>
+			<h3 class="head_h3">会员列表</h3>
+		</div>
+
+		<div class="usercon">
+			<ul class="con_ul">
+				<li class="con_li">
+					<div class="con_left uname">用户名</div>
+					<div class="con_right uname" id="minDay">注册日期</div>
+					<div class="con_right_day uname" id="monesDay">近30日动态</div>
+				</li>
+				<li class="con_li">
+					<div class="con_left">18629364654</div>
+					<div class="con_right">2017-04-24</div>
+					<div class="con_con_tit haveDD">有最新订单</div>
+				</li>
+				<li class="con_li">
+					<div class="con_left">18629364654</div>
+					<div class="con_right">2017-04-24</div>
+					<div class="con_con_tit hasDD">无最新订单</div>
+				</li>
+				<li class="con_li">
+					<div class="con_left">18629364654</div>
+					<div class="con_right">2017-04-24</div>
+					<div class="con_con_tit haveDD">有最新订单</div>
+				</li>
+				<li class="con_li">
+					<div class="con_left">18629364654</div>
+					<div class="con_right">2017-04-24</div>
+					<div class="con_con_tit hasDD">无最新订单</div>
+				</li>
+				<li class="con_li">
+					<div class="con_left">18629364654</div>
+					<div class="con_right">2017-04-24</div>
+					<div class="con_con_tit haveDD">有最新订单</div>
+				</li>
+				<li class="con_li">
+					<div class="con_left">18629364654</div>
+					<div class="con_right">2017-04-24</div>
+					<div class="con_con_tit hasDD">无最新订单</div>
+				</li>
+				<li class="con_li">
+					<div class="con_left">18629364654</div>
+					<div class="con_right">2017-04-24</div>
+					<div class="con_con_tit haveDD">有最新订单</div>
+				</li>
+				<li class="con_li">
+					<div class="con_left">18629364654</div>
+					<div class="con_right">2017-04-24</div>
+					<div class="con_con_tit hasDD">无最新订单</div>
+				</li>
+				<li class="con_li">
+					<div class="con_left">18629364654</div>
+					<div class="con_right">2017-04-24</div>
+					<div class="con_con_tit haveDD">有最新订单</div>
+				</li>
+				<li class="con_li">
+					<div class="con_left">18629364654</div>
+					<div class="con_right">2017-04-24</div>
+					<div class="con_con_tit hasDD">无最新订单</div>
+				</li>
+				<li class="con_li">
+					<div class="con_left">18629364654</div>
+					<div class="con_right">2017-04-24</div>
+					<div class="con_con_tit haveDD">有最新订单</div>
+				</li>
+				<li class="con_li">
+					<div class="con_left">18629364654</div>
+					<div class="con_right">2017-04-24</div>
+					<div class="con_con_tit hasDD">无最新订单</div>
+				</li>
+			</ul>
+		</div>
+		<div class="tianjia">
+			<a href="user2.html">添加会员</a>
+		</div>
+		<!--footer-->
+		<div class="footer">
+			<p>版权所有 © 2015-2016 全名网络科技有限公司，并保留所有权利。</p>
+		</div>
+
+		<script src="../js/jquery.min.js"></script>
+
+		<script>
+			$("#monesDay").click(function() {
+				getHave();
+				getHas();
+				tiaozheng();
+
+				function tiaozheng() {
+					$(".uname").css("margin", "0px -2px");
+				}
+
+				function getHave() {
+					var phone1 = [];
+					var time1 = [];
+					var haveDD11 = [];
+					var _div = document.createElement("div");
+					_div.className = "content1";
+					for(var i = 0; i < $(".haveDD").length; i++) {
+						var text = ($($(".haveDD")[i]).parents(".con_li").find(".con_left").text());
+
+						phone1.push(text);
+						var _time = ($($(".haveDD")[i]).parents(".con_li").find(".con_right").text())
+						time1.push(_time);
+						var _haveDD1 = ($($(".haveDD")[i]).parents(".con_li").find(".haveDD").text())
+						haveDD11.push(_haveDD1);
+
+						var _li = document.createElement("li");
+						_li.className = "con_li";
+						var _con_left = document.createElement("div");
+						_con_left.className = "con_left";
+						var _con_right = document.createElement("div");
+						_con_right.className = "con_right ";
+
+						_con_left.innerHTML = phone1[i];
+						_con_right.innerHTML = time1[i];
+						var _haveDD11 = document.createElement("div");
+						_haveDD11.className = "con_con_tit haveDD11";
+
+						_haveDD11.innerHTML = haveDD11[i];
+						console.log(i);
+						console.log(haveDD11[i]);
+
+						_li.appendChild(_con_left);
+						_li.appendChild(_con_right);
+						_li.appendChild(_haveDD11);
+						_div.appendChild(_li);
+						$(".con_ul").append(_div);
+
+					}
+
+					$(".haveDD").parents(".con_li").remove();
+				}
+
+				function getHas() {
+					var phone1 = [];
+					var time1 = [];
+					var haveDD11 = [];
+					var _div = document.createElement("div");
+					_div.className = "content1";
+					for(var i = 0; i < $(".hasDD").length; i++) {
+						var text = ($($(".hasDD")[i]).parents(".con_li").find(".con_left").text());
+
+						phone1.push(text);
+						var _time = ($($(".hasDD")[i]).parents(".con_li").find(".con_right").text())
+						time1.push(_time);
+						var _haveDD1 = ($($(".hasDD")[i]).parents(".con_li").find(".hasDD").text())
+						haveDD11.push(_haveDD1);
+
+						var _li = document.createElement("li");
+						_li.className = "con_li";
+						var _con_left = document.createElement("div");
+						_con_left.className = "con_left";
+						var _con_right = document.createElement("div");
+						_con_right.className = "con_right ";
+
+						_con_left.innerHTML = phone1[i];
+						_con_right.innerHTML = time1[i];
+						var _haveDD11 = document.createElement("div");
+						_haveDD11.className = "con_con_tit hasDD11";
+
+						_haveDD11.innerHTML = haveDD11[i];
+						console.log(i);
+						console.log(haveDD11[i]);
+
+						_li.appendChild(_con_left);
+						_li.appendChild(_con_right);
+						_li.appendChild(_haveDD11);
+						_div.appendChild(_li);
+						$(".con_ul").append(_div);
+
+					}
+
+					$(".hasDD").parents(".con_li").remove();
+				}
+
+			})
+		</script>
+		</script>
+
+	</body>
+
+</html>

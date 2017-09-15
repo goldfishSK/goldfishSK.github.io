@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>收货人信息</title>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<link rel="stylesheet" href="../css/init.css">
+
+		<link href="../css/gsmap.css" rel="stylesheet">
+		<link rel="stylesheet" href="../css/LArea.css">
+		<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="../js/LAreaData1.js"></script>
+		<script src="../js/LAreaData2.js"></script>
+		<script src="../js/LArea.js"></script>
+		<style>
+			@font-face {
+				font-family: "iconfont";
+				src: url('../icon/iconfont.eot');
+				/* IE9*/
+				src: url('../icon/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../icon/iconfont.woff') format('woff'), /* chrome, firefox */
+				url('../icon/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+				url('../icon/iconfont.svg#iconfont') format('svg');
+				/* iOS 4.1- */
+			}
+			
+			.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 16px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mapUser">
+			<div class="head_nav">
+				<div class="head_logo">
+					<span class="hlg_span_left" id="back"><i class="iconfont">&#xe65e;</i></span>
+					<h4>地址管理</h4>
+					<span class="hlg_span" id="caidan"><i class="iconfont">&#xe637;</i></span>
+				</div>
+			</div>
+			<div class="addmap">
+				<span id="addMap">+添加收货地址</span>
+			</div>
+			<!--地址管理 -->
+			<div class="mapcont">
+				<ul class="mc_ul">
+					<li class="mcu_li">
+						<div class="mcul_divtop">
+							<div class="mculd_d"><span class="mcud_left">佘坤</span>
+								<span class="mcud_right">18629364654</span></div>
+							<div class="mculd_down"><span class="mcud_span">收货地址:</span><span class="mcuds_ri">陕西省西安市未央区未央路12号</span></div>
+						</div>
+						<div class="mcul_divdown">
+							<span class="removea"><i class="iconfont" >&#xe608;</i>删除</span>
+							<span class="change"><i class="iconfont" >&#xe645;</i>修改</span>
+						</div>
+					</li>
+					<li class="mcu_li">
+						<div class="mcul_divtop">
+							<div class="mculd_d"><span class="mcud_left">佘da坤</span>
+								<span class="mcud_right">18629364654</span></div>
+							<div class="mculd_down"><span class="mcud_span">收货地址:</span><span class="mcuds_ri">陕西省西安市未央区凤城三路</span></div>
+						</div>
+						<div class="mcul_divdown">
+							<span class="removea"><i class="iconfont">&#xe608;</i>删除</span>
+							<span class="change"><i class="iconfont">&#xe645;</i>修改</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 修改添加地址 -->
+		<div class="modify">
+			<div class="head_logo">
+				<span class="hlg_span_left" id="quxiao"><i class="iconfont">&#xe65e;</i></span>
+				<h4>收货人信息</h4>
+			</div>
+			<div class="mode_con" style="padding-top: 44px;">
+				<ul class="modic_ul">
+					<li class="modi_li">
+						<span class="modili_span">收货人姓名:</span> <input type="text" placeholder="请输入姓名" class="modis_in">
+						<div style="width: 90%;height: 1px;background: #c6c6c6;float: right;"></div>
+					</li>
+					<li class="modi_li">
+						<span class="modili_span">收货人手机号: </span><input type="text" placeholder="请输入11位手机号" class="modis_in">
+						<div style="width: 90%;height: 1px;background: #c6c6c6;float: right;"></div>
+					</li>
+					<li class="modi_li">
+						<span class="modili_span">收货人地址: </span>
+
+						<div class="content-block">
+							<input id="demo1" type="text" readonly="" placeholder="城市选择" value="北京市,朝阳区" class="modis_in" placeholder="北京市,朝阳区">
+							<input id="value1" type="hidden" value="20,234,504">
+						</div>
+
+						<div style="width: 90%;height: 1px;background: #c6c6c6;float: right;"></div>
+					</li>
+					<li class="modi_li">
+						<span class="modili_span">收货人详细地址: </span><input type="text" placeholder="请输入详细地址" class="modis_in">
+						<div style="width: 90%;height: 1px;background: #c6c6c6;float: right;"></div>
+					</li>
+				</ul>
+				<div class="baocun">
+					<button type="button" class="bc_btn">保存</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- 城市多级联动 -->
+		<script>
+			var area1 = new LArea();
+			area1.init({
+				'trigger': '#demo1', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+				'valueTo': '#value1', //选择完毕后id属性输出到该位置
+				'keys': {
+					id: 'id',
+					name: 'name'
+				}, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+				'type': 1, //数据源类型
+				'data': LAreaData //数据源
+			});
+			area1.value = [1, 13, 3]; //控制初始位置，注意：该方法并不会影响到input的value
+			var area2 = new LArea();
+			area2.init({
+				'trigger': '#demo2',
+				'valueTo': '#value2',
+				'keys': {
+					id: 'value',
+					name: 'text'
+				},
+				'type': 2,
+				'data': [provs_data, citys_data, dists_data]
+			});
+		</script>
+		<script>
+		</script>
+
+		<!-- 添加地址保存传数据 -->
+		<script>
+			$("#addMap").click(function() {
+				$(".mapUser").hide();
+				$(".modify").show();
+				_tag = 1;
+			});
+			$("#quxiao").click(function() {
+				$(".mapUser").show();
+				$(".modify").hide();
+			});
+
+			$($(".modis_in")[1]).focus(function() {
+				$(this).val("");
+			});
+			$($(".modis_in")[0]).focus(function() {
+				$(this).val("");
+			});
+			$($(".modis_in")[3]).focus(function() {
+				$(this).val("");
+			})
+			$(".modis_in").blur(function() {
+				$(this).css("color", "#333");
+			})
+
+			//   添加地址
+			$(".bc_btn").click(function() {
+				getVal();
+
+				function getVal() {
+					// name
+					var user_name = String($($(".modis_in")[0]).val());
+					var _what = $($(".modis_in")[1]).val();
+					// map 
+					var UserMap = $($(".modis_in")[2]).val();
+					//   详细地址
+					var xiangxiMap = $($(".modis_in")[3]).val();
+					//  地址简单拼接
+					var all = UserMap.concat(xiangxiMap);
+
+					var ok1 = false;
+					var ok2 = false;
+					var ok3 = false;
+					var ok4 = false;
+
+					getName();
+
+					function getName() {
+						if(user_name == "") {
+							$($(".modis_in")[0]).val("*请输入姓名");
+							$($(".modis_in")[0]).css("color", "red");
+
+						} else if(user_name == "*请输入姓名") {
+							$($(".modis_in")[0]).val("*请输入姓名");
+							$($(".modis_in")[0]).css("color", "red");
+						} else if((user_name == "") == false && (user_name == "*请输入姓名") == false) {
+							alert("姓名验证成功")
+							ok1 = true;
+						}
+						// phone 
+						var phonesn = /^1(3|4|5|7|8)\d{9}$/;
+						if(phonesn.test(_what) == false) {
+							$($(".modis_in")[1]).val('*手机号不正确');
+							$($(".modis_in")[1]).css("color", "red");
+						} else {
+							alert("手机号验证成功")
+							ok2 = true;
+						}
+						if(UserMap !== "") {
+							alert("省市区验证通过")
+							ok3 = true;
+						}
+						if(xiangxiMap == "") {
+							$($(".modis_in")[3]).val("*请输入详细地址")
+							$($(".modis_in")[3]).css("color", "red");
+						}
+						if(xiangxiMap == "*请输入详细地址") {
+							$($(".modis_in")[3]).val("")
+							$($(".modis_in")[3]).css("color", "#333");
+						} else if((xiangxiMap == "") == false && (xiangxiMap == "*请输入详细地址") == false) {
+							alert("详细地址验证通过")
+							ok4 = true;
+
+						}
+					}
+
+					if((ok1 == true) && (ok2 == true) && (ok3 == true) && (ok4 == true)) {
+						addToli();
+						//   认证成功添加一个LI 
+						function addToli() {
+							var _all = all.split(",");
+							var __all = _all.join("")
+							var _ul = $(".mc_ul");
+							var _li = document.createElement("li");
+							// _li.setAttribute("id", "mcu_li");
+							_li.className = "mcu_li";
+							_ul.prepend(_li);
+							var div1 = document.createElement("div");
+							div1.className = "mcul_divtop";
+							_li.appendChild(div1);
+							var div2 = document.createElement("div");
+							div2.className = "mculd_d";
+							div1.appendChild(div2);
+							var span1 = document.createElement("span");
+							span1.className = "mcud_left";
+							span1.innerHTML = user_name;
+							div2.appendChild(span1);
+							var span2 = document.createElement("span");
+							span2.className = "mcud_right";
+							span2.innerHTML = _what;
+							div2.appendChild(span2);
+							var div3 = document.createElement("div");
+							div3.className = "mculd_down";
+							div1.appendChild(div3);
+							var span3 = document.createElement("span");
+							span3.className = "mcud_span";
+							span3.innerHTML = "收货地址:";
+							div3.appendChild(span3);
+							var span4 = document.createElement("span");
+							span4.className = "mcuds_ri";
+							span4.innerHTML = __all;
+							div3.appendChild(span4);
+							var div4 = document.createElement("div");
+							div4.className = "mcul_divdown";
+							_li.appendChild(div4);
+							var span5 = document.createElement("span");
+							span5.className = "removea";
+							span5.innerHTML = "删除";
+							div4.appendChild(span5);
+							var i1 = document.createElement("i");
+							i1.className = "iconfont";
+							i1.innerHTML = "&#xe608;";
+							span5.prepend(i1);
+							var span6 = document.createElement("span");
+							span6.className = "change";
+							span6.innerHTML = "修改";
+							span6.click = getName();
+							div4.appendChild(span6);
+							var i2 = document.createElement("i");
+							i2.className = "iconfont";
+							i2.innerHTML = "&#xe645;";
+							span6.prepend(i2);
+							setTimeout(relaceName(), 1000);
+						}
+						//   验证成功清空数据
+						function relaceName() {
+							user_name = "";
+							$($(".modis_in")[0]).val("");
+							_what = "";
+							$($(".modis_in")[1]).val("");
+
+							//   详细地址
+							xiangxiMap = "";
+							$($(".modis_in")[3]).val("");
+							//  地址简单拼接
+							all = "";
+							ok1 = false;
+							ok2 = false;
+							ok3 = false;
+							ok4 = false;
+							$(".modify").hide();
+							$(".mapUser").show();
+						}
+					}
+				}
+			});
+		</script>
+		<!--  修改地址-->
+		<script>
+			$(".removea").click(function() {
+				$(this).parents("li").remove();
+			});
+		</script>
+
+	</body>
+
+</html>

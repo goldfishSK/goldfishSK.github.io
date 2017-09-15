@@ -1,0 +1,224 @@
+/*添加地址 */
+
+body {
+    font-family: "微软雅黑", "宋体", Arial, Helvetica, sans-serif;
+    max-width: 640px;
+    min-width: 320x;
+    margin: 0 auto;
+}
+
+.haed_nav {
+    display: block;
+    width: 100%;
+    height: 44px;
+    max-width: 640px;
+    min-width: 320x;
+    margin: 0 auto;
+}
+
+.head_logo {
+    position: fixed;
+    top: 0;
+    z-index: 333;
+    display: block;
+    width: 100%;
+    height: 44px;
+    background-color: #fff;
+    border-bottom: 1px solid #f3f3f3;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+.head_logo h4 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    height: 44px;
+    line-height: 44px;
+    font-size: 17px;
+    color: #000;
+    text-indent: -20px;
+}
+
+.hlg_span {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.hlg_span_left {
+    display: inline-block;
+    float: left;
+    height: 44px;
+    line-height: 44px;
+    text-indent: 10px;
+}
+
+.hlg_span i {
+    display: block;
+    height: 44px;
+    line-height: 44px;
+    font-size: 20px;
+    margin-right: 1rem;
+}
+
+.addmap {
+    width: 100%;
+    height: 80px;
+    background: #686868;
+    margin-top: 45px;
+}
+
+.addmap span {
+    display: block;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    color: #fff;
+}
+
+a {
+    color: #333;
+}
+
+
+/*  查看地址*/
+
+.mapcont {
+    width: 100%;
+}
+
+.mc_ul {
+    display: block;
+    width: 100%;
+}
+
+.mcu_li {
+    display: block;
+    width: 100%;
+    background: #fff;
+    margin-top: 15px;
+}
+
+.mcul_divtop {
+    width: 100%;
+    display: block;
+    border-bottom: 1px dashed #c6c6c6;
+}
+
+.mcul_divtop span {
+    height: 28px;
+    line-height: 28px;
+    width: 47%;
+    text-overflow: ellipsis;
+}
+
+.mcud_left {
+    float: left;
+    text-align: left;
+    text-indent: 10px;
+    white-space: nowrap;
+}
+
+.mcud_right {
+    float: right;
+    text-align: right;
+    margin-right: 15px;
+    white-space: nowrap;
+}
+
+.mculd_down span:first-child {
+    margin-left: 10px;
+}
+
+.mcul_divdown {
+    width: 100%;
+    background: #fff;
+    height: 35px;
+}
+
+.mcul_divdown span {
+    height: 35px;
+    line-height: 35px;
+    float: right;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.mcul_divdown span i:first-child {
+    font-size: 20px;
+}
+
+.mcul_divdown span i:last-child {
+    font-size: 17px;
+}
+
+
+/*修改收货地址*/
+
+.mode_con {
+    display: block;
+    width: 100%;
+}
+
+.modic_ul {
+    display: block;
+    width: 100%;
+    background: #fff;
+    padding-bottom: 2px;
+}
+
+.modi_li {
+    display: block;
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    margin-top: 7px;
+}
+
+.modili_span {
+    display: inline-block;
+    width: auto;
+    text-align: left;
+    font-size: 14px;
+    white-space: nowrap;
+    text-indent: 10px;
+}
+
+.modis_in {
+    border: 0;
+    padding: 5px 0px;
+    text-indent: 10px;
+    width: 60%;
+}
+
+.content-block {
+    display: inline-block;
+    width: 60%;
+}
+
+.baocun {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.baocun button {
+    width: 70%;
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background: red;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.modify {
+    display: none;
+}

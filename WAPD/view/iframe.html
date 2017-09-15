@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<link rel="stylesheet" href="../css/init.css">
+		<link href="../css/jiesuan.css" rel="stylesheet">
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+		</script>
+		<script src="../js/jiesuan.js"></script>
+		<style>
+			@font-face {
+				font-family: "iconfont";
+				src: url('../icon/iconfont.eot');
+				/* IE9*/
+				src: url('../icon/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../icon/iconfont.woff') format('woff'), /* chrome, firefox */
+				url('../icon/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+				url('../icon/iconfont.svg#iconfont') format('svg');
+				/* iOS 4.1- */
+			}
+			
+			.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 16px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			
+			#Citys {
+				display: none;
+				position: fixed;
+				z-index: 66;
+				top: 0;
+				right: 0;
+				left: 400px;
+				width: 100%;
+				height: 100%;
+				bottom: 0;
+				/* background: rgba(0, 0, 0, 0.6); */
+				background: #fff;
+				opacity: 1;
+				min-width: 320px;
+				max-width: 640px;
+				margin: 0 auto;
+				overflow-y: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="header">
+			<i class="iconfont">&#xe65e;</i>
+			<h3>确认订单</h3>
+		</div>
+		<div class="content">
+			<!-- 地址 -->
+			<div class="conhead">
+				<div class="conleft"><i class="iconfont">&#xe609;</i></div>
+				<div class="concen">
+					<p class="concen_P1">收货人:<span id="concen_p_span1">佘坤</span><span class="concen_phone" style="margin-left: 15px;">电话号:<span id="concen_phone_number">18629364654</span></span>
+					</p>
+					<p class="concen_p2">收货地址:<span id="con_cen_p_span2">中国陕西西安未央区凤城十二路</span></p>
+				</div>
+				<div class="conright">
+					<i class="iconfont">&#xe61f;</i>
+				</div>
+			</div>
+			<!--订单详情可以修改回到购物车-->
+			<div class="ddtitle">
+				<i class="iconfont">&#xe6e3;</i>
+				<span>订单详情</span>
+				<a href="javascript:;">修改</a>
+				<div style="width: 96%;height: 1px;margin: 0 auto;background: #eee;"></div>
+			</div>
+			<!-- 店铺名称+商品列表 -->
+			<div class="ddshopname">
+				<div class="ddntitle"><i class="iconfont">&#xe630;</i><span class="ddname">店铺名称：法式布艺法式布艺法式布艺法式布艺全名网自营</span></div>
+				<div style="width: 96%;height: 1px;margin: 0 auto;background: #eee;"></div>
+				<ul>
+
+					<li>
+						<div class="li_left">
+							<img src="../img/sd.jpg" alt="">
+						</div>
+						<div class="li_cent">
+							<!--  这里是商品名称-->
+							<h2>庭邦布艺沙发 法式布艺 法式精美沙发 法式家具 法式客厅实木布艺沙发</h2>
+							<div class="li_rigdiv">
+								<div>
+									<span>材质:</span><span>布艺</span>
+									<span>规格:</span><span>单人位1204*214*1220</span>
+									<div><span class="div_freght">含运费(<span class="freght">300</span>)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="li_right">
+							<span class="gs_money">2422.00</span>
+							<span class="gs_num">3</span>
+						</div>
+						<div style="width: 96%;height: 1px;margin: 0 auto;background: #eee;"></div>
+					</li>
+					<li>
+						<div class="li_left">
+							<img src="../img/sd.jpg" alt="">
+						</div>
+						<div class="li_cent">
+							<!--  这里是商品名称-->
+							<h2>庭邦布艺沙发 法式布艺 法式精美沙发 法式家具 法式客厅实木布艺沙发</h2>
+							<div class="li_rigdiv">
+								<span>材质:</span><span>布艺</span>
+								<span>规格:</span><span>单人位1204*214*1220</span>
+								<div><span class="div_freght">含运费(<span class="freght">300</span>)</span>
+								</div>
+							</div>
+						</div>
+						<div class="li_right">
+							<span class="gs_money">2422.00</span>
+							<span class="gs_num">2</span>
+						</div>
+						<div style="width: 96%;height: 1px;margin: 0 auto;background: #eee;"></div>
+					</li>
+				</ul>
+			</div>
+			<div class="ddshopname">
+				<div class="ddntitle"><i class="iconfont">&#xe630;</i><span class="ddname">店铺名称：法式布艺法式布艺法式布艺法式布艺全名网自营</span></div>
+				<div style="width: 96%;height: 1px;margin: 0 auto;background: #eee;"></div>
+				<ul>
+
+					<li>
+						<div class="li_left">
+							<img src="../img/sd.jpg" alt="">
+						</div>
+						<div class="li_cent">
+							<!--  这里是商品名称-->
+							<h2>庭邦布艺沙发 法式布艺 法式精美沙发 法式家具 法式客厅实木布艺沙发</h2>
+							<div class="li_rigdiv">
+								<span>材质:</span><span>布艺</span>
+								<span>规格:</span><span>单人位1204*214*1220</span>
+								<div><span class="div_freght">含运费(<span class="freght">300</span>)</span>
+								</div>
+							</div>
+						</div>
+						<div class="li_right">
+							<span class="gs_money">2422.00</span>
+							<span class="gs_num">1</span>
+						</div>
+						<div style="width: 96%;height: 1px;margin: 0 auto;background: #eee;"></div>
+					</li>
+					<li>
+						<div class="li_left">
+							<img src="../img/sd.jpg" alt="">
+						</div>
+						<div class="li_cent">
+							<!--  这里是商品名称-->
+							<h2>庭邦布艺沙发 法式布艺 法式精美沙发 法式家具 法式客厅实木布艺沙发</h2>
+							<div class="li_rigdiv">
+								<span>材质:</span><span>布艺</span>
+								<span>规格:</span><span>单人位1204*214*1220</span>
+								<div><span class="div_freght">含运费(<span class="freght">300</span>)</span>
+								</div>
+							</div>
+						</div>
+						<div class="li_right">
+							<span class="gs_money">2422.00</span>
+							<span class="gs_num">1</span>
+						</div>
+						<div style="width: 96%;height: 1px;margin: 0 auto;background: #eee;"></div>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<!-- 其他选项 -->
+		<div style="height: 10px;width: 100%;background: rgb(235, 236, 237);"></div>
+		<!--  其他选项-->
+		<div class="other">
+			<div class="ddtitle">
+				<i class="iconfont">&#xe6e3;</i>
+				<span>其他选项</span>
+
+				<div style="width: 96%;height: 1px;margin: 0 auto;background: #eee;margin-top: -1px;"></div>
+			</div>
+			<!-- 选择发票类型-->
+			<div class="incoice">
+				<ul>
+					<li class="initem">
+						<div class="initem_head">
+							<span>开具发票</span>
+							<i class="iconfont">&#xe61f;</i>
+						</div>
+						<div class="initem1">
+							<input type="checkbox" name="bbill" value="" id="bill" class="b_checkbox" onclick="getInput1()"> <label for="">开发票：</label>
+							<select name="inv_type" id="invoice_type" onchange="" class="initem1_select" disabled="disabled">
+								<option value="0">请选择发票类型</option>
+								<option value="1">普通发票 [3%]</option>
+								<option value="2">增值税发票 [3%]</option>
+								<option value="3">增值税发票 [4%]</option>
+								<option value="4">增值税发票 [6%]</option>
+								<option value="5">增值税发票 [11%]</option>
+								<option value="6">增值税发票 [13%]</option>
+								<option value="7">增值税发票 [17%]</option>
+							</select>
+							<div class="initem1_div">
+								<select class="initem1_select" id="invoice_conten">
+
+									<option value="1" selected="">请选择发票内容</option>
+									<option value="">明细</option>
+									<option value="办公用品">办公用品</option>
+									<option value="电脑配件">电脑配件</option>
+									<option value="耗材">耗材</option>
+									<option value="其他">其他</option>
+								</select>
+								<!-- 个人单位发票抬头 -->
+								<div class="initem1_div3">
+									<label for="" style="margin-left: 78px;">
+                                <input type="checkbox" class="c_checkbox_t" id="personal" onclick="personal()">个人
+                            </label>
+									<label for="">
+                                <input type="checkbox" class="c_checkbox_t" id="company" onclick="company()">单位
+                            </label>
+									<div class="initem1_div3_cl">
+										<input type="text" placeholder="发票抬头" class="invoice_header">
+									</div>
+								</div>
+								<!--增值税发票 -->
+
+								<table id="vat_invoice_tbody" width="100%" cellpadding="5" cellspacing="0">
+									<tbody>
+										<tr>
+											<td colspan="3" align="left"><strong style="font-size:14px;">公司信息</strong></td>
+										</tr>
+										<tr>
+											<td align="right" width="120"><em style="color:#e4393c">*</em>单位名称：</td>
+											<td colspan="2"><input name="vat_inv_company_name" type="text" class="txt1"></td>
+										</tr>
+										<tr>
+											<td align="right"><em style="color:#e4393c">*</em>纳税人识别号：</td>
+											<td><input name="vat_inv_taxpayer_id" type="text" onblur="javascript:check_taxpayer_id(this,&quot;taxpayer_notice&quot;)" class="txt1"></td>
+											<td>&nbsp;<span id="taxpayer_notice" style="font-size:12px;color:#f00;"></span></td>
+										</tr>
+
+										<tr>
+											<td align="right"><em style="color:#e4393c">*</em>银行账户：</td>
+											<td colspan="2"><input name="vat_inv_deposit_bank" type="text" class="txt1"></td>
+										</tr>
+										<tr>
+											<td align="right"><em style="color:#e4393c">*</em>开户银行：</td>
+											<td><input name="vat_inv_bank_account" type="text" onblur="javascript:check_bank_account(this,&quot;bank_account_notice&quot;)" class="txt1"></td>
+											<td>&nbsp;<span id="bank_account_notice" style="font-size:12px;color:#f00;"></span></td>
+										</tr>
+										<tr>
+											<td colspan="3" align="left" style="padding:10px 0px"><strong style="font-size:14px;">收票人信息</strong></td>
+										</tr>
+										<tr>
+											<td align="right"><em style="color:#e4393c">*</em>收票人姓名：</td>
+											<td colspan="2"><input name="inv_consignee_name" type="text" class="txt1"></td>
+										</tr>
+										<tr>
+											<td align="right"><em style="color:#e4393c">*</em>收票人手机：</td>
+											<td><input name="inv_consignee_phone" type="text" onblur="javascript:check_phone_number(this,&quot;phone_number_notice&quot;)" class="txt1"></td>
+											<td>&nbsp;<span id="phone_number_notice" style="font-size:12px;color:#f00;"></span></td>
+										</tr>
+										<tr>
+											<td align="right"><em style="color:#e4393c">*</em>收票人省份：</td>
+											<td colspan="2"><input type="text" name="inv_country" value="">
+											</td>
+										</tr>
+										<tr>
+											<td align="right"><em style="color:#e4393c">*</em>详细地址：</td>
+											<td colspan="2"><input name="inv_consignee_address" type="text" class="txt1"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+						</div>
+
+					</li>
+
+					<li class="initem">
+						<div class="initem_head">
+							<span>订单附言</span>
+							<i class="iconfont">&#xe61f;</i>
+						</div>
+						<div class="initem1">
+							<div class="flow_bottom_list">
+								<textarea name="postscript" cols="80" rows="3" id="postscript" style=" border:1px solid #e5e5e5"></textarea>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- 选择支付方式-->
+			<div class="title" id="zhifutitle" style="border-bottom:1px solid #eeeeee;">
+				<span class="i-icon-arrow-down i-icon-arrow-up" id="zhifuip"></span>
+				<span class="text">支付方式</span>
+				<a href="javascript:void(0)" title="修改商品列表" class="link">必选</a> <em class="qxz" id="emzhifu">请选择支付方式</em>
+			</div>
+			<ul class="nav nav-list-sidenav" id="zhifu68" style="display:block; border-bottom:none;">
+				<li class="clearfix" name="payment_name">
+					<label for="payment_method_4">
+                 <input type="radio" name="payment" value="4" checked="checked" iscod="0" onclick="clickZhiFu()" id="zhifuinput"  class="c_checkbox_t">
+                 <div class="fl shipping_title">
+                   支付宝￥0.00元    </div>
+               </label>
+
+				</li>
+			</ul>
+			<div style="width: 100%;height: 15px;margin: 0 auto;background: #eee;margin-top: -1px;"></div>
+			<!--  订单价目-->
+			<ul class="ct-list order_total_ul">
+				<li>
+					<div class="subtotal">
+						<span class="total-text">商品总价：</span>
+						<em class="total">5052.00</em>
+						<br>
+						<span class="tax_span"><span class="total-text">发票含税金</span>
+						<em class="tax">0</em>
+						<br>
+						</span>
+						<span class="total-text">含运费：</span>
+						<em class="freitltle">336.00</em>
+						<br>
+						<span class="total-text"><input type="hidden"  name="qmw_service" value="1"><input style="width:16px;height:16px;-webkit-appearance:normal" type="checkbox" name="order" id="service" value="s" checked="checked" onclick="serviceChange()">服务费</span>
+						<em><span id="service_money">256</span>元</em>
+						<br>
+						<span class="total-text">应付款金额：</span>
+						<strong class="price_total"><span id="amount_formated">5644</span></strong>
+					</div>
+				</li>
+			</ul>
+			<!-- 提交订单-->
+			<div class="panel panel-default info-box" style="padding-bottom: 15px;">
+				<div class="pay-btn">
+					<input onclick="" type="submit" class="sub-btn btnRadius" value="提交订单">
+					<input type="hidden" name="step" value="done"></div>
+			</div>
+		</div>
+		<div style="width: 100%;height: 15px;margin: 0 auto;background: #eee;margin-top: -1px;"></div>
+		<div class="footer">
+			<div class="links" id="ECS_MEMBERZONE">
+				<a href=""><span>shekunc</span></a>
+				<a href=""><span>退出</span></a>
+				<a href="javascript:window.scrollTo(0,0);"><span>回顶部</span></a>
+			</div>
+			<ul class="linkss">
+				<li>
+					<a href="#">
+						<i class="footerimg_1"></i>
+						<span>客户端</span></a>
+				</li>
+				<li>
+					<a href=""><i class="footerimg_2"></i><span class="gl">触屏版</span></a>
+				</li>
+				<li>
+					<a href="" class="goDesktop"><i class="footerimg_3"></i><span>电脑版</span></a>
+				</li>
+			</ul>
+			<p class="mf_o4">© 2005-2017 全名网 版权所有，并保留所有权利。</p>
+		</div>
+
+		<iframe src="citys.html" id="Citys" frameborder="0" width="" height=""></iframe>
+
+		<script>
+			function getInput1() {
+				var a = $('#bill[type=checkbox]').is(':checked');
+				console.log(a);
+				if($('#bill[type=checkbox]').is(':checked') == true) {
+					$("#invoice_type").removeAttr("disabled");
+					$("#invoice_type").css("color", "#000");
+				}
+				if($('#bill[type=checkbox]').is(':checked') == false) {
+					$("#invoice_type").attr("disabled", "disabled");
+					$("#invoice_type").css("color", "#999");
+				}
+
+			};
+
+			function personal() {
+				if($("#personal[type=checkbox]").is(":checked") == true) {
+					document.getElementById("company").checked = false;
+					$(".invoice_header").hide();
+				}
+			}
+
+			function company() {
+				if($("#company[type=checkbox]").is(":checked") == true) {
+					document.getElementById("personal").checked = false;
+					$(".invoice_header").show();
+
+				}
+			}
+
+			$("#invoice_type").change(function() {
+				calculation();
+				if($(this).val() == 1 || $(this).val() == 0) {
+					$(".initem1_div3").show();
+					$("#vat_invoice_tbody").hide();
+					$(".tax_span").hide();
+				} else {
+
+					$(".initem1_div3").hide();
+					$("#vat_invoice_tbody").show();
+					$(".tax_span").show();
+				}
+
+			});
+
+			function item1() {
+				document.getElementById("item_2").checked = false;
+				document.getElementById("item_3").checked = false;
+			}
+
+			function item2() {
+				document.getElementById("item_1").checked = false;
+				document.getElementById("item_3").checked = false;
+			}
+
+			function item3() {
+				document.getElementById("item_1").checked = false;
+				document.getElementById("item_2").checked = false;
+			}
+
+			function time1() {
+				document.getElementById("time_2").checked = false;
+				document.getElementById("time_3").checked = false;
+			}
+
+			function time2() {
+				document.getElementById("time_1").checked = false;
+				document.getElementById("time_3").checked = false;
+			}
+
+			function time3() {
+				document.getElementById("time_1").checked = false;
+				document.getElementById("time_2").checked = false;
+			}
+			var zhifu = 0;
+
+			function clickZhiFu() {
+				zhifu++;
+				if(zhifu % 2 == 0) {
+					document.getElementById("zhifuinput").checked = true;
+				} else {
+					document.getElementById("zhifuinput").checked = false;
+				}
+
+			}
+			$(".initem_head").click(function() {
+
+				$(this).next().toggle();
+
+			});
+		</script>
+		<script>
+			var money = 0;
+			var yunfei = 0;
+			getMoney();
+
+			function getMoney() {
+				for(var i = 0; i < $(".li_right").length; i++) {
+					var danjia = Number($($(".li_right")[i]).find(".gs_money").text());
+					var number = Number($($(".li_right")[i]).find(".gs_num").text());
+					var money1 = Number(danjia * number);
+					money += money1;
+					var yunfei1 = (Number($($(".li_cent")[i]).find(".freght").text())) * number;
+					yunfei += yunfei1
+				}
+				$(".total").text(money);
+				$(".freitltle").text(yunfei);
+				var service = Number($("#service_money").text());
+				var zongjiage = Number(money + service);
+				$("#amount_formated").text(zongjiage);
+			}
+
+			function serviceChange() {
+				var zongjia = Number($("#amount_formated").text());
+				var fuwufei2 = Number($("#service_money").text());
+				if(document.getElementById("service").checked == true) {
+					var ranhou = Number(zongjia + fuwufei2);
+					$("#amount_formated").text(ranhou);
+				} else {
+					var ranhou = Number(zongjia - fuwufei2);
+					$("#amount_formated").text(ranhou);
+				}
+			}
+
+			function calculation() {
+				var _val = $("#invoice_type").val();
+				if(_val == 0) {
+					$(".tax").text("0");
+				}
+				if(_val == 1 || _val == 2) {
+					var jiage = Number($("#amount_formated").text());
+					var shuijin = Number(jiage * 0.03);
+					$(".tax").text(shuijin.toFixed(2));
+				}
+				if(_val == 3) {
+					var jiage = Number($("#amount_formated").text());
+					var shuijin = Number(jiage * 0.04);
+					$(".tax").text(shuijin.toFixed(2));
+				}
+				if(_val == 4) {
+					var jiage = Number($("#amount_formated").text());
+					var shuijin = Number(jiage * 0.06);
+					$(".tax").text(shuijin.toFixed(2));
+				}
+				if(_val == 5) {
+					var jiage = Number($("#amount_formated").text());
+					var shuijin = Number(jiage * 0.11);
+					$(".tax").text(shuijin.toFixed(2));
+				}
+				if(_val == 6) {
+					var jiage = Number($("#amount_formated").text());
+					var shuijin = Number(jiage * 0.13);
+					$(".tax").text(shuijin.toFixed(2));
+				}
+				if(_val == 7) {
+					var jiage = Number($("#amount_formated").text());
+					var shuijin = Number(jiage * 0.17);
+					$(".tax").text(shuijin.toFixed(2));
+				}
+			}
+		</script>
+		<script type="text/javascript">
+			var _view = 0;
+			$(".conhead").click(function() {
+
+				_view = 1;
+				$("#Citys").animate({
+					left: "0px",
+					opacity: "show"
+				}, 'normal');
+				alloc();
+
+			})
+
+			function alloc() {
+				leftClick();
+				rightClick();
+				rememberMap();
+				addMap();
+			}
+			alloc();
+			var _index;
+			var _tag;
+			//  右边是编辑地址 编辑地conhead址 
+			function rightClick() {
+
+				$("#Citys").contents().find(".con_right").click(function() {
+					_view = 2;
+					_index = $(this).parents("li").index();
+					_tag = 1;
+					var oldName = $($(this).parents("li")).find(".con_name").text();
+					var oldPhone = $($(this).parents("li")).find(".con_phone").text();
+					var oldMap = $($(this).parents("li")).find(".con_down").text();
+					$($("#Citys").contents().find(".mask")).find(".consigen").val(oldName);
+					$($("#Citys").contents().find(".mask")).find(".phoneNum").val(oldPhone);
+					$($("#Citys").contents().find(".mask")).find("textarea").val(oldMap);
+
+					$("#Citys").contents().find(".mask").show();
+					$($("#Citys").contents().find(".mask")).find(".ma_foot").show();
+
+				});
+			}
+
+			//  左边是选择地址
+			function leftClick() {
+				$("#Citys").contents().find(".con_left").click(function() {
+					_view = 0;
+					var _usName = $(this).find(".con_name").text();
+					var _usPhone = $(this).find(".con_phone").text();
+					var _usMap = $(this).find(".con_down").text();
+					$("#concen_p_span1").text(_usName);
+					$("#concen_phone_number").text(_usPhone);
+					$("#con_cen_p_span2").text(_usMap);
+					$("#Citys").hide();
+
+				});
+			}
+
+			//  保存地址
+			function rememberMap() {
+
+				$("#Citys").contents().find(".hideBtn").click(function() {
+
+					_view = 1;
+					if(_tag == 1) {
+						var oldView = $($("#Citys").contents().find(".con_li ")[_index]);
+						$(oldView).find(".con_name").text($($(this).parents(".mask")).find(".consigen").val());
+						$(oldView).find(".con_phone").text($($(this).parents(".mask")).find(".phoneNum").val());
+						$(oldView).find(".con_down").text($($(this).parents(".mask")).find(".address_input1").val() + $($(this).parents(".mask")).find("textarea").val());
+
+						$(this).parents(".mask").hide();
+						gui();
+					} else {
+						createLi();
+						$(this).parents(".mask").find("input").val("");
+						$(this).parents(".mask").find(".textarea").val("");
+						$(this).parents(".ma_foot").hide();
+						$(this).parents(".mask").hide();
+						gui();
+
+					}
+					// input 歸零 
+
+					function gui() {
+						$($(this).parents(".mask")).find(".consigen").val("");
+						$($(this).parents(".mask")).find(".phoneNum").val("");
+						$($(this).parents(".mask")).find(".address_input1").val("")
+						$($(this).parents(".mask")).find("textarea").val("");
+					}
+				})
+
+			}
+			//  添加地址
+			function addMap() {
+				$("#Citys").contents().find(".addMap").click(function() {
+					_view = 2
+					_tag = 2;
+					$(this).parents(".footer").next().show();
+					$(this).parents(".footer").next().find(".ma_foot").show();
+				})
+			}
+
+			//  拿到地址电话创建li的方法 
+			function createLi() {
+
+				var usName = $("#Citys").contents().find(".consigen").val();
+				var usPhone = $("#Citys").contents().find(".phoneNum").val();
+				var oneMap = $("#Citys").contents().find(".address_input1").val();
+				var twoMap = $("#Citys").contents().find("textarea").val();
+				var _li = document.createElement("li");
+
+				_li.className = "con_li";
+				_li.innerHTML = "<div class='con_left'><div class='con_top'><span class='con_name'>" + usName + "</span> <span class='con_phone'>" + usPhone + "</span></div><div class='con_down'>" + oneMap + twoMap + "</div></div><div class='con_right'><img class='con_img' src='../img/111.png' class='chioce' alt=''></div>";
+				$("#Citys").contents().find(".cont_ul").append(_li);
+
+				leftClick();
+				rightClick();
+			};
+
+			$(".header i").click(function() {
+				if(_view == 0) {
+					history.back();
+				}
+				if(_view == 1) {
+
+					$("#Citys").animate({
+						left: "400px",
+						opacity: "hide"
+					}, 'normal');
+
+				}
+				if(_view == 2) {
+					$("#Citys").contents().find(".mask").hide();
+				}
+			})
+		</script>
+	</body>
+
+</html>

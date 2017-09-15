@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <link rel="stylesheet" href="../css/init.css">
+    <link href="../css/dingdan2.css" rel="stylesheet">
+    <script src="../js/jquery.min.js">
+    </script>
+    <style>
+        @font-face {
+            font-family: "iconfont";
+            src: url('../icon/iconfont.eot');
+            /* IE9*/
+            src: url('../icon/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('../icon/iconfont.woff') format('woff'), /* chrome, firefox */
+            url('../icon/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+            url('../icon/iconfont.svg#iconfont') format('svg');
+            /* iOS 4.1- */
+        }
+        
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .ddcon {
+            margin-top: 40px;
+        }
+        
+        .head_nav {
+            top: 0;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head_nav">
+        <span class="head_span iconfont">&#xe628;</span>
+        <h3 class="head_h3">订单详情</h3>
+    </div>
+    <div class="ddcon">
+        <ul class="ddcon_ul">
+            <li class="dd_li">
+                <div class="dd_div">
+                    <span class="con_left">订单号</span>
+                    <span class="con_right">15323135132</span>
+                    <span class="con_left">收货人</span>
+                    <span class="con_right">佘坤</span>
+                </div>
+            </li>
+            <li class="dd_li">
+                <div class="dd_div">
+                    <span class="con_left">下单时间</span>
+                    <span class="con_right">2017-10-10</span>
+                    <span class="con_left">订单状态</span>
+                    <span class="con_right">收货中</span>
+                    <span class="con_left">付款状态</span>
+                    <span class="con_right">已付款</span>
+                    <span class="con_left">发货状态</span>
+                    <span class="con_right">已发货</span>
+                    <span class="con_left">配送方式</span>
+                    <span class="con_right">物流自取</span>
+                    <span class="con_left">支付方式</span>
+                    <span class="con_right">微信</span>
+                </div>
+            </li>
+            <li class="dd_li">
+                <div class="dd_div">
+                    <span class="con_left" id="left_yichu">收货地址</span>
+                    <span class="con_right" id="yichu">西安市未央区凤城十二路富尔顿国际财富中心sadasd</span>
+                    <span class="con_left">手机号</span>
+                    <span class="con_right">18629364654</span>
+                    <span class="con_left">邮编</span>
+                    <span class="con_right">000000</span>
+                    <span class="con_left">电话</span>
+                    <span class="con_right">000000</span>
+                </div>
+            </li>
+            <li class="dd_li">
+                <div class="dd_div">
+                    <span class="con_left">订单状态</span>
+                    <span class="con_right">收货中</span>
+                    <span class="con_left">付款状态</span>
+                    <span class="con_right">已付款</span>
+                    <span class="con_left">发货状态</span>
+                    <span class="con_right">已发货</span>
+                </div>
+            </li>
+            <li class="dd_li">
+                <div class="dd_div">
+                    <span class="con_left">订单金额</span>
+                    <span class="con_right"><span>￥</span>4564</span>
+                    <span class="con_left">实际付款</span>
+                    <span class="con_right"><span>￥</span>4444</span>
+                    <span class="con_left">运费</span>
+                    <span class="con_right"><span>￥</span>1000</span>
+                    <span class="con_left">服务费</span>
+                    <span class="con_right"><span>￥</span>1000</span>
+                    <span class="con_left">税费</span>
+                    <span class="con_right"><span>￥</span>1000</span>
+                </div>
+            </li>
+            <li class="dd_li">
+                <div class="dd_div">
+                    <span class="con_left" id="left_yichu1">订单详情</span>
+                    <span class="con_right" id="yichu1">欧艺香妃法式双人床 床头床尾香槟金软包 法式经典家具 婚床 公主床 软包床头 法式经典 象牙白描银</span>
+                    <span class="con_left">材质</span>
+                    <span class="con_right">中密度纤维板+环保树脂+内置实木</span>
+                    <span class="con_left">颜色</span>
+                    <span class="con_right">象牙白描银</span>
+                    <span class="con_left">规格</span>
+                    <span class="con_right">床头柜570*415*650mm</span>
+                    <span class="con_left">风格</span>
+                    <span class="con_right">法式</span>
+                    <span class="con_left">数量</span>
+                    <span class="con_right">2</span>
+                </div>
+            </li>
+            <li class="dd_li">
+                <div class="dd_div">
+                    <a href="javascript:;" class="gs_back">返回订单</a>
+                    <a href="" id="gs_con">查看商品详情</a>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+    <script>
+        $(".gs_back").click(function() {
+            history.back();
+        });
+        $(document).ready(function() {
+            $("#left_yichu").height($("#yichu").height());
+            $("#left_yichu1").height($("#yichu1").height());
+        })
+    </script>
+    <script>
+        var _x = $(".dd_div").length;
+        $($(".dd_div")[0]).find(".con_left").length;
+        for (var i = 0; i < _x; i++) {
+
+            if (i == 2) {
+                var x = $($(".dd_div")[1]).find(".con_left").height();
+                var _y = $($(".dd_div")[i]).find(".con_left").length;
+                $($(".dd_div")[i]).height(x * _y + 35);
+            } else if (i == 5) {
+                var x = $($(".dd_div")[1]).find(".con_left").height();
+                var _y = $($(".dd_div")[i]).find(".con_left").length;
+                $($(".dd_div")[i]).height(x * _y + 70);
+            } else {
+                var x = $($(".dd_div")[i]).find(".con_left").height();
+                var _y = $($(".dd_div")[i]).find(".con_left").length;
+                $($(".dd_div")[i]).height(x * _y);
+            }
+        }
+    </script>
+</body>
+
+</html>

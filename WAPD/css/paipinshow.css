@@ -1,0 +1,225 @@
+body {
+    display: block;
+    height: 100%;
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.head_nav {
+    height: 40px;
+    text-align: center;
+}
+
+.head_nav h4 {
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    margin: 0 auto;
+    color: #FD792C;
+    font-size: 18px;
+}
+
+.hn_tab {
+    height: 31px;
+    width: 100%;
+}
+
+.hn_tab ul {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #FD4220;
+}
+
+.hn_tab ul li {
+    display: inline-block;
+    width: 23.7%;
+    text-align: center;
+    font-size: 13px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 6px 6px 0px 0px;
+}
+
+.con_ul {
+    display: none;
+    margin-top: 7px;
+    width: 100%;
+}
+
+.current {
+    color: #FD4220;
+    border-left: 1px solid #FD4220;
+    border-right: 1px solid #FD4220;
+    border-top: 1px solid #FD4220;
+}
+
+
+/* 全部商品css */
+
+.con_ul li {
+    display: block;
+    width: 100%;
+    height: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #c6c6c6;
+}
+
+.con_ul li a {
+    display: block;
+    width: 100%;
+    height: 80px;
+}
+
+.con_ul li a div {
+    display: inline-block;
+    width: 31%;
+    overflow: hidden;
+    height: 100%;
+}
+
+.con_ul li a div img {
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.shunxu {
+    display: block;
+    font-size: 15px;
+    color: #000;
+    height: 17px;
+    line-height: 17px;
+    text-indent: 10px;
+}
+
+.daohang {
+    display: block;
+    width: 30px;
+    height: 80%;
+    position: fixed;
+    top: 13%;
+    right: 0;
+    z-index: 333;
+    text-align: center;
+}
+
+.daohangui {
+    display: block;
+    height: 100%;
+}
+
+.daohangui li {
+    display: block;
+    width: 100%;
+    height: 4%;
+    border: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 13px;
+    line-height: 15px;
+    color: #666;
+}
+
+.folatdiv {
+    display: block;
+    width: 100%;
+    top: 0;
+    background-color: #fff;
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.abcd {
+    display: none;
+    height: 15px;
+    font-size: 13px;
+    color: #333;
+    text-indent: 10px;
+    background-color: #f2f2f2;
+}
+
+.conul_div {
+    width: 32% !important;
+}
+
+#caidan {
+    display: inline-block;
+    float: right;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    text-align: left;
+    font-size: 18px;
+    color: #666;
+    z-index: 444;
+}
+
+
+/* 遮罩 */
+
+.mask {
+    display: none;
+    position: fixed;
+    z-index: 666;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    opacity: 1;
+}
+
+.maskChild {
+    display: block;
+    width: 100%;
+    height: 30%;
+}
+
+.maskChild ul {
+    display: block;
+    width: 100%;
+    margin-top: 40%;
+    height: 70%;
+}
+
+.maskChild ul li {
+    display: inline-block;
+    width: 20%;
+    list-style: none;
+    float: left;
+    margin-top: 2%;
+}
+
+.maskChild ul li a {
+    text-decoration: none;
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.maskChild ul li img {
+    display: block;
+    width: 40%;
+    margin-left: 30%;
+}
+
+.maskChild ul li span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #f2f2f2;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+}

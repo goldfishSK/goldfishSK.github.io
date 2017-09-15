@@ -1,0 +1,134 @@
+body {
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.head_nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    padding-top: 20px;
+    height: 40px;
+    background: #f2f2f2;
+    width: 100%;
+    text-align: center;
+    min-width: 320px;
+    max-width: 640px;
+}
+
+.head_span {
+    display: inline-block;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 10px;
+    z-index: 333;
+    position: relative;
+}
+
+.head_h3 {
+    display: inline-block;
+    height: 40px;
+    font-size: 19px;
+    line-height: 40px;
+    color: #333;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+}
+
+.uszc {
+    margin-top: 75px;
+}
+
+.zx_td {
+    display: block;
+    width: 100%;
+}
+
+.zx_div {
+    width: 100%;
+    background: #fff;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+._div_span {
+    display: inline-block;
+    width: 30%;
+    text-align: right;
+}
+
+.zx_div input {
+    display: inline-block;
+    border: 0;
+    width: 60%;
+    overflow: hidden;
+    padding: 5px 0px;
+    height: 21px;
+    line-height: 21px;
+}
+
+.jinrong_in {
+    display: none !important;
+}
+
+.jinrong_sp {
+    display: inline-block !important;
+    width: 15px !important;
+    height: 15px;
+    background: #c3c3c3;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: 14px;
+    margin-left: 10px;
+}
+
+.jinrong_spat {
+    display: inline-block !important;
+    width: 15px !important;
+    height: 15px;
+    background: #FF2C2C;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: 14px;
+    margin-left: 10px;
+}
+
+#jin_sp_rig {
+    display: inline-block !important;
+    width: 15px !important;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: 14px;
+    margin-left: 10px;
+}
+
+.jinrong_rigsp {
+    background: #FF2C2C;
+}
+
+.tijiao {
+    display: block;
+    margin-top: 20px;
+    width: 120px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 0;
+    background: #FF2C2C;
+    color: #fff;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    font-size: 19px;
+}
+
+.zx__div {
+    display: none;
+}

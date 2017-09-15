@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<link rel="stylesheet" href="../css/init.css" />
+		<link rel="stylesheet" href="../www/css/pintuer.css" />
+		<link rel="stylesheet" href="../css/security.css" />
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../www/js/pintuer.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style>
+			@font-face {
+				font-family: "iconfont";
+				src: url('../icon/iconfont.eot');
+				/* IE9*/
+				src: url('../icon/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../icon/iconfont.woff') format('woff'), /* chrome, firefox */
+				url('../icon/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+				url('../icon/iconfont.svg#iconfont') format('svg');
+				/* iOS 4.1- */
+			}
+			
+			.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 16px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			
+			.con_ri {
+				float: right;
+				color: #666666;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="header">
+			<i class="iconfont back">&#xe65e;</i>
+			<h3 id="head_h3">账户安全</h3>
+		</div>
+		<div class="container">
+			<div class="content">
+				<ul id="content_ul" class="list-group">
+					<li>
+						修改手机验证
+						<i class="iconfont">&#xe61f;</i>
+						<span class="con_ri">18629364654</span>
+					</li>
+					<li>
+						修改登录密码
+						<i class="iconfont">&#xe61f;</i>
+						<span class="con_ri">****</span>
+					</li>
+
+					<li>
+						修改支付密码
+						<i class="iconfont">&#xe61f;</i>
+						<span class="con_ri">未设置</span>
+					</li>
+					<li>
+						修改绑定银行卡
+						<i class="iconfont">&#xe61f;</i>
+						<span class="con_ri">未绑定</span>
+					</li>
+					<li>
+						实名认证
+						<i class="iconfont">&#xe61f;</i>
+						<span class="con_ri">未认证</span>
+					</li>
+
+				</ul>
+			</div>
+			<div class="footer">
+				<div class="links" id="ECS_MEMBERZONE">
+					<a href=""><span>shekunc</span></a>
+					<a href=""><span>退出</span></a>
+					<a href="javascript:window.scrollTo(0,0);"><span>回顶部</span></a>
+				</div>
+				<ul class="linkss">
+					<li>
+						<a href="#">
+							<i class="footerimg_1"></i>
+							<span>客户端</span></a>
+					</li>
+					<li>
+						<a href=""><i class="footerimg_2"></i><span class="gl">触屏版</span></a>
+					</li>
+					<li>
+						<a href="" class="goDesktop"><i class="footerimg_3"></i><span>电脑版</span></a>
+					</li>
+				</ul>
+				<p class="mf_o4">© 2005-2017 全名网 版权所有，并保留所有权利。</p>
+			</div>
+			<div class="mask">
+				<!-- 修改手机号-->
+				<div class="phone maskone">
+					<form method="post">
+						<div class="form-group">
+							<div class="label">
+								<label for="username">
+				原手机号</label>
+							</div>
+							<div class="field">
+								<input type="text" class="input" id="username" name="username" disabled="disabled" size="30" placeholder="手机/邮箱/账号" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="label">
+								<label for="password">
+				新手机号</label>
+							</div>
+							<div class="field">
+								<input type="text" class="input" id="password" name="password" size="30" placeholder="手机/邮箱/账号" />
+							</div>
+						</div>
+						<div class="form-group">
+					<div class="label">
+						<label for="username">
+				验证码</label><span class="tishi"></span>
+					</div>
+					<div class="field">
+						<input type="text" class="input" id="veriCode" name="username" size="50" data-validate="required:必填" maxlength="6" placeholder="验证码" />
+						<button class="getcode" id="getCode">获取验证码</button>
+					</div>
+				</div>
+				
+						<div class="form-button">
+							<button class="button phoneBtn"  type="submit">
+			修改</button>
+						</div>
+					</form>
+				</div>
+				<!-- 修改密码 -->
+				<div class="passwords maskone">
+					<form method="post">
+						<div class="form-group">
+							<div class="label">
+								<label for="username">
+				原密码</label>
+							</div>
+							<div class="field">
+								<input type="text" class="input" id="username" name="username" size="30" placeholder="手机/邮箱/账号" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="label">
+								<label for="password">
+				新密码</label>
+							</div>
+							<div class="field">
+								<input type="text" class="input" id="password" name="password" size="30" placeholder="手机/邮箱/账号" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="label">
+								<label for="password">
+				确认密码</label>
+							</div>
+							<div class="field">
+								<input type="text" class="input" id="password" name="password" size="30" placeholder="手机/邮箱/账号" />
+							</div>
+						</div>
+						<!--<div class="form-group">
+					<div class="label">
+						<label for="username">
+				验证码</label><span class="tishi"></span>
+					</div>
+					<div class="field">
+						<input type="text" class="input" id="veriCode" name="username" size="50" data-validate="required:必填" maxlength="6" placeholder="验证码" />
+						<button class="getcode" id="getCode">获取验证码</button>
+					</div>
+				</div>-->
+				
+						<div class="form-button">
+							<button class="button phoneBtn"  type="submit">
+			修改</button>
+						</div>
+					</form>
+				</div>
+				<!--  修改支付密码-->
+				<div class="zhifumima maskone">
+					<form method="post">
+						<div class="form-group">
+							<div class="label">
+								<label for="username">
+				原密码</label>
+							</div>
+							<div class="field">
+								<input type="password" class="input" id="username" name="username" size="30" placeholder="原来的支付密码" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="label">
+								<label for="password">
+				新密码</label>
+							</div>
+							<div class="field">
+								<input type="password" class="input" id="password" name="password" size="30" placeholder="填写新的支付密码" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="label">
+								<label for="password">
+				确认密码</label>
+							</div>
+							<div class="field">
+								<input type="password" class="input" id="password" name="password" size="30" placeholder="重复刚才的密码" />
+							</div>
+						</div>
+						<div class="form-group">
+					<div class="label">
+						<label for="username">
+				手机验证码</label><span class="tishi"></span>
+					</div>
+					<div class="field">
+						<input type="text" class="input" id="veriCode" name="username" size="50" data-validate="required:必填" maxlength="6" placeholder="验证码" />
+						<button class="getcode" id="getCode">获取验证码</button>
+					</div>
+				</div>
+				
+						<div class="form-button">
+							<button class="button phoneBtn"  type="submit">
+			修改</button>
+						</div>
+					</form>
+				</div>
+				<!-- 修改绑定银行卡 -->
+				<div class="yinhangka maskone" >
+					<form method="post">
+						<div class="form-group">
+							<div class="label">
+								<label for="username">
+				原密码</label>
+							</div>
+							<div class="field">
+								<input type="text" class="input" id="username" name="username" size="30" placeholder="手机/邮箱/账号" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="label">
+								<label for="password">
+				新密码</label>
+							</div>
+							<div class="field">
+								<input type="text" class="input" id="password" name="password" size="30" placeholder="手机/邮箱/账号" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="label">
+								<label for="password">
+				确认密码</label>
+							</div>
+							<div class="field">
+								<input type="text" class="input" id="password" name="password" size="30" placeholder="手机/邮箱/账号" />
+							</div>
+						</div>
+						<!--<div class="form-group">
+					<div class="label">
+						<label for="username">
+				验证码</label><span class="tishi"></span>
+					</div>
+					<div class="field">
+						<input type="text" class="input" id="veriCode" name="username" size="50" data-validate="required:必填" maxlength="6" placeholder="验证码" />
+						<button class="getcode" id="getCode">获取验证码</button>
+					</div>
+				</div>-->
+				
+						<div class="form-button">
+							<button class="button phoneBtn"  type="submit">
+			修改</button>
+						</div>
+					</form>
+				</div>
+      <!-- 暂时没有内容-->
+      <!-- 实名认证 -->
+      <div class="shiming maskone" >
+					<form method="post">
+						<div class="form-group">
+							<div class="label">
+								<label for="username">
+				原密码</label>
+							</div>
+							<div class="field">
+								<input type="text" class="input" id="username" name="username" size="30" placeholder="手机/邮箱/账号" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="label">
+								<label for="password">
+				新密码</label>
+							</div>
+							<div class="field">
+								<input type="text" class="input" id="password" name="password" size="30" placeholder="手机/邮箱/账号" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="label">
+								<label for="password">
+				确认密码</label>
+							</div>
+							<div class="field">
+								<input type="text" class="input" id="password" name="password" size="30" placeholder="手机/邮箱/账号" />
+							</div>
+						</div>
+						<!--<div class="form-group">
+					<div class="label">
+						<label for="username">
+				验证码</label><span class="tishi"></span>
+					</div>
+					<div class="field">
+						<input type="text" class="input" id="veriCode" name="username" size="50" data-validate="required:必填" maxlength="6" placeholder="验证码" />
+						<button class="getcode" id="getCode">获取验证码</button>
+					</div>
+				</div>-->
+				
+						<div class="form-button">
+							<button class="button phoneBtn"  type="submit">
+			修改</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(".header i").click(function () {
+				console.log($(this))
+			 if($(this).hasClass("back")){
+			 	history.back();
+			 }else{
+			 	$(".mask").hide();
+			 	$(".mask .maskone").hide();
+			 	$(this).addClass("back");
+			 }
+			})
+		</script>
+		<script type="text/javascript">
+			$("#content_ul li").click(function() {
+			  $(".header i").removeClass("back");
+				if($(this).index() ==0){
+					$(".mask").show();
+					$(".mask .maskone").hide();
+					$(".mask .phone").show();
+//					$(this).find(".con_ri").text();
+					$(".mask .phone").find("#username").val($(this).find(".con_ri").text())
+					
+				}if($(this).index() ==1){
+					$(".mask").show();
+					$(".mask .maskone").hide();
+					$(".mask .passwords").show();
+					
+				}
+				if($(this).index() ==2){
+					$(".mask").show();
+					$(".mask .maskone").hide();
+					$(".mask .zhifumima").show();
+					
+				}
+				if($(this).index() ==3){
+					$(".mask").show();
+					$(".mask .maskone").hide();
+					$(".mask .yinhangka ").show();
+					
+				}
+				if($(this).index() ==4){
+					$(".mask").show();
+					$(".mask .maskone").hide();
+					$(".mask .shiming").show();
+					
+				}
+			})
+			
+		</script>
+	</body>
+
+</html>

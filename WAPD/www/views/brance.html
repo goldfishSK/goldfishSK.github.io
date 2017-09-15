@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<link href="../css/pintuer.css" rel="stylesheet">
+		<link rel="stylesheet" href="../css/brance.css">
+	
+		<!--<script src="../js/pintuer.js"></script>-->
+		<style>
+			@font-face {
+				font-family: "iconfont";
+				src: url('../icon/iconfont.eot');
+				/* IE9*/
+				src: url('../icon/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../icon/iconfont.woff') format('woff'), /* chrome, firefox */
+				url('../icon/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+				url('../icon/iconfont.svg#iconfont') format('svg');
+				/* iOS 4.1- */
+			}
+			
+			.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 16px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="head_nav">
+				<span class="head_span iconfont">&#xe628;</span>
+				<h3 class="head_h3">注册会员</h3>
+			</div>
+			<form method="post" class="form form-block">
+				<div class="form-group">
+					<div class="label">
+						<label for="username">
+				账号</label> <span class="tishi"></span>
+					</div>
+					<div class="field">
+						<input type="text" class="input" id="username" name="username" size="50" data-validate="required:必填" maxlength="16" placeholder="手机/邮箱/账号" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label for="password">
+				密码</label><span class="tishi"></span>
+					</div>
+					<div class="field">
+						<input type="password" class="input" id="password" name="password" size="50" data-validate="required:必填" maxlength="16" placeholder="请输入密码" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label for="username">
+				手机号</label><span class="tishi"></span>
+					</div>
+					<div class="field">
+						<input type="text" class="input" id="phoneNum" name="username" size="50" data-validate="required:必填" maxlength="16" placeholder="手机" onKeyUp="this.value=this.value.replace(/\D/g,'')" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label for="username">
+				验证码</label><span class="tishi"></span>
+					</div>
+					<div class="field">
+						<input type="text" class="input" id="veriCode" name="username" size="50" data-validate="required:必填" maxlength="6" placeholder="验证码" />
+						<button class="getcode" id="getCode">获取验证码</button>
+					</div>
+				</div>
+				<div class="form-button">
+					<button class="button" type="submit">
+			注册</button>
+				</div>
+			</form>
+		</div>
+			<script src="../js/jquery.min.js">
+		</script>
+		<script>
+			$(".head_span").click(function() {
+				history.back();
+			});
+
+			$("#getCode").click(function() {
+				$("#getCode").attr("disabled", "disabled");
+
+				if($("#getCode").attr("disabled", "disabled")) {
+					getMIN();
+				} else {
+
+				}
+
+				function getMIN() {
+					var i = 60;
+
+					setInterval(function() {
+						i--;
+						if(i <= 1) {
+							$("#getCode").text("重新发送验证码");
+							i = 0;
+
+							$("#getCode").attr("disabled", false);
+						} else {
+							$("#getCode").text(i + "秒后在获取");
+							$("#getCode").css("border", "1px solid red");
+						}
+					}, 1000);
+				}
+
+			})
+			//     手机号
+			$("#phoneNum").blur(function() {
+				var phone = document.getElementById('phoneNum').value;
+				if(!(/^1[34578]\d{9}$/.test(phone))) {
+					$("#phoneNum").parents(".form-group").find(".tishi").text("手机号码有误，请重填");
+					return false;
+				} else {
+					$("#phoneNum").parents(".form-group").find(".tishi").text("");
+
+				}
+			});
+			//   账号位数
+			$("#username").blur(function() {
+				if($("#username").val().length < 6) {
+					$("#username").parents(".form-group").find(".tishi").text("账号不能小于6位数");
+				} else {
+					$("#username").parents(".form-group").find(".tishi").text("");
+
+				}
+			});
+			//   密码检测
+			$("#password").blur(function() {
+				if($("#password").val().length < 6) {
+					$("#password").parents(".form-group").find(".tishi").text("密码不能少于6位数");
+
+				} else {
+					if($("#password").val() == "112233" || $("#password").val() == "123123" || $("#password").val() == "123456789") {
+						$("#password").parents(".form-group").find(".tishi").text("密码不能过于简单");
+					}
+
+				}
+			});
+		</script>
+	</body>
+
+</html>

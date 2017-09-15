@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/init.css" />
+		<script type="text/javascript" src="../js/QRcode.js">
+		</script>
+	</head>
+
+	<body>
+		<div id="qrcode">
+		</div>
+
+		<script type="text/javascript">
+			var qrcode = new QRCode(document.getElementById("qrcode"), {
+				width: 96, //设置宽高
+				height: 96
+			});
+			var setName = localStorage.setName;
+			console.log(setName);
+			//  
+			if(setName !== 'undefined') {
+				qrcode.makeCode('http://www.quanmingwang.com/');
+
+				setTimeout(function() {
+					window.location.assign('zhuce.html');
+				}, 30000)
+
+			} else {
+				// plan 1
+				var head = document.getElementsByTagName('head')[0];
+				var script = document.createElement('script');
+				script.type = 'text/javascript';
+				script.src = '../js/ajaxCode.js';
+				
+				head.appendChild(script);
+               
+				// plan2
+				var _url = document.URL;
+				var _arr = _url.split("?");
+				localStorage.setName = _arr[1];
+
+			}
+			qrcode.makeCode("http://www.quanmingwang.com/");
+		</script>
+	</body>
+
+</html>

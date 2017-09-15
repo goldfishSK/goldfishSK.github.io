@@ -1,0 +1,170 @@
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<style type="text/css">
+			@font-face {
+				font-family: "iconfont";
+				src: url('../icon/iconfont.eot');
+				/* IE9*/
+				src: url('../icon/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../icon/iconfont.woff') format('woff'), /* chrome, firefox */
+				url('../icon/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+				url('../icon/iconfont.svg#iconfont') format('svg');
+				/* iOS 4.1- */
+			}
+			
+			.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 16px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				height: 100%;
+				font-family: "微软雅黑";
+			}
+			
+			a {
+				text-decoration: none;
+				color: #000;
+			}
+			
+			.haed_nav {
+				display: block;
+				position: fixed;
+				top: 0;
+				height: 50px;
+				width: 100%;
+				text-align: center;
+				background-color: #efefef;
+			}
+			
+			.back {
+				display: block;
+				position: absolute;
+				line-height: 50px;
+				margin-left: 1rem;
+			}
+			
+			.head_title {
+				display: inline-block;
+				height: 50px;
+				line-height: 50px;
+			}
+			
+			.head_right {
+				display: inline-block;
+				float: right;
+				height: 50px;
+				line-height: 50px;
+				margin-right: 1rem;
+			}
+			
+			#l-map {
+				height: 300px;
+				width: 100%;
+			}
+			
+			#r-result,
+			#r-result table {
+				width: 100%;
+			}
+			
+			#wark {
+				display: block;
+				width: 99%;
+				margin: 0 auto;
+				text-align: center;
+				border: 1px solid #efefef;
+				height: 40px;
+				line-height: 40px;
+				background-color: #EF4F4F;
+				border-radius: 5px;
+				color: #fff;
+				margin-top: -5px;
+				margin-bottom: 5px;
+			}
+		</style>
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=TWHo27fBCFbLyVnha515wCu9BRPvOuUT"></script>
+		<title>步行导航</title>
+	</head>
+
+	<body>
+		<div class="haed_nav">
+			<a href="../view/map.html"> <span class="back"><i class="iconfont">&#xe65e;</i></span></a>
+			<span class="head_title">体验馆导航</span>
+			<span class="head_right"><i class="iconfont" style="font-size: 1.5rem;">&#xe637;</i></span>
+		</div>
+		<div style="width: 100%;display: block;height: 60px;"></div>
+		<a href="" id="wark">打开百度地图APP进行导航</a>
+		<div id="l-map"></div>
+		<div id="r-result"></div>
+
+		<!--or 起点坐标   de 终点坐标-->
+	</body>
+
+</html>
+<!--//   安卓借口-->
+<!--<a href="bdapp:// map/geocoder?src=openApiDemo&address=北京市海淀区上地信息路9号奎科科技大厦">地址解析</a>-->
+<!--//   ios 接口-->
+<!--//网页应用调起iOS百度地图方式举例-->
+<!--<a href="baidumap://map/direction?origin=34.264642646862,108.95108518068&destination=40.007623,116.360582&mode=driving&src=webapp.navi.yourCompanyName.yourAppName">驾车导航</a>-->
+<script type="text/javascript">
+	// 百度地图API功能
+	var yhjd = String(localStorage.yhjd).trim();
+	var yhwd = String(localStorage.yhwd).trim();
+	var tyjd = String(localStorage.tyjd).trim();
+	var tywd = String(localStorage.tywd).trim();
+	var stra = String("bdapp://map/walknavi?origin=" + yhjd + "," + yhwd + "&destination=" + tyjd + "," + tywd);
+	console.log(stra);
+	$("#wark").attr("href", stra);
+	$("#demo").text(localStorage.setname);
+	$("#demo1").text(localStorage.getname);
+	var yonghu = localStorage.getname;
+	var tiyandian = localStorage.setname;
+	// 根据IP定位拿到城市
+	var map = new BMap.Map("l-map");
+	var point = new BMap.Point(116.331398, 39.897445);
+	map.centerAndZoom(point, 12);
+	map.addControl(new BMap.MapTypeControl()); //添加地图类型控件
+	map.setCurrentCity("西安"); // 设置地图显示的城市 此项是必须设置的
+	map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+	var yonghu = localStorage.setname;
+	var yiyandian = localStorage.getname;
+	var walking = new BMap.WalkingRoute(map, {
+		renderOptions: {
+			map: map,
+			panel: "r-result",
+			autoViewport: true
+		}
+	});
+	walking.search(yiyandian, yonghu);
+	var u = navigator.userAgent;
+	var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+	if(isAndroid === true) {
+
+	}
+	if(isiOS === true) {
+		// 网页应用调起iOS百度地图方式举例
+		// <a href="baidumap://map/direction?origin=34.264642646862,108.95108518068&destination=40.007623,116.360582&mode=driving&src=webapp.navi.yourCompanyName.yourAppName">驾车导航</a>
+	}
+	// alert('是否是Android：' + isAndroid);
+	// alert('是否是iOS：' + isiOS);
+</script>

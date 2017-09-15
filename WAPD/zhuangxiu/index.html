@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link href="css/style.css" rel="stylesheet">-->
+    <script src="../js/jquery.js">
+    </script>
+</head>
+
+<body>
+
+    <input type="text" name="" value="" class="mianji">
+    <button type="" onclick="money()">提交</button>
+    <script>
+        function money() {
+            var _mianji = Number($(".mianji").val());
+            var _money = _mianji * 629.5;
+            var _div = document.createElement("div");
+            _div.innerText = "卧室的价钱是" + (_money * 0.2903).toFixed(2) + "餐厅价钱是" + (_money * 0.0662).toFixed(2) + "厨房价钱是" + (_money * 0.022).toFixed(2) + "卫生间的价钱是" + (_money * 0.033).toFixed(2) + "阳台的价钱是" + (_money * 0.0294).toFixed(2) + "其他预算是" + (_money * 0.0304).toFixed(2);
+            $('body').append(_div);
+        }
+    </script>
+
+</body>
+
+</html>

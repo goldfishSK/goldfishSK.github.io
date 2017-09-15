@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/init.css">
+    <script src="../js/jquery.js">
+    </script>
+    <link rel="stylesheet" href="../dingdan/css/LArea.css">
+    <script src="../dingdan/js/LAreaData1.js"></script>
+    <script src="../dingdan/js/LAreaData2.js"></script>
+    <script src="../dingdan/js/LArea.js"></script>
+    <style>
+        @font-face {
+            font-family: "iconfont";
+            src: url('../icon/iconfont.eot');
+            /* IE9*/
+            src: url('../icon/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('../icon/iconfont.woff') format('woff'), /* chrome, firefox */
+            url('../icon/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+            url('../icon/iconfont.svg#iconfont') format('svg');
+            /* iOS 4.1- */
+        }
+        /*a{
+            cursor: disabled;
+        }*/
+        
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .hlg_span {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        
+        .hlg_span_left {
+            display: inline-block;
+            float: left;
+            height: 44px;
+            line-height: 44px;
+            text-indent: 10px;
+        }
+        
+        .hlg_span i {
+            display: block;
+            height: 44px;
+            line-height: 44px;
+            font-size: 20px;
+            margin-right: 1rem;
+        }
+        
+        body {
+            font-family: "微软雅黑", "宋体", Arial, Helvetica, sans-serif;
+            max-width: 640px;
+            min-width: 320x;
+            margin: 0 auto;
+            background: #f2f2f2;
+        }
+        
+        .head_logo {
+            position: fixed;
+            top: 0;
+            z-index: 333;
+            display: block;
+            width: 100%;
+            height: 44px;
+            background-color: #fff;
+            border-bottom: 1px solid #f3f3f3;
+            max-width: 640px;
+            min-width: 320px;
+            margin: 0 auto;
+        }
+        
+        .head_logo h4 {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin: 0 auto;
+            height: 44px;
+            line-height: 44px;
+            font-size: 17px;
+            color: #000;
+            text-indent: -20px;
+        }
+        
+        .mode_con {
+            width: 100%;
+        }
+        
+        .modec_ul {
+            display: block;
+            background: #fff;
+            margin-top: 15px;
+        }
+        
+        .mode_span {
+            display: inline-block;
+            height: 35px;
+            line-height: 35px;
+            font-size: 15px;
+            color: #999;
+            width: 30%;
+            text-align: right;
+        }
+        
+        .content-block {
+            display: inline-block;
+            width: 60%;
+            margin-left: 5%;
+        }
+        
+        .content-block input {
+            border: 0;
+            color: #000;
+            font-size: 15px;
+            height: 25px;
+            line-height: 25px;
+            text-align: right;
+            width: 86%;
+        }
+        
+        .m2 {
+            display: inline-block;
+            height: 25px;
+            line-height: 25px;
+            position: relative;
+            top: 2px;
+            text-indent: 3px;
+        }
+        
+        .mode_input {
+            border: 0;
+            display: inline-block;
+            width: 52%;
+            text-align: right;
+            height: 25px;
+            line-height: 25px;
+        }
+        
+        .modi_btn {
+            display: block;
+            margin: 0 auto;
+            height: 35px;
+            line-height: 35px;
+            width: 86%;
+            border: 0;
+            border-radius: 5px;
+            background: #FF4E4E;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+        
+        .modi_li {
+            border-bottom: 1px solid #c6c6c6;
+        }
+        
+        .zhe {
+            position: absolute;
+            display: none;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 97;
+            width: 100%;
+            background: rgba(0, 0, 0, .4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head_logo">
+        <span class="hlg_span_left" id="quxiao"><i class="iconfont">&#xe65e;</i></span>
+        <h4>装修报价</h4>
+    </div>
+    <div class="mode_con" style="padding-top: 44px;width: 100%;">
+        <div class="mode_con">
+            <ul class="modec_ul">
+                <li class="modi_li">
+                    <span class="mode_span">您所在的城市:</span>
+                    <div class="content-block">
+                        <input id="demo1" type="text" readonly="" placeholder="城市选择" value="北京市,朝阳区" class="modis_in" placeholder="北京市,朝阳区">
+                        <input id="value1" type="hidden" value="20,234,504">
+                    </div>
+                </li>
+                <li class="modi_li">
+                    <span class="mode_span">您家的房屋面积:</span>
+                    <input type="text" value="90" class="mode_input"><span class="m2">㎡</span>
+                </li>
+                <li class="modi_li" style="border-bottom: 0;">
+                    <button type="" class="modi_btn">获取报价</button>
+                </li>
+            </ul>
+        </div>
+        </div>
+        <div class="zhe"></div>
+        <div class="con">
+
+        </div>
+        <!--<!-- 城市多级联动 -->
+        <script>
+            var area1 = new LArea();
+            area1.init({
+                'trigger': '#demo1', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+                'valueTo': '#value1', //选择完毕后id属性输出到该位置
+                'keys': {
+                    id: 'id',
+                    name: 'name'
+                }, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+                'type': 1, //数据源类型
+                'data': LAreaData //数据源
+            });
+            area1.value = [1, 13, 3]; //控制初始位置，注意：该方法并不会影响到input的value
+            var area2 = new LArea();
+            area2.init({
+                'trigger': '#demo2',
+                'valueTo': '#value2',
+                'keys': {
+                    id: 'value',
+                    name: 'text'
+                },
+                'type': 2,
+                'data': [provs_data, citys_data, dists_data]
+            });
+        </script>
+        <script>
+            // $(".zhe").css("display", "block");
+            // $(".zhe").css("height", "100%");
+        </script>
+        <script>
+            window.onbeforeunload = onbeforeunload_handler;
+            window.onunload = onunload_handler;
+
+            function onbeforeunload_handler() {
+                var warning = "确认退出?";
+                return warning;
+            }
+
+            function onunload_handler() {
+                var warning = "谢谢光临";
+                alert(warning);
+            }
+        </script>
+</body>
+
+</html>

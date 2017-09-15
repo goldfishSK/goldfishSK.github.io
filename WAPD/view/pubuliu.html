@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<link href="../css/pubuliu.css" rel="stylesheet">
+		<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<style>
+			@font-face {
+				font-family: "iconfont";
+				src: url('../icon/iconfont.eot');
+				/* IE9*/
+				src: url('../icon/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../icon/iconfont.woff') format('woff'), /* chrome, firefox */
+				url('../icon/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+				url('../icon/iconfont.svg#iconfont') format('svg');
+				/* iOS 4.1- */
+			}
+			
+			.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 16px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="haed_nav">
+			<span class="back"><i class="iconfont">&#xe65e;</i></span>
+			<div class="none_input">
+				<a href="javascript:;" style="display: block;width: 100%;height: 100%;"> <span class="none_span">
+                <i class="iconfont" style="float:left;font-size: 22px;height: 25px;line-height: 29px;color: #000;">&#xe60b;</i>搜索商品
+            </span>
+				</a>
+			</div>
+			<span class="head_right"><i class="iconfont" style="font-size: 1.5rem;">&#xe637;</i></span>
+		</div>
+		<!--综合条件 -->
+		<div style="height: 40px;width: 100%;background-color: #fff;"></div>
+		<div class="compre">
+			<ul class="compre_ul">
+				<li class="compre_li" id="compre_item1" style="color: #f23432;">综合<img src="../img/dow.png" alt="" class="compre_img_1"></li>
+				<li class="compre_li">人气</li>
+				<li class="compre_li" id="money">价格<img src="../img/change.png" alt="" class="compre_img"></li>
+				<li class="compre_li" id="compre_item4">筛选</li>
+				<li class="left_li"> <img src="../img/shaixuan1.png" /></li>
+			</ul>
+			<ul class="compre_item_ul">
+				<li class="com_ul_li">综合 <span></span></li>
+				<li class="com_ul_li">人气 <span></span></li>
+				<li class="com_ul_li">上新 <span></span></li>
+			</ul>
+		</div>
+		<div class="gd_toshow">
+
+			<ul class="con_ul">
+
+				<li class="conall_li" style="margin-top: 1px;">
+					<div class="conl_all">
+
+						<div class="con_li_con">
+							<div class="clc_left"><img src="../img/1470078278376232149.png" alt=""></div>
+							<div class="clc_cent">
+								<p class="gs_miaoshu">你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了</p>
+								<p class="gs_caizhi">99</p>
+								<p class="xiaoliang">1212 <span class="danwei">件</span></p>
+							</div>
+
+						</div>
+
+					</div>
+				</li>
+				<li class="conall_li" style="margin-top: 1px;">
+					<div class="conl_all">
+
+						<div class="con_li_con">
+							<div class="clc_left"><img src="../img/1470078278376232149.png" alt=""></div>
+							<div class="clc_cent">
+								<p class="gs_miaoshu">你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了</p>
+								<p class="gs_caizhi">99</p>
+								<p class="xiaoliang">1212 <span class="danwei">件</span></p>
+							</div>
+
+						</div>
+
+					</div>
+				</li>
+				<li class="conall_li" style="margin-top: 1px;">
+					<div class="conl_all">
+
+						<div class="con_li_con">
+							<div class="clc_left"><img src="../img/1470078278376232149.png" alt=""></div>
+							<div class="clc_cent">
+								<p class="gs_miaoshu">你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了</p>
+								<p class="gs_caizhi">99</p>
+								<p class="xiaoliang">1212 <span class="danwei">件</span></p>
+							</div>
+
+						</div>
+
+					</div>
+				</li>
+				<li class="conall_li" style="margin-top: 1px;">
+					<div class="conl_all">
+
+						<div class="con_li_con">
+							<div class="clc_left"><img src="../img/1470078278376232149.png" alt=""></div>
+							<div class="clc_cent">
+								<p class="gs_miaoshu">你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了</p>
+								<p class="gs_caizhi">99</p>
+								<p class="xiaoliang">1212 <span class="danwei">件</span></p>
+							</div>
+
+						</div>
+
+					</div>
+				</li>
+				<li class="conall_li" style="margin-top: 1px;">
+					<div class="conl_all">
+
+						<div class="con_li_con">
+							<div class="clc_left"><img src="../img/1470078278376232149.png" alt=""></div>
+							<div class="clc_cent">
+								<p class="gs_miaoshu">你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了</p>
+								<p class="gs_caizhi">99</p>
+								<p class="xiaoliang">1212 <span class="danwei">件</span></p>
+							</div>
+
+						</div>
+
+					</div>
+				</li>
+				<li class="conall_li" style="margin-top: 1px;">
+					<div class="conl_all">
+
+						<div class="con_li_con">
+							<div class="clc_left"><img src="../img/1470078278376232149.png" alt=""></div>
+							<div class="clc_cent">
+								<p class="gs_miaoshu">你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了</p>
+								<p class="gs_caizhi">99</p>
+								<p class="xiaoliang">1212 <span class="danwei">件</span></p>
+							</div>
+
+						</div>
+
+					</div>
+				</li>
+				<li class="conall_li" style="margin-top: 1px;">
+					<div class="conl_all">
+
+						<div class="con_li_con">
+							<div class="clc_left"><img src="../img/1470078278376232149.png" alt=""></div>
+							<div class="clc_cent">
+								<p class="gs_miaoshu">你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了</p>
+								<p class="gs_caizhi">99</p>
+								<p class="xiaoliang">1212 <span class="danwei">件</span></p>
+							</div>
+
+						</div>
+
+					</div>
+				</li>
+				
+				<li class="conall_li" style="margin-top: 1px;">
+					<div class="conl_all">
+
+						<div class="con_li_con">
+							<div class="clc_left"><img src="../img/1470078278376232149.png" alt=""></div>
+							<div class="clc_cent">
+								<p class="gs_miaoshu">你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了</p>
+								<p class="gs_caizhi">99</p>
+								<p class="xiaoliang">1212 <span class="danwei">件</span></p>
+							</div>
+
+						</div>
+
+					</div>
+				</li>
+
+			</ul>
+
+		</div>
+		<div class="screen_view">
+			<div class="sv_lift"></div>
+			<div class="sv_content">
+				<div class="svc_nav">
+					<span class="svcn_span"><i class="iconfont">&#xe65e;</i></span>
+					<h4>筛选</h4>
+				</div>
+				<div class="baoguo">
+					<form>
+						<ul class="svc_ul">
+							<li class="svc_li">
+								<!--推荐-->
+								<div class="svclpp_div"><span class="svclpp_span">推荐</span>
+									<span class="clickzed"></span>
+									<span class="svclpp_span1"> <img src="../img/dow.png" class="svclpp_img" alt=""></span>
+
+								</div>
+								<ul class="svcsl_ul">
+									<div class="stymore">
+										<li class="svclus_li">
+											<a href="">团购</a>
+										</li>
+										<li class="svclus_li">
+											<a href="">热卖</a>
+										</li>
+										<li class="svclus_li">
+											<a href="">精品</a>
+										</li>
+									</div>
+								</ul>
+							</li>
+							<!--风格-->
+							<li class="svc_li">
+								<div class="svclpp_div"><span class="svclpp_span">风格</span>
+									<span class="clickzed"></span>
+									<span class="svclpp_span1">
+                        <img src="../img/dow.png" class="svclpp_img" alt="">
+                                 </span>
+								</div>
+								<ul class="svcsl_ul">
+									<div class="stymore">
+										<!--英式-->
+										<li class="svclus_li">
+											<a href="">韩式风格韩式风格韩式风格韩式风格韩式风格韩式风格韩式风格</a>
+										</li>
+										<li class="svclus_li">
+											<a href="">法式风格</a>
+										</li>
+										<li class="svclus_li">
+											<a href="">地中海</a>
+										</li>
+										<li class="svclus_li">
+											<a href="">美式风格</a>
+										</li>
+										<li class="svclus_li">
+											<a href="">精美奢华</a>
+										</li>
+										<li class="svclus_li">
+											<a href="">传统中式</a>
+										</li>
+									</div>
+								</ul>
+							</li>
+							<!--材质 secence-->
+							<li class="svc_li">
+								<div class="svclpp_div"><span class="svclpp_span">材质</span>
+									<span class="clickzed"></span>
+									<span class="svclpp_span1">
+                                   <img src="../img/dow.png" class="svclpp_img" alt="">
+                                </span>
+								</div>
+								<ul class="svcsl_ul">
+									<div class="stymore">
+										<li class="svclus_li">
+											<a href="">蝴蝶石</a>
+										</li>
+										<li class="svclus_li">
+											<a href="">实木布艺</a>
+										</li>
+										<li class="svclus_li">
+											<a href="">其他材质</a>
+										</li>
+									</div>
+								</ul>
+							</li>
+							<!--价格 money-->
+							<li class="svc_li">
+								<div class="svclpp_div"><span class="svclpp_span">价格</span>
+									<span class="clickzed"></span>
+									<span class="svclpp_span1">
+                        <img src="../img/dow.png" class="svclpp_img" alt=""></span>
+								</div>
+								<ul class="svcsl_ul">
+									<div class="stymore">
+										<li class="svclus_li">
+											<a href="">0-1000元</a>
+										</li>
+										<li class="svclus_li">
+											<a href="">1000-1999元</a>
+										</li>
+										<li class="svclus_li">
+											<a href="">2000-2999元</a>
+										</li>
+										<li class="svclus_li">
+											<a href="">3000-3999元</a>
+										</li>
+										<li class="svclus_li">
+											<a href="">4000-4999元</a>
+										</li>
+										<li class="svclus_li">
+											<a href="">5000元以上</a>
+										</li>
+									</div>
+								</ul>
+							</li>
+							<!--品牌 pp-->
+							<li class="svc_li">
+								<div class="svclpp_div"><span class="svclpp_span">品牌</span>
+									<span class="clickzed"></span>
+									<span class="svclpp_span1">
+                        <img src="../img/dow.png" class="svclpp_img" alt="">
+                                 </span>
+								</div>
+								<ul class="svcsl_ul">
+									<div class="stymore">
+										<li class="svclus_li li_img">
+											<a href=""><img src="../img/xifan.png" alt=""></a>
+										</li>
+										<li class="svclus_li li_img">
+											<a href=""><img src="../img/xifan.png" alt=""></a>
+										</li>
+										<li class="svclus_li li_img">
+											<a href=""><img src="../img/xifan.png" alt=""></a>
+										</li>
+										<li class="svclus_li li_img">
+											<a href=""><img src="../img/xifan.png" alt=""></a>
+										</li>
+										<li class="svclus_li li_img">
+											<a href=""><img src="../img/xifan.png" alt=""></a>
+										</li>
+										<li class="svclus_li li_img">
+											<a href=""><img src="../img/xifan.png" alt=""></a>
+										</li>
+										<li class="svclus_li li_img">
+											<a href="javascript:;"><img src="../img/xifan.png" alt=""></a>
+										</li>
+									</div>
+								</ul>
+							</li>
+						</ul>
+						<div class="foot_btn">
+							<div class="fb_item fb_item2" id="fb_item2">取消</div>
+							<input type="submit" class="fb_item" id="fb_item3" value="确定">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+			<div class="mask">
+			<div class="maskChild">
+				<ul>
+					<li>
+						<a href="../index.html">
+							<img src="../img/001.png " alt=" ">
+							<span>全部商品</span>
+						</a>
+
+					</li>
+					<li>
+						<a href="../view/jiancai.html">
+							<img src="../img/001.png " alt=" ">
+							<span>建材城</span> </a>
+					</li>
+					<li>
+						<a href=" ">
+							<img src="../img/002.png " alt=" ">
+							<span>家具城</span> </a>
+					</li>
+					<li>
+						<a href=" ">
+							<img src="../img/003.png " alt=" ">
+							<span>电器城</span> </a>
+					</li>
+					<li>
+						<a href=" ">
+							<img src="../img/004.png " alt=" ">
+							<span>装修服务</span> </a>
+					</li>
+					<li>
+						<a href="../view/gouwuche.html">
+							<img src="../img/005.png " alt=" ">
+							<span>购物车</span> </a>
+					</li>
+					<li>
+						<a href="../view/map.html">
+							<img src="../img/006.png " alt=" ">
+							<span>体验店</span> </a>
+					</li>
+					<li>
+						<a href=" ">
+							<img src="../img/007.png " alt=" ">
+							<span>热门活动</span> </a>
+					</li>
+					<li>
+						<a href="../view/userCenter.html">
+							<img src="../img/008.png " alt=" ">
+							<span>个人中心</span> </a>
+					</li>
+					<li>
+						<a href=" ">
+							<img src="../img/002.png " alt=" ">
+							<span>更多</span> </a>
+					</li>
+
+				</ul>
+
+			</div>
+		</div>
+		
+		
+		<script type="text/javascript">
+			function getLeft() {
+				var _x = $(".gd_show_li").length;
+				for(var i = 0; i < _x; i++) {
+					if(i % 2 == 1) {
+						$($(".gd_show_li")[i]).css("float", "right");
+					} else {
+						$($(".gd_show_li")[i]).css("float", "left")
+					}
+				}
+			}
+			//   瀑布流图片两边分开
+			//			getLeft();
+		</script>
+
+		<script>
+			//   <!--  折叠-->
+			$(".svclpp_img").click(function() {
+				if($($(this).parents(".svclpp_div").next().find(".stymore")).css("display") == "none") {
+					$(this).parents(".svclpp_div").next().find(".stymore").show();
+					$(this).parents(".svclpp_div").next().find("#stylemore").hide();
+					$(this).parents(".svclpp_div").next().find(".svclpp_more").hide();
+					$(this).css("transform", "rotate(180deg)");
+				} else {
+					$(this).parents(".svclpp_div").next().find(".stymore").hide();
+					$(this).css("transform", "rotate(0deg)");
+					$(this).parents(".svclpp_div").next().find("#stylemore").show();
+					$(this).parents(".svclpp_div").next().find(".svclpp_more").show();
+				}
+			});
+			//   更多
+			$(".svclpp_more").click(function() {
+				$(this).hide();
+				$(this).parents(".svcsl_ul").find(".stymore").show();
+				$(this).parents(".svc_li").find(".svclpp_img").css("transform", "rotate(180deg)")
+			});
+			//   单项选择
+			$(".svclus_li").click(function() {
+				$(this).parents(".svcsl_ul").find(".svclus_li").removeClass("clickze");
+				$(this).parents(".svcsl_ul").find(".svclus_li a").css("color", "#333");
+				$(this).addClass("clickze");
+				$(this).find("a").css("color", "#fff");
+				$(this).parents(".svc_li").find(".svclpp_div").find(".clickzed").text($(this).text());
+				$(this).parents(".svc_li").find(".svclpp_div").find(".clickzed").css("display", "inline-block");
+				var x = $(this).find("a img").attr("src");
+				if(typeof(x) == "string") {
+					var _url = "url(" + "./" + x + ")  " + "no-repeat";
+					// background: url(../../img/xifan.png) no-repeat;
+					// background-size: 100% 25px;
+					console.log(_url)
+					$(this).parents(".svc_li").find(".svclpp_div").find(".clickzed").css({
+						"background": _url,
+						"background-size": " 100% 25px",
+					});
+				}
+			});
+		</script>
+		<script>
+			$(".back").click(function() {
+				history.back();
+			})
+		</script>
+		<script>
+			// 筛选
+			$("#compre_item4").click(function() {
+				$(".screen_view").show();
+			})
+			$("#fb_item2").click(function() {
+				$(".screen_view").hide();
+			});
+			$("#fb_item3").click(function() {
+				$(".screen_view").hide();
+			})
+			$(".svcn_span").click(function() {
+				$(".screen_view").hide();
+			})
+		</script>
+		<script>
+			// 综合排序  图片旋转排列方式展开
+			var _num = 0;
+			$("#compre_item1").click(function() {
+				_num++;
+				var x = _num * 180;
+				var _x = String("rotate(" + x + "deg)");
+				$(".compre_img_1").css("transform", _x);
+				if(x % 360 == 180) {
+					$(".compre_item_ul").show(100);
+					$(".compre_item_ul .com_ul_li").click(function() {
+						$(this).find('span').show();
+						location = location;
+					})
+				}
+				if(x % 360 == 0) {
+					$(".compre_item_ul").hide(100);
+				}
+			});
+		</script>
+		<script>
+			var __num = 0;
+			$("#money").click(function() {
+				__num++;
+				if(__num % 2 == 0) {
+					// 价格向上
+					$(this).find('img').attr("src", "../img/up.png");
+				} else {
+					//  价格向下
+					$(this).find('img').attr("src", "../img/down.png");
+				}
+			});
+		</script>
+		<!--<script>
+			$('a').attr("href", "javascript:;")
+		</script>-->
+
+		<script type="text/javascript">
+			var clicked = 1;
+			$(".left_li").click(function() {
+				clicked += 1;
+				if(clicked % 2 == 0) {
+
+					$(".conall_li").css({
+
+						"display": "inline-block",
+				
+						"height": "225px"
+					});
+					
+					$(".conall_li").width($(window).width()/2 - 3);
+					if($(window).width() >= 640){
+						$(".conall_li").width("317px")
+					}
+					
+
+					$(".clc_left").css({
+
+						"display": "block",
+						"width": "100%",
+					})
+					$(".clc_cent").css({
+						"display": "block",
+						"width": "100%",
+					})
+					$(".gs_caizhi").css({
+
+						"margin-top": "3px"
+					});
+					$($(this).find("img")).attr("src","../img/shaixuan0.png");
+				} else {
+                    $(".conall_li").css({
+
+						"display": "block",
+						"width": "100%",
+						"height": "auto"
+					});
+
+				
+					$(".clc_left").css({
+
+						"display": "inline-block",
+						"width": "29%",
+					})
+					$(".clc_cent").css({
+						"display": "inline-block",
+						"width": "67%",
+					})
+					$(".gs_caizhi").css({
+
+						"margin-top": "15px"
+					});
+					$($(this).find("img")).attr("src","../img/shaixuan1.png")
+				}
+			});
+			$(".head_right").click(function(){
+				$(".mask").show();
+			})
+			$(".mask").click(function(){
+				$(".mask").hide();
+			})
+		</script>
+
+	</body>
+
+</html>

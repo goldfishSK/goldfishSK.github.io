@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>订单结算</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <link rel="stylesheet" href="../css/init.css">
+    <link rel="stylesheet" href="../css/jiesuangai.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+    <script src="../js/city.js"></script>
+    <style>
+        @font-face {
+            font-family: "iconfont";
+            src: url('../icon/iconfont.eot');
+            /* IE9*/
+            src: url('../icon/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('../icon/iconfont.woff') format('woff'), /* chrome, firefox */
+            url('../icon/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+            url('../icon/iconfont.svg#iconfont') format('svg');
+            /* iOS 4.1- */
+        }
+        
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        @media only screen and (min-width: 100px) and (max-width: 321px) {
+            .paryPlan {
+                width: 40px;
+                height: 40px;
+            }
+            .chiocePay {
+                width: 16px;
+                margin-left: 68px;
+            }
+        }
+        
+        @media only screen and (min-width: 415px) and (max-width: 770px) {
+            .chiocePay {
+                margin-left: 120px;
+            }
+        }
+        
+        @media only screen and (min-width: 770px) and (max-width: 1030px) {
+            .chiocePay {
+                margin-left: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <i class="iconfont">&#xe65e;</i>
+        <h3>确认订单</h3>
+    </div>
+    <div class="content">
+        <!-- 地址 -->
+        <div class="conhead">
+            <div class="conleft"><i class="iconfont">&#xe609;</i></div>
+            <div class="concen">
+                <p class="concen_P1">收货人:<span id="concen_p_span1">佘坤</span><span class="concen_phone">电话号:<span id="concen_phone_number">18629364654</span></span>
+                </p>
+                <p class="concen_p2">地址:<span id="concen_p_span2">中国陕西西安未央区凤城十二路</span></p>
+            </div>
+            <div class="conright">
+                <i class="iconfont">&#xe61f;</i>
+            </div>
+        </div>
+        <!--订单详情可以修改回到购物车-->
+        <div class="ddtitle">
+            <i class="iconfont">&#xe6e3;</i>
+            <span>订单详情</span>
+            <a href="javascript:;">修改</a>
+            <div style="width: 96%;height: 1px;margin: 0 auto;background: #eee;"></div>
+        </div>
+        <!-- 店铺名称+商品列表 -->
+        <div class="ddshopname">
+            <div class="ddntitle"><i class="iconfont">&#xe630;</i><span class="ddname">店铺名称：法式布艺法式布艺法式布艺法式布艺全名网自营</span></div>
+            <div style="width: 96%;height: 1px;margin: 0 auto;background: #eee;"></div>
+            <ul>
+                <li>
+                    <div class="li_left">
+                        <img src="../img/sd.jpg" alt="">
+                    </div>
+                    <div class="li_cent">
+                        <!--  这里是商品名称-->
+                        <h2>庭邦布艺沙发 法式布艺 法式精美沙发 法式家具 法式客厅实木布艺沙发</h2>
+                        <div class="li_rigdiv">
+                            <div>
+                                <span>材质:</span><span>布艺</span>
+                                <span>规格:</span><span>单人位1204*214*1220</span>
+                                <div>
+
+                                    <select name="" class="wuliu">
+											<option value="100">服务费(￥300)</option>
+											<option value="0">物流点自提(￥0)</option>
+										</select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="li_right">
+                        <span class="gs_money">2422.00</span>
+                        <span class="gs_num">3</span>
+                    </div>
+                    <div style="width: 96%;height: 1px;margin: 0 auto;background: #eee;"></div>
+                </li>
+                <li>
+                    <div class="li_left">
+                        <img src="../img/sd.jpg" alt="">
+                    </div>
+                    <div class="li_cent">
+                        <!--  这里是商品名称-->
+                        <h2>庭邦布艺沙发 法式布艺 法式精美沙发 法式家具 法式客厅实木布艺沙发</h2>
+                        <div class="li_rigdiv">
+                            <span>材质:</span><span>布艺</span>
+                            <span>规格:</span><span>单人位1204*214*1220</span>
+
+                            <div>
+
+                                <select name="" class="wuliu">
+										<option value="200">服务费(￥300)</option>
+										<option value="0">物流点自提(￥0)</option>
+									</select>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="li_right">
+                        <span class="gs_money">2422.00</span>
+                        <span class="gs_num">2</span>
+                    </div>
+                    <div style="width: 96%;height: 1px;margin: 0 auto;background: #eee;"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="ddshopname">
+            <div class="ddntitle"><i class="iconfont">&#xe630;</i><span class="ddname">店铺名称：法式布艺法式布艺法式布艺法式布艺全名网自营</span></div>
+            <div style="width: 96%;height: 1px;margin: 0 auto;background: #eee;"></div>
+            <ul>
+
+                <li>
+                    <div class="li_left">
+                        <img src="../img/sd.jpg" alt="">
+                    </div>
+                    <div class="li_cent">
+                        <!--  这里是商品名称-->
+                        <h2>庭邦布艺沙发 法式布艺 法式精美沙发 法式家具 法式客厅实木布艺沙发</h2>
+                        <div class="li_rigdiv">
+                            <span>材质:</span><span>布艺</span>
+                            <span>规格:</span><span>单人位1204*214*1220</span>
+                            <div>
+
+                                <select name="" class="wuliu">
+										<option value="300">服务费(￥300)</option>
+										<option value="0">物流点自提(￥0)</option>
+									</select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="li_right">
+                        <span class="gs_money">2422.00</span>
+                        <span class="gs_num">1</span>
+                    </div>
+                    <div style="width: 96%;height: 1px;margin: 0 auto;background: #eee;"></div>
+                </li>
+                <li>
+                    <div class="li_left">
+                        <img src="../img/sd.jpg" alt="">
+                    </div>
+                    <div class="li_cent">
+                        <!--  这里是商品名称-->
+                        <h2>庭邦布艺沙发 法式布艺 法式精美沙发 法式家具 法式客厅实木布艺沙发</h2>
+                        <div class="li_rigdiv">
+                            <span>材质:</span><span>布艺</span>
+                            <span>规格:</span><span>单人位1204*214*1220</span>
+                            <div>
+                                <select name="" class="wuliu">
+										<option value="400">服务费(￥300)</option>
+										<option value="0">物流点自提(￥0)</option>
+									</select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="li_right">
+                        <span class="gs_money">2422.00</span>
+                        <span class="gs_num">1</span>
+                    </div>
+                    <div style="width: 96%;height: 1px;margin: 0 auto;background: #eee;"></div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- 其他选项 -->
+    <div style="height: 10px;width: 100%;background: rgb(235, 236, 237);"></div>
+    <!--  其他选项-->
+    <div class="other">
+        <div class="ddtitle">
+            <i class="iconfont">&#xe6e3;</i>
+            <span>其他选项</span>
+
+            <div style="width: 96%;height: 1px;margin: 0 auto;background: #eee;margin-top: -1px;"></div>
+        </div>
+        <!-- 选择发票类型-->
+        <div class="incoice">
+            <ul>
+                <li class="initem">
+                    <div class="initem_head">
+                        <span>开具发票</span>
+                        <i class="iconfont">&#xe61f;</i>
+                    </div>
+                    <div class="initem1">
+                        <input type="checkbox" name="bbill" value="" id="bill" class="b_checkbox" onclick="getInput1()"> <label for="">开发票：</label>
+                        <select name="inv_type" id="invoice_type" onchange="" class="initem1_select" disabled="disabled">
+								<option value="0">请选择发票类型</option>
+								<option value="1">普通发票 [3%]</option>
+								<option value="2">增值税发票 [3%]</option>
+								<option value="3">增值税发票 [4%]</option>
+								<option value="4">增值税发票 [6%]</option>
+								<option value="5">增值税发票 [11%]</option>
+								<option value="6">增值税发票 [13%]</option>
+								<option value="7">增值税发票 [17%]</option>
+							</select>
+                        <div class="initem1_div">
+                            <select class="initem1_select" id="invoice_conten">
+
+									<option value="1" selected="">请选择发票内容</option>
+									<option value="">明细</option>
+									<option value="办公用品">办公用品</option>
+									<option value="电脑配件">电脑配件</option>
+									<option value="耗材">耗材</option>
+									<option value="其他">其他</option>
+								</select>
+                            <!-- 个人单位发票抬头 -->
+                            <div class="initem1_div3">
+                                <label for="" style="margin-left: 78px;">
+                                <input type="checkbox" class="c_checkbox_t" id="personal" onclick="personal()">个人
+                            </label>
+                                <label for="">
+                                <input type="checkbox" class="c_checkbox_t" id="company" onclick="company()">单位
+                            </label>
+                                <div class="initem1_div3_cl">
+                                    <input type="text" placeholder="发票抬头" class="invoice_header">
+                                </div>
+                            </div>
+                            <!--增值税发票 -->
+
+                            <table id="vat_invoice_tbody" width="100%" cellpadding="5" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="3" align="left"><strong style="font-size:14px;">公司信息</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" width="120"><em style="color:#e4393c">*</em>单位名称：</td>
+                                        <td colspan="2"><input name="vat_inv_company_name" type="text" class="txt1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right"><em style="color:#e4393c">*</em>纳税人识别号：</td>
+                                        <td><input name="vat_inv_taxpayer_id" type="text" onblur="javascript:check_taxpayer_id(this,&quot;taxpayer_notice&quot;)" class="txt1"></td>
+                                        <td>&nbsp;<span id="taxpayer_notice" style="font-size:12px;color:#f00;"></span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td align="right"><em style="color:#e4393c">*</em>银行账户：</td>
+                                        <td colspan="2"><input name="vat_inv_deposit_bank" type="text" class="txt1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right"><em style="color:#e4393c">*</em>开户银行：</td>
+                                        <td><input name="vat_inv_bank_account" type="text" onblur="javascript:check_bank_account(this,&quot;bank_account_notice&quot;)" class="txt1"></td>
+                                        <td>&nbsp;<span id="bank_account_notice" style="font-size:12px;color:#f00;"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" align="left" style="padding:10px 0px"><strong style="font-size:14px;">收票人信息</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right"><em style="color:#e4393c">*</em>收票人姓名：</td>
+                                        <td colspan="2"><input name="inv_consignee_name" type="text" class="txt1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right"><em style="color:#e4393c">*</em>收票人手机：</td>
+                                        <td><input name="inv_consignee_phone" type="text" onblur="javascript:check_phone_number(this,&quot;phone_number_notice&quot;)" class="txt1"></td>
+                                        <td>&nbsp;<span id="phone_number_notice" style="font-size:12px;color:#f00;"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right"><em style="color:#e4393c">*</em>收票人省份：</td>
+                                        <td colspan="2"><input type="text" name="inv_country" value="">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right"><em style="color:#e4393c">*</em>详细地址：</td>
+                                        <td colspan="2"><input name="inv_consignee_address" type="text" class="txt1"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </li>
+
+                <li class="initem">
+                    <div class="initem_head">
+                        <span>订单附言</span>
+                        <i class="iconfont">&#xe61f;</i>
+                    </div>
+                    <div class="initem1">
+                        <div class="flow_bottom_list">
+                            <textarea name="postscript" cols="80" rows="3" id="postscript" style=" border:1px solid #e5e5e5"></textarea>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 选择支付方式-->
+        <div class="title" id="zhifutitle" style="border-bottom:1px solid #eeeeee;">
+            <span class="i-icon-arrow-down i-icon-arrow-up" id="zhifuip"></span>
+            <span class="text">支付方式</span>
+            <a href="javascript:void(0)" title="修改商品列表" class="link">必选</a> <em class="qxz" id="emzhifu">请选择支付方式</em>
+        </div>
+        <ul class="nav nav-list-sidenav" id="zhifu68" style="display:block; border-bottom:none;">
+            <li class="clearfix" name="payment_name">
+                <div class="paryMoney">
+                    <span class="PM1">
+						<img src="../img/wechall.png" alt="" class="paryPlan">
+					   <img src="../img/4.png" alt="" class="chiocePay chioceImg">
+					</span>
+
+                </div>
+                <div class="paryMoney">
+                    <span class="PM1">
+						<img src="../img/alibaba.png" alt=""  class="paryPlan">
+						<img src="../img/4.png" alt="" class="chiocePay">
+					</span>
+                </div>
+                <div class="paryMoney">
+                    <span class="PM1">
+						<img src="../img/yinlian.png" alt=""  class="paryPlan">
+						<img src="../img/4.png" alt="" class="chiocePay">
+					</span>
+                </div>
+
+            </li>
+        </ul>
+        <div style="width: 100%;height: 15px;margin: 0 auto;background: #eee;margin-top: -1px;"></div>
+        <!--  订单价目-->
+        <ul class="ct-list order_total_ul">
+            <li>
+                <div class="subtotal">
+                    <span class="total-text">商品总价：</span>
+                    <em class="total">5052.00</em>
+                    <br>
+                    <span class="tax_span"><span class="total-text">发票含税金</span>
+                    <em class="tax">0</em>
+                    <br>
+                    </span>
+                    <span class="total-text">含运费：</span>
+                    <em class="freitltle">336.00</em>
+                    <br>
+                    <!--<input type="hidden"  name="qmw_service" value="1"><input style="width:16px;height:16px;-webkit-appearance:radio" type="checkbox" name="order" id="service" value="s" checked="checked" onclick="serviceChange()">-->
+                    <span class="total-text">服务费</span>
+                    <em><span id="service_money">256</span>元</em>
+                    <br>
+                    <span class="total-text">应付款金额：</span>
+                    <strong class="price_total"><span id="amount_formated">5644</span></strong>
+                </div>
+            </li>
+        </ul>
+        <!-- 提交订单-->
+        <div class="panel panel-default info-box" style="padding-bottom: 15px;">
+            <div class="pay-btn">
+                <input onclick="" type="submit" class="sub-btn btnRadius" value="提交订单">
+                <input type="hidden" name="step" value="done"></div>
+        </div>
+    </div>
+    <div style="width: 100%;height: 15px;margin: 0 auto;background: #eee;margin-top: -1px;"></div>
+    <div class="footer">
+        <div class="links" id="ECS_MEMBERZONE">
+            <a href=""><span>shekunc</span></a>
+            <a href=""><span>退出</span></a>
+            <a href="javascript:window.scrollTo(0,0);"><span>回顶部</span></a>
+        </div>
+        <ul class="linkss">
+            <li>
+                <a href="#">
+                    <i class="footerimg_1"></i>
+                    <span>客户端</span></a>
+            </li>
+            <li>
+                <a href=""><i class="footerimg_2"></i><span class="gl">触屏版</span></a>
+            </li>
+            <li>
+                <a href="" class="goDesktop"><i class="footerimg_3"></i><span>电脑版</span></a>
+            </li>
+        </ul>
+        <p class="mf_o4">© 2005-2017 全名网 版权所有，并保留所有权利。</p>
+    </div>
+
+    <div class="management">
+
+        <div class="content">
+            <ul class="cont_ul">
+                <!--<li class="con_li ByClick">
+                    <div class="con_left">
+                        <div class="con_top"><span class="con_name">佘坤</span> <span class="con_phone">18629364654</span></div>
+                        <div class="con_down">陕西省西安市未央区凤城十二路</div>
+                    </div>
+                    <div class="con_right"><img class="con_img" src="../img/right.png" class="chioce" alt=""></div>
+                </li>
+                -->
+            </ul>
+        </div>
+        <div class="footer">
+            <button type="" class="addMap">添加新地址</button>
+        </div>
+        <div class="mask">
+            <Div style="position: absolute;top:180px;border:1px solid red;height:440px;overflow-y:scroll;width: 98%;" id="area_list"></Div>
+            <form class="mask_form">
+                <ul class="f_ul">
+                    <li class="f_li">
+                        <span>收货人姓名</span>
+                        <input type="text" class="consigen" placeholder="收货人姓名">
+                    </li>
+                    <li class="f_li">
+                        <span>联系方式</span>
+                        <input type="text" class="phoneNum" placeholder="手机(必填)">
+                    </li>
+                    <li class="f_li">
+                        <!--<div id="addAddress">
+                            <div class="address_input"><input class="address_input1" type="text" placeholder="选择您的所在地" id="shengshi" onClick="getProvinceBuy()" readonly="readonly"></div>
+                        </div>-->
+                        <select name="province" id="province">
+								<option value="1">北京</option>
+								<option value="2">安徽</option>
+								<option value="3">福建</option>
+								<option value="4">甘肃</option>
+								<option value="5">广东</option>
+								<option value="6">广西</option>
+								<option value="7">贵州</option>
+								<option value="8">海南</option>
+								<option value="9">河北</option>
+								<option value="10">河南</option>
+								<option value="11">黑龙江</option>
+								<option value="12">湖北</option>
+								<option value="13">湖南</option>
+								<option value="14">吉林</option>
+								<option value="15">江苏</option>
+								<option value="16">江西</option>
+								<option value="17">辽宁</option>
+								<option value="18">内蒙古</option>
+								<option value="19">宁夏</option>
+								<option value="20">青海</option>
+								<option value="21">山东</option>
+								<option value="22">山西</option>
+								<option value="23">陕西</option>
+								<option value="24">上海</option>
+								<option value="25">四川</option>
+								<option value="26">天津</option>
+								<option value="27">西藏</option>
+								<option value="28">新疆</option>
+								<option value="29">云南</option>
+								<option value="30">浙江</option>
+								<option value="31">重庆</option>
+								<option value="32">香港</option>
+								<option value="33">澳门</option>
+								<option value="34">台湾</option>
+								<option value="51">国外</option>
+							</select>
+                        <select name="" id="city">
+								<option value=""></option>
+							</select>
+                        <select name="" id="county">
+								<option value=""></option>
+							</select>
+
+                    </li>
+                    <li class="f_li">
+
+                        <textarea name="" id="_textarea" cols="30" rows="3">详细地址</textarea>
+                    </li>
+
+                </ul>
+                <div class="ma_foot">
+                    <div class="hideBtn">保存</div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function getInput1() {
+            var a = $('#bill[type=checkbox]').is(':checked');
+
+            if ($('#bill[type=checkbox]').is(':checked') == true) {
+                $("#invoice_type").removeAttr("disabled");
+                $("#invoice_type").css("color", "#000");
+
+            }
+            if ($('#bill[type=checkbox]').is(':checked') == false) {
+                $("#invoice_type").attr("disabled", "disabled");
+                $("#invoice_type").css("color", "#999");
+                $("#vat_invoice_tbody").hide();
+                $("#vat_invoice_tbody").find("input").val("");
+            }
+
+        };
+
+        function personal() {
+            if ($("#personal[type=checkbox]").is(":checked") == true) {
+                document.getElementById("company").checked = false;
+                $(".invoice_header").hide();
+            }
+        }
+
+        function company() {
+            if ($("#company[type=checkbox]").is(":checked") == true) {
+                document.getElementById("personal").checked = false;
+                $(".invoice_header").show();
+
+            }
+        }
+
+        $("#invoice_type").change(function() {
+            calculation();
+            if ($(this).val() == 1 || $(this).val() == 0) {
+                $(".initem1_div3").show();
+                $("#vat_invoice_tbody").hide();
+                $(".tax_span").hide();
+            } else {
+
+                $(".initem1_div3").hide();
+                $("#vat_invoice_tbody").show();
+                $(".tax_span").show();
+            }
+
+        });
+        var zhifu = 0;
+
+        function clickZhiFu() {
+            zhifu++;
+            if (zhifu % 2 == 0) {
+                document.getElementById("zhifuinput").checked = true;
+            } else {
+                document.getElementById("zhifuinput").checked = false;
+            }
+        }
+        $(".initem_head").click(function() {
+            $(this).next().toggle();
+        });
+    </script>
+    <script>
+        $(".wuliu").change(function() {
+
+            getMoney();
+
+        })
+
+        getMoney();
+
+        function getMoney() {
+            var money = 0;
+            var fuwufei = 0;
+            var zongfuwu = 0;
+            var money1 = 0;
+            for (var i = 0; i < $(".li_right").length; i++) {
+                var danjia = Number($($(".li_right")[i]).find(".gs_money").text());
+                var number = Number($($(".li_right")[i]).find(".gs_num").text());
+                var fuwu = Number($($(".li_rigdiv")[i]).find("select").val());
+                money1 = Number(danjia * number);
+                zongfuwu = Number(fuwu * number);
+                fuwufei += zongfuwu;
+                money += money1;
+            }
+            $(".total").text(money);
+            $("#service_money").text(fuwufei);
+            var zongjiage = Number(money + fuwufei);
+            $("#amount_formated").text(zongjiage);
+
+        }
+
+        function serviceChange() {
+            var zongjia = Number($("#amount_formated").text());
+            var fuwufei2 = Number($("#service_money").text());
+            if (document.getElementById("service").checked == true) {
+                var ranhou = Number(zongjia + fuwufei2);
+                $("#amount_formated").text(ranhou);
+            } else {
+                var ranhou = Number(zongjia - fuwufei2);
+                $("#amount_formated").text(ranhou);
+            }
+        }
+
+        //  税费计算
+        function calculation() {
+            var _val = $("#invoice_type").val();
+            if (_val == 0) {
+                $(".tax").text("0");
+            }
+            if (_val == 1 || _val == 2) {
+                var jiage = Number($("#amount_formated").text());
+                var shuijin = Number(jiage * 0.03);
+                $(".tax").text(shuijin.toFixed(2));
+            }
+            if (_val == 3) {
+                var jiage = Number($("#amount_formated").text());
+                var shuijin = Number(jiage * 0.04);
+                $(".tax").text(shuijin.toFixed(2));
+            }
+            if (_val == 4) {
+                var jiage = Number($("#amount_formated").text());
+                var shuijin = Number(jiage * 0.06);
+                $(".tax").text(shuijin.toFixed(2));
+            }
+            if (_val == 5) {
+                var jiage = Number($("#amount_formated").text());
+                var shuijin = Number(jiage * 0.11);
+                $(".tax").text(shuijin.toFixed(2));
+            }
+            if (_val == 6) {
+                var jiage = Number($("#amount_formated").text());
+                var shuijin = Number(jiage * 0.13);
+                $(".tax").text(shuijin.toFixed(2));
+            }
+            if (_val == 7) {
+                var jiage = Number($("#amount_formated").text());
+                var shuijin = Number(jiage * 0.17);
+                $(".tax").text(shuijin.toFixed(2));
+            }
+        }
+    </script>
+
+    <script>
+        var li1;
+        // var _tag = 1;
+        //  添加新地址
+        $(".addMap").click(function() {
+            // _tag = 1;
+            $(".mask").show();
+            $(".ma_foot").show();
+            // $(".me_foot").hide();
+        });
+        var ok1 = false;
+        $("textarea").focus(function() {
+            $(this).text("");
+            $(this).css("color", "#333");
+        })
+
+        //   地址管理的显示
+        $(".conhead").click(function() {
+                $(".management").animate({
+                    left: '0px',
+                    opacity: 'show'
+                }, 'normal')
+            })
+            //     liClick
+            //   选择地址   
+        ulliClick();
+
+        function ulliClick() {
+            $(".cont_ul li").click(function() {
+                $("#concen_p_span1").text($(this).find(".con_name").text());
+                $("#concen_p_span2").text($(this).find(".con_down").text());
+                $("#concen_phone_number").text($(this).find(".con_phone").text())
+                $(".management").animate({
+                    left: '400px',
+                    opacity: 'hide'
+                }, 'normal')
+            });
+        }
+
+        //   普通的保存
+        $(".dotm_btn1").click(function() {
+            getName();
+            // $(".me_foot").hide();
+            $(".mask").hide();
+        });
+
+        function getName() {
+            var _name = $(".consigen").val();
+            var _map = $(".address_input1").val();
+            $($(".con_li")[_index]).find(".con_name").text(_name);
+            $($(".con_li")[_index]).find(".con_down").text(_map);
+            $(".consigen").val("");
+            $(".address_input1").val("");
+        };
+        //   保存 / 默认和新建
+        $(".hideBtn").click(function() {
+            // if (_tag == 1) {
+            $(".cont_ul").append(creaDiv(li1));
+            ulliClick();
+            yanzheng(ok1);
+
+            $(".mask").hide();
+
+        });
+        //   创建DOM
+        function creaDiv(li1) {
+            var _name = $(".consigen").val();
+            //   获得 input 的 val（）  也就是地址栏
+            var _map = $(".address_input1").val();
+            //  获得 textarea 的 value  
+            var _textarea = document.getElementById("_textarea").value;
+            var _phone = $(".phoneNum").val();
+            var _li = document.createElement("li");
+            _li.className = "con_li";
+            var _divleft = document.createElement("div");
+            _divleft.className = "con_left";
+            var _divtop = document.createElement("div");
+            _divtop.className = "con_top";
+            var _span = document.createElement("span");
+            _span.className = "con_name";
+            _span.innerHTML = _name;
+            var _con_phone = document.createElement("span");
+            _con_phone.className = "con_phone";
+            _con_phone.innerHTML = _phone;
+            var _divdown = document.createElement("div");
+            _divdown.className = "con_down";
+            _divdown.innerHTML = _map + _textarea;
+            var _divright = document.createElement("div");
+            _divright.className = "con_right";
+            var _img = document.createElement("img");
+            _img.className = "con_img";
+            _img.src = "../img/111.png";
+            _divright.appendChild(_img);
+            _span.appendChild(_con_phone);
+            _divtop.appendChild(_span);
+            _divleft.appendChild(_divtop);
+            _divleft.appendChild(_divdown);
+            _li.appendChild(_divleft);
+            _li.appendChild(_divright);
+            li1 = _li;
+            $(".mask").find("input").val("");
+            $("textarea").val("");
+            return li1;
+        }
+
+        //   返回
+        $(".iconfont").click(function() {
+            if ($(".mask").show()) {
+                $(".mask").hide();
+            } else {
+                history.back();
+            }
+        });
+
+        //   表单验证
+
+        function yanzheng(ok1) {
+
+            //    收货人姓名 
+            $(".consigen").val();
+            //      收货人电话
+            $(".phoneNum").val();
+            //   地址
+            $(".address_input1").val();
+            //   详细地址e
+            $("#_textarea").val();
+            //   验证手机
+            checkPhone(ok1);
+
+            function checkPhone(ok1) {
+
+                reg = /^(1\d{10})$/;
+                var tel = $(".phoneNum").val();
+                if (!(reg.test(tel))) {
+                    alert("手机号格式不正确");
+                    return ok1 = false;
+                } else {
+                    console.log("验证通过");
+                    if ($(".consigen").val().length >= 1 && $(".address_input1").val().length >= 1) {
+                        return ok1 = true;
+
+                    }
+
+                }
+            }
+
+        }
+
+        //   选择支付方式
+        $(".paryPlan").click(function() {
+            $(".chiocePay").removeClass("chioceImg");
+            $(this).next().addClass("chioceImg");
+        })
+    </script>
+
+    <!-- 地址选择 -->
+    <script>
+        jQuery("#province").change(function() {
+            var province = this.value;
+            //  省 
+            $.get("http://www.qmwjj.cc/index.php?r=order/get_area", {
+                "province": province
+            }, function(result) {
+                //console.log("1111");
+
+                console.log(result);
+                var area_list = JSON.parse(result);
+
+                var options = '';
+                for (var i = 0; i < area_list.length; i++) {
+                    options += '<option value="' + area_list[i].id + '">' + area_list[i].name + '</option>';
+                }
+
+                jQuery("#city").html();
+                jQuery("#city").show();
+                jQuery("#city").html(options);
+            });
+
+        });
+        var area_list = '';
+        jQuery("#city").change(function() {
+            //  市 
+            var city = this.value;
+            var zipcode = '';
+
+            $.get("http://www.qmwjj.cc/index.php?r=order/get_area", {
+                "province": province
+            }, function(result) {
+                //console.log("1111");
+
+                console.log(result);
+                area_list = JSON.parse(result);
+                //  console.log(area_list.result);
+                //  var area=area_list;
+                var options = '';
+                for (var i = 0; i < area_list.length; i++) {
+                    options += '<option value="' + area_list[i].id + '">' + area_list[i].name + '</option>';
+
+                }
+
+                //  county 县
+                jQuery("#county").html();
+                jQuery("#county").show();
+                jQuery("#county").html(options);
+
+            });
+
+        });
+    </script>
+    <!-- 7 10 的补充 -->
+    <script>
+        $(".ddtitle a").click(function() {
+            history.back();
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang='zh'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta content='width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport'>
+    <meta content='yes' name='apple-mobile-web-app-capable'>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'>
+    <meta content='telephone=no' name='format-detection'>
+    <meta content='email=no' name='format-detection'>
+    <title></title>
+    <link rel='stylesheet' href='../css/init.css'>
+    <link rel="stylesheet" href="../css/swiper-3.2.5.min.css">
+    <style>
+        body {
+            min-width: 320px;
+            max-width: 640px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        
+        .swiper-container {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: 400px;
+            z-index: 1;
+            min-width: 320px;
+            max-width: 640px;
+        }
+        
+        .swiper-slide img {
+            width: 100%;
+            height: 400px;
+        }
+        /*.swiper-slide::after {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 80%;
+            width: 80%;
+            top: 10%;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }*/
+        
+        .header {
+            width: 100%;
+            height: 40px;
+            background: #fff;
+            text-align: center;
+            z-index: 9999;
+        }
+        
+        .header h3 {
+            line-height: 40px;
+            font-weight: 600;
+            font-family: unset;
+        }
+        
+        .back {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background: url(../img/chahao.png) no-repeat;
+            background-size: 20px;
+            float: right;
+            margin-top: -30px;
+            margin-right: 5px;
+        }
+        
+        .footer {
+            width: 100%;
+            height: 40px;
+            position: fixed;
+            bottom: 0;
+            overflow: hidden;
+            text-align: center;
+            z-index: 9999;
+            background-color: #fff;
+            min-width: 320px;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        
+        .footer p {
+            width: 100%;
+            line-height: 40px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background: #ff2233;
+        }
+        /* 左边*/
+        
+        .swiper-button-prev,
+        .swiper-container-rtl .swiper-button-next {
+            background-image: none;
+            background: url(../img/swleft.png) no-repeat;
+            left: 10px;
+            right: auto;
+            background-size: 44px 44px;
+            width: 44px;
+            transform: rotate(180deg);
+        }
+        /* 右边 */
+        
+        .swiper-button-next,
+        .swiper-container-rtl .swiper-button-prev {
+            background-image: none;
+            background: url(../img/swleft.png) no-repeat;
+            right: 10px;
+            left: auto;
+            background-size: 44px 44px;
+            width: 44px;
+            transform: rotate(0deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h3>我来看细节</h3>
+        <span class="back"></span>
+    </div>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="../img/a001.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="../img/a002.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="../img/a003.jpg" alt="">
+            </div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- 如果需要滚动条 -->
+        <!--<div class="swiper-scrollbar"></div>-->
+    </div>
+
+    <div class="footer">
+        <p class="footer_p">YSHT 美式风格精品提花工艺墙布 客厅 餐厅 卧室</p>
+    </div>
+    <script src="../js/jquery.js">
+    </script>
+    <script src="../js/swiper-3.2.5.min.js"></script>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'horizontal',
+            loop: true,
+
+            // 如果需要分页器
+            pagination: '.swiper-pagination',
+
+            // 如果需要前进后退按钮
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+
+            // 如果需要滚动条
+            // scrollbar: '.swiper-scrollbar',
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+
+                $(".header").hide();
+                $(".footer").hide();
+            }, 3000)
+        });
+        $(".swiper-slide img").click(function() {
+            $(".header").show();
+            $(".footer").show();
+        });
+        $(".back").click(function() {
+            history.back();
+        })
+    </script>
+</body>
+
+</html>
