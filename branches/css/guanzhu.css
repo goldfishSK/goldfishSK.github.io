@@ -111,6 +111,8 @@ body {
 	    font-size: 14px;
     line-height: 19px;
     padding: 5px 5px;
+    text-align: left;
+    text-indent: 3px;
 }
 
 .rd_gouwu img {
@@ -130,6 +132,7 @@ body {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	color: #666666;
+	text-align: left;
 }
 .lock,.rd_gouwu{
 	float: right;
@@ -189,10 +192,14 @@ body {
     color: #666666;
 }
 .content_ul{
-	display: none;
+	/*display: none;*/
+	/*padding-top: 5px;*/
 	padding-bottom: 50px;
-	margin-top: 10px;
+
 }
 .show{
 	display: block !important;
+}
+.content_ul .con_li:first-child{
+	padding-top: 7px;
 }
