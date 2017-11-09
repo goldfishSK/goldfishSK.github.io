@@ -10,14 +10,15 @@ body {
 	background: #F6F7F9;
 	overflow-x: hidden;
 }
+
 ::-webkit-scrollbar {
-width: 1px;
-float: right;
-}
-::-webkit-scrollbar:horizontal {
-height: 0em;
+	width: 1px;
+	float: right;
 }
 
+::-webkit-scrollbar:horizontal {
+	height: 0em;
+}
 
 .header {
 	position: fixed;
@@ -45,7 +46,7 @@ height: 0em;
 	display: inline-block;
 	float: right;
 	line-height: 40px;
-	    margin-right: 10px;
+	margin-right: 10px;
 }
 
 .sousuo a {
@@ -56,7 +57,6 @@ height: 0em;
 	width: 25px;
 	position: relative;
 	top: 7px;
-	
 }
 
 .tab {
@@ -67,6 +67,7 @@ height: 0em;
 	display: block;
 	width: 100%;
 	border-bottom: 1px solid #DDDDDD;
+	height: 40px;
 }
 
 .tab_ul li {
@@ -75,6 +76,8 @@ height: 0em;
 	line-height: 40px;
 	font-size: 14px;
 	color: #2C3036;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .tab_more {
@@ -82,7 +85,7 @@ height: 0em;
 }
 
 .tab_li span {
-	margin-left: 5px;
+	margin-left: 3px;
 	font-size: 12px;
 	line-height: 40px;
 }
@@ -253,6 +256,10 @@ height: 0em;
 	content: ".00";
 }
 
+.sou_money:before {
+	content: "¥";
+}
+
 .source_p {
 	display: inline-block;
 	float: right;
@@ -381,4 +388,30 @@ height: 0em;
 	text-align: center;
 	background: rgba(0, 0, 0, 0.8);
 	z-index: 66;
+}
+
+.mask {
+	display: none;
+	position: fixed;
+	top: 40px;
+	height: 100%;
+	z-index: 999;
+	background: rgba(0, 0, 0, 0.7);
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+.mask img {
+	display: block;
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 45px;
 }

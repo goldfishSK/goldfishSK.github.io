@@ -31,6 +31,25 @@
 				-webkit-text-stroke-width: 0.2px;
 				-moz-osx-font-smoothing: grayscale;
 			}
+			
+			@media only screen and (min-width: 300px) and (max-width: 330px) {
+				.order_number {
+					width: 130px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+				.state,
+				.state1 {
+					position: relative;
+					bottom: 15px;
+				}
+				.goods_left {
+					width: 70px;
+				}
+				.tab_li {
+					font-size: 12px;
+				}
+			}
 		</style>
 	</head>
 
@@ -39,7 +58,7 @@
 			<span class="head_span iconfont">&#xe628;</span>
 			<span class="sousuo"><a href=""><img src="../img/sousuo.png"/></a></span>
 			<h3 class="head_h3">订单详情</h3>
-			
+
 			<!--  tab  -->
 			<div class="tab">
 				<ul class="tab_ul">
@@ -299,21 +318,7 @@
 				</li>
 
 			</ul>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+
 			<!-- 待发货 -->
 			<ul class="con_ul">
 
@@ -552,16 +557,7 @@
 				</li>
 
 			</ul>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+
 			<!--  待评价  -->
 			<ul class="con_ul">
 
@@ -838,8 +834,7 @@
 						</li>
 						<!-- 退款  -->
 						<!--  -->
-						
-						
+
 						<!-- 客户信息 -->
 						<li class="customer">
 							<div class="cust_top">
@@ -900,10 +895,7 @@
 
 						</li>
 						<!-- 客户信息 -->
-						
-						
-						
-						
+
 						<li class="customer">
 							<div class="cust_top">
 								<span class="consig">收  货   人</span> <span class="con_name">佘坤</span> <span class="phone_number">18629364654</span>
@@ -918,13 +910,12 @@
 						<!-- 退款-->
 						<li class="refund">
 							<div class="re_con">
-								<p class="timess">2017-09-15  14:49:32</p>
+								<p class="timess">2017-09-15 14:49:32</p>
 								<p class="reason">
 									<span class="res_name">佘坤</span>发起了退货换货申请。货物状态: <span class="res_goods">未发货</span>,原因：<span class="res_reason">拍错/多拍/不想要，</span>金额:<span class="res_money">152.00</span>元
 								</p>
 							</div>
-							
-							
+
 						</li>
 
 						<!-- 订单操作 -->
@@ -1059,6 +1050,17 @@
 			</ul>
 
 		</div>
+		
+		<div class="mask">
+			<img src="../img/loding.gif"/>
+		</div>
+		
+		
+		
+		
+		
+		
+		
 		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$(".tab_li").click(function() {
@@ -1066,19 +1068,28 @@
 				var _index = $(this).index();
 				console.log(_index);
 				if(_index >= 4) {
-                        $(".tab_mores").toggle();
-                      
+					$(".tab_mores").toggle();
+
 				} else {
-                      $(".tab_li").removeClass("ctr");
-                      $(this).addClass("ctr");
-                      $(".con_ul").removeClass("show");
-                      $($(".con_ul")[_index]).addClass("show");
-                      setTimeout(function(){
-                      	$("body").animate({
-                      	scrollTop:0
-                         },1500)
-                      },1500)
-                      
+                      $(".mask").show();
+                      $("body").css("overflow","hidden");
+					$(".tab_li").removeClass("ctr");
+					$(this).addClass("ctr");
+					$(".con_ul").removeClass("show");
+					$($(".con_ul")[_index]).addClass("show");
+					
+					setTimeout(function() {
+						$("body").animate({
+							scrollTop: 0
+						}, 1000)
+						
+						$("body").css({
+							"overflow-x":"hidden",
+							"overflow-y":"auto"
+						});
+						$(".mask").hide();
+					}, 1500)
+
 				}
 
 			})

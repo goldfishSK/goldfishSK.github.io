@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title></title>
+		<link rel="stylesheet" href="css/init.css" />
+		<style type="text/css">
+			body {
+				width: 100%;
+				min-width: 320px;
+				max-width: 640px;
+				margin: 0 auto;
+				height: 100%;
+				background: #F4F4F4;
+			}
+			
+			.header {
+				width: 100%;
+				height: 45px;
+				line-height: 45px;
+				background: #FFFFFF;
+				padding-bottom: 10px;
+			}
+			
+			.server {
+				display: inline-block;
+				padding: 5px 60px 5px 8px;
+				border: 1px solid #ddd;
+				border-radius: 5px;
+				height: 30px;
+				margin-top: 5px;
+				margin-left: 20px;
+			}
+			
+			.server img {
+				width: 25px;
+			}
+			
+			.server input {
+				border: none;
+				position: relative;
+				top: -8px;
+				max-width: 200px;
+				height: 25px;
+				line-height: 25px;
+			}
+			
+			.btn {
+				display: inline-block;
+				float: right;
+				margin-top: 15px;
+				margin-right: 35px;
+				color: #ff2233;
+				border: none;
+				background: none;
+				font-size: 16px;
+				font-weight: 600;
+			}
+			
+			.content {
+				width: 100%;
+			}
+			
+			.con_head {
+				width: 100%;
+				background: #EBEBEB;
+				height: 35px;
+			}
+			
+			.head_title {
+				color: #858585;
+				line-height: 35px;
+				margin-left: 20px;
+				font-size: 15px;
+			}
+			
+			.con_ul {
+				display: block;
+				width: 100%;
+			}
+			
+			.con_ul li {
+				display: block;
+				width: 100%;
+				height: 35px;
+				line-height: 35px;
+				text-indent: 20px;
+				color: #484848;
+				font-weight: 700;
+			}
+			
+			.con_ul li:after {
+				content: "";
+				display: block;
+				height: 1px;
+				width: 96%;
+				background: #959595;
+				float: right;
+			}
+			.clear{
+				width: 100%;
+				text-align: center;
+			}
+			.clear button{
+				background: #FFFFFF;
+				color: #666666;
+				border: 1px solid #C6C6C6;
+				width: 80%;
+				height: 40px;
+				line-height: 40px;
+				border-radius: 5px;
+				margin-top: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="header">
+			<form action="" method="post">
+
+				<div class="server">
+					<img src="img/sousuo.png" alt="" />
+					<input type="text" placeholder="请输入文字或者拼音"  class="changeInput"/>
+					
+				</div>
+				<button type="submit" class="btn">搜索</button>
+			</form>
+
+		</div>
+		<div class="content">
+			<div class="con_head">
+				<span class="head_title">暂无搜索记录</span>
+			</div>
+			<ul class="con_ul">
+				<li>
+					家具
+				</li>
+			</ul>
+			
+			<div class="clear">
+				<button>清空历史记录</button>
+			</div>
+		</div>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	
+
+  $(".changeInput").bind('input porpertychange',function(){
+  
+  	console.log($(this).val())
+  })
+</script>
+	</body>
+
+</html>

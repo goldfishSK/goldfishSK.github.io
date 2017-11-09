@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            height: 100%;
+            font-family: "微软雅黑";
+            background: #EFEFF4;
+            max-width: 640px;
+            min-width: 320px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            height: 44px;
+            line-height: 44px;
+            background: #F7F7F7;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .header span {
+            display: inline-block;
+            height: 44px;
+            line-height: 44px;
+            float: left;
+        }
+        
+        .header span img {
+            display: block;
+            width: 25px;
+            height: 25px;
+            margin-top: 10px;
+            margin-left: 5px;
+        }
+        
+        .header h4 {
+            display: inline-block;
+            height: 44px;
+            line-height: 44px;
+            margin: 0 auto;
+            margin-right: 30px;
+        }
+        
+        .pasw {
+            width: 100%;
+            margin-top: 60px;
+            padding-bottom: 5px;
+            background: #fff;
+        }
+        
+        .fomr_item1 {
+            width: 100%;
+            height: 40px;
+            background: #fff;
+        }
+        
+        .fomr_item1 lable {
+            display: inline-block;
+            width: 18%;
+            height: 40px;
+            line-height: 40px;
+            text-align: right;
+            font-size: 14px;
+        }
+        
+        .fomr_item1 input {
+            display: inline-block;
+            width: 40%;
+            text-align: left;
+            height: 30px;
+            padding: 5px 15px 0px 10px;
+            line-height: 30px;
+            outline: 0;
+            -webkit-appearance: none;
+            border: 0;
+        }
+        
+        .xian {
+            display: block;
+            height: 1px;
+            width: 94%;
+            background-color: #c8c7cc;
+            float: right;
+        }
+        
+        .huoquyanz {
+            display: inline-block;
+            width: 38% !important;
+            float: left !important;
+            text-align: left !important;
+            height: 30px !important;
+            padding: 8px 15px 0px 15px !important;
+            line-height: 30px !important;
+            outline: 0;
+            -webkit-appearance: none;
+            border: 0;
+        }
+        
+        .yanzhengma {
+            display: inline-block !important;
+            width: 30% !important;
+            height: 31px !important;
+            line-height: 30px !important;
+            text-align: center !important;
+            float: right !important;
+            border-radius: 5px;
+            background-color: #ff3344;
+            color: #fff;
+            margin-top: 5px;
+            border: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .start {
+            width: 100%;
+            margin-top: 17px;
+            text-align: center;
+        }
+        
+        .start_btn {
+            display: inline-block;
+            width: 80%;
+            height: 30px;
+            color: #fff;
+            background-color: #ff3344;
+            border-radius: 5px;
+            border: 0;
+            font-size: 17px;
+        }
+        
+        .fispan {
+            display: inline-block;
+            width: 28%;
+            font-size: 14px;
+            height: 40px;
+            line-height: 40px;
+            color: red;
+            text-overflow: ellipsis;
+            float: right;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        
+        #code_input {
+            margin-top: 5px;
+        }
+        
+        #verifyCanvas {
+            margin-top: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <span><img src="back.png" alt=""></span>
+        <h4>注册</h4>
+    </div>
+    <!-- 账号密码-->
+    <div class="pasw">
+        <form>
+            <div class="fomr_item1">
+                <lable>账号</lable>
+                <input type="text" placeholder="请输入账号" name="" value="" maxlength="20">
+                <span class="fispan"></span>
+                <span class="xian"></span>
+            </div>
+            <div class="fomr_item1">
+                <lable>密码</lable>
+                <input type="password" placeholder="请输入密码" name="" value="" maxlength="20" class="password1">
+                <span class="fispan"></span>
+                <span class="xian"></span>
+            </div>
+            <div class="fomr_item1">
+                <lable style="font-size: 13px;">确认密码</lable>
+                <input type="password" placeholder="请输入密码" name="" value="" maxlength="20" class="password2">
+                <span class="fispan"></span>
+                <span class="xian"></span>
+            </div>
+            <div class="fomr_item1">
+                <lable>手机号</lable>
+                <input type="text" placeholder="请输入手机号" name="" value="" maxlength="15" class="phonesnumber" onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+                <span class="fispan"></span>
+                <span class="xian"></span>
+            </div>
+            <div class="fomr_item1">
+                <lable style="float: left">验证码</lable>
+                <input type="text" placeholder="请输入验证码" name="" value="" maxlength="8" class="huoquyanz">
+                <input class="yanzhengma" id="phone" value="获取验证码"></input>
+                <span class="xian"></span>
+            </div>
+            <div class="fomr_item1">
+                <lable style="float: left">图形验证</lable>
+                <div id="v_container" style="width: 150px;height: 37px;float: right;"></div>
+                <input type="text" id="code_input" value="" placeholder="请输入验证码" />
+                <!--<button id="my_button">验证</button>-->
+            </div>
+        </form>
+
+    </div>
+    <div class="start">
+        <button type="" class="start_btn">注册</button>
+    </div>
+    <script>
+        $(function() {
+            var ok1 = false;
+            var ok2 = false;
+            var ok3 = false;
+            //  检查手机号
+            $(".phonesnumber").focus(function() {
+                $(this).next().text('编辑中...')
+            }).blur(function() {
+                var phonesn = /^1(3|4|5|7|8)\d{9}$/;
+                var _what = $(this).val();
+                if (phonesn.test(_what) == false) {
+                    $(this).next().text('手机号不正确');
+                } else {
+                    $(this).next().text("");
+                    ok1 = true;
+                    //      手机号验证通过
+
+                }
+            });
+            //  检查密码
+            $(".password1").focus(function() {
+                $(this).next().text("6~20位之间");
+            }).blur(function() {
+                if ($(this).val().length != " ") {
+                    $(this).next().text(" ");
+                } else {
+                    $(this).next().text("密码不能为空");
+                };
+                if ($(this).val().length < 6) {
+                    $(this).next().text("密码少于6位");
+                } else if ($(this).val().length > 20) {
+                    $(this).next().text("密码大于20位");
+                }
+            });
+            //  确认密码
+            $(".password2").focus(function() {
+                $(this).next().text("编辑中...");
+            }).blur(function() {
+                if ($(this).val() != $(".password1").val()) {
+                    $(this).next().text("密码不一致");
+                } else if ($(this).val().length < 1) {
+                    $(this).next().text("密码不一致");
+                } else {
+                    $(this).next().text(" ");
+                    ok2 = true;
+                    //   密码验证通过
+                }
+            });
+            //   手机验证码倒计时
+            $("#phone").click(function() {
+
+                if (ok1 == true) {
+
+
+
+                    var inter;
+                    var count = 5;
+                    var curCount;
+                    var code = ""; // 验证码
+                    var codeLenght = 6; // 验证码长度
+                    curCount = count;
+                    var dealType; // 验证方式
+                    var uid = $(".huoquyanz").val();
+                    // 设置倒计时效果
+                    $(this).attr("disabled", "true");
+                    $(this).val(+curCount + "秒后再获取");
+                    $(this).css("background-color", "gray")
+                    inter = window.setInterval(setTime, 1000);
+                    // 启动定时器
+                    function setTime() {
+                        if (curCount == 0) {
+                            window.clearInterval(inter); // 计时停止
+                            $("#phone").removeAttr("disabled");
+                            $("#phone").val("重新发送");
+                            $("#phone").css("background-color", "#007AFF")
+                            code = " ";
+                        } else {
+                            curCount--;
+                            $("#phone").val(+curCount + "秒后再获取");
+
+                        }
+                    };
+                } else {
+                    $("#phone").css("disabled", "disabled");
+                }
+            });
+
+        })
+    </script>
+    <script>
+        !(function(window, document) {
+            function GVerify(options) { //创建一个图形验证码对象，接收options对象为参数
+                this.options = { //默认options参数值
+                    id: "", //容器Id
+                    canvasId: "verifyCanvas", //canvas的ID
+                    width: "100", //默认canvas宽度
+                    height: "30", //默认canvas高度
+                    type: "blend", //图形验证码默认类型blend:数字字母混合类型、number:纯数字、letter:纯字母
+                    code: ""
+                }
+
+                if (Object.prototype.toString.call(options) == "[object Object]") { //判断传入参数类型
+                    for (var i in options) { //根据传入的参数，修改默认参数值
+                        this.options[i] = options[i];
+                    }
+                } else {
+                    this.options.id = options;
+                }
+
+                this.options.numArr = "0,1,2,3,4,5,6,7,8,9".split(",");
+                this.options.letterArr = getAllLetter();
+
+                this._init();
+                this.refresh();
+            }
+
+            GVerify.prototype = {
+                    /**版本号**/
+                    version: '1.0.0',
+
+                    /**初始化方法**/
+                    _init: function() {
+                        var con = document.getElementById(this.options.id);
+                        var canvas = document.createElement("canvas");
+                        this.options.width = con.offsetWidth > 0 ? con.offsetWidth : "100";
+                        this.options.height = con.offsetHeight > 0 ? con.offsetHeight : "30";
+                        canvas.id = this.options.canvasId;
+                        canvas.width = this.options.width;
+                        canvas.height = this.options.height;
+                        canvas.style.cursor = "pointer";
+                        canvas.innerHTML = "您的浏览器版本不支持canvas";
+                        con.appendChild(canvas);
+                        var parent = this;
+                        canvas.onclick = function() {
+                            parent.refresh();
+                        }
+                    },
+
+                    /**生成验证码**/
+                    refresh: function() {
+                        this.options.code = "";
+                        var canvas = document.getElementById(this.options.canvasId);
+                        if (canvas.getContext) {
+                            var ctx = canvas.getContext('2d');
+                        } else {
+                            return;
+                        }
+
+                        ctx.textBaseline = "middle";
+
+                        ctx.fillStyle = randomColor(180, 240);
+                        ctx.fillRect(0, 0, this.options.width, this.options.height);
+
+                        if (this.options.type == "blend") { //判断验证码类型
+                            var txtArr = this.options.numArr.concat(this.options.letterArr);
+                        } else if (this.options.type == "number") {
+                            var txtArr = this.options.numArr;
+                        } else {
+                            var txtArr = this.options.letterArr;
+                        }
+
+                        for (var i = 1; i <= 4; i++) {
+                            var txt = txtArr[randomNum(0, txtArr.length)];
+                            this.options.code += txt;
+                            ctx.font = randomNum(this.options.height / 2, this.options.height) + 'px SimHei'; //随机生成字体大小
+                            ctx.fillStyle = randomColor(50, 160); //随机生成字体颜色		
+                            ctx.shadowOffsetX = randomNum(-3, 3);
+                            ctx.shadowOffsetY = randomNum(-3, 3);
+                            ctx.shadowBlur = randomNum(-3, 3);
+                            ctx.shadowColor = "rgba(0, 0, 0, 0.3)";
+                            var x = this.options.width / 5 * i;
+                            var y = this.options.height / 2;
+                            var deg = randomNum(-30, 30);
+                            /**设置旋转角度和坐标原点**/
+                            ctx.translate(x, y);
+                            ctx.rotate(deg * Math.PI / 180);
+                            ctx.fillText(txt, 0, 0);
+                            /**恢复旋转角度和坐标原点**/
+                            ctx.rotate(-deg * Math.PI / 180);
+                            ctx.translate(-x, -y);
+                        }
+                        /**绘制干扰线**/
+                        for (var i = 0; i < 4; i++) {
+                            ctx.strokeStyle = randomColor(40, 180);
+                            ctx.beginPath();
+                            ctx.moveTo(randomNum(0, this.options.width), randomNum(0, this.options.height));
+                            ctx.lineTo(randomNum(0, this.options.width), randomNum(0, this.options.height));
+                            ctx.stroke();
+                        }
+                        /**绘制干扰点**/
+                        for (var i = 0; i < this.options.width / 4; i++) {
+                            ctx.fillStyle = randomColor(0, 255);
+                            ctx.beginPath();
+                            ctx.arc(randomNum(0, this.options.width), randomNum(0, this.options.height), 1, 0, 2 * Math.PI);
+                            ctx.fill();
+                        }
+                    },
+
+                    /**验证验证码**/
+                    validate: function(code) {
+                        var code = code.toLowerCase();
+                        var v_code = this.options.code.toLowerCase();
+                        console.log(v_code);
+                        if (code == v_code) {
+                            return true;
+                        } else {
+                            this.refresh();
+                            return false;
+                        }
+                    }
+                }
+                /**生成字母数组**/
+            function getAllLetter() {
+                var letterStr = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z";
+                return letterStr.split(",");
+            }
+            /**生成一个随机数**/
+            function randomNum(min, max) {
+                return Math.floor(Math.random() * (max - min) + min);
+            }
+            /**生成一个随机色**/
+            function randomColor(min, max) {
+                var r = randomNum(min, max);
+                var g = randomNum(min, max);
+                var b = randomNum(min, max);
+                return "rgb(" + r + "," + g + "," + b + ")";
+            }
+            window.GVerify = GVerify;
+        })(window, document);
+    </script>
+    <script>
+        var verifyCode = new GVerify("v_container");
+
+        // document.getElementById("my_button").onclick = function() {
+        //     var res = verifyCode.validate(document.getElementById("code_input").value);
+        //     if (res) {
+        //         alert("验证正确");
+        //     } else {
+        //         alert("验证码错误");
+        //     }
+        // }
+        $("#code_input").blur(function() {
+            var res = verifyCode.validate(document.getElementById("code_input").value);
+            if (res) {
+                alert("验证正确");
+            } else {
+                alert("验证码错误");
+            }
+        })
+    </script>
+</body>
+
+</html>

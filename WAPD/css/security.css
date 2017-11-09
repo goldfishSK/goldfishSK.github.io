@@ -58,7 +58,8 @@ body{
 	float: right;
 	margin-right: -10px;
 	color: #CCCCCC;
-	
+	position: relative;
+	top: 1px;
 }
 .footer {
 	position: absolute;

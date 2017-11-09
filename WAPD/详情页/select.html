@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title></title>
+		<link rel="stylesheet" href="css/init.css" />
+		<style type="text/css">
+			body {
+				background: #FFFFFF;
+				width: 100%;
+				min-width: 320px;
+				max-width: 640px;
+				margin: 0 auto;
+			}
+			
+			.header {
+				width: 100%;
+				height: 40px;
+				border-bottom: 1px solid #DDDDDD;
+				text-align: center;
+			}
+			
+			.header span {
+				display: inline-block;
+				width: 25px;
+				height: 25px;
+			}
+			
+			.header span img {
+				display: block;
+				width: 25px;
+				height: 25px;
+			}
+			
+			.header h3 {
+				line-height: 40px;
+				display: inline-block;
+				margin: 0 auto;
+			}
+			
+			.back {
+				float: left;
+				margin-top: 7px;
+				margin-left: 10px;
+			}
+			
+			.head_right {
+				float: right;
+				margin-top: 8px;
+				margin-right: 10px;
+			}
+			
+			.goto_home {
+				display: block;
+			}
+			
+			.back img {
+				width: 20px !important;
+				height: 20px !important;
+				margin-top: 4px;
+			}
+			/*  三角*/
+			
+			.mui-global-nav-arr {
+				font-size: 10px;
+				position: absolute;
+				top: -4px;
+				right: 12px;
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				border-bottom: 4px solid rgba(51, 51, 51, .95);
+			}
+			.goto_home {
+				display: none;
+				background: rgba(51, 51, 51, .9);
+				width: 80px;
+				position: absolute;
+				right: 10px;
+				border-radius: 6px;
+			}
+			.goto_home ul {
+				display: block;
+				width: 100%;
+			}
+			.goto_home ul li {
+				display: block;
+			}
+			.goto_home ul li:first-child {
+				border-bottom: 1px solid #BBBBBB;
+			}
+			.goto_home ul li a {
+				display: block;
+				color: #FFFFFF;
+				width: 100%;
+				font-size: 13px;
+				line-height: 29px;
+			}
+			.content {
+				margin-top: 15px;
+			}
+			.con_head {
+				width: 100%;
+				color: #535353;
+				text-indent: 28px;
+				padding-bottom: 11px;
+				font-weight: 700;
+			}
+			.con_cont {
+				width: 100%;
+			}
+			.con_cont ul {
+				display: block;
+				padding: 0px 15px;
+			}
+			.con_cont ul li {
+				display: inline-block;
+				line-height: 30px;
+				height: 30px;
+				border: 1px solid #ddd;
+				margin: 5px 10px;
+				padding: 0px 15px;
+				border-radius: 5px;
+				font-size: 14px;
+				color: #7D7D7D;
+			}
+			.chioce{
+				color: #FFFFFF !important;
+				background: #E60044;
+			}
+			.footer{
+				width: 100%;
+				position: fixed;
+				bottom: 0px;
+				height: 45px;
+				text-align: center;
+				min-width: 320px;
+				max-width: 640px;
+				margin: 0 auto;
+			}
+			.footer button{
+				width: 100%;
+				
+				height: 45px;
+				border: none;
+				background: #E60044;
+				color: #FFFFFF;
+				
+			
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="header">
+			<span class="back"><img src="img/cli.png"/></span>
+			<h3>商家店铺</h3>
+			<span class="head_right"><img src="img/ddd.png"/></span>
+			<div class="goto_home">
+				<div class="mui-global-nav-arr"></div>
+				<ul>
+					<li>
+						<a href="">首页</a>
+					</li>
+					<li>
+						<a href="">购物车</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+			<div class="con_head">
+				分类
+			</div>
+			<div class="con_cont">
+				<ul class="chioce_ul ">
+					<li class="chioce">
+						<span>全部分类</span>
+					</li>
+					<li class="">
+						<span>建材家居</span>
+					</li>
+					<li class="">
+						<span>餐厅套装</span>
+					</li>
+					<li class="">
+						<span>卫浴用品</span>
+					</li>
+					<li class=""> 
+						<span>全屋建材</span>
+					</li>
+					<li class=""> 
+						<span>居家日用</span>
+					</li>
+					<li class="">
+						<span>电热水器</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer">
+			<button>确定</button>
+		</div>
+		<script type="text/javascript" src="js/jquery.min.js">
+			
+		</script>
+<script type="text/javascript">
+		
+		
+			$(".chioce_ul li").click(function(){
+			     $(".chioce_ul li").removeClass("chioce");
+			     $(this).addClass("chioce");
+		     	   $.ajax({
+		     	   	type:"get",
+		     	   	url:"",
+		     	   	async:true,
+		     	   	success:function(){
+		     	   		
+		     	   	},
+		     	   	error:function(){
+		     	   		
+		     	   	},
+		     	   });
+	       })
+		 
+		 
+		 
+		 $(".head_right").click(function(){
+		 	$(".goto_home").show()
+		 });
+		$(".back").click(function(){
+			history.back();
+		})
+</script>
+	</body>
+
+</html>
