@@ -150,6 +150,10 @@
 				position: relative;
 				bottom: 10%;
 			}
+			
+			#dummy {
+				text-align: left;
+			}
 		</style>
 	</head>
 
@@ -206,7 +210,7 @@
 				<div class="m-cell">
 					<div class="cell-item">
 						<div class="cell-right">
-							<div class="cell-textarea" placeholder="" id="dummy"></div>
+							<div class="cell-textarea" placeholder="" id="dummy">|</div>
 						</div>
 					</div>
 				</div>
@@ -244,22 +248,22 @@
 					if(length <= 0) {
 						$("#YDUI_CONFRIM").hide()
 						$("#substance").val("");
-						var num =Math.random()*10;
-						var num1 =num.toFixed(0);
-						setTimeout(function(){
-							
+						var num = Math.random() * 10;
+						var num1 = num.toFixed(0);
+						setTimeout(function() {
+
 							Robot(talkToMe(num1));
-						},2000)
+						}, 2000)
 					} else {
 						$("#YDUI_CONFRIM").hide()
 						Record();
 						$("#substance").val("");
-						var num =Math.random()*10;
-						var num1 =num.toFixed(0);
-						setTimeout(function(){
-							
+						var num = Math.random() * 10;
+						var num1 = num.toFixed(0);
+						setTimeout(function() {
+
 							Robot(talkToMe(num1));
-						},2000)
+						}, 2000)
 					}
 
 				})
@@ -276,38 +280,36 @@
 					html += "<div class='curstom'><div class='me'><div class='border_user_img'><img src='../img/aaa.jpg' class='user_img' alt='' /></div><div class='talk_cont'><div class='sanjiao'></div><div class='talk_c'>" + text + "</div></div></div></div>"
 					$(".content").append(html)
 					Calculation()
-					 setTimeout(scro1(),200)
+					setTimeout(scro1(), 200)
 				}
 				//   机器人说话  
-				
-				function Robot(text){
-					var html ="";
+
+				function Robot(text) {
+					var html = "";
 					html += "<div class='curstom'><div class='other'><div class='border_user_img'><img src='./bitch.png' class='user_img' alt='' /></div><div class='talk_cont'><div class='sanjiao'></div><div class='talk_c'>" + text + "</div></div></div></div>"
-                     $(".content").append(html)
-                     Calculation();
-                     setTimeout(scro1(),200)
+					$(".content").append(html)
+					Calculation();
+					setTimeout(scro1(), 200)
 				}
-				
-				
-				
-				function scro1(){
-					$('body').scrollTop( $('body')[0].scrollHeight);
+
+				function scro1() {
+					console.log($('body')[0].scrollHeight)
+					$('body').scrollTop($('body')[0].scrollHeight-30);
+					
 				}
-				
-				function Calculation(){
-				  for (var i =0; i<$("body .curstom").length; i++){
-				  	var curstom =$($("body .curstom")[i]);
-				     var talk_cont = 	curstom.find(".talk_cont")
-				  	curstom.height(talk_cont.height())
-				  	
-				  }
+
+				function Calculation() {
+					for(var i = 0; i < $("body .curstom").length; i++) {
+						var curstom = $($("body .curstom")[i]);
+						var talk_cont = curstom.find(".talk_cont")
+						curstom.height(talk_cont.height())
+
+					}
 				}
-				
-				
-				
+
 				//   打开中间的输入的View
 				function open() {
-					
+
 					$(".mask-black-dialog").css({
 						"display": "flex"
 					})
@@ -318,14 +320,9 @@
 				//   关闭中间的输入View
 				function close() {
 					$("#YDUI_CONFRIM").hide();
-					
-					
-					
-					
+
 				}
-				
-				
-				
+
 				//    最下面的假的输入框
 				$("#dummy").click(function() {
 					open();
@@ -338,8 +335,6 @@
 					this.style.height = 'auto';
 					this.style.height = (this.scrollHeight) + 'px';
 				});
-
-				
 
 				function talkToMe(Numbers) {
 
@@ -364,7 +359,47 @@
 					return str1
 
 				}
-				
+				var jisuan = 0;
+				setInterval(function() {
+					jisuan++;
+					if(jisuan % 2 == 0) {
+						$("#dummy").text("|")
+					} else {
+						$("#dummy").text("")
+					}
+				}, 600)
+
+				$('#substance').bind('keypress', function(event) {
+
+					if(event.keyCode == "13")
+
+					{
+
+						var length = $("#substance").val().length
+						if(length <= 0) {
+							$("#YDUI_CONFRIM").hide()
+							$("#substance").val("");
+							var num = Math.random() * 10;
+							var num1 = num.toFixed(0);
+							setTimeout(function() {
+
+								Robot(talkToMe(num1));
+							}, 2000)
+						} else {
+							$("#YDUI_CONFRIM").hide()
+							Record();
+							$("#substance").val("");
+							var num = Math.random() * 10;
+							var num1 = num.toFixed(0);
+							setTimeout(function() {
+
+								Robot(talkToMe(num1));
+							}, 2000)
+						}
+
+					}
+
+				})
 
 			}(window, jQuery);
 		</script>
