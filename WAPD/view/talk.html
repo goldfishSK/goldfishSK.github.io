@@ -31,7 +31,6 @@
 				max-width: 5.6rem;
 				position: relative;
 				top: 10px;
-				/*padding-bottom: 1.2rem;*/
 			}
 			
 			.border_user_img {
@@ -40,9 +39,9 @@
 			}
 			
 			.sanjiao {
-				border: solid 0px #ccc;
+				border: solid 10px #ccc;
 				width: 0px;
-				height: 10px;
+				height: 0px;
 				border-left-color: #F5F5F5;
 				border-right-color: #F5F5F5;
 				border-top: none;
@@ -58,16 +57,12 @@
 				padding: 5px;
 				margin-left: 10px;
 				background: #FFFFFF;
-				word-break: break-all;
-				word-wrap: break-word;
-				min-width: 1.1rem;
 			}
 			
 			.curstom {
 				display: block;
 				width: 100%;
 				min-height: 1.4rem;
-				padding-bottom: 1.2rem;
 			}
 			
 			.me {
@@ -108,51 +103,27 @@
 			.cell-item {
 				padding-left: 0;
 			}
-			
-			.content {
+			.content{
 				margin-top: 1rem;
-				padding-bottom: 2rem;
 			}
 			
 			.cell-textarea {
 				height: 0.7rem;
-				min-height: 0.7rem;
-				border-radius: 5px;
+				border-radius: 10px;
 				text-indent: 8px;
-				background: #FFFFFF;
-			}
-			
-			#YDUI_CONFRIM .cell-textarea {
-				position: relative;
-				top: 7px;
-			}
-			
-			.confirm-ft {
-				background: #FFFFFF;
 			}
 			
 			.cell-right {
 				padding: 0.16rem;
 				border-radius: 15px;
 			}
-			
-			header {
+			header{
 				position: fixed !important;
 				width: 100%;
 				top: 0;
 				left: 0;
 				right: 0;
 				z-index: 99;
-			}
-			
-			.m-confirm {
-				background: #DDDDDD;
-				position: relative;
-				bottom: 10%;
-			}
-			
-			#dummy {
-				text-align: left;
 			}
 		</style>
 	</head>
@@ -164,7 +135,7 @@
 				<i class="back-ico"></i>
 			</a>
 			<div class="navbar-center">
-				<span class="navbar-title">假的客服聊天界面</span>
+				<span class="navbar-title">NavBar</span>
 			</div>
 
 		</header>
@@ -174,14 +145,14 @@
 
 				<div class="other">
 					<div class="border_user_img">
-						<img src="./bitch.png" class="user_img" alt="" />
+						<img src="../img/aaa.jpg" class="user_img" alt="" />
 					</div>
 					<div class="talk_cont">
 						<div class="sanjiao">
 
 						</div>
 						<div class="talk_c">
-							机器人 Bitch 正在跟您聊天......
+							符合副我好地方和史蒂夫 发多少不
 						</div>
 
 					</div>
@@ -197,7 +168,7 @@
 
 						</div>
 						<div class="talk_c">
-							Hello Bitch
+							符合副我好地方和史蒂夫 发多少不
 						</div>
 
 					</div>
@@ -210,198 +181,25 @@
 				<div class="m-cell">
 					<div class="cell-item">
 						<div class="cell-right">
-							<div class="cell-textarea" placeholder="" id="dummy">|</div>
+							<textarea class="cell-textarea" placeholder=""></textarea>
 						</div>
 					</div>
 				</div>
 			</div>
 
 		</footer>
-
-		<div class="mask-black-dialog" id="YDUI_CONFRIM">
-			<div class="m-confirm">
-
-				<div class="confirm-bd"><textarea class="cell-textarea" placeholder="" id="substance"></textarea></div>
-				<div class="confirm-ft">
-					<a href="javascript:;" class="confirm-btn default">取消</a>
-					<a href="javascript:;" class="confirm-btn primary">发送</a>
-				</div>
-			</div>
-		</div>
 		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/ydui.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			! function(win, $) {
-
-				var dialog = win.YDUI.dialog;
-				/* 普通确认框 */
-				$('').on('click', function() {
-					dialog.confirm('选填标题', '我有一个小毛驴我从来也不骑！', function() {
-						dialog.toast('你点了确定', 'none', 1000);
-					});
-				});
-
-				//   发送
-				$(".primary").click(function() {
-
-					var length = $("#substance").val().length
-					if(length <= 0) {
-						$("#YDUI_CONFRIM").hide()
-						$("#substance").val("");
-						var num = Math.random() * 10;
-						var num1 = num.toFixed(0);
-						setTimeout(function() {
-
-							Robot(talkToMe(num1));
-						}, 2000)
-					} else {
-						$("#YDUI_CONFRIM").hide()
-						Record();
-						$("#substance").val("");
-						var num = Math.random() * 10;
-						var num1 = num.toFixed(0);
-						setTimeout(function() {
-
-							Robot(talkToMe(num1));
-						}, 2000)
-					}
-
-				})
-				//   取消
-				$(".default").click(function() {
-					$("#YDUI_CONFRIM").hide()
-					$("#substance").val("");
-				})
-
-				//    记录输入框的东西，并且创建聊天窗口
-				function Record() {
-					var text = $("#substance").val();
-					var html = "";
-					html += "<div class='curstom'><div class='me'><div class='border_user_img'><img src='../img/aaa.jpg' class='user_img' alt='' /></div><div class='talk_cont'><div class='sanjiao'></div><div class='talk_c'>" + text + "</div></div></div></div>"
-					$(".content").append(html)
-					Calculation()
-					setTimeout(scro1(), 200)
-				}
-				//   机器人说话  
-
-				function Robot(text) {
-					var html = "";
-					html += "<div class='curstom'><div class='other'><div class='border_user_img'><img src='./bitch.png' class='user_img' alt='' /></div><div class='talk_cont'><div class='sanjiao'></div><div class='talk_c'>" + text + "</div></div></div></div>"
-					$(".content").append(html)
-					Calculation();
-					setTimeout(scro1(), 200)
-				}
-
-				function scro1() {
-					console.log($('body')[0].scrollHeight)
-					$('body').scrollTop($('body')[0].scrollHeight-30);
-					
-				}
-
-				function Calculation() {
-					for(var i = 0; i < $("body .curstom").length; i++) {
-						var curstom = $($("body .curstom")[i]);
-						var talk_cont = curstom.find(".talk_cont")
-						curstom.height(talk_cont.height())
-
-					}
-				}
-
-				//   打开中间的输入的View
-				function open() {
-
-					$(".mask-black-dialog").css({
-						"display": "flex"
-					})
-				}
-
-				close();
-
-				//   关闭中间的输入View
-				function close() {
-					$("#YDUI_CONFRIM").hide();
-
-				}
-
-				//    最下面的假的输入框
-				$("#dummy").click(function() {
-					open();
-					$("#substance").focus();
-				})
-
-				$('textarea').each(function() {
-					this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
-				}).on('input', function() {
-					this.style.height = 'auto';
-					this.style.height = (this.scrollHeight) + 'px';
-				});
-
-				function talkToMe(Numbers) {
-
-					var talk = [{
-						0: "Hello Father",
-						1: "你说什么我没听清",
-						2: "你确定你不是机器人",
-						3: "这句话是我瞎编的",
-						4: "你是不是酒喝多了？",
-						5: "愿漂泊的人都有酒喝，愿孤独的人都会唱歌",
-						6: "......",
-						7: "机器人 Bitch 正在跟您聊天......",
-						8: "Hello Bitch",
-						9: "别说话了，我接不上",
-						10: "嘘~~~"
-					}];
-
-					var str = talk[0];
-					var str1 = str[Numbers]
-					console.log(str1);
-
-					return str1
-
-				}
-				var jisuan = 0;
-				setInterval(function() {
-					jisuan++;
-					if(jisuan % 2 == 0) {
-						$("#dummy").text("|")
-					} else {
-						$("#dummy").text("")
-					}
-				}, 600)
-
-				$('#substance').bind('keypress', function(event) {
-
-					if(event.keyCode == "13")
-
-					{
-
-						var length = $("#substance").val().length
-						if(length <= 0) {
-							$("#YDUI_CONFRIM").hide()
-							$("#substance").val("");
-							var num = Math.random() * 10;
-							var num1 = num.toFixed(0);
-							setTimeout(function() {
-
-								Robot(talkToMe(num1));
-							}, 2000)
-						} else {
-							$("#YDUI_CONFRIM").hide()
-							Record();
-							$("#substance").val("");
-							var num = Math.random() * 10;
-							var num1 = num.toFixed(0);
-							setTimeout(function() {
-
-								Robot(talkToMe(num1));
-							}, 2000)
-						}
-
-					}
-
-				})
-
-			}(window, jQuery);
+			
+			
+			$(".cell-textarea").focus(function(){
+				$("footer").animate({
+					bottom:"271px"
+				},1000)
+				
+				
+			})
+			
 		</script>
 	</body>
 
