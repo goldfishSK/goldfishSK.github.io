@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/screen.css">
+
+		<style>
+			@font-face {
+				font-family: "iconfont";
+				src: url('../icon/iconfont.eot');
+				/* IE9*/
+				src: url('../icon/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../icon/iconfont.woff') format('woff'), /* chrome, firefox */
+				url('../icon/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+				url('../icon/iconfont.svg#iconfont') format('svg');
+				/* iOS 4.1- */
+			}
+			
+			.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 16px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="screen_view">
+			<div class="sv_lift"></div>
+			<div class="sv_content">
+				<div class="svc_nav">
+					<span class="svcn_span"><i class="iconfont">&#xe65e;</i></span>
+					<h4>筛选</h4>
+				</div>
+				<div class="baoguo">
+					<ul class="svc_ul">
+						<li class="svc_li">
+							<!--推荐-->
+							<div class="svcl_div"><span class="svcd_span">推荐</span></div>
+							<ul class="svcl_ul">
+								<li class="svclu_li">团购</li>
+								<li class="svclu_li">热卖</li>
+								<li class="svclu_li">精品</li>
+							</ul>
+						</li>
+						<!--风格-->
+						<li class="svc_li" style="margin-top: 10px;">
+							<div class="svcsl_div"><span class="svcsd_span">风格</span><span class="svcd_span1">
+                        <img src="../img/dow.png" class="svcd_img" alt=""></span></div>
+							<ul class="svcsl_ul">
+								<li class="svcslu_li">中式风格</li>
+								<li class="svcslu_li">田园风格</li>
+								<li class="svcslu_li">欧式风格</li>
+								<li class="svcslu_li">现代简约</li>
+								<li class="svcslu_li">意式风格</li>
+								<li class="svcslu_li" id="stylemore">更多</li>
+								<!--英式-->
+								<li class="svcslu_li limores">韩式风格</li>
+								<li class="svcslu_li limores">法式风格</li>
+								<li class="svcslu_li limores">地中海</li>
+								<li class="svcslu_li limores">美式风格</li>
+								<li class="svcslu_li limores">精美奢华</li>
+								<li class="svcslu_li limores">传统中式</li>
+							</ul>
+						</li>
+						<!--材质 secence-->
+						<li class="svc_li">
+							<div class="svcls_div"><span class="svclsd_span">材质</span><span class="svcsld_span1">
+                        <img src="../img/dow.png" class="svclsd_img" alt=""></span></div>
+							<ul class="svcls_ul">
+								<li class="svclus_li">实木</li>
+								<li class="svclus_li">真皮</li>
+								<li class="svclus_li">玻璃</li>
+								<li class="svclus_li">大理石</li>
+								<li class="svclus_li">环保</li>
+								<li class="svclus_li" id="svclusl_more">更多</li>
+								<li class="svclus_li slus_li">蝴蝶石</li>
+								<li class="svclus_li slus_li">实木布艺</li>
+								<li class="svclus_li slus_li">其他材质</li>
+							</ul>
+						</li>
+						<!--价格 money-->
+						<li class="svc_li">
+							<div class="svclm_div"><span class="svclm_span">价格</span>
+							</div>
+							<ul class="svclm_ul">
+								<li class="svclm_li">0-1000元</li>
+								<li class="svclm_li">1000-1999元</li>
+								<li class="svclm_li">2000-2999元</li>
+								<li class="svclm_li">3000-3999元</li>
+								<li class="svclm_li">4000-4999元</li>
+								<li class="svclm_li">5000元以上</li>
+							</ul>
+						</li>
+						<!--品牌 pp-->
+						<li class="svc_li">
+							<div class="svclpp_div"><span class="svclpp_span">品牌</span>
+								<span class="svclpp_span1">
+                        <img src="../img/dow.png" class="svclpp_img" alt="">
+                    </span>
+							</div>
+							<ul class="svclpp_ul">
+								<li class="svclpp_li">中源紫砂</li>
+								<li class="svclpp_li">马可波罗</li>
+								<li class="svclpp_li">天皓木门</li>
+								<li class="svclpp_li">东鹏瓷砖</li>
+								<li class="svclpp_li">金石人生</li>
+								<li class="svclpp_li" id="svclpp_more">更多</li>
+								<li class="svclpp_li slpp_li">福源灯饰</li>
+								<li class="svclpp_li slpp_li">雷士照明</li>
+								<li class="svclpp_li slpp_li">海尔</li>
+								<li class="svclpp_li slpp_li">美的</li>
+								<li class="svclpp_li slpp_li">阿里丹顿</li>
+								<li class="svclpp_li slpp_li">德意电器</li>
+								<li class="svclpp_li slpp_li">苏泊尔</li>
+								<li class="svclpp_li slpp_li">伊亚小镇</li>
+								<li class="svclpp_li slpp_li">欧艺香妃</li>
+								<li class="svclpp_li slpp_li">乐华士</li>
+								<li class="svclpp_li slpp_li">洋木匠</li>
+								<li class="svclpp_li slpp_li">A家家居</li>
+
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="foot_btn">
+					<div class="fb_item fb_item2">取消</div>
+					<div class="fb_item">确定</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- 品牌 -->
+		<script>
+			var _svcm = 0;
+			$("#svclpp_more").click(function() {
+				$(this).text("樱桃木");
+				$(".slpp_li").css("display", "inline-block");
+				$(".slpp_li").show(10);
+				$(".svclpp_img").css("transform", "rotate(180deg)")
+				_svcm++;
+			});
+
+			$(".svclpp_img").click(function() {
+				_svcm++;
+				console.log(_trf % 2);
+				var _cishu = _svcm * 180;
+
+				var _xuanzh = String("rotate(" + _cishu + "deg)");
+				console.log(_cishu);
+				console.log(_xuanzh);
+				$(this).css("transform", _xuanzh);
+				if(_svcm % 2 == 1) {
+					// 打开
+					$("#svclpp_more").text("樱桃木");
+					$(".slpp_li").css("display", "inline-block");
+					$(".slpp_li").show(10);
+				} else {
+					// 关闭
+					$("#svclpp_more").text("更多");
+					$(".slpp_li").css("display", "inline-block");
+					$(".slpp_li").hide(10);
+				}
+			})
+		</script>
+		<!-- 材质-->
+		<script>
+			var _svcm = 0;
+			$("#svclusl_more").click(function() {
+				$(this).text("樱桃木");
+				$(".slus_li").css("display", "inline-block");
+				$(".slus_li").show(10);
+				$(".svclsd_img").css("transform", "rotate(180deg)")
+				_svcm++;
+			});
+
+			$(".svclsd_img").click(function() {
+				_svcm++;
+				console.log(_trf % 2);
+				var _cishu = _svcm * 180;
+
+				var _xuanzh = String("rotate(" + _cishu + "deg)");
+				console.log(_cishu);
+				console.log(_xuanzh);
+				$(this).css("transform", _xuanzh);
+				if(_svcm % 2 == 1) {
+					// 打开
+					$("#svclusl_more").text("樱桃木");
+					$(".slus_li").css("display", "inline-block");
+					$(".slus_li").show(10);
+				} else {
+					// 关闭
+					$("#svclusl_more").text("更多");
+					$(".slus_li").css("display", "inline-block");
+					$(".slus_li").hide(10);
+				}
+			})
+		</script>
+		<script>
+			var _trf = 0;
+			$("#stylemore").click(function() {
+				$(this).text("英式风格");
+				$(".limores").css("display", "inline-block");
+				$(".limores").show(10);
+				$(".svcd_img").css("transform", "rotate(180deg)")
+				_trf++;
+			});
+
+			$(".svcd_img").click(function() {
+				_trf++;
+				console.log(_trf % 2);
+				var _cishu = _trf * 180;
+				var _xuanzh = String("rotate(" + _cishu + "deg)");
+				console.log(_cishu);
+				console.log(_xuanzh);
+				$(this).css("transform", _xuanzh);
+				if(_trf % 2 == 1) {
+					// 打开
+					$("#stylemore").text("英式风格");
+					$(".limores").css("display", "inline-block");
+					$(".limores").show(10);
+				} else {
+					// 关闭
+					$("#stylemore").text("更多");
+					$(".limores").css("display", "inline-block");
+					$(".limores").hide(10);
+				}
+			})
+		</script>
+	</body>
+
+</html>

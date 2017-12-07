@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>分类筛选</title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<link rel="stylesheet" type="text/css" href="../css/init.css" />
+		<link rel="stylesheet" href="../css/ydui.css" />
+		<link rel="stylesheet" href="../css/scrolltab.css" />
+		<script src="../js/ydui.flexible.js"></script>
+		<style type="text/css">
+			body {
+				width: 100%;
+				min-width: 320px;
+				max-width: 640px;
+				margin: 0 auto;
+			}
+			@media only screen and (min-width: 300px) and (max-width: 350px) {
+				
+				.padding-all ul li {
+    
+    width: 39% !important;
+}
+				
+				
+			}
+			
+			.scrolltab-item {
+				padding: 0.1rem;
+			}
+			
+			.access_chan {
+				display: block;
+				width: 100%;
+				height: 0.7rem;
+				border-radius: 2px;
+				background: #E71F19;
+				line-height: 0.7rem;
+				text-align: center;
+				color: #fff !important;
+				font-size: 0.28rem;
+			}
+			
+			.padding-all ul {
+				display: block;
+				width: 100%;
+			}
+			
+			.padding-all ul li:last-child {
+				text-align: left;
+			}
+			
+			.padding-all ul li {
+				display: inline-block;
+				margin: 5px 10px;
+				padding: 5px;
+				text-align: center;
+				width: 41%;
+			}
+			
+			.padding-all ul li img {
+				display: block;
+				width: 1.6rem;
+			}
+			
+			.padding-all ul li a {
+				display: inline-block;
+				color: #333333;
+			}
+			
+			.padding-all ul li span {
+				text-align: center;
+			}
+			
+			.scrolltab-icon {
+				margin-right: 0.1rem;
+			}
+			
+			.scrolltab-item.crt,
+			.scrolltab-item.crt:active {
+				background-color: #FFF;
+				border-left: 3px solid #ff2233;
+			}
+			
+			@font-face {
+				font-family: 'iconfont';
+				src: url('../icon/iconfont.eot');
+				src: url('../icon/iconfont.eot?#iefix') format('embedded-opentype'), url('../icon/iconfont.woff') format('woff'), url('../icon/iconfont.ttf') format('truetype'), url('../icon/iconfont.svg#iconfont') format('svg');
+			}
+			
+			.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 16px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			
+			.iconfont {
+				font-size: 0.44rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<section class="g-flexview">
+
+			<header class="m-navbar">
+				<a href="../demo.html" class="navbar-item"><i class="back-ico"></i></a>
+				<div class="navbar-center"><span class="navbar-title">分类筛选</span></div>
+			</header>
+
+			<section class="g-scrollview">
+
+				<div class="m-scrolltab" data-ydui-scrolltab>
+					<div class="scrolltab-nav">
+						<a href="javascript:;" class="scrolltab-item">
+							<div class="scrolltab-icon"><i class="iconfont">&#xe601;</i></div>
+							<div class="scrolltab-title">墙地材料</div>
+						</a>
+						<a href="javascript:;" class="scrolltab-item">
+							<div class="scrolltab-icon"><i class="iconfont">&#xe6a3;</i></div>
+							<div class="scrolltab-title">灯饰照明</div>
+						</a>
+						<a href="javascript:;" class="scrolltab-item">
+							<div class="scrolltab-icon"><i class="iconfont">&#xe502;</i></div>
+							<div class="scrolltab-title">客厅家具</div>
+						</a>
+						<a href="javascript:;" class="scrolltab-item">
+							<div class="scrolltab-icon"><i class="iconfont">&#xe689;</i></div>
+							<div class="scrolltab-title">卧室家具</div>
+						</a>
+						<a href="javascript:;" class="scrolltab-item">
+							<div class="scrolltab-icon"><i class="iconfont">&#xe60c;</i></div>
+							<div class="scrolltab-title">儿童家具</div>
+						</a>
+						<a href="javascript:;" class="scrolltab-item">
+							<div class="scrolltab-icon"><i class="iconfont">&#xe60a;</i></div>
+							<div class="scrolltab-title">餐厅家具</div>
+						</a>
+						<a href="javascript:;" class="scrolltab-item">
+							<div class="scrolltab-icon"><i class="iconfont">&#xe620;</i></div>
+							<div class="scrolltab-title">厨房家具</div>
+						</a>
+						<a href="javascript:;" class="scrolltab-item">
+							<div class="scrolltab-icon"><i class="iconfont">&#xe611;</i></div>
+							<div class="scrolltab-title">厨卫电器</div>
+						</a>
+						<a href="javascript:;" class="scrolltab-item">
+							<div class="scrolltab-icon"><i class="iconfont">&#xe62e;</i></div>
+							<div class="scrolltab-title">生活电器</div>
+						</a>
+						<a href="javascript:;" class="scrolltab-item">
+							<div class="scrolltab-icon"><i class="iconfont">&#xe56f;</i></div>
+							<div class="scrolltab-title">卫浴用品</div>
+						</a>
+						<a href="OnSaleBrand在售品牌.html" class="scrolltab-item">
+							<div class="scrolltab-icon"></div>
+							<div class="scrolltab-title">在售品牌</div>
+						</a>
+
+					</div>
+					<div class="scrolltab-content">
+						<div class="scrolltab-content-item">
+							<strong class="scrolltab-content-title">墙地材料</strong>
+							<section class="menu-right padding-all j-content">
+
+								<span>
+               						 <a href="#" class="access_chan">进入墙地材料频道 &gt;&gt;</a>
+       						     </span>
+								<ul>
+									<li class="w-3">
+										<a href="#">
+											<img src="../img/1470076500138048875.png" /><span>瓷砖</span></a>
+									</li>
+
+									<li class="w-3">
+										<a href="#">
+											<img src="../img/1470076454998667067.png" /><span>壁纸</span></a>
+									</li>
+
+									<li class="w-3">
+										<a href="#">
+											<img src="../img/1470076436075252430.png" /><span>木地板</span></a>
+									</li>
+
+									<li class="w-3">
+										<a href="#">
+											<img src="../img/1475601139576979605.png" /><span>木门</span></a>
+									</li>
+
+									<li class="w-3">
+										<a href="#">
+											<img src="../img/1470076485085836431.png" /><span>墙布</span></a>
+									</li>
+
+									<li class="w-3">
+										<a href="#">
+											<img src="../img/74346546.png" /><span>刺绣壁布</span></a>
+									</li>
+
+									<li class="w-3">
+										<a href="#">
+											<img src="../img/76544363456.png" /><span>釉面砖</span>
+										</a>
+									</li>
+
+								</ul>
+							</section>
+						</div>
+						<div class="scrolltab-content-item">
+							<strong class="scrolltab-content-title">灯饰照明</strong>
+							<section class="menu-right padding-all j-content">
+
+								<span>
+                                 <a href="#" class="access_chan">进入灯饰照明频道 &gt;&gt;</a>
+                               </span>
+								<ul>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470076538966643646.png" /><span>吊灯</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470076556787423792.png" /><span>吸顶灯</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470076576199158587.png" /><span>水晶灯</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470076592317308406.png" /><span>壁灯</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/345678uw.png" /><span>LED灯</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470076612418480673.png" /><span>台灯</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/78906tgr37.png" /><span>射灯</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/345678i4rfr.png" /><span>筒灯</span></a>
+									</li>
+
+								</ul>
+							</section>
+						</div>
+						<div class="scrolltab-content-item">
+							<strong class="scrolltab-content-title">客厅家具</strong>
+							<section class="menu-right padding-all j-content">
+								<span>
+            					    <a href="#" class="access_chan">进入客厅家具频道 &gt;&gt;</a>
+           						 </span>
+								<ul>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077480035159001.png" /><span>沙发</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077495770665548.png" /><span>茶几</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077508635307235.png" /><span>电视柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077522155228401.png" /><span>鞋柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077563606031095.png" /><span>客厅套装</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077578034865989.png" /><span>饰品柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077592187244822.png" /><span>组合厅柜</span></a>
+									</li>
+								</ul>
+							</section>
+						</div>
+						<div class="scrolltab-content-item">
+							<strong class="scrolltab-content-title">卧室家具</strong>
+							<section class="menu-right padding-all j-content">
+								<span>
+             				   <a href="#" class="access_chan">进入卧室家具频道 &gt;&gt;</a>
+           						 </span>
+								<ul>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470078017360095833.png" /><span>床</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470078215116309311.png" /><span>衣柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470078229565960556.png" /><span>梳妆台</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470078243774045688.png" /><span>床头柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470078257376703988.png" /><span>床垫</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470078278376232149.png" /><span>斗柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470078291007132524.png" /><span>穿衣镜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470078305587538543.png" /><span>卧室套装</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470078317414747721.png" /><span>梳妆凳</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470078329885535756.png" /><span>床尾凳</span></a>
+									</li>
+
+								</ul>
+							</section>
+						</div>
+						<div class="scrolltab-content-item">
+							<strong class="scrolltab-content-title">儿童家具</strong>
+							<section class="menu-right padding-all j-content">
+								<span>
+              					  <a href="#" class="access_chan">进入儿童家具频道 &gt;&gt;</a>
+           						 </span>
+								<ul>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470079047427555507.png" /><span>儿童床</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/4t6y7udfgh.png" /><span>儿童套餐</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470079081861764127.png" /><span>儿童衣柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470079114443502171.png" /><span>儿童床头柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470079095691004471.png" /><span>儿童桌椅</span></a>
+									</li>
+
+								</ul>
+							</section>
+						</div>
+						<div class="scrolltab-content-item">
+							<strong class="scrolltab-content-title">餐厅家具</strong>
+							<section class="menu-right padding-all j-content">
+								<span>
+            					    <a href="#" class="access_chan">进入餐厅家具频道 &gt;&gt;</a>
+           						 </span>
+								<ul>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077480035159001.png" /><span>沙发</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077495770665548.png" /><span>茶几</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077508635307235.png" /><span>电视柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077522155228401.png" /><span>鞋柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077563606031095.png" /><span>客厅套装</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077578034865989.png" /><span>饰品柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077592187244822.png" /><span>组合厅柜</span></a>
+									</li>
+
+								</ul>
+							</section>
+						</div>
+						<div class="scrolltab-content-item">
+							<strong class="scrolltab-content-title">厨房家具</strong>
+							<section class="menu-right padding-all j-content">
+								<span>
+            					    <a href="#" class="access_chan">进入厨房家具频道 &gt;&gt;</a>
+           						 </span>
+								<ul>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077480035159001.png" /><span>沙发</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077495770665548.png" /><span>茶几</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077508635307235.png" /><span>电视柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077522155228401.png" /><span>鞋柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077563606031095.png" /><span>客厅套装</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077578034865989.png" /><span>饰品柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077592187244822.png" /><span>组合厅柜</span></a>
+									</li>
+
+								</ul>
+							</section>
+						</div>
+						<div class="scrolltab-content-item">
+							<strong class="scrolltab-content-title">厨卫电器</strong>
+							<section class="menu-right padding-all j-content">
+								<span>
+            					    <a href="#" class="access_chan">进入厨卫电器频道 &gt;&gt;</a>
+           						 </span>
+								<ul>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077480035159001.png" /><span>沙发</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077495770665548.png" /><span>茶几</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077508635307235.png" /><span>电视柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077522155228401.png" /><span>鞋柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077563606031095.png" /><span>客厅套装</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077578034865989.png" /><span>饰品柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077592187244822.png" /><span>组合厅柜</span></a>
+									</li>
+
+								</ul>
+							</section>
+						</div>
+						<div class="scrolltab-content-item">
+							<strong class="scrolltab-content-title">生活电器</strong>
+							<section class="menu-right padding-all j-content">
+								<span>
+            					    <a href="#" class="access_chan">进入生活电器频道 &gt;&gt;</a>
+           						 </span>
+								<ul>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077480035159001.png" /><span>沙发</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077495770665548.png" /><span>茶几</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077508635307235.png" /><span>电视柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077522155228401.png" /><span>鞋柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077563606031095.png" /><span>客厅套装</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077578034865989.png" /><span>饰品柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077592187244822.png" /><span>组合厅柜</span></a>
+									</li>
+
+								</ul>
+							</section>
+						</div>
+						<div class="scrolltab-content-item">
+							<strong class="scrolltab-content-title">卫浴用品</strong>
+							<section class="menu-right padding-all j-content">
+								<span>
+            					    <a href="#" class="access_chan">进入卫浴用品频道 &gt;&gt;</a>
+           						 </span>
+								<ul>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077480035159001.png" /><span>沙发</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077495770665548.png" /><span>茶几</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077508635307235.png" /><span>电视柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077522155228401.png" /><span>鞋柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077563606031095.png" /><span>客厅套装</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077578034865989.png" /><span>饰品柜</span></a>
+									</li>
+									<li class="w-3">
+										<a href="#"> <img src="../img/1470077592187244822.png" /><span>组合厅柜</span></a>
+									</li>
+
+								</ul>
+							</section>
+						</div>
+						<div class="scrolltab-content-item">
+							<strong class="scrolltab-content-title">在售品牌</strong>
+							<section class="menu-right padding-all j-content">
+								<span>
+            					    <a href="#" class="access_chan">进入在售品牌频道 &gt;&gt;</a>
+           						 </span>
+
+							</section>
+						</div>
+					</div>
+				</div>
+
+			</section>
+
+		</section>
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="../js/ydui.js"></script>
+		<script type="text/javascript">
+		</script>
+	</body>
+
+</html>

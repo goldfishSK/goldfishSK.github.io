@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title>商品列表</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/fen.css" />
+		<style type="text/css">
+			@media only screen and (min-width: 310px) and (max-width: 330px) {
+				.list-theme2 .list-img img {
+					width: 100%;
+					margin-top: 16px;
+				}
+			}
+		</style>
+	</head>
+
+	<body onscroll="getTop()">
+
+		<div class="mui-content">
+			<header class="mui-bar mui-bar-nav mui-bar-transparent">
+
+				<div class="mui-input-row mui-search">
+					<span class=" mui-icon mui-icon-arrowleft"></span>
+					<input type="search" class="mui-input-clear searches" id="search-input" placeholder="搜索商家、品类或商圈">
+					<span id="right" class="mui-icon mui-icon-bars"></span>
+				</div>
+
+			</header>
+			<div class="compre">
+				<ul class="compre_ul">
+					<li class="compre_li" id="compre_item1" style="color: #f23432;">热卖</li>
+					<li class="compre_li">特价</li>
+					<li class="compre_li">综合</li>
+					<li class="compre_li" id="money">精品</li>
+					<li class="compre_li" id="compre_item4">筛选</li>
+					<li class="left_li"><img src="./img/shaixuan1.png"></li>
+				</ul>
+
+			</div>
+			<section class="g-scrollview" id="J_List">
+				<div id="J_ListContent" class="m-list list-theme1">
+					<a href=" " class="list-item">
+						<div class="list-img">
+							<img src="http://img1.shikee.com/try/2016/06/19/09430120929215230041.jpg_220x220.jpg" data-url="http://img1.shikee.com/try/2016/06/19/09430120929215230041.jpg_220x220.jpg">
+						</div>
+						<div class="list-mes">
+							<h3 class="list-title"><span class="list-del-price">这个是品牌</span>2016夏天新款男士短袖t恤青少年韩版修身印花圆领半袖男装衣服潮</h3>
+							<div class="list-mes-item">
+								<div>
+									<span class="list-price"><em>¥</em>134.45</span>
+									
+								</div>
+							</div>
+							<div class="brance_name"><span class="self-supert">自营</span><span class="brance-title">这里是店铺名称</span> <span class="selling">热销</span> </div>
+						</div>
+					</a>
+
+					<a href=" " class="list-item">
+						<div class="list-img">
+							<img src="http://img1.shikee.com/try/2016/06/21/10172020923917672923.jpg_220x220.jpg" data-url="http://img1.shikee.com/try/2016/06/21/10172020923917672923.jpg_220x220.jpg">
+						</div>
+						<div class="list-mes">
+							<h3 class="list-title"><span class="list-del-price">这个是品牌</span>骆驼男装2016夏装男士短袖T恤 圆领衣服 印花男装体恤 半袖打底衫</h3>
+							<div class="list-mes-item">
+								<div>
+									<span class="list-price"><em>¥</em>334.45</span>
+									
+								</div>
+							</div>
+							<div class="brance_name"><span class="self-supert">自营</span><span class="brance-title">这里是店铺名称</span> <span class="selling">热销</span> </div>
+						</div>
+					</a>
+
+					<a href=" " class="list-item">
+						<div class="list-img">
+							<img src="http://img1.shikee.com/try/2016/06/23/15395220917905380014.jpg_220x220.jpg" data-url="http://img1.shikee.com/try/2016/06/23/15395220917905380014.jpg_220x220.jpg">
+						</div>
+						<div class="list-mes">
+							<h3 class="list-title"><span class="list-del-price">这个是品牌</span>条纹短袖T恤男士韩版衣服大码潮流男装夏季圆领体恤2016新款半袖</h3>
+							<div class="list-mes-item">
+								<div>
+									<span class="list-price"><em>¥</em>344.45</span>
+									
+								</div>
+							</div>
+							<div class="brance_name"><span class="self-supert">自营</span><span class="brance-title">这里是店铺名称</span> <span class="selling">热销</span> </div>
+						</div>
+					</a>
+
+					<a href=" " class="list-item">
+						<div class="list-img">
+							<img src="http://img1.shikee.com/try/2016/06/25/14244120933639105658.jpg_220x220.jpg" data-url="http://img1.shikee.com/try/2016/06/25/14244120933639105658.jpg_220x220.jpg">
+						</div>
+						<div class="list-mes">
+							<h3 class="list-title"><span class="list-del-price">这个是品牌</span>夏季青少年衣服男生潮牌t恤 男士 夏秋学生 日系棉短袖半袖男小衫</h3>
+							<div class="list-mes-item">
+								<div>
+									<span class="list-price"><em>¥</em>34.45</span>
+									
+								</div>
+							</div>
+							<div class="brance_name"><span class="self-supert">自营</span><span class="brance-title">这里是店铺名称</span> <span class="selling">热销</span> </div>
+						</div>
+					</a>
+
+					<a href=" " class="list-item">
+						<div class="list-img">
+							<img src="http://img1.shikee.com/try/2016/06/26/12365720933909085511.jpg_220x220.jpg" data-url="http://img1.shikee.com/try/2016/06/26/12365720933909085511.jpg_220x220.jpg">
+						</div>
+						<div class="list-mes">
+							<h3 class="list-title"><span class="list-del-price">这个是品牌</span>2016夏装新款时尚潮流短袖T恤男纯棉V领日系青少年韩版夏季上衣服</h3>
+							<div class="list-mes-item">
+								<div>
+									<span class="list-price"><em>¥</em>34.7</span>
+									
+								</div>
+							</div>
+							<div class="brance_name"><span class="self-supert">自营</span><span class="brance-title">这里是店铺名称</span> <span class="selling">热销</span> </div>
+						</div>
+					</a>
+
+					<a href=" " class="list-item">
+						<div class="list-img">
+							<img src="http://img1.shikee.com/try/2016/06/23/14381920926024616259.jpg_220x220.jpg" data-url="http://img1.shikee.com/try/2016/06/23/14381920926024616259.jpg_220x220.jpg">
+						</div>
+						<div class="list-mes">
+							<h3 class="list-title"><span class="list-del-price">这个是品牌</span>男装衣服男夏t恤 男士短袖t恤圆领夏季潮牌宽松原宿风半截袖男</h3>
+							<div class="list-mes-item">
+								<div>
+									<span class="list-price"><em>¥</em>39.45</span>
+									
+								</div>
+							</div>
+							<div class="brance_name"><span class="self-supert">自营</span><span class="brance-title">这里是店铺名称</span> <span class="selling">热销</span> </div>
+						</div>
+					</a>
+
+					<a href=" " class="list-item">
+						<div class="list-img">
+							<img src="http://static.ydcss.com/uploads/ydui/goods_default.jpg" data-url="http://img1.shikee.com/try/2016/07/06/12154120902559544523.jpg_220x220.jpg">
+						</div>
+						<div class="list-mes">
+							<h3 class="list-title"><span class="list-del-price">这个是品牌</span>夏装新款亚麻短袖t恤男韩版修身棉麻半袖t恤衫潮男装薄款夏季衣服</h3>
+							<div class="list-mes-item">
+								<div>
+									<span class="list-price"><em>¥</em>34.4</span>
+									
+								</div>
+							</div>
+							<div class="brance_name"><span class="self-supert">自营</span><span class="brance-title">这里是店铺名称</span> <span class="selling">热销</span> </div>
+						</div>
+					</a>
+
+					<a href=" " class="list-item">
+						<div class="list-img">
+							<img src="http://static.ydcss.com/uploads/ydui/goods_default.jpg" data-url="http://img1.shikee.com/try/2016/09/28/14575020926479478831.jpg_220x220.jpg">
+						</div>
+						<div class="list-mes">
+							<h3 class="list-title">	<span class="list-del-price">这个是品牌</span>买一送二新款青少年潮男大码T恤 学生字半袖修身款衣服半截袖青年</h3>
+							<div class="list-mes-item">
+								<div>
+									<span class="list-price"><em>¥</em>34.45</span>
+								
+								</div>
+							</div>
+							<div class="brance_name"><span class="self-supert">自营</span><span class="brance-title">这里是店铺名称</span> <span class="selling">热销</span> </div>
+						</div>
+					</a>
+
+					<a href=" " class="list-item">
+						<div class="list-img">
+							<img src="http://static.ydcss.com/uploads/ydui/goods_default.jpg" data-url="http://img1.shikee.com/try/2016/09/14/15383120913857087526.jpg_220x220.jpg">
+						</div>
+						<div class="list-mes">
+							<h3 class="list-title">	<span class="list-del-price"> 这个是品牌</span>男士长袖t恤男款体恤男装衣服男春装薄款圆领纯棉T恤男打底衫白色</h3>
+							<div class="list-mes-item">
+								<div>
+									<span class="list-price"><em>¥</em>64.45</span>
+								
+								</div>
+							</div>
+							<div class="brance_name"><span class="self-supert">自营</span><span class="brance-title">这里是店铺名称</span> <span class="selling">热销</span> </div>
+						</div>
+					</a>
+
+					<a href=" " class="list-item">
+						<div class="list-img">
+							<img src="http://static.ydcss.com/uploads/ydui/goods_default.jpg" data-url="http://img1.shikee.com/try/2016/06/03/12173920932544716516.jpg_220x220.jpg">
+						</div>
+						<div class="list-mes">
+							<h3 class="list-title"><span class="list-del-price">这个是品牌</span>superman短袖t恤日潮牌男士日韩夏装水洗做旧修身个性短袖t恤衣服</h3>
+							<div class="list-mes-item">
+								<div>
+									<span class="list-price"><em>¥</em>34.45</span>
+									
+								</div>
+							</div>
+							<div class="brance_name"><span class="self-supert">自营</span><span class="brance-title">这里是店铺名称</span> <span class="selling">热销</span> </div>
+						</div>
+					</a>
+				</div>
+				<div class="J_InfiniteScrollTag"></div>
+				<div class="list-loading" style="display: none;"><img src="http://static.ydcss.com/uploads/ydui/loading/loading10.svg"></div>
+			</section>
+
+		</div>
+		<a href="" class="cart-link"></a>
+		<div class="screen_view">
+			<div class="sv_lift"></div>
+			<div class="sv_content">
+				<div class="svc_nav">
+					<span class="svcn_span"><i class="mui-icon mui-icon-arrowleft"></i></span>
+					<h4>筛选</h4>
+				</div>
+				<div class="baoguo">
+					<form>
+						<ul class="svc_ul">
+							<li class="svc_li">
+								<!--推荐-->
+								<div class="svclpp_div"><span class="svclpp_span">推荐</span>
+									<span class="clickzed"></span>
+									<span class="svclpp_span1 mui-icon mui-icon-arrowup"></span>
+
+								</div>
+								<ul class="svcsl_ul">
+
+									<li class="svclus_li">
+										<a href="">团购</a>
+									</li>
+									<li class="svclus_li">
+										<a href="">热卖</a>
+									</li>
+									<li class="svclus_li">
+										<a href="">精品</a>
+									</li>
+
+								</ul>
+							</li>
+							<!--风格-->
+							<li class="svc_li">
+								<div class="svclpp_div"><span class="svclpp_span">风格</span>
+									<span class="clickzed"></span>
+									<span class="svclpp_span1 mui-icon mui-icon-arrowup"></span>
+								</div>
+								<ul class="svcsl_ul">
+
+									<!--英式-->
+									<li class="svclus_li">
+										<a href="">韩式风格韩式风格韩式风格韩式风格韩式风格韩式风格韩式风格</a>
+									</li>
+									<li class="svclus_li">
+										<a href="">法式风格</a>
+									</li>
+									<li class="svclus_li">
+										<a href="">地中海</a>
+									</li>
+									<li class="svclus_li">
+										<a href="">美式风格</a>
+									</li>
+									<li class="svclus_li">
+										<a href="">精美奢华</a>
+									</li>
+									<li class="svclus_li">
+										<a href="">传统中式</a>
+									</li>
+
+								</ul>
+							</li>
+							<!--材质 secence-->
+							<li class="svc_li">
+								<div class="svclpp_div"><span class="svclpp_span">材质</span>
+									<span class="clickzed"></span>
+									<span class="svclpp_span1 mui-icon mui-icon-arrowup"></span>
+								</div>
+								<ul class="svcsl_ul">
+
+									<li class="svclus_li">
+										<a href="">蝴蝶石</a>
+									</li>
+									<li class="svclus_li">
+										<a href="">实木布艺</a>
+									</li>
+									<li class="svclus_li">
+										<a href="">其他材质</a>
+									</li>
+
+								</ul>
+							</li>
+							<!--价格 money-->
+							<li class="svc_li">
+								<div class="svclpp_div"><span class="svclpp_span">价格</span>
+									<span class="clickzed"></span>
+									<span class="svclpp_span1 mui-icon mui-icon-arrowup"></span>
+								</div>
+								<ul class="svcsl_ul">
+
+									<li class="svclus_li">
+										<a href="">0-1000元</a>
+									</li>
+									<li class="svclus_li">
+										<a href="">1000-1999元</a>
+									</li>
+									<li class="svclus_li">
+										<a href="">2000-2999元</a>
+									</li>
+									<li class="svclus_li">
+										<a href="">3000-3999元</a>
+									</li>
+									<li class="svclus_li">
+										<a href="">4000-4999元</a>
+									</li>
+									<li class="svclus_li">
+										<a href="">5000元以上</a>
+									</li>
+
+								</ul>
+							</li>
+							<!--品牌 pp-->
+							<li class="svc_li">
+								<div class="svclpp_div"><span class="svclpp_span">品牌</span>
+									<span class="clickzed"></span>
+									<span class="svclpp_span1 mui-icon mui-icon-arrowup"></span>
+								</div>
+								<ul class="svcsl_ul">
+
+									<li class="svclus_li li_img">
+										<a href=""><img src="./img/xifan.png" alt=""></a>
+									</li>
+									<li class="svclus_li li_img">
+										<a href=""><img src="./img/xifan.png" alt=""></a>
+									</li>
+									<li class="svclus_li li_img">
+										<a href=""><img src="./img/xifan.png" alt=""></a>
+									</li>
+									<li class="svclus_li li_img">
+										<a href=""><img src="./img/xifan.png" alt=""></a>
+									</li>
+									<li class="svclus_li li_img">
+										<a href=""><img src="./img/xifan.png" alt=""></a>
+									</li>
+									<li class="svclus_li li_img">
+										<a href=""><img src="./img/xifan.png" alt=""></a>
+									</li>
+									<li class="svclus_li li_img">
+										<a href="javascript:;"><img src="./img/xifan.png" alt=""></a>
+									</li>
+
+								</ul>
+							</li>
+						</ul>
+						<div class="foot_btn">
+							<div class="fb_item fb_item2" id="fb_item2">取消</div>
+							<input type="submit" class="fb_item" id="fb_item3" value="确定">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<div class="mask">
+			<div class="mask-content">
+				<div class="colu">
+
+					<ul class="colu_ul">
+						<li>
+							<a href="">
+								<img src="img/分类.png" alt="">
+								<span>分类</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="img/建筑基材.png" alt="">
+								<span>建材城</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="img/家具宠物.png" alt="">
+								<span>家具城</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="img/食物&amp;器皿－电饭煲.png" alt="">
+								<span>电器城</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="img/家装助理.png" alt="">
+								<span>装修服务</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="img/门市店铺.png" alt="">
+								<span>体验店</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="img/收藏 (1).png" alt="">
+								<span>我的收藏</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="img/活动.png" alt="">
+								<span>热门活动</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="img/购物车.png" alt="">
+								<span>购物车</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="img/个人中心.png" alt="">
+								<span>个人中心</span>
+							</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+			
+		</div>
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui('.mui-bar-transparent').transparent({
+				top: 0,
+				offset: 180,
+				duration: 10,
+				scrollby: document.querySelector('.mui-scroll-wrapper')
+			})
+			//  热卖 特价
+			mui(".compre_ul").on('tap', '.compre_li', function() {
+
+				$(".compre_li").css("color", "#000");
+				$(this).css("color", "#f23432");
+				console.log($(this).index());
+				if($(this).index() =="4"){
+					window.location.assign('YDUIshaixuan.html')
+				}
+			})
+			//   back
+
+			mui(".mui-input-row").on('tap', '.mui-icon-arrowleft', function() {
+
+				history.back();
+			})
+			//   列表展示形式切换
+			mui(".compre_ul").on('tap', '.left_li', function() {
+
+				if($("#J_ListContent").hasClass("list-theme1")) {
+					$("#J_ListContent").removeClass("list-theme1").addClass("list-theme2");
+				} else {
+					$("#J_ListContent").removeClass("list-theme2").addClass("list-theme1");
+				}
+
+			});
+
+
+
+			$("#search-input").focus(function() {
+				console.log("跳转去搜索界面")
+//				window.location.assign("sousuo.html")
+			})
+
+
+
+			//   透明导航
+			function getTop() {
+				var color = $("header").css("background-color")
+				$(".compre_ul").css({
+
+					"background-color": color
+				})
+			}
+			//    筛选加载
+			//			var html = ret.list + '将数据拼接成html';
+			//                  $('#J_ListContent').append(html);
+
+			$(".svclpp_span1").click(function() {
+
+				var ul = $(this).parents(".svc_li").find(".svcsl_ul");
+				console.log(ul);
+
+				for(var i = 0; i < 5; i++) {
+					var li = document.createElement("li");
+
+					li.className = "svclus_li";
+					var li_a = document.createElement("a");
+					li_a.innerText = "添加的";
+					li_a.href = "";
+					li.append(li_a);
+					$(ul).append(li);
+				}
+				$(this).css("transform", "rotate(180deg)")
+
+			})
+			//   取消 确定
+			$(".foot_btn").click(function(){
+				$(".screen_view").hide();
+			})
+			$(".svcn_span").click(function(){
+				$(".screen_view").hide();
+			})
+			//  回首页
+			$(".mask-content").click(function(){
+				$(".mask").hide();
+			})
+			//
+			$("#right").click(function(){
+				$(".mask").show();
+				$("header").css("background","#F7F7F7");
+				$(".compre_ul").css("background","#F7F7F7")
+			})
+		</script>
+
+		<script type="text/javascript">
+		</script>
+	</body>
+
+</html>

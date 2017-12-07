@@ -1,0 +1,46 @@
+.strong-title{
+	display: block;
+	font-size: 17px;
+	line-height: 24px;
+}
+.grids-txt span{
+	display: block;
+	text-align: left;
+	text-indent: 10px;
+	line-height: 24px;
+	font-size: 14px;
+	color: #CF2D28;
+}
+.grids-txt{
+	height: 2rem;
+}
+.grids-txt img{
+	    width: 100%;
+    margin: 0 auto;
+}
+.notBorder:before{
+	border-right: 0 !important;
+}
+.fanzhuan{
+	    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+}
+.aotu-y{
+	height: 3rem;
+}
+.aotu-y img{
+	margin-top: 0.3rem;
+}
+.adver-img{
+	padding: 10px 0px;
+}
+.adver-img-span{
+	display: block;
+	width: 100%;
+	height: 60px;
+	background: url("../img/advier.png") no-repeat;
+	background-size: 100% 60px;
+}

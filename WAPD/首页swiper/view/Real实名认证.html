@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title></title>
+		<link rel="stylesheet" href="../css/ydui.css" />
+		<script src="../js/ydui.flexible.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.m-cell{
+				margin-top: 1.5rem;
+			}
+			.btn-danger{
+				width: 75%;
+				height: 0.8rem;
+				line-height: 0.8rem;
+				margin:  0 auto;
+				margin-top: 1rem;
+			}
+			.navbar-title{
+				font-size: 0.33rem !important;
+			}
+			.btn-warning{
+				background: #EF4F4F !important;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<header class="m-navbar">
+			<a href="#" class="navbar-item">
+				<i class="back-ico"></i>
+			</a>
+			<div class="navbar-center">
+				<span class="navbar-title">实名认证</span>
+			</div>
+
+		</header>
+		
+		<div class="m-cell">
+			<div class="cell-item">
+				<div class="cell-left">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</div>
+				<div class="cell-right"><input type="text" id="phone" class="cell-input" placeholder="姓名" autocomplete="off" />
+				
+				</div>
+			</div>
+			<div class="cell-item">
+				<div class="cell-left">身份证号：</div>
+				<div class="cell-right"><input type="number" id="code" pattern="[0-9]*" class="cell-input" placeholder="身份证号" autocomplete="off" />
+
+				</div>
+			</div>
+		</div>
+        <button type="submit" class="btn-block btn-danger" disabled="disabled">确认</button>
+
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/ydui.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			
+			//   修改验证确认
+			$(".btn-danger").on("click",function(){
+                  
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title></title>
+		<link rel="stylesheet" href="../css/ydui.css" />
+		<script src="../js/ydui.flexible.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			::-webkit-scrollbar {
+				width: 1px;
+				float: right;
+			}
+			
+			::-webkit-scrollbar:horizontal {
+				height: 0em;
+			}
+			
+			.btn-danger {
+				width: 75%;
+				height: 0.8rem;
+				line-height: 0.8rem;
+				margin: 0 auto;
+				margin-top: 1rem;
+			}
+			
+			.tab-panel-item {
+				padding: 0 !important;
+			}
+			
+			.navbar-title {
+				font-size: 0.33rem !important;
+			}
+			
+			.btn-warning {
+				background: #EF4F4F !important;
+			}
+			
+			body {
+				background: #FFFFFF;
+			}
+			
+			.content {
+				padding-bottom: 20px;
+				border-bottom: 1px solid #DDDDDD;
+			}
+			
+			.icon-con ul li {
+				display: inline-block;
+				width: 24%;
+				text-align: center;
+				color: #B2B3BA;
+				margin-top: 5px;
+			}
+			
+			.icon-con ul li img {
+				display: block;
+				width: 70%;
+				margin: 0 auto;
+			}
+			
+			.title {
+				margin-top: 1.2rem;
+				font-weight: 100;
+				line-height: 24px;
+				font-size: 0.25rem;
+				display: inline-block;
+				padding-left: 10px;
+			}
+			
+			.title2 {
+				margin-top: 10px;
+			}
+			
+			.title:before {
+				content: "";
+				background-color: #ff3344;
+				height: 15px;
+				width: 2px;
+				position: absolute;
+				left: 0px;
+				margin-top: 4px;
+			}
+			
+			.tab-nav-item,
+			.cell-left {
+				font-size: 0.26rem !important;
+				color: #686868;
+			}
+			
+			.cell-item:not(:last-child):after,
+			.m-cell:after {
+				content: '';
+				z-index: 0;
+				left: 0;
+				height: 1px;
+				width: 100%;
+				bottom: 1px;
+			}
+			
+			.cell-right {
+				min-height: 0.75rem !important;
+			}
+			
+			.m-navbar {
+				height: .9rem;
+				position: fixed;
+				display: flex;
+				background-color: rgba(255, 255, 255, .98);
+				top: 0;
+				z-index: 88;
+				width: 100%;
+				left: 0;
+				right: 0;
+			}
+			
+			#YDUI_CONFRIM {
+				display: none;
+				overflow: scroll;
+			}
+			
+			.m-confirm {
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<header class="m-navbar">
+			<a href="#" class="navbar-item">
+				<i class="back-ico"></i>
+			</a>
+			<div class="navbar-center">
+				<span class="navbar-title">客户服务</span>
+			</div>
+
+		</header>
+
+		<div class="content">
+			<h3 class="title">自主服务</h3>
+
+			<div class="icon-con">
+				<ul>
+
+					<li>
+						<img src="../img/tianping.png" />
+						<p>交易纠纷</p>
+					</li>
+					<li>
+						<img src="../img/shezhi.png" />
+						<p>退换/售后</p>
+					</li>
+					<li>
+						<img src="../img/zhanghao.png" />
+						<p>账号申诉</p>
+					</li>
+					<li>
+						<img src="../img/zhuangxiu.png" />
+						<p>安装服务</p>
+					</li>
+					<li>
+						<img src="../img/naozhong.png" />
+						<p>订单催单</p>
+					</li>
+					<li>
+						<img src="../img/huoyun.png" />
+						<p>配送服务</p>
+					</li>
+					<li>
+						<img src="../img/dingwei.png" />
+						<p>自提查询</p>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<h3 class="title title2">帮助中心</h3>
+		<div id="J_Tab" class="m-tab">
+			<ul class="tab-nav">
+				<li class="tab-nav-item tab-active">
+					<a href="javascript:;">常见问题</a>
+				</li>
+				<li class="tab-nav-item">
+					<a href="javascript:;">订单类</a>
+				</li>
+				<li class="tab-nav-item">
+					<a href="javascript:;">配送类</a>
+				</li>
+				<li class="tab-nav-item">
+					<a href="javascript:;">售后类</a>
+				</li>
+				<li class="tab-nav-item">
+					<a href="javascript:;">财务类</a>
+				</li>
+				<li class="tab-nav-item">
+					<a href="javascript:;">账户类</a>
+				</li>
+			</ul>
+			<div class="tab-panel">
+				<div class="tab-panel-item tab-active">
+					<div class="m-cell">
+						<div class="cell-item">
+							<div class="cell-left changjian">如何修改个人信息</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left changjian">忘记支付密码怎么办</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left changjian">退换/售后申请在哪里查看进度</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left changjian">如何区分全名网自营商品和第三方卖家销售的商品</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left changjian">购买的家电类产品多长时间可以上门安装</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left changjian">电子发票可以用于商品维修吗</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left changjian">付款方式有哪些</div>
+							<div class="cell-right"></div>
+						</div>
+
+					</div>
+
+				</div>
+				<!--  订单类 -->
+				<div class="tab-panel-item">
+					<div class="m-cell">
+
+						<div class="cell-item">
+							<div class="cell-left dingdanlei">如何更新交易纠纷单内容</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left dingdanlei">订单拒收后，多久退款</div>
+							<div class="cell-right"></div>
+						</div>
+
+						<div class="cell-item">
+							<div class="cell-left dingdanlei">订单如何取消</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left dingdanlei">订单取消后还能恢复吗</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left dingdanlei">我的订单取消后，多久退款给我退到哪</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left dingdanlei">取消订单注意事项有哪些</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left dingdanlei">违规订单处理规则</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left dingdanlei">订单状态显示商品已发货，什么时候可以给客户送达</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left dingdanlei">订单有哪些状态 </div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left dingdanlei">我的订单为什么会被拆分</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left dingdanlei">为什么我的订单状态一直没有变化</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left dingdanlei">页面显示有货的商品，为什么下单会显示无货呢</div>
+							<div class="cell-right"></div>
+						</div>
+					</div>
+
+				</div>
+				<!-- 配送类 -->
+				<div class="tab-panel-item">
+					<div class="m-cell">
+						<div class="cell-item ">
+							<div class="cell-left peisonglei">物流显示派件，几天未送到，怎么办</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left peisonglei">订单多久能发货</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left peisonglei">快递单号查不到配送信息，怎么办</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left peisonglei">我的订单可以提前配送吗</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left peisonglei">我的订单可以延迟收货吗</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left peisonglei">收到的商品不是自己订单内的商品怎么办</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left peisonglei">为何物流显示签收，却没有收到</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left peisonglei">收到的商品少了/发错了怎么办</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left peisonglei">付款以后可以当场验收商品吗</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left peisonglei">签收时发现商品包装破损，该如何处理</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left peisonglei">拒收自营商品是否需要收取运费</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left peisonglei">配送过程中，物品损坏，怎么办</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left peisonglei">我能指定某一个快递公司送货吗</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left peisonglei">可以指定送货时间吗</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left peisonglei">什么是自提</div>
+							<div class="cell-right"></div>
+						</div>
+
+					</div>
+				</div>
+				<!-- 售后类 -->
+				<div class="tab-panel-item">
+					<div class="m-cell">
+						<div class="cell-item">
+							<div class="cell-left shouhoulei">什么样的情况会收取退换货的运费</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left shouhoulei">收货后发现少商品，怎么办</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left shouhoulei">是否能更换同等价格的不同商品</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left shouhoulei">发票丢了，是否可以退货</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left shouhoulei">什么是退换货运费险</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left shouhoulei">不支持退换货的情况(第三方)</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left shouhoulei">自营商品退换货、维修需要多长时间</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left shouhoulei">我刚刚申请了退货，可不可以帮我换成换货</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left shouhoulei">退货/换货地址是哪里</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left shouhoulei">什么时候审核售后服务单申请</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left shouhoulei">网上退换货申请提交后发现出错如何修改</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left shouhoulei">我的退款会给我退到哪里</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left shouhoulei">退款成功后会有提醒吗</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left shouhoulei">我的退款为什么少了</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left shouhoulei">预约安装的商品可以指定送货时间吗</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left shouhoulei">可以指定安装时间吗</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left shouhoulei">可以上门安装吗</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left shouhoulei">安装服务注意事项</div>
+							<div class="cell-right"></div>
+						</div>
+
+					</div>
+				</div>
+				<!-- 财务类 -->
+				<div class="tab-panel-item">
+					<div class="m-cell">
+						<div class="cell-item">
+							<div class="cell-left caiwulei">怎么修改增票资质信息</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left caiwulei">如何获得增值税发票</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left caiwulei">支付方式有哪些</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left caiwulei">配送收取金额与订单金额不一致如何处理</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left caiwulei">订单已提交成功后，如何付款</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left caiwulei">余额提现为什么不成功</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left caiwulei">余额提现怎么操作</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left caiwulei">换货/维修商品发票什么时候返还</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left caiwulei">收到的发票有误，怎么办呢</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left caiwulei">已经收到纸质发票，还可以修改发票内容吗</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left caiwulei">如何设置发票信息</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left caiwulei">怎么换普通发票</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left caiwulei">如何获得普通纸质发票</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left caiwulei">开发票的注意事项</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left caiwulei">收到商品为何没有发票</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left caiwulei">发票开具非明细内容是否享受保修</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left caiwulei">订单开具了电子发票，如何办理退换货</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left caiwulei">电子发票可以用于商品维修吗</div>
+							<div class="cell-right"></div>
+						</div>
+
+					</div>
+				</div>
+				<!-- 账户类 -->
+				<div class="tab-panel-item">
+					<div class="m-cell">
+						<div class="cell-item">
+							<div class="cell-left zhanghulei">已绑定的手机号不能正常使用，如何修改原来绑定的手机号码</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left zhanghulei">已绑定的手机号可正常使用，如何修改原来绑定的手机号码</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left zhanghulei">想要修改会员名（账户名）怎么办</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left zhanghulei">如何注销账户</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left zhanghulei">注销账户有什么影响</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item zhanghulei">
+							<div class="cell-left">注册了很多账户，现在不需要了可以注销吗</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left zhanghulei">违规京东账号处理规则</div>
+							<div class="cell-right"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left zhanghulei">如何提高账户安全等级</div>
+							<div class="cell-right"></div>
+						</div>
+
+					</div>
+				</div>
+				<!--<div class="tab-panel-item">333333</div>-->
+			</div>
+		</div>
+		<div class="mask-black-dialog" id="YDUI_CONFRIM">
+			<div class="m-confirm">
+				<div class="confirm-hd"><strong class="confirm-title">全名网</strong></div>
+				<div class="confirm-bd" id="yaoshuode">我有一个小毛驴我从来也不骑！</div>
+				<div class="confirm-ft">
+					<a href="javascript:;" class="confirm-btn default">取消</a>
+					<a href="javascript:;" class="confirm-btn primary">确定</a>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/ydui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/question.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var $tab = $('#J_Tab');
+
+			$tab.tab({
+				nav: '.tab-nav-item',
+				panel: '.tab-panel-item',
+				activeClass: 'tab-active'
+			});
+
+			$tab.find('.tab-nav-item').on('open.ydui.tab', function(e) {
+				//				console.log('索引：%s - [%s]正在打开', e.index, $(this).text());
+			});
+
+			$tab.find('.tab-nav-item').on('opened.ydui.tab', function(e) {
+				//				console.log('索引：%s - [%s]已经打开了', e.index, $(this).text());
+			});
+			console.log(quertion)
+
+			function close() {
+				$("#YDUI_CONFRIM").css({
+					"display": "none"
+				})
+				$(".m-confirm").css({
+					"top": ""
+				})
+			}
+
+			function getHeight() {
+				$("body #yaoshuode").height();
+				if($("body #yaoshuode").height() >= screen.availHeight) {
+					$(".m-confirm").css({
+						"top": "50px"
+					})
+				}
+			}
+			$(".default").click(function() {
+				close()
+			})
+			$(".primary").click(function() {
+				close()
+			})
+			$("#YDUI_CONFRIM").click(function() {
+				close()
+			})
+
+			$(".cell-item").on("click", function() {
+
+				function getDate(arr1, arr2) {
+					var index = arr2.index();
+					var da = quertion[arr1];
+					var daa = da[0];
+					var arr = [];
+					for(var i in daa) {
+						arr.push(daa[i])
+					}
+					//					console.log(arr[index])
+					return(arr[index]);
+				}
+
+				if($($(this).find(".cell-left")).hasClass("changjian")) {
+					$(".confirm-title").text($(this).text().trim())
+
+					$("#YDUI_CONFRIM").css({
+						"display": "flex"
+					});
+					$("#yaoshuode").html(getDate("changjian", $(this)))
+					getHeight()
+				}
+				if($($(this).find(".cell-left")).hasClass("dingdanlei")) {
+					$(".confirm-title").text($(this).text().trim())
+					$("#YDUI_CONFRIM").css({
+						"display": "flex"
+					});
+					$("#yaoshuode").html(getDate("dingdanlei", $(this)))
+					getHeight()
+				}
+				if($($(this).find(".cell-left")).hasClass("peisonglei")) {
+					$(".confirm-title").text($(this).text().trim())
+					$("#YDUI_CONFRIM").css({
+						"display": "flex"
+					});
+					$("#yaoshuode").html(getDate("peisonglei", $(this)))
+					getHeight()
+				}
+				if($($(this).find(".cell-left")).hasClass("shouhoulei")) {
+					$(".confirm-title").text($(this).text().trim())
+					$("#YDUI_CONFRIM").css({
+						"display": "flex"
+					});
+					$("#yaoshuode").html(getDate("shouhoulei", $(this)))
+					getHeight()
+				}
+				if($($(this).find(".cell-left")).hasClass("caiwulei")) {
+					$(".confirm-title").text($(this).text().trim())
+					$("#YDUI_CONFRIM").css({
+						"display": "flex"
+					});
+					$("#yaoshuode").html(getDate("caiwulei", $(this)))
+					getHeight()
+
+				}
+				if($($(this).find(".cell-left")).hasClass("zhanghulei")) {
+
+					$(".confirm-title").text($(this).text().trim())
+					$("#YDUI_CONFRIM").css({
+						"display": "flex"
+					});
+					$("#yaoshuode").html(getDate("zhanghulei", $(this)))
+					getHeight()
+
+				}
+
+			})
+		</script>
+	</body>
+
+</html>

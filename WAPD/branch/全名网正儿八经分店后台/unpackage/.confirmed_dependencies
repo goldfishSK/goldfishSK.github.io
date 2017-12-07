@@ -1,0 +1,131 @@
+{
+  "news.html": {
+    "href": "news.html",
+    "resources": [
+      "css/mui.min.css",
+      "img/40X40.png",
+      "js/mui.js",
+      "view/Profit.html"
+    ],
+    "refer": [
+      "home.html"
+    ],
+    "priority": 0
+  },
+  "view/BranchList.html": {
+    "href": "view/BranchList.html",
+    "resources": [
+      "css/ydui.css",
+      "js/ydui.flexible.js",
+      "css/Manger.css",
+      "js/jquery.min.js",
+      "js/ydui.js",
+      "img/40X40.png"
+    ],
+    "refer": [
+      "home.html"
+    ],
+    "priority": 0
+  },
+  "view/BranchUserList.html": {
+    "href": "view/BranchUserList.html",
+    "resources": [
+      "css/ydui.css",
+      "js/ydui.flexible.js",
+      "js/jquery.min.js",
+      "js/ydui.js"
+    ],
+    "refer": [
+      "home.html"
+    ],
+    "priority": 0
+  },
+  "view/ManagerList.html": {
+    "href": "view/ManagerList.html",
+    "resources": [
+      "css/ydui.css",
+      "js/ydui.flexible.js",
+      "css/Manger.css",
+      "js/jquery.min.js",
+      "js/ydui.js",
+      "img/40X40.png"
+    ],
+    "refer": [
+      "home.html"
+    ],
+    "priority": 0
+  },
+  "view/ManagerUserList.html": {
+    "href": "view/ManagerUserList.html",
+    "resources": [
+      "css/ydui.css",
+      "css/Manger.css",
+      "js/ydui.flexible.js",
+      "js/jquery.min.js",
+      "js/ydui.js"
+    ],
+    "refer": [
+      "home.html"
+    ],
+    "priority": 0
+  },
+  "view/qrCode.html": {
+    "href": "view/qrCode.html",
+    "resources": [
+      "js/jquery.min.js"
+    ],
+    "refer": [
+      "index.html",
+      "home.html"
+    ],
+    "priority": 0
+  },
+  "home.html": {
+    "href": "home.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/style.css",
+      "js/mui.min.js",
+      "img/40X40.png"
+    ],
+    "refer": [
+      "news.html",
+      "view/BranchList.html",
+      "view/BranchUserList.html",
+      "view/ManagerList.html",
+      "view/ManagerUserList.html",
+      "index.html",
+      "view/qrCode.html",
+      "view/tabPay.html"
+    ],
+    "priority": 0
+  },
+  "index.html": {
+    "href": "index.html",
+    "resources": [
+      "css/ydui.css",
+      "js/ydui.flexible.js",
+      "js/jquery.min.js",
+      "js/ydui.js"
+    ],
+    "refer": [
+      "home.html"
+    ],
+    "priority": 0
+  },
+  "view/tabPay.html": {
+    "href": "view/tabPay.html",
+    "resources": [
+      "css/ydui.css",
+      "js/ydui.flexible.js",
+      "js/jquery.min.js",
+      "js/touchslider.js",
+      "js/ydui.js",
+      "img/nomore.png"
+    ],
+    "refer": [
+      "home.html"
+    ],
+    "priority": 0
+  }
+}

@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="format-detection" content="telephone=no">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title>手机购物车商品结算</title>
+
+		<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/gouwuche.js"></script>
+
+		<link type="text/css" rel="stylesheet" href="../css/init.css" />
+		<link type="text/css" rel="stylesheet" href="../css/gouwuche.css" />
+		<style>
+			@media screen and (min-width: 320px) {
+				.input.check {
+					left: 5px;
+				}
+				.shop-info .shop-info-img {
+					width: 80px;
+					left: 40px;
+				}
+				.shop-info .shop-info-text {
+					margin-left: 115px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<!--头部开始-->
+		<div class="header">
+			<h1>购物车</h1>
+			<a href="#" class="back"><span></span></a>
+			<a href="#" class=""></a>
+		</div>
+		<!--头部结束-->
+		<div class="shopping">
+
+			<div class="shop-group-item">
+				<div class="shop-name">
+					<input type="checkbox" class="check goods-check shopCheck">
+					<h4><a href="#">苹果专卖店</a></h4>
+					<div class="coupons"><span class="edit">编辑</span></div>
+				</div>
+				<ul>
+					<li>
+						<div class="shop-info">
+							<input type="checkbox" class="check goods-check goodsCheck">
+							<div class="shop-info-img">
+								<a href="#"><img src="../img/computer.jpg" /></a>
+							</div>
+							<div class="shop-info-text">
+								<h4>Apple MacBook Pro 13.3英寸笔记本电脑 银色(Core i5 处理器/8GB内存/128GB SSD闪存/Retina屏 MF839CH/A)</h4>
+								<div class="shop-brief"><span>重量:3.3kg</span><span>颜色:标配版</span><span>版本:13.3英寸</span></div>
+								<div class="shop-price">
+									<div class="shop-pices">￥<b class="price">100.00</b></div>
+									<div class="shop-arithmetic">
+										<a href="javascript:;" class="minus">-</a>
+										<input class="num" value="1" maxlength="4" onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+										<a href="javascript:;" class="plus">+</a>
+									</div>
+									<div class="yunfei">含运费(<span class="yunfeis">300</span>)</div>
+								</div>
+							</div>
+							<div class="shop-info-move">
+								<span>删除</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="shop-info">
+							<input type="checkbox" class="check goods-check goodsCheck">
+							<div class="shop-info-img">
+								<a href="#"><img src="../img/computer.jpg" /></a>
+							</div>
+							<div class="shop-info-text">
+								<h4>Apple MacBook Pro 13.3英寸笔记本电脑 银色(Core i5 处理器/8GB内存/128GB SSD闪存/Retina屏 MF839CH/A)</h4>
+								<div class="shop-brief"><span>重量:3.3kg</span><span>颜色:标配版</span><span>版本:13.3英寸</span></div>
+								<div class="shop-price">
+									<div class="shop-pices">￥<b class="price">100.00</b>
+
+									</div>
+									<div class="shop-arithmetic">
+										<a href="javascript:;" class="minus">-</a>
+										<input class="num" value="1" maxlength="4" onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+										<a href="javascript:;" class="plus">+</a>
+									</div>
+
+								</div>
+								<div class="yunfei">含运费(<span class="yunfeis">300</span>)</div>
+							</div>
+							<div class="shop-info-move">
+								<span>删除</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="shop-info">
+							<input type="checkbox" class="check goods-check goodsCheck">
+							<div class="shop-info-img">
+								<a href="#"><img src="../img/computer.jpg" /></a>
+							</div>
+							<div class="shop-info-text">
+								<h4>Apple MacBook Pro 13.3英寸笔记本电脑 银色(Core i5 处理器/8GB内存/128GB SSD闪存/Retina屏 MF839CH/A)</h4>
+								<div class="shop-brief"><span>重量:3.3kg</span><span>颜色:标配版</span><span>版本:13.3英寸</span></div>
+								<div class="shop-price">
+									<div class="shop-pices">￥<b class="price">100.00</b></div>
+									<div class="shop-arithmetic">
+										<a href="javascript:;" class="minus">-</a>
+										<input class="num" value="1" maxlength="4" onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+										<a href="javascript:;" class="plus">+</a>
+									</div>
+
+								</div>
+								<div class="yunfei">含运费(<span class="yunfeis">300</span>)</div>
+							</div>
+							<div class="shop-info-move">
+								<span>删除</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div>
+			</div>
+
+			<div class="shop-group-item">
+				<div class="shop-name">
+					<input type="checkbox" class="check goods-check shopCheck">
+					<h4><a href="#">苹果专卖店</a></h4>
+					<div class="coupons"><span class="edit">编辑</span>
+						<!--<span class="shop-total-amount ShopTotal">0</span>--></div>
+				</div>
+				<ul>
+					<li>
+						<div class="shop-info">
+							<input type="checkbox" class="check goods-check goodsCheck">
+							<div class="shop-info-img">
+								<a href="#"><img src="../img/computer.jpg" /></a>
+							</div>
+							<div class="shop-info-text">
+								<h4>Apple MacBook Pro 13.3英寸笔记本电脑 银色(Core i5 处理器/8GB内存/128GB SSD闪存/Retina屏 MF839CH/A)</h4>
+								<div class="shop-brief"><span>重量:3.3kg</span><span>颜色:标配版</span><span>版本:13.3英寸</span></div>
+								<div class="shop-price">
+									<div class="shop-pices">￥<b class="price">100.00</b></div>
+									<div class="shop-arithmetic">
+										<a href="javascript:;" class="minus">-</a>
+										<input class="num" value="1" maxlength="4" onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+										<a href="javascript:;" class="plus">+</a>
+									</div>
+
+								</div>
+								<div class="yunfei">含运费(<span class="yunfeis">300</span>)</div>
+							</div>
+							<div class="shop-info-move">
+								<span>删除</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="shop-info">
+							<input type="checkbox" class="check goods-check goodsCheck">
+							<div class="shop-info-img">
+								<a href="#"><img src="../img/computer.jpg" /></a>
+							</div>
+							<div class="shop-info-text">
+								<h4>Apple MacBook Pro 13.3英寸笔记本电脑 银色(Core i5 处理器/8GB内存/128GB SSD闪存/Retina屏 MF839CH/A)</h4>
+								<div class="shop-brief"><span>重量:3.3kg</span><span>颜色:标配版</span><span>版本:13.3英寸</span></div>
+								<div class="shop-price">
+									<div class="shop-pices">￥<b class="price">100.00</b></div>
+									<div class="shop-arithmetic">
+										<a href="javascript:;" class="minus">-</a>
+										<input class="num" value="1" maxlength="4" onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')">
+										<a href="javascript:;" class="plus">+</a>
+									</div>
+								</div>
+								<div class="yunfei">含运费(<span class="yunfeis">300</span>)</div>
+							</div>
+							<div class="shop-info-move">
+								<span>删除</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div>
+			</div>
+		</div>
+
+		<div class="payment-bar">
+			<div class="all-checkbox"><input type="checkbox" class="check goods-check" id="AllCheck">全选</div>
+			<div class="shop-total">
+				<strong>总价：<i class="total" id="AllTotal">0.00</i></strong>
+			</div>
+			<a href="#" class="settlement">结算</a>
+		</div>
+
+		<script>
+			//   编辑
+			ok1 = false;
+			$(".edit").click(function() {
+				if(ok1 == false) {
+					$(this).parents(".shop-group-item").find(".shop-info-text").css("width", "54%");
+					$(this).parents(".shop-group-item").find(".shop-info-move").show();
+					$(this).text("完成");
+					ok1 = true;
+					console.log(ok1);
+				} else {
+					$(this).parents(".shop-group-item").find(".shop-info-text").css("width", "auto");
+					$(this).parents(".shop-group-item").find(".shop-info-move").hide();
+					$(this).text("编辑");
+					ok1 = false;
+					console.log(ok1);
+				}
+			});
+			//   删除
+			$(".shop-info-move").click(function() {
+
+				if($(this).parents(".shop-group-item").find("li").length == 1) {
+					$(this).parents(".shop-group-item").remove();
+
+				} else {
+					$(this).parents("li").remove();
+				}
+				if($(".shop-group-item").length == 0) {
+					var _a = document.createElement("a");
+					_a.innerText = "购物车里空空如也，快去购物吧!";
+					_a.href = "http://www.quanmingwang.com/";
+					_a.className = "kong";
+					$(".shopping").append(_a);
+				}
+			});
+		</script>
+
+	</body>
+
+</html>

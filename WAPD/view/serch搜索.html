@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title></title>
+		<link rel="stylesheet" href="../css/ydui.css" />
+		<script src="../js/ydui.flexible.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.head_input {
+				background: #F0F2F5;
+				border: 0;
+				border-radius: 11px;
+				height: 0.56rem;
+				min-width: 5.8rem;
+				text-indent: 10px;
+				position: relative;
+				right: 5px;
+				font-size: 0.26rem;
+				color: #333333;
+			}
+			
+			body {
+				background: #fff;
+			}
+			
+			.hot {}
+			
+			.hot h3,
+			.histoy h3 {
+				text-indent: 10px;
+				line-height: 30px;
+				font-size: 0.3rem;
+				margin-top: 13px;
+			}
+			
+			.hot ul,
+			.histoy ul {
+				display: block;
+			}
+			
+			.hot ul li {
+				display: inline-block;
+				padding: 0.11rem 0.2rem;
+				margin: 0.16rem;
+				background: #F0F2F5;
+				border-radius: 6px;
+				color: #333333;
+			}
+			
+			.histoy ul li {
+				display: block;
+				line-height: 35px;
+				width: 100%;
+				text-indent: 10px;
+				color: #333;
+				font-size: 0.26rem;
+			}
+			
+			.histoy ul li:after {
+				content: "";
+				width: 98%;
+				height: 1px;
+				background: #eee;
+				position: absolute;
+				right: 0;
+				margin-top: 34px;
+			}
+			
+			.remove_all {
+				display: block;
+				width: 90%;
+				margin: 0 auto;
+				line-height: 0.7rem;
+				color: #666;
+				border: 1px solid #ccc;
+				border-radius: 5px;
+				margin-top: 0.8rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="m-navbar">
+			<a href="#" class="navbar-item">
+				<i class="back-ico"></i>
+			</a>
+			<div class="navbar-center">
+				<input type="text" name="" id="" value="" class="head_input" placeholder="双十一" />
+			</div>
+			<a href="#" class="navbar-item">
+				搜索
+			</a>
+		</header>
+
+		<div class="hot">
+			<h3>热搜</h3>
+			<ul>
+				<li>
+					台灯
+				</li>
+				<li>
+					床垫
+
+				</li>
+				<li>
+					儿童椅
+
+				</li>
+				<li>
+					儿童床
+
+				</li>
+				<li>
+					卧室套装
+
+				</li>
+				<li>
+					洗碗机
+
+				</li>
+				<li>
+					空调
+
+				</li>
+				<li>
+					饮水机
+
+				</li>
+				<li>
+					全屋定制
+				</li>
+			</ul>
+		</div>
+		<div class="histoy">
+			<div class="back" style="width: 100%;height: 10px;background: #F0F2F5;"></div>
+
+			<h3>历史搜索</h3>
+			<ul id="hist_con">
+				<li>
+					台灯
+				</li>
+				<li>
+					卧室套装
+
+				</li>
+				<li>
+					洗碗机
+
+				</li>
+				<li>
+					空调
+
+				</li>
+			</ul>
+			<button class="remove_all">清空历史记录</button>
+		</div>
+
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/ydui.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			! function(win, $) {
+				setTimeout(function() {
+					$(".head_input").focus();
+				}, 1000)
+
+				var dialog = win.YDUI.dialog;
+				/* 普通确认框 */
+				$('.remove_all').on('click', function() {
+					dialog.confirm('', '确定清空历史记录吗！', function() {
+
+							$("#hist_con li").remove();
+							$(".histoy").hide();
+					
+					});
+				});
+				
+				$("#hist_con").on("click","li",function(){
+					alert("11")
+				})
+				
+
+			}(window, jQuery);
+		</script>
+	</body>
+
+</html>

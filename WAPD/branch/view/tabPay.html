@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/ydui.css" />
+		<script src="../js/ydui.flexible.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body,
+			td,
+			th,
+			ul,
+			li {
+				font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+				padding: 0;
+				margin: 0;
+			}
+			
+			a {
+				color: #333;
+				text-decoration: none;
+				cursor: pointer;
+			}
+			
+			.find_nav {
+				width: 100%;
+				height: 43px;
+				background-color: #f9f9f9;
+				position: fixed;
+				top: .9rem;
+				z-index: 9999;
+				border-bottom: 1px solid #ddd;
+				display: -moz-box;
+				display: -webkit-box;
+				display: box;
+			}
+			
+			.find_nav_left {
+				height: 43px;
+				position: relative;
+				overflow: hidden;
+				-moz-box-flex: 1;
+				-webkit-box-flex: 1;
+				box-flex: 1;
+			}
+			
+			.find_nav_list {
+				position: absolute;
+				left: 0;
+			}
+			
+			.find_nav_list ul {
+				position: relative;
+				white-space: nowrap;
+				font-size: 0;
+			}
+			
+			.find_nav_list ul li {
+				display: inline-block;
+				padding: 0;
+				margin: 0 20px;
+			}
+			
+			.find_nav_list ul li a {
+				display: block;
+				width: 100%;
+				height: 100%;
+				line-height: 43px;
+				font-size: 16px;
+				text-align: center;
+				color: #666;
+			}
+			
+			.find_nav_cur a {
+				color: #48a5f4 !important;
+			}
+			
+			.find_nav_list a.active {
+				color: #C00
+			}
+			
+			.sideline {
+				display: block;
+				position: absolute;
+				border: 0;
+				height: 2px;
+				background-color: #48a5f4;
+				left: 0;
+				top: 68px;
+				pointer-events: none;
+			}
+			
+			.li_list {
+				/*min-height: 800px;*/
+				/*font-size: 40px;*/
+				/*line-height: 800px;*/
+				/*color: #fff;*/
+				/*text-align: center*/
+				margin-top: 5px !important;
+			}
+			
+			.swipe {
+				padding: 0.9rem 0 0 0;
+			}
+			
+			body {
+				min-width: 320px;
+				max-width: 640px;
+				margin: 0 auto;
+			}
+			
+			.m-navbar {
+				height: .9rem;
+				position: fixed;
+				display: flex;
+				background-color: rgba(255, 255, 255, .98);
+				width: 100%;
+				z-index: 33;
+			}
+			/* 补充 */
+			/* footer*/
+			
+			.tixian {
+				margin-top: 0 !important;
+				max-width: 28%;
+				bottom: 1px;
+			}
+			
+			.m-tabbar {
+				position: fixed;
+				bottom: 0;
+				padding: 0 !important;
+			}
+			
+			.zongjia {
+				text-indent: 0.2rem;
+				color: #333;
+				font-size: 0.4rem;
+				text-decoration: underline;
+				display: inline-block;
+				max-width: 182px;
+			}
+			/* 提现提示框 */
+			
+			.tixiantishikuang {
+				display: none;
+			}
+			
+			.tab-nav-item {
+				min-width: 93px;
+				position: relative;
+			}
+			
+			body {
+				overflow-x: hidden;
+			}
+			
+			.mui-media-body {
+				float: right;
+				width: 90%;
+				font-size: 14px;
+				overflow: hidden;
+				padding: 5px;
+				line-height: 21px;
+			}
+			
+			.number {
+				margin-left: 8px;
+			}
+			
+			.mui-ellipsis {
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				margin-bottom: 0;
+			}
+			
+			.mui-table-view-cell p {
+				margin-bottom: 0;
+			}
+			
+			p {
+				font-size: 14px;
+				margin-top: 0;
+				margin-bottom: 10px;
+				color: #8f8f94;
+			}
+			
+			.money {
+				font-size: 16px;
+				color: #ff3344;
+				font-weight: 600;
+				margin-left: 5px;
+				position: relative;
+				top: 1px;
+			}
+			
+			.money:before {
+				content: "¥";
+				font-size: 13px;
+				padding-right: 2px;
+			}
+			
+			.m-cell:first-child {
+				margin-top: 0.8rem;
+			}
+			
+			#nomore {
+				display: block;
+				margin: 0 auto;
+				padding-top: 40%;
+				padding-bottom: 40%;
+				text-align: center;
+			}
+			
+			#nomore img {
+				margin: 0 auto;
+				width: 150px;
+			}
+			
+			#nomore p {
+				padding-top: 10px;
+			}
+			
+			.m-cell {
+				padding-bottom: 1rem;
+			}
+			
+			.cell-item {
+				border-bottom: 1px solid #c6c6c6;
+			}
+			
+			.cell-right span {
+				color: #555;
+				display: block;
+				font-size: 0.4rem;
+				text-indent: 0.2rem;
+				-webkit-box-flex: 1;
+				height: 1rem;
+				border: none;
+				line-height: 1.1rem;
+				text-align: center;
+				padding: 0px 54px;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="m-navbar">
+			<a href="../home.html" class="navbar-item">
+				<i class="back-ico"></i>
+			</a>
+			<div class="navbar-center">
+				<span class="navbar-title">我的收益</span>
+			</div>
+
+		</header>
+		<div class="find_nav">
+			<div class="find_nav_left">
+				<div class="find_nav_list" id="pagenavi1">
+					<ul>
+
+						<li>
+							<a href="#" class="active">2017-02-21~2017-03-21</a>
+						</li>
+						<li>
+							<a href="#">2017-02-21~2017-03-21</a>
+						</li>
+						<li>
+							<a href="#">2017-02-21~2017-03-21</a>
+						</li>
+						<li>
+							<a href="#">2017-02-21~2017-03-21</a>
+						</li>
+						<li>
+							<a href="#">2017-02-21~2017-03-21</a>
+						</li>
+						<li>
+							<a href="#">2017-02-21~2017-03-21</a>
+						</li>
+						<li>
+							<a href="#">2017-02-21~2017-03-21</a>
+						</li>
+						<!--<li>
+							<a href="#">2017-02-21~2017-03-21</a>
+						</li>-->
+
+						<li class="sideline"></li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="slider1" class="swipe">
+			<ul class="box01_list">
+				<li class="li_list">
+					<div class="m-cell">
+						<label class="cell-item">
+        
+    				    <label class="cell-right">
+     				       <input type="checkbox" name="checkbox" class="price" checked>
+    				        <i class="cell-checkbox-icon"></i>
+    				    </label>
+						<div class="mui-media-body">
+							<span class="title">2017-10-09</span><span class="number">204554512154545</span>
+							<p class="mui-ellipsis">金红阳 实木时尚梳妆台 梳妆凳 时尚家居卧室梳妆台HA-913#</p>
+							<p class="mui-ellipsis">可提现金额 <span class="money">26.22</span></p>
+						</div>
+						</label>
+						<label class="cell-item">
+        
+     					   <label class="cell-right">
+     				       <input type="checkbox" name="checkbox" class="price" checked>
+      				      <i class="cell-checkbox-icon"></i>
+     				   </label>
+						<div class="mui-media-body">
+							<span class="title">2017-10-09</span><span class="number">204554512154545</span>
+							<p class="mui-ellipsis">金红阳 实木时尚梳妆台 梳妆凳 时尚家居卧室梳妆台HA-913#</p>
+							<p class="mui-ellipsis">可提现金额 <span class="money">26.22</span></p>
+						</div>
+						</label>
+						<label class="cell-item">
+        
+     				 <label class="cell-right">
+                    <input type="checkbox" name="checkbox" class="price" checked>
+                    <i class="cell-checkbox-icon"></i>
+                    </label>
+						<div class="mui-media-body">
+							<span class="title">2017-10-09</span><span class="number">204554512154545</span>
+							<p class="mui-ellipsis">金红阳 实木时尚梳妆台 梳妆凳 时尚家居卧室梳妆台HA-913#</p>
+							<p class="mui-ellipsis">可提现金额 <span class="money">26.22</span></p>
+						</div>
+						</label>
+
+					</div>
+					<!--  底部  -->
+					<footer class="m-tabbar">
+						<div class="cell-item">
+							<div class="cell-left ">
+								<label class="cell-right" id="all_remove">
+                                  <input type="checkbox" name="checkbox"  id="all_checked" checked/>
+                                 <i class="cell-checkbox-icon"></i></label> 订单总价 ¥
+							</div>
+							<div class="cell-right">
+								<span class="commission" date-money="" date-ratio="" date-total="">11</span>
+							</div>
+						</div>
+
+						<input type="button" class="btn-block btn-primary tixian btn-danger" id="tixian_btn" value="提现" />
+					</footer>
+
+				</li>
+				<li class="li_list">
+					<div class="m-cell">
+
+					</div>
+					<!--  底部  -->
+					<footer class="m-tabbar">
+						<div class="cell-item">
+							<div class="cell-left ">
+								<label class="cell-right" id="all_remove">
+                                  <input type="checkbox" name="checkbox"  id="all_checked" checked/>
+                                 <i class="cell-checkbox-icon"></i></label> 订单总价 ¥
+							</div>
+							<div class="cell-right">
+								<span class="commission" date-money="" date-ratio="" date-total="">11</span>
+							</div>
+						</div>
+
+						<input type="button" class="btn-block btn-primary tixian btn-danger" id="tixian_btn" value="提现" />
+					</footer>
+
+				</li>
+				<li class="li_list">
+					<div class="m-cell">
+
+					</div>
+					<!--  底部  -->
+					<footer class="m-tabbar">
+						<div class="cell-item">
+							<div class="cell-left ">
+								<label class="cell-right" id="all_remove">
+                                  <input type="checkbox" name="checkbox"  id="all_checked" checked/>
+                                 <i class="cell-checkbox-icon"></i></label> 订单总价 ¥
+							</div>
+							<div class="cell-right">
+								<span class="commission" date-money="" date-ratio="" date-total="">11</span>
+							</div>
+						</div>
+
+						<input type="button" class="btn-block btn-primary tixian btn-danger" id="tixian_btn" value="提现" />
+					</footer>
+				</li>
+				<li class="li_list">
+					<div class="m-cell">
+
+					</div>
+					<!--  底部  -->
+					<footer class="m-tabbar">
+						<div class="cell-item">
+							<div class="cell-left ">
+								<label class="cell-right" id="all_remove">
+                                  <input type="checkbox" name="checkbox"  id="all_checked" checked/>
+                                 <i class="cell-checkbox-icon"></i></label> 订单总价 ¥
+							</div>
+							<div class="cell-right">
+								<span class="commission" date-money="" date-ratio="" date-total="">11</span>
+							</div>
+						</div>
+
+						<input type="button" class="btn-block btn-primary tixian btn-danger" id="tixian_btn" value="提现" />
+					</footer>
+				</li>
+				<li class="li_list">
+					<div class="m-cell">
+
+					</div>
+					<!--  底部  -->
+					<!--  底部  -->
+					<footer class="m-tabbar">
+						<div class="cell-item">
+							<div class="cell-left ">
+								<label class="cell-right" id="all_remove">
+                                  <input type="checkbox" name="checkbox"  id="all_checked" checked/>
+                                 <i class="cell-checkbox-icon"></i></label> 订单总价 ¥
+							</div>
+							<div class="cell-right">
+								<span class="commission" date-money="" date-ratio="" date-total="">11</span>
+							</div>
+						</div>
+
+						<input type="button" class="btn-block btn-primary tixian btn-danger" id="tixian_btn" value="提现" />
+					</footer>
+				</li>
+				<li class="li_list">
+					<div class="m-cell">
+
+					</div>
+					<!--  底部  -->
+					<footer class="m-tabbar">
+						<div class="cell-item">
+							<div class="cell-left ">
+								<label class="cell-right" id="all_remove">
+                                  <input type="checkbox" name="checkbox"  id="all_checked" checked/>
+                                 <i class="cell-checkbox-icon"></i></label> 订单总价 ¥
+							</div>
+							<div class="cell-right">
+								<span class="commission" date-money="" date-ratio="" date-total="">11</span>
+							</div>
+						</div>
+
+						<input type="button" class="btn-block btn-primary tixian btn-danger" id="tixian_btn" value="提现" />
+					</footer>
+				</li>
+				<li class="li_list">
+					<div class="m-cell">
+
+					</div>
+					<!--  底部  -->
+					<footer class="m-tabbar">
+						<div class="cell-item">
+							<div class="cell-left ">
+								<label class="cell-right" id="all_remove">
+                                  <input type="checkbox" name="checkbox"  id="all_checked" checked/>
+                                 <i class="cell-checkbox-icon"></i></label> 订单总价 ¥
+							</div>
+							<div class="cell-right">
+								<span class="commission" date-money="" date-ratio="" date-total="">11</span>
+							</div>
+						</div>
+
+						<input type="button" class="btn-block btn-primary tixian btn-danger" id="tixian_btn" value="提现" />
+					</footer>
+				</li>
+				<!--<li class="li_list">
+					<div class="m-cell">
+
+					</div>
+				</li>-->
+
+			</ul>
+		</div>
+
+		<!-- 提示框 -->
+		<div class="mask-black-dialog tixiantishikuang" id="tixantishi">
+			<div class="m-confirm">
+
+				<div class="confirm-hd"><strong class="confirm-title">提现金额 365.2 </strong></div>
+				<div class="confirm-bd tixianshijian">提现时间 2017-02-15</div>
+				<div class="confirm-bd tixiankahao">提现卡号 6217004220040078135</div>
+
+				<div class="confirm-ft">
+					<a href="javascript:;" class="confirm-btn default">取消</a>
+					<a href="javascript:;" class="confirm-btn primary">确定</a>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../js/touchslider.js"></script>
+		<script src="../js/ydui.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="" type="text/javascript" charset="utf-8">
+			//   提现确认
+			$("#tixian_btn").click(function() {
+				$("#tixantishi").css("display", "flex");
+				$($("#tixantishi").find(".confirm-title")).text("提现金额 " + $(".zongjia").val());
+				$($("#tixantishi").find(".tixiankahao")).text("提现卡号" + "6217004220040078135");
+			})
+			//   取消
+			$(".default").click(function() {
+
+				$("#tixantishi").hide();
+
+			})
+			// 确定  
+			$(".primary").click(function() {
+				alert("你点了确定");
+				$("#tixantishi").css("display", "none");
+			})
+		</script>
+		<script type="text/javascript">
+			$(".find_nav_list").css("left", 0);
+
+			$(".find_nav_list li").each(function() {
+				$(".sideline").css({
+					left: 0
+				});
+				$(".find_nav_list li").eq(0).addClass("find_nav_cur").siblings().removeClass("find_nav_cur");
+			});
+			var nav_w = $(".find_nav_list li").first().width();
+			$(".sideline").width(nav_w);
+			$(".find_nav_list li").on('click', function() {
+				nav_w = $(this).width();
+				$(".sideline").stop(true);
+				$(".sideline").animate({
+					left: $(this).position().left
+				}, 300);
+				$(".sideline").animate({
+					width: nav_w
+				});
+				$(this).addClass("find_nav_cur").siblings().removeClass("find_nav_cur");
+				var fn_w = ($(".find_nav").width() - nav_w) / 2;
+				var fnl_l;
+				var fnl_x = parseInt($(this).position().left);
+				if(fnl_x <= fn_w) {
+					fnl_l = 0;
+				} else if(fn_w - fnl_x <= flb_w - fl_w) {
+					fnl_l = flb_w - fl_w;
+				} else {
+					fnl_l = fn_w - fnl_x;
+				}
+				$(".find_nav_list").animate({
+					"left": fnl_l
+				}, 300);
+
+			});
+			var fl_w = $(".find_nav_list").width();
+			var flb_w = $(".find_nav_left").width();
+			$(".find_nav_list").on('touchstart', function(e) {
+				var touch1 = e.originalEvent.targetTouches[0];
+				x1 = touch1.pageX;
+				y1 = touch1.pageY;
+				ty_left = parseInt($(this).css("left"));
+			});
+			$(".find_nav_list").on('touchmove', function(e) {
+				var touch2 = e.originalEvent.targetTouches[0];
+				var x2 = touch2.pageX;
+				var y2 = touch2.pageY;
+				if(ty_left + x2 - x1 >= 0) {
+					$(this).css("left", 0);
+				} else if(ty_left + x2 - x1 <= flb_w - fl_w) {
+					$(this).css("left", flb_w - fl_w);
+				} else {
+					$(this).css("left", ty_left + x2 - x1);
+				}
+				if(Math.abs(y2 - y1) > 0) {
+					e.preventDefault();
+				}
+			});
+
+			for(n = 1; n < 9; n++) {
+				var page = 'pagenavi' + n;
+				var mslide = 'slider' + n;
+				var mtitle = 'emtitle' + n;
+				arrdiv = 'arrdiv' + n;
+				var as1 = document.getElementById(page);
+				var as = $(as1).find("a");
+				var tt = new TouchSlider({
+					id: mslide,
+					'auto': '-1',
+					fx: 'ease-out',
+					direction: 'left',
+					speed: 600,
+					timeout: 5000,
+					'before': function(index) {
+						var as = document.getElementById(this.page).getElementsByTagName('a');
+						as[this.p].className = '';
+						this.p = index;
+
+						fnl_x = parseInt($(".find_nav_list li").eq(this.p).position().left);
+
+						nav_w = $(".find_nav_list li").eq(this.p).width();
+						$(".sideline").stop(true);
+						$(".sideline").animate({
+							left: $(".find_nav_list li").eq(this.p).position().left
+						}, 300);
+						$(".sideline").animate({
+							width: nav_w
+						}, 100);
+						$(".find_nav_list li").eq(this.p).addClass("find_nav_cur").siblings().removeClass("find_nav_cur");
+						var fn_w = ($(".find_nav").width() - nav_w) / 2;
+						var fnl_l;
+						if(fnl_x <= fn_w) {
+							fnl_l = 0;
+						} else if(fn_w - fnl_x <= flb_w - fl_w) {
+							fnl_l = flb_w - fl_w;
+						} else {
+							fnl_l = fn_w - fnl_x;
+						}
+						$(".find_nav_list").animate({
+							"left": fnl_l
+						}, 300);
+					}
+				});
+				tt.page = page;
+				tt.p = 0;
+				//console.dir(tt); console.dir(tt.__proto__);
+
+				for(var i = 0; i < as.length; i++) {
+					(function() {
+						var j = i;
+						as[j].tt = tt;
+						as[j].onclick = function() {
+							this.tt.slide(j);
+							return false;
+						}
+					})();
+				}
+			}
+		</script>
+
+		<script type="text/javascript">
+			! function(win, $) {
+var dialog = win.YDUI.dialog;
+				//   提现确认
+				$(".tixian").click(function() {
+					$("#tixantishi").css("display", "flex");
+
+					var _index = $("#pagenavi1 .find_nav_cur").index();
+					var _money = $($("#slider1 ul li")[_index]);
+					var span = $(_money.find(".commission"))
+					$("#tixantishi .confirm-title").text("提现金额" + span.text());
+
+					$("#tixantishi .tixianshijian").text("提现比例" + span.attr("date-ratio")+"%");
+
+					$("#tixantishi .tixiankahao").text("订单总价" + span.attr("date-total"));
+				})
+				//   取消
+				$(".default").click(function() {
+
+					$("#tixantishi").hide();
+
+				})
+				// 确定  
+				$(".primary").click(function() {
+					 dialog.alert('暂时不支持提现、目前仅供查看');
+					$("#tixantishi").css("display", "none");
+				})
+
+				$(document).ready(getDate());
+
+				function getDate() {
+
+					var reommend_branch = {
+						branch_id: localStorage.branch_id,
+					}
+					console.log(reommend_branch);
+					$.ajax({
+						url: "http://api.qmwjj.cc/index.php?r=business/order/order_divided",
+						data: {
+							reommend_branch: reommend_branch
+						},
+						type: "get",
+						//dataType: 'JSON',
+						success: function(data) {
+							console.log(data);
+
+							var d = JSON.parse(data);
+							console.log(d);
+							/**
+							 * ratio比率
+							 * money提现钱数
+							 * total 订单总数
+							 * order_sum 订单合计
+							 */
+							ForTime(d);
+
+						},
+
+					})
+				};
+
+				function ForTime(date) {
+					console.log(date)
+					var Copy = [];
+					for(var y in date) {
+						Copy.push(y);
+					}
+					for(var i = 0; i < Copy.length - 1; i++) {
+						var tab = $("#pagenavi1 li a")[i];
+						$(tab).text(Copy[i]);
+
+						//   每一行
+						var li = $("#slider1 ul li .m-cell")[i];
+						//   date的关键词  2017-02-21~2017-03-21
+						var str = Copy[i];
+						var Array1 = [];
+						Array1.push(date[str]);
+						console.log(Array1);
+						console.log("这个是Array1");
+						//   Array2 (8) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]   其中关键词有个0 
+
+						var Array2 = Array1[0];
+						console.log(Array2);
+						console.log("这个是ARRAY2")
+						//   array2 的关键词  接出来
+						var Array3 = [];
+						for(var arr in Array2) {
+							Array3.push(arr);
+						}
+						console.log(Array3);
+						console.log(Array3.length + "这个是Array3的长度");
+						for(var w = 0; w < Array3.length; w++) {
+							//   str1 是Array2的关键词的实例化
+							var str1 = Array3[w];
+							console.log(str1);
+							console.log("这个是STR1");
+							//   提成展示
+							if(str1 == "order_sum") {
+								var Array4 = Array2[str1];
+								console.log(Array4);
+								console.log("这个是提成")
+
+							}
+							if(str1 == "commission") {
+								var Array4 = Array2[str1];
+								console.log(Array4)
+								$($($(li).next()).find(".commission")).text(Array4.money);
+								$($($(li).next()).find(".commission")).attr("date-ratio", Array4.ratio);
+								$($($(li).next()).find(".commission")).attr("date-total", Array4.total);
+								console.log("提现金额是" + Array4.money + "提成比例是" + Array4.ratio + "%"+"订单总价是" + Array4.total);
+							}
+							if(str1 == 0) {
+								var Array4 = Array2[str1];
+								var html1 = "";
+								console.log(Array4.length)
+
+								if(Array4.length == 0) {
+									html1 += "<div id='nomore'><img src='../img/nomore.png' /><p>抱歉、暂无订单</p></div>";
+								}
+
+								for(var e = 0; e < Array4.length; e++) {
+									var Array5 = Array4[e];
+									console.log(Array5)
+									console.log("订单的ID是" + Array5.order_id + "商品名称是" + Array5.m_name + "订单号是" + Array5.order_number + "订单的付款状态是" + Array5.order_receive_status + "订单的退款金额是" + Array5.order_return_money + "该笔订单总价格是" + Array5.order_total);
+									//   直接在这里制作HTML  在这个for循环外面append就OK了；
+									if(Array5.order_receive_status == 0) {
+										Array5.order_receive_status = "支付成功";
+									} else {
+										Array5.order_receive_status = "支付失败";
+									}
+									html1 += "<label class='cell-item'><label class='cell-right'><input type='checkbox' name='checkbox' class='price' checked><i class='cell-checkbox-icon'></i></label><div class='mui-media-body'><span class='title'>" + Array5.order_receive_status + "</span><span class='number'>" + Array5.order_number + "</span><p class='mui-ellipsis'>" + Array5.m_name + "</p><p class='mui-ellipsis'>订单总价 <span class='money'>" + Array5.order_total + "</span></p></div></label>";
+
+									//							    添加到LI的那个For循环里面 而不是外面
+								}
+								$(li).find(".cell-item").remove();
+								$(li).html(html1);
+
+							}
+
+						}
+
+						//    append到这里；  HTML制作好
+
+					}
+				}
+
+				// H5 plus事件处理
+				function plusReady() {
+					// 监听键按下事件
+					plus.key.addEventListener("keydown", function(e) {
+						console.log("keydown: " + e.keyCode);
+						
+						if(e.keyCode == 4) {
+							//  这个按下的返回按键
+							window.location.assign("../home.html")
+
+						}
+					}, false);
+					// 监听键松开事件
+					plus.key.addEventListener("keyup", function(e) {
+						console.log("keyup: " + e.keyCode);
+
+					}, false);
+					// 监听长按键事件
+					plus.key.addEventListener("longpressed", function(e) {
+						console.log("longpressed: " + e.keyCode);
+
+					}, false);
+				}
+				if(window.plus) {
+					plusReady();
+				} else {
+					document.addEventListener("plusready", plusReady, false);
+				}
+
+			}(window, jQuery);
+		</script>
+	</body>
+
+</html>

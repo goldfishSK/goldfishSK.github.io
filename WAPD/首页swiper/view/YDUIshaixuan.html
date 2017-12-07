@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<link rel="stylesheet" type="text/css" href="../css/init.css" />
+		<link rel="stylesheet" type="text/css" href="../css/ydui.css" />
+		<script src="../js/ydui.flexible.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body,
+			.m-navbar,
+			.footer {
+				min-width: 320px;
+				max-width: 640px;
+				margin: 0 auto;
+			}
+			
+			.m-navbar,
+			.footer {
+				position: fixed;
+				z-index: 333;
+				left: 0;
+				right: 0;
+				width: 100%;
+			}
+			
+			.m-navbar {
+				top: 0;
+			}
+			
+			.footer {
+				bottom: 0;
+			}
+			
+			.content {
+				margin-top: 0.9rem;
+				color: #848484;
+				font-size: 0.26rem;
+				background: #FFFFFF;
+				padding-bottom: 1rem;
+			}
+			
+			.grids-span {
+				border: 1px solid #DDDDDD;
+				border-radius: 5px;
+				display: block;
+				width: 100%;
+				/* margin: 2%; */
+				height: 0.7rem;
+				line-height: 0.7rem;
+			}
+			
+			.m-grids-3 .grids-item:not(:nth-child(3n)):before {
+				border-right: 0;
+			}
+			
+			.grids-item {
+				padding: 0.15rem 0 0.25rem 0;
+			}
+			
+			.title {
+				line-height: 0.8rem;
+				text-indent: 0.3rem;
+				color: #666;
+			}
+			
+			.grids-item:after {
+				border-bottom: 0;
+			}
+			
+			.m-grids-2 .grids-item:not(:nth-child(2n)):before {
+				border-right: 0;
+			}
+			
+			.m-grids-2:before {
+				width: 0;
+			}
+			
+			.grids-span input {
+				border: none;
+				text-align: center;
+			}
+			
+			.gride_input1:before {
+				content: "";
+				width: 10px;
+				height: 1px;
+				background: #666;
+				display: block;
+				position: absolute;
+				top: 48%;
+				left: -5px;
+			}
+			
+			.footer {
+				border-top: 1px solid #DDDDDD;
+			}
+			
+			.footer .m-grids-2 a:first-child {
+				border-right: 1px solid #ddd;
+				color: #333333;
+			}
+			
+			.footer .m-grids-2 a:last-child {
+				background-color: #E60044;
+			}
+			
+			.footer .m-grids-2 a:last-child .grids-txt {
+				color: #FFFFFF !important;
+			}
+			
+			.chionce {
+				background: #E60044;
+				color: #FFFFFF;
+			}
+			
+			.add_to {
+				color: #E60044;
+			}
+			
+			.add_two {
+				color: #E60044;
+				margin: 0px 4px;
+			}
+			
+			.grids-span input {
+				color: #333333;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="m-navbar">
+			<a href="javascript:;" id="back" class="navbar-item">
+				<i class="back-ico"></i>
+			</a>
+			<div class="navbar-center">
+				<span class="navbar-title">筛选</span>
+			</div>
+
+		</header>
+
+		<div class="content">
+
+			<ul id="forms">
+				<li>
+					<div class="title">
+						商品类型
+					</div>
+					<div class="m-grids-3" id="goodsType">
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">精品</span></div>
+						</a>
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">高品质</span></div>
+						</a>
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">特价</span></div>
+						</a>
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">热卖</span></div>
+						</a>
+
+					</div>
+
+				</li>
+
+				<li>
+					<div class="title">
+						价格区间
+					</div>
+					<div class="m-grids-2" id="chioceMoneyShow">
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span"><input type="text" /></span></div>
+						</a>
+						<a href="javascript:;" class="grids-item gride_input1">
+							<div class="grids-txt"><span class="grids-span"><input type="text" /></span></div>
+						</a>
+
+					</div>
+					<div class="m-grids-3" id="chioceMoney">
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">0-200</span></div>
+						</a>
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">200-1000</span></div>
+						</a>
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">>1000</span></div>
+						</a>
+
+					</div>
+
+				</li>
+				<!-- 品牌 -->
+				<li>
+					<div class="title" id="addAll">
+						品牌 <span class="add_to">所有</span>
+					</div>
+					<div class="m-grids-3" id="BrandAll">
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">精品</span></div>
+						</a>
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">高品质</span></div>
+						</a>
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">特价</span></div>
+						</a>
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">精品</span></div>
+						</a>
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">高品质</span></div>
+						</a>
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">特价</span></div>
+						</a>
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">精品</span></div>
+						</a>
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">高品质</span></div>
+						</a>
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">特价</span></div>
+						</a>
+
+					</div>
+
+				</li>
+				<!-- 商品分类 -->
+				<li>
+					<div class="title">
+						商品分类
+					</div>
+					<div class="m-grids-3" id="category">
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">精品</span></div>
+						</a>
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">高品质</span></div>
+						</a>
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">特价</span></div>
+						</a>
+						<a href="javascript:;" class="grids-item">
+							<div class="grids-txt"><span class="grids-span">热卖</span></div>
+						</a>
+
+					</div>
+
+				</li>
+
+			</ul>
+
+		</div>
+
+		<div class="footer">
+			<div class="m-grids-2">
+				<a href="javascript:;" class="grids-item">
+					<div class="grids-txt">重置</div>
+				</a>
+				<a href="javascript:;" class="grids-item">
+					<div class="grids-txt">确定</div>
+				</a>
+
+			</div>
+		</div>
+
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/ydui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			! function(win, $) {
+				var dialog = win.YDUI.dialog;
+				$("#goodsType .grids-item").click(function() {
+					$($("#goodsType").find(".grids-span")).removeClass("chionce")
+					$($(this).find(".grids-span")).addClass("chionce")
+				})
+				$("#chioceMoney .grids-item").click(function() {
+					$($("#chioceMoney").find(".grids-span")).removeClass("chionce")
+					$($(this).find(".grids-span")).addClass("chionce")
+					if($(this).index() == 0) {
+						$($("#chioceMoneyShow input")[0]).val("0")
+						$($("#chioceMoneyShow input")[1]).val("200")
+					}
+					if($(this).index() == 1) {
+						$($("#chioceMoneyShow input")[0]).val("200")
+						$($("#chioceMoneyShow input")[1]).val("1000")
+					}
+					if($(this).index() == 2) {
+						$($("#chioceMoneyShow input")[0]).val("1000")
+						$($("#chioceMoneyShow input")[1]).val("99999")
+					}
+				})
+				$("#BrandAll .grids-item").click(function() {
+					var _this = $(this)
+					getLength(_this)
+				})
+//               品牌的选择
+				function getLength(_this) {
+					if($("#BrandAll").find(".chionce").length > 5) {
+						dialog.loading.open('最多选择6个品牌');
+						setTimeout(function() {
+							dialog.loading.close(); /* 移除loading */
+						}, 2000);
+						$("#BrandAll .grids-item").attr("disabled", "disabled")
+					} else {
+						$(_this.find(".grids-span")).addClass("chionce")
+						var html = "";
+						for(var i = 0; i <= $("#BrandAll").find(".chionce").length; i++) {
+							html += "<span class='add_two'>" + $($("#BrandAll .grids-item").find(".chionce")[i]).text() + "</span>"
+						}
+						$(".add_to").remove();
+						$($("#addAll").find(".add_two")).remove()
+						$("#addAll").append(html)
+					}
+				}
+				$("#category .grids-item").click(function(){
+					$($("#category .grids-item").find(".chionce")).removeClass("chionce")
+					$($(this).find(".grids-span")).addClass("chionce");
+				})
+				$("#back").click(function(){
+					history.back()
+				})
+			}(window, jQuery);
+		</script>
+	</body>
+
+</html>

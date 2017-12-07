@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/ydui.css" />
+		<script src="../js/ydui.flexible.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			header {
+				position: fixed !important;
+				top: 0;
+				z-index: 33;
+				width: 100%;
+			}
+			
+			.m-grids-3 {
+				padding-top: 41px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<section class="g-flexview">
+
+			<header class="m-navbar">
+				<a href="../home.html" class="navbar-item"><i class="back-ico"></i></a>
+				<div class="navbar-center"><span class="navbar-title" data-branch_id="" id="J_ShowActionSheet">会员查看</span></div>
+			</header>
+
+			<div class="m-grids-3">
+				<a href="#" class="grids-item">
+					<div class="grids-txt"><span>用户名</span></div>
+				</a>
+				<a href="#" class="grids-item">
+					<div class="grids-txt"><span>注册时间</span></div>
+				</a>
+				<a href="#" class="grids-item">
+					<div class="grids-txt"><span>电话号</span></div>
+				</a>
+
+				<div class="grid_item" id="grid_items">
+					<a href="#" class="grids-item">
+						<div class="grids-txt"><span>grids-3</span></div>
+					</a>
+					<a href="#" class="grids-item">
+						<div class="grids-txt"><span>grids-3</span></div>
+					</a>
+					<a href="#" class="grids-item">
+						<div class="grids-txt"><span>grids-3</span></div>
+					</a>
+
+				</div>
+
+			</div>
+
+		</section>
+
+		<div class="m-actionsheet" id="J_ActionSheet">
+			<div class="J_ActionSheet-content">
+				<div class="j-con">
+
+				</div>
+
+			</div>
+
+			<a href="javascript:;" class="actionsheet-action" id="J_Cancel">取消</a>
+		</div>
+
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/ydui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			! function(win, $) {
+
+				/* 普通提示框*/
+				var dialog = win.YDUI.dialog;
+				/* 加载中提示框 */
+				//				dialog.loading.open('加载中');
+				/* 自定义事件 */
+
+				$(document).ready(function() {
+					//   默认选择显示第一个分店下的会员
+
+					var information = JSON.parse(localStorage.information);
+
+					QueryList(information.branch_id);
+
+				})
+
+				//   分店下查询会员列表
+				function QueryList(Object) {
+
+					var recommend = {
+						branch_id: Object
+					}
+					console.log(recommend);
+					$.ajax({
+						url: "http://api.qmwjj.cc/index.php?r=recommend/member/member_list",
+						data: {
+							recommend: recommend
+						},
+						type: "get",
+						//dataType: 'JSON',
+						success: function(data) {
+							console.log(data);
+							var d = JSON.parse(data);
+							console.log(d);
+							var html = "";
+							for(var i = 0; i < d.length; i++) {
+								html += "<a href='#' class='grids-item'><div class='grids-txt'><span>" + d[i].m_name + "</span></div></a><a href='#' class='grids-item'><div class='grids-txt'><span>" + getLocalTime(d[i].m_reg_time) + "</span></div></a><a href='#' class='grids-item'><div class='grids-txt'><span>" + d[i].m_tel + "</span></div></a>"
+							}
+							$("#grid_items .grids-item").remove();
+							$("#grid_items").append(html);
+							dialog.loading.close();
+						},
+					})
+
+				}
+
+				//    				
+
+				//   时间戳转换
+
+				function getLocalTime(nS) {
+					return new Date(parseInt(nS) * 1000).Format("yyyy-MM-dd hh:mm:ss");
+				}
+				Date.prototype.Format = function(fmt) { //author: meizz  
+					var o = {
+						"M+": this.getMonth() + 1, //月份  
+						"d+": this.getDate(), //日  
+						"h+": this.getHours(), //小时  
+						"m+": this.getMinutes(), //分  
+						"s+": this.getSeconds(), //秒  
+						"q+": Math.floor((this.getMonth() + 3) / 3), //季度  
+						"S": this.getMilliseconds() //毫秒  
+					};
+					if(/(y+)/.test(fmt))
+						fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+					for(var k in o)
+						if(new RegExp("(" + k + ")").test(fmt))
+							fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+					return fmt;
+				}
+				console.log(getLocalTime(1490586664)); //2017-03-27 11:51:04  
+
+				// H5 plus事件处理
+				function plusReady() {
+					// 监听键按下事件
+					plus.key.addEventListener("keydown", function(e) {
+						console.log("keydown: " + e.keyCode);
+						
+						if(e.keyCode == 4) {
+							//  这个按下的返回按键
+							window.location.assign("../home.html")
+
+						}
+					}, false);
+					// 监听键松开事件
+					plus.key.addEventListener("keyup", function(e) {
+						console.log("keyup: " + e.keyCode);
+
+					}, false);
+					// 监听长按键事件
+					plus.key.addEventListener("longpressed", function(e) {
+						console.log("longpressed: " + e.keyCode);
+
+					}, false);
+				}
+				if(window.plus) {
+					plusReady();
+				} else {
+					document.addEventListener("plusready", plusReady, false);
+				}
+
+			}(window, jQuery);
+		</script>
+	</body>
+
+</html>

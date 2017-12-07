@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title></title>
+
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/style.css" />
+		<style type="text/css">
+			.authcation {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<!-- 主界面菜单同时移动 -->
+		<!-- 侧滑导航根容器 -->
+		<div class="mui-off-canvas-wrap mui-draggable">
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<!-- 菜单容器 -->
+				<!--<aside class="mui-off-canvas-left" id="offCanvasSide">-->
+					<!--<div class="mui-scroll-wrapper">-->
+						<!--<div class="mui-scroll">-->
+							<!-- 菜单具体展示内容 -->
+
+							<!--<div class="mui-card">-->
+								<!--页眉，放置标题-->
+								<!--<div class="mui-card-header"></div>-->
+								<!--内容区-->
+								<!--<div class="mui-card-content">
+
+								</div>-->
+								<!--页脚，放置补充信息或支持的操作-->
+								<!--<div class="mui-card-footer">
+									<img src="img/40X40.png" style="border-radius: 50%;" />
+									<div class="mui-media-body">
+										陕西西安
+										<p>这边的功能暂时没法使用、请等待版本更新</p>
+									</div>
+								</div>
+							</div>-->
+							<!--  各种选项 -->
+							<!--<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right">资料修改</a>
+								</li>
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right">添加动态</a>
+								</li>
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right">商品管理</a>
+								</li>
+								<li class="mui-table-view-cell">
+									<a class="mui-navigate-right">退出登录</a>
+								</li>
+							</ul>
+
+						</div>
+					</div>
+				</aside>-->
+				<!-- 主页面标题 -->
+				<header class="mui-bar mui-bar-nav">
+					<a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left head-img" href="#offCanvasSide"></a>
+					<h1 class="mui-title">全名网商家</h1>
+				</header>
+				<!--<nav class="mui-bar mui-bar-tab">
+					<a class="mui-tab-item mui-active">
+						<span class="mui-icon mui-icon-home"></span>
+						<span class="mui-tab-label">首页</span>
+					</a>
+					<a class="mui-tab-item" href="news.html" id="New">
+						<span class="mui-icon mui-icon-chatbubble"></span>
+						<span class="mui-tab-label">消息</span>
+					</a>
+					<a class="mui-tab-item">
+						<span class="mui-icon mui-icon-compose"></span>
+						<span class="mui-tab-label">订单</span>
+					</a>
+					<a class="mui-tab-item">
+						<span class="mui-icon mui-icon-refresh"></span>
+						<span class="mui-tab-label">更新</span>
+					</a>
+				</nav>-->
+				<!-- 主页面内容容器 -->
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 主界面具体展示内容 -->
+						<div class="background_img">
+							<div class="center">
+
+								<p>2222</p>
+							</div>
+						</div>
+						<!-- content -->
+
+						<ul class="mui-table-view">
+
+							<li class="mui-table-view-cell" id="UserList">
+								<a class="mui-navigate-right">会员查看</a>
+							</li>
+							<li class="mui-table-view-cell" id="QRCode">
+								<a href="./view/qrCode.html" class="mui-navigate-right">注册会员</a>
+							</li>
+							<li class="mui-table-view-cell" id="ManList">
+								<a class="mui-navigate-right">订单查看</a>
+							</li>
+							<li class="mui-table-view-cell" id="Profit">
+								<a class="mui-navigate-right" id="openPopover" href="#popover">我的收益</a>
+							</li>
+
+							<li class="mui-table-view-cell authcation" id="Authentication">
+								<a class="mui-navigate-right" id="" href="./view/fdsubmit.html">分店认证</a>
+							</li>
+							<li class="mui-table-view-cell" id="RemoveLocation">
+								<a class="mui-navigate-right">安全退出</a>
+							</li>
+
+						</ul>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div id="popover" class="mui-popover">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#">Item1</a>
+				</li>
+
+			</ul>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				gestureConfig: {
+					tap: true, //默认为true
+					doubletap: true, //默认为false
+					longtap: true, //默认为false
+					swipe: true, //默认为true
+					drag: true, //默认为true
+					hold: false, //默认为false，不监听
+					release: false //默认为false，不监听
+				}
+			});
+			mui('.mui-scroll-wrapper').scroll({
+				deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+			});
+			//			mui("body").on("tap", "a", clicked);
+			//
+			//			function clicked() {
+			//				var url = $(this).attr("href");
+			//				window.location.assign(url);
+			//			}
+			var information = JSON.parse(localStorage.information);
+			console.log(information)
+			//   订单查看查看
+			mui("body").on("tap", "#ManList", function() {
+				if(information.branch == 0) {
+					mui.alert("请完成分店认证", "全名网")
+				}
+
+				if(information.branch == 2) {
+					//  进入推荐分店的会员查看页面
+					window.location.assign('./view/BranchList.html')
+				}
+				if(information.branch == 1) {
+					//  进入业务经理的会员查看页面
+					window.location.assign('./view/ManagerList.html')
+				}
+
+			});
+
+			//    会员查看
+			mui("body").on("tap", "#UserList", function() {
+				if(information.branch == 0) {
+					mui.alert("请完成分店认证", "全名网")
+				}
+				if(information.branch == 2) {
+					//  进入推荐分店的会员查看页面
+					window.location.assign('./view/BranchUserList.html')
+				}
+				if(information.branch == 1) {
+					//  进入业务经理的会员查看页面
+					window.location.assign('./view/ManagerUserList.html')
+				}
+
+			});
+
+//			//  收益入口 上拉菜单
+			mui("#popover ul").on("tap", "li a", function() {
+
+				
+//				window.location.assign("./view/tabPay.html")popover
+				if(information.branch == 0) {
+				mui.alert("请完成分店认证", "全名网")
+					
+				}if(information.branch == 2) {
+					mui('.bottomPopover').popover('hide')
+					window.location.assign("./view/tabPay.html")
+					
+				}if(information.branch == 1) {
+//					业务经理
+					window.localStorage.branch_id = $(this).attr("date-id");
+					window.location.assign("./view/tabPay.html")
+				}
+					
+
+			})
+
+			mui("body").on("tap", "#Profit", function() {
+				//				mui.alert("抱歉收益功能暂时不能查看", "全名网");       查询名下分店列表 获得ID传参数
+				if(information.branch == 0) {
+					mui.alert("请完成分店认证", "全名网")
+					
+				}
+				if(information.branch == 2) {
+					//  进入推荐分店的收益查看页面
+					window.localStorage.branch_id = information.branch_id;
+					window.location.assign('./view/tabPay.html');
+				}
+				if(information.branch == 1) {
+					//  进入业务经理的收益查看页面
+					get_branch_id();
+				}
+				get_branch_id();
+
+				function get_branch_id() {
+					var information = JSON.parse(localStorage.information);
+					var recommend = {
+						business_id: information.business_id,
+					}
+					$.ajax({
+						url: "http://api.qmwjj.cc/index.php?r=business/recommend/recommend_branch_list",
+						data: {
+							recommend: recommend
+						},
+						type: "get",
+						//dataType: 'JSON',
+						success: function(data) {
+							var d = JSON.parse(data);
+							console.log(d)
+							var html = "";
+							for(var i = 0; i < d.length; i++) {
+								html += "<li class='mui-table-view-cell'><a href='#' date-id='" + d[i].branch_id + "'>" + d[i].branch_name + "</a></li>";
+
+							}
+							$($("#popover ul").find("li")).remove();
+							$("#popover ul").append(html);
+						},
+					})
+				}
+
+			});
+
+			//   注册会员的二维码
+			mui("body").on("tap", "#QRCode", function() {
+				if(information.branch == 0) {
+					mui.alert("请完成分店认证", "全名网")
+				}
+				if(information.branch == 1) {
+				//   业务经理
+					mui.alert("抱歉此功能暂时不能使用", "全名网");
+				}
+				if(information.branch == 2) {
+				
+					window.location.assign('./view/qrCode.html')
+				}
+
+			});
+
+			//    安全退出
+			mui("body").on("tap", "#RemoveLocation", function() {
+				window.localStorage.information = "";
+				window.location.assign('./index.html')
+
+			});
+
+			//   欢迎XXX客户
+			Judge_Branch();
+
+			function Judge_Branch() {
+
+				setTimeout(function() {
+
+					console.log(information)
+					if(information.branch == 0) {
+						$(".center p").text("全名网欢迎您访问，请完成分店认证");
+						$("#Authentication").show();
+						$("#Profit").remove();
+					}
+					if(information.branch == 2) {
+						$(".center p").text("欢迎推荐分店" + information.m_name);
+						console.log("开始")
+
+					}
+					if(information.branch == 1) {
+						$(".center p").text("欢迎业务经理" + information.m_name);
+					}
+				}, 100)
+
+			}
+			mui("body").on("tap", "#Authentication", function() {
+				window.location.assign('./view/fdsubmit.html')
+			});
+
+			// H5 plus事件处理
+			function plusReady() {
+				// 监听键按下事件
+				plus.key.addEventListener("keydown", function(e) {
+					console.log("keydown: " + e.keyCode);
+
+					if(e.keyCode == 4) {
+						//  这个按下的返回按键
+
+						window.location.assign("./index.html")
+					}
+				}, false);
+				// 监听键松开事件
+				plus.key.addEventListener("keyup", function(e) {
+					console.log("keyup: " + e.keyCode);
+
+				}, false);
+				// 监听长按键事件
+				plus.key.addEventListener("longpressed", function(e) {
+					console.log("longpressed: " + e.keyCode);
+
+				}, false);
+			}
+			if(window.plus) {
+				plusReady();
+			} else {
+				document.addEventListener("plusready", plusReady, false);
+			}
+
+			//									console.log(information)
+		</script>
+	</body>
+
+</html>

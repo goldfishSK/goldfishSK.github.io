@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>全名网用户中心</title>
+    <link rel="stylesheet" href="../css/init.css" />
+    <link rel="stylesheet" type="text/css" href="../css/userCenter.css" />
+</head>
+<style>
+    @font-face {
+        font-family: "iconfont";
+        src: url('../icon/iconfont.eot');
+        /* IE9*/
+        src: url('../icon/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../icon/iconfont.woff') format('woff'), /* chrome, firefox */
+        url('../icon/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+        url('../icon/iconfont.svg#iconfont') format('svg');
+        /* iOS 4.1- */
+    }
+    
+    .iconfont {
+        font-family: "iconfont" !important;
+        font-size: 16px;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: 0.2px;
+        -moz-osx-font-smoothing: grayscale;
+    }
+</style>
+
+<body>
+    <div class="head_nav">
+        <span class="hn_s" onclick="histy()"><i class="iconfont hns_i">&#xe693;</i></span>
+        <h4 class="hns_h4">用户中心</h4>
+    </div>
+    <!-- 主界面具体展示内容 -->
+    <div class="bg_div">
+        <div class="bg_user">
+            <span class="iconfont">&#xe626;
+</span>
+        </div>
+        <div class="bg_sign">
+            <a href="../view/login.html">登录</a>
+        </div>
+    </div>
+    <!-- 商品開始 -->
+    <div class="dindan">
+        <h4>全部订单</h4>
+        <span><a href="../view/dingdan.html">查看全部订单 <i class="iconfont"> &#xe694;</i></a></span>
+    </div>
+    <div class="state">
+        <ul>
+            <li class="state_li">
+                <a href="">
+                    <div class="statel_div">
+                        <span class="statel_span1">0</span>
+                        <i class="iconfont">&#xe61b;</i>
+                        <span class="statel_span2">待付款</span>
+                    </div>
+                </a>
+            </li>
+            <li class="state_li">
+                <a href="">
+                    <div class="statel_div">
+                        <span class="statel_span1">0</span>
+                        <i class="iconfont">&#xe60e;</i>
+                        <span class="statel_span2">待收货</span>
+                    </div>
+                </a>
+            </li>
+            <li class="state_li">
+                <a href="">
+                    <div class="statel_div">
+                        <span class="statel_span1">0</span>
+                        <i class="iconfont">&#xe658;</i>
+                        <span class="statel_span2">待发货</span>
+                    </div>
+                </a>
+            </li>
+            <li class="state_li">
+                <a href="">
+                    <div class="statel_div">
+                        <span class="statel_span1">0</span>
+                        <i class="iconfont">&#xe615;</i>
+                        <span class="statel_span2">待评价</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--我的资产 -->
+    <!--<div class="assets">
+        <h4>我的资产</h4>
+        <span><a href="">查看全部资产<i class="iconfont"> &#xe694;</i></a></span>
+    </div>-->
+    <!--<div class="assets_item">
+        <ul>
+            <li>
+                <a href="">
+                    <i class="iconfont">&#xe60d;</i>
+                    <span class="ai_span1">余额</span>
+                    <span class="ai_span2">0</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="iconfont">&#xe698;</i>
+                    <span class="ai_span1">积分</span>
+                    <span class="ai_span2">0</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="iconfont">&#xe618;</i>
+                    <span class="ai_span1">充值</span>
+                    <span class="ai_span2">0</span>
+                </a>
+            </li>
+        </ul>
+    </div>-->
+    <!-- 收货地址 储值卡充值 -->
+    <div class="map">
+        <ul>
+            <li>
+                <a href="../view/city.html"><i class="iconfont ">&#xe501;</i>收货地址<span class="iconfont"> &#xe694;</span></a>
+            </li>
+            <!--<li>
+                <a href=""><i class="iconfont ">&#xe618;</i>储值卡充值<span class="iconfont"> &#xe694;</span></a>
+            </li>-->
+        </ul>
+    </div>
+    <!--商品晒单 -->
+    <div class="gsshow">
+        <ul>
+            <li>
+                <a href=""><i class="iconfont ">&#xe610;</i>商品评价<span class="iconfont"> &#xe694;</span></a>
+            </li>
+              <li>
+                <a href="../view/liuyan.html"><i class="iconfont ">&#xe634;</i>账户安全<span class="iconfont"> &#xe694;</span></a>
+            </li>
+            <li>
+                <a href="../view/liuyan.html"><i class="iconfont ">&#xe615;</i>我要留言<span class="iconfont"> &#xe694;</span></a>
+            </li>
+            <li>
+                <a href="../view/aboutUs.html"><i class="iconfont ">&#xe503;</i>关于我们<span class="iconfont"> &#xe694;</span></a>
+            </li>
+            <li>
+                <a href="../view/customer客户服务.htmll"><i class="iconfont ">&#xe7bf;</i>客户服务<span class="iconfont"> &#xe694;</span></a>
+            </li>
+            <li>
+                <a href="../view/aboutUs.html"><i class="iconfont fendian1">&#xe607;</i>分店管理<span class="iconfont"> &#xe694;</span></a>
+            </li>
+            <li>
+                <a href="../view/aboutUs.html"><i class="iconfont fendian">&#xe771;</i>入驻商管理<span class="iconfont"> &#xe694;</span></a>
+            </li>
+          
+           
+        </ul>
+    </div>
+
+    <footer class="m-tabbar tabbar-fixed">
+			<a href="#" class="tabbar-item">
+				<span class="tabbar-icon">
+            <i class="iconfont homeIcon">&#xe603;</i>
+       				 </span>
+				<span class="tabbar-txt">首页</span>
+			</a>
+			<a href="#" class="tabbar-item">
+				<span class="tabbar-icon">
+            <i class="iconfont classIcon">&#xe604;</i>
+      			  </span>
+				<span class="tabbar-txt">分类</span>
+			</a>
+			<a href="#" class="tabbar-item">
+				<span class="tabbar-icon">
+            <i class="iconfont">&#xe623;</i>
+        </span>
+				<span class="tabbar-txt">发现</span>
+			</a>
+			<a href="#" class="tabbar-item">
+				<span class="tabbar-icon">
+            <i class="iconfont CarIcon">&#xe647;</i>
+        </span>
+				<span class="tabbar-txt">购物车</span>
+			</a>
+			<a href="#" class="tabbar-item">
+				<span class="tabbar-icon">
+            <i class="iconfont">&#xe626;</i>
+        </span>
+				<span class="tabbar-txt">个人中心</span>
+			</a>
+		</footer>
+		<link rel="stylesheet" type="text/css" href="../css/footer.css"/>
+    <script type="text/javascript">
+        function histy() {
+            history.back();
+        }
+    </script>
+</body>
+
+</html>

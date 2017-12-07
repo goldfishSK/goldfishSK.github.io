@@ -337,15 +337,7 @@ a {
 	text-indent: 5px;
 }
 
-.gs_num {
-	display: -webkit-inline-box;
-	position: relative;
-	top: -17px;
-}
 
-.gs_num:after {
-	content: "件";
-}
 
 .chioce_goods {
 	display: inline-block;
