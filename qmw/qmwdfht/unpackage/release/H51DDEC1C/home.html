@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<link rel="stylesheet" type="text/css" href="css/jquery-weui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/weui.min.css" />
+
+		<link rel="stylesheet" type="text/css" href="css/private/home.css" />
+		<title></title>
+
+	</head>
+
+	<body>
+		<div class="weui-search-bar" id="searchBar">
+			<span class="title">全名网</span>
+		</div>
+		<div class="back_image">
+			<img src="img/index.jpg" />
+			<p class="titles">欢迎您</p>
+		</div>
+		<div class="content">
+			<div class="weui-cells">
+				<a class="weui-cell weui-cell_access" href="javascript:;" id="UserLock">
+					<div class="weui-cell__bd">
+						<p>会员查看</p>
+					</div>
+					<div class="weui-cell__ft">
+					</div>
+				</a>
+				<a class="weui-cell weui-cell_access" href="javascript:;" id="UserReg">
+					<div class="weui-cell__bd">
+						<p>注册会员</p>
+					</div>
+					<div class="weui-cell__ft">
+					</div>
+				</a>
+				<a class="weui-cell weui-cell_access" href="javascript:;" id="OrderLock">
+					<div class="weui-cell__bd">
+						<p>订单查看</p>
+					</div>
+					<div class="weui-cell__ft">
+					</div>
+				</a>
+				<a class="weui-cell weui-cell_access" href="javascript:;" id="MoneyLock">
+					<div class="weui-cell__bd">
+						<p>我的收益</p>
+					</div>
+					<div class="weui-cell__ft">
+					</div>
+				</a>
+				<a class="weui-cell weui-cell_access" href="javascript:;" id="BranchReg">
+					<div class="weui-cell__bd">
+						<p>分店认证</p>
+					</div>
+					<div class="weui-cell__ft">
+					</div>
+				</a>
+				<a class="weui-cell weui-cell_access" href="javascript:;" id="Exit">
+					<div class="weui-cell__bd">
+						<p>退出账号</p>
+					</div>
+					<div class="weui-cell__ft">
+					</div>
+				</a>
+			</div>
+
+		</div>
+
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-weui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var information = JSON.parse(localStorage.information);
+			console.log(information)
+
+			$(document).ready(function() {
+
+				//   业务经理
+				if(information.branch == 0) {
+					$(".titles").text("欢迎业务经理" + information.m_name)
+				}
+				//   推荐分店
+				if(information.branch == 1) {
+					$(".titles").text("欢迎推荐分店" + information.m_name)
+				}
+				//  普通会员
+				if(information.branch == 2) {
+					$(".titles").text("欢迎您登陆分店、请完成分店认证")
+					$("#BranchReg").css({
+						'display': 'block'
+					});
+				}
+
+			})
+
+			//   会员查看
+			$("#UserLock").click(function() {
+				//   业务经理
+				if(information.branch == 0) {
+					//   先查询旗下分店 选择分店
+					window.location.assign('./view/ManagerUserList.html')
+				}
+				//   推荐分店
+				if(information.branch == 1) {
+					window.location.assign('./view/BranchUserList.html')
+				}
+				//  普通会员
+				if(information.branch == 2) {
+					$.alert("抱歉、请完成分店认证", "全名网", function() {
+						//点击确认后的回调函数
+					});
+				}
+
+			})
+			//   注册会员
+			$("#UserReg").click(function() {
+				//   业务经理
+				if(information.branch == 0) {
+					// 
+
+					$.alert("抱歉、此功能您暂时不能使用", "全名网", function() {
+						//点击确认后的回调函数
+					});
+				}
+				//   推荐分店
+				if(information.branch == 1) {
+
+					window.location.assign('./view/qrCode.html')
+				}
+				//  普通会员
+				if(information.branch == 2) {
+					$.alert("抱歉、请完成分店认证", "全名网", function() {
+						//点击确认后的回调函数
+					});
+				}
+
+			})
+			//  订单查看
+
+			$("#OrderLock").click(function() {
+				//   业务经理
+				if(information.branch == 0) {
+					window.location.assign('./view/ManagerList.html')
+				}
+				//   推荐分店
+				if(information.branch == 1) {
+					window.location.assign('./view/BranchList.html')
+				}
+				//  普通会员
+				if(information.branch == 2) {
+					$.alert("抱歉、请完成分店认证", "全名网", function() {
+						//点击确认后的回调函数
+					});
+				}
+
+			})
+			//   我的收益
+			//   getActions   上拉菜单
+			function getActions(list) {
+				var list = list;
+				console.log(list)
+
+				var ObjectArray = [];
+				for(var i = 0; i < list.length; i++) {
+					var parameter = (list[i])
+					console.log(parameter)
+					var Object = {
+						text: list[i].branch_name,
+						className: list[i].branch_id,
+						onClick: function() {
+
+							var parameters = {};
+							parameters.branch_id = $(this)[0].className
+							console.log(parameters)
+							window.localStorage.branch_id=parameters.branch_id
+							
+							window.location.assign('./view/tabPay.html')
+						}
+					}
+					ObjectArray.push(Object)
+				}
+				console.log(ObjectArray)
+				$.actions({
+					title: "选择分店名称",
+					onClose: function() {
+						console.log("close");
+					},
+					actions: ObjectArray
+				});
+			}
+			function getBranchID(){
+//				localStorage.branch_id
+
+			}
+			
+			
+			//   查看收益
+			$("#MoneyLock").click(function() {
+				//   业务经理
+				if(information.branch == 0) {
+					var recommend = {
+					business_id: information.business_id
+				}
+				console.log(recommend)
+
+				$.ajax({
+					url: "http://api.qmwjj.cc/index.php?r=business/recommend/recommend_branch_list",
+					data: {
+						recommend: recommend
+					},
+					type: "get",
+					dataType: 'JSON',
+					success: function(data) {
+
+						console.log(data)
+						$.hideLoading()
+						if(data.branch_count == 0) {
+							nomore()
+							alerts('全名网', '您的旗下没有推荐分店，快去推广吧');
+						} else {
+							var list = data.branch_list
+							console.log(list)
+							getActions(list)
+						}
+
+					},
+				})
+				}
+				//   推荐分店
+				if(information.branch == 1) {
+					window.localStorage.branch_id=information.branch_id
+						window.location.assign('./view/tabPay.html')
+						
+				}
+				//  普通会员
+				if(information.branch == 2) {
+					$.alert("抱歉、请完成分店认证", "全名网", function() {
+						//点击确认后的回调函数
+					});
+				}
+
+			})
+
+			//  分店认证
+
+			$("#BranchReg").click(function() {
+				//   业务经理
+				if(information.branch == 0) {
+					$.alert("抱歉、您已认证", "全名网", function() {
+						//点击确认后的回调函数
+					});
+				}
+				//   推荐分店
+				if(information.branch == 1) {
+					$.alert("抱歉、您已认证", "全名网", function() {
+						//点击确认后的回调函数
+					});
+				}
+				//  普通会员
+				if(information.branch == 2) {
+					window.location.assign('./view/fdsubmit.html')
+				}
+
+			})
+
+			//  退出账号
+
+			$("#Exit").click(function() {
+				window.location.assign('./index.html')
+
+			})
+		</script>
+		<script type="text/javascript">
+			// H5 plus事件处理
+			function plusReady() {
+				// 监听键按下事件
+				plus.key.addEventListener("keydown", function(e) {
+					console.log("keydown: " + e.keyCode);
+
+					if(e.keyCode == 4) {
+						//  这个按下的返回按键
+
+						window.location.assign("./index.html")
+					}
+				}, false);
+				// 监听键松开事件
+				plus.key.addEventListener("keyup", function(e) {
+					console.log("keyup: " + e.keyCode);
+
+				}, false);
+				// 监听长按键事件
+				plus.key.addEventListener("longpressed", function(e) {
+					console.log("longpressed: " + e.keyCode);
+
+				}, false);
+			}
+			if(window.plus) {
+				plusReady();
+			} else {
+				document.addEventListener("plusready", plusReady, false);
+			}
+		</script>
+	</body>
+
+</html>

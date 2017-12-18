@@ -1,0 +1,17 @@
+#nomore {
+	display: block;
+	margin: 0 auto;
+	padding-top: 40%;
+	padding-bottom: 77%;
+	text-align: center;
+}
+
+#nomore img {
+	margin: 0 auto;
+	width: 150px;
+}
+
+#nomore p {
+	padding-top: 10px;
+	color: #666666;
+}

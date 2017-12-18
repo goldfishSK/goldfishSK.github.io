@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<link href="../css/pintuer.css" rel="stylesheet">
+		<link rel="stylesheet" href="../css/brance.css">
+
+		<!--<script src="../js/pintuer.js"></script>-->
+		<style>
+			@font-face {
+				font-family: "iconfont";
+				src: url('../icon/iconfont.eot');
+				/* IE9*/
+				src: url('../icon/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../icon/iconfont.woff') format('woff'), /* chrome, firefox */
+				url('../icon/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+				url('../icon/iconfont.svg#iconfont') format('svg');
+				/* iOS 4.1- */
+			}
+			
+			.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 16px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="head_nav">
+				<span class="head_span iconfont">&#xe628;</span>
+				<h3 class="head_h3">分店认证</h3>
+			</div>
+			<form method="post" class="form form-block">
+				<div class="form-group">
+					<div class="label">
+						<label for="username">
+				店铺名称</label> <span class="tishi"></span>
+					</div>
+					<div class="field">
+						<input type="text" class="input" id="shopName" name="username" size="50" data-validate="required:必填" maxlength="16" placeholder="店铺名称" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label for="password">
+				详细地址</label><span class="tishi"></span>
+					</div>
+					<div class="field">
+						<div id="addressMap">省/市/区/街道</div>
+
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label for="username">
+				负责人姓名</label><span class="tishi"></span>
+					</div>
+					<div class="field">
+						<input type="text" class="input" id="person" name="username" size="50" data-validate="required:必填" maxlength="16" placeholder="负责人姓名" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label for="username">
+				负责人电话</label><span class="tishi"></span>
+					</div>
+					<div class="field">
+						<input type="text" class="input" id="personNumber" name="username" size="50" data-validate="required:必填" maxlength="16" placeholder="负责人电话" onKeyUp="this.value=this.value.replace(/\D/g,'')" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="label">
+						<label for="username">
+				身份证号</label><span class="tishi"></span>
+					</div>
+					<div class="field">
+						<input type="text" class="input" id="user_Number" name="username" size="50" data-validate="required:必填" maxlength="26" placeholder="身份证" onKeyUp="this.value=this.value.replace(/\D/g,'')" />
+					</div>
+
+				</div>
+
+				<div class="form-group">
+					<div class="label">
+						<label for="username">
+				法人银行卡号</label><span class="tishi"></span>
+					</div>
+					<div class="field">
+						<input type="text" class="input" id="idNum" name="username" size="50" data-validate="required:必填" maxlength="20" placeholder="法人银行卡号" onKeyUp="this.value=this.value.replace(/\D/g,'')" />
+					</div>
+
+				</div>
+
+				<div class="form-group">
+					<div class="label">
+						<label for="username">
+				支付宝账号</label><span class="tishi"></span>
+					</div>
+					<div class="field">
+						<input type="text" class="input" id="idNums" name="username" size="50" data-validate="required:必填" maxlength="20" placeholder="支付宝账号" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" />
+					</div>
+
+				</div>
+
+				<div class="form-group">
+					<div class="label">
+						<label for="username">
+				店面描述</label><span class="tishi"></span>
+					</div>
+					<div class="field">
+						<textarea id="textarea" placeholder="店铺简介"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<label for="username">
+				店面面积</label><span class="tishi"></span>
+					</div>
+					<div class="field">
+						<input type="text" class="input" id="measuer" name="measuer" size="50" data-validate="required:必填" placeholder="㎡" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="label">
+						<label for="username">
+				选择你的店铺规模</label><span class="tishi"></span>
+					</div>
+					<div class="field">
+						<select name="" id="grades">
+							<option value="flagship">旗舰店</option>
+							<option value="image">形象店</option>
+							<option value="category	">类别店</option>
+							<option value="recommend">推荐店</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-button">
+					<button class="button" type="button" id="submitt">
+			信息确认无误、提交账号</button>
+				</div>
+
+			</form>
+		</div>
+
+		<div class="mask">
+			<img src="../img/loding.gif" alt="">
+			<p class="tishixinxi">信息提交中...</p>
+		</div>
+
+		<div class="map">
+
+			<ul id="mapUl">
+
+			</ul>
+
+		</div>
+
+		<script src="../js/jquery.min.js">
+		</script>
+
+		<script>
+			$(".head_span").click(function() {
+				history.back();
+			});
+		</script>
+		<script>
+			var m2 = 1;
+			$("#measuer").blur(function() {
+				m2++;
+				if(m2 == 2) {
+					var _val = $(this).val() + "㎡";
+					$("#measuer").val(_val)
+				}
+			})
+		</script>
+
+		<!--   textarea  高度自       适应插件-->
+		<script>
+			/**
+			 * 文本框根据输入内容自适应高度
+			 * @param                {HTMLElement}        输入框元素
+			 * @param                {Number}                设置光标与输入框保持的距离(默认0)
+			 * @param                {Number}                设置最大高度(可选)
+			 */
+			var autoTextarea = function(elem, extra, maxHeight) {
+				extra = extra || 0;
+				var isFirefox = !!document.getBoxObjectFor || 'mozInnerScreenX' in window,
+					isOpera = !!window.opera && !!window.opera.toString().indexOf('Opera'),
+					addEvent = function(type, callback) {
+						elem.addEventListener ?
+							elem.addEventListener(type, callback, false) :
+							elem.attachEvent('on' + type, callback);
+					},
+					getStyle = elem.currentStyle ? function(name) {
+						var val = elem.currentStyle[name];
+
+						if(name === 'height' && val.search(/px/i) !== 1) {
+							var rect = elem.getBoundingClientRect();
+							return rect.bottom - rect.top -
+								parseFloat(getStyle('paddingTop')) -
+								parseFloat(getStyle('paddingBottom')) + 'px';
+						};
+
+						return val;
+					} : function(name) {
+						return getComputedStyle(elem, null)[name];
+					},
+					minHeight = parseFloat(getStyle('height'));
+
+				elem.style.resize = 'none';
+
+				var change = function() {
+					var scrollTop, height,
+						padding = 0,
+						style = elem.style;
+
+					if(elem._length === elem.value.length) return;
+					elem._length = elem.value.length;
+
+					if(!isFirefox && !isOpera) {
+						padding = parseInt(getStyle('paddingTop')) + parseInt(getStyle('paddingBottom'));
+					};
+					scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+
+					elem.style.height = minHeight + 'px';
+					if(elem.scrollHeight > minHeight) {
+						if(maxHeight && elem.scrollHeight > maxHeight) {
+							height = maxHeight - padding;
+							style.overflowY = 'auto';
+						} else {
+							height = elem.scrollHeight - padding;
+							style.overflowY = 'hidden';
+						};
+						style.height = height + extra + 'px';
+						scrollTop += parseInt(style.height) - elem.currHeight;
+						document.body.scrollTop = scrollTop;
+						document.documentElement.scrollTop = scrollTop;
+						elem.currHeight = parseInt(style.height);
+					};
+				};
+
+				addEvent('propertychange', change);
+				addEvent('input', change);
+				addEvent('focus', change);
+				change();
+			};
+		</script>
+		<script src="../js/area.js" type="text/javascript" charset="utf-8"></script>
+
+		<script>
+			$(".mask").click(function() {
+				$(".mask").hide()
+			})
+
+			var text = document.getElementById("textarea");
+			autoTextarea(text); // 调用
+			// H5 plus事件处理
+			function plusReady() {
+				// 监听键按下事件
+				plus.key.addEventListener("keydown", function(e) {
+					console.log("keydown: " + e.keyCode);
+
+					if(e.keyCode == 4) {
+						//  这个按下的返回按键
+						window.location.assign("../home.html")
+
+					}
+				}, false);
+				// 监听键松开事件
+				plus.key.addEventListener("keyup", function(e) {
+					console.log("keyup: " + e.keyCode);
+
+				}, false);
+				// 监听长按键事件
+				plus.key.addEventListener("longpressed", function(e) {
+					console.log("longpressed: " + e.keyCode);
+
+				}, false);
+			}
+			if(window.plus) {
+				plusReady();
+			} else {
+				document.addEventListener("plusready", plusReady, false);
+			}
+		</script>
+
+		<script type="text/javascript">
+			$("#addressMap").click(function() {
+				var li = "";
+				$(".map").show();
+				for(var i = 0; i < area.result.length; i++) {
+					if(area.result[i].parentid == "0") {
+						li += "<li data-id=" + area.result[i].id + " data-parentid=" + area.result[i].parentid + " data-name=" + area.result[i].name + ">" + area.result[i].name + "</li>"
+					}
+				}
+				document.getElementById('mapUl').innerHTML = li;
+			})
+			$('#mapUl').on('click', 'li', function() { //就改这一行就可以了
+				console.log($(this));
+				$this = $(this);
+				$("#mapUl li").remove();
+				var li = "";
+				for(var i = 0; i < area.result.length; i++) {
+					if(area.result[i].parentid == $this.attr("data-id")) {
+						li += "<li data-id=" + area.result[i].id + " data-parentid=" + area.result[i].parentid + " data-parentname=" + area.result[i].parentname + " data-name=" + area.result[i].name + ">" + area.result[i].name + "</li>"
+					}
+				}
+				document.getElementById('mapUl').innerHTML = li;
+				getLength();
+
+				function getLength() {
+					if($("#mapUl li").length == "0") {
+						$this.attr("data-parentid");
+						for(var i1 = 0; i1 < area.result.length; i1++) {
+							if(area.result[i1].id == $this.attr("data-parentid")) {
+								$("#addressMap").text(area.result[i1].parentname + $this.attr("data-parentname") + $this.attr("data-name"));
+							}
+							$("#mapUl li").remove();
+							$(".map").hide();
+						}
+					}
+				}
+
+			});
+
+			$("#submitt").click(function() {
+				$(".mask .tishixinxi").text("信息提交中......")
+				$(".mask").show()
+				setTimeout(function() {
+					$(".mask .tishixinxi").text("网络超时、请重试")
+				}, 15000)
+//				getBank();
+				StartUp()	
+			//   分店身份认证
+//			    identity()
+
+			})
+
+			//   银行三要素 
+
+			function getBank() {
+
+				var name = $("#person").val(); //  姓名
+				var phone = $("#personNumber").val();   // 手机
+				var peopleId = $("#user_Number").val();  // 身份证
+				var bankId = $("#idNum").val();  // 银行卡  
+
+				var person = {
+					'address': 'ii', //地址
+					'branch_name': 'ii', //分店
+					'people_name': name, //人名
+					'people_id': peopleId, //身份证
+					'bank_id': bankId //银行卡
+				};
+
+				console.log(person);
+				$.ajax({
+					url: "http://api.qmwjj.cc/index.php?r=branch/branch/settledbranch",
+					data: {
+						person: person
+					},
+					type: "get",
+					dataType: 'JSON',
+
+					success: function(data) {
+						console.log(data)
+						if(data == "") {
+
+							$(".mask .tishixinxi").text("当前网络错误、请过几分钟后再试")
+						}
+						if(data.msg != "ok") {
+							$(".mask .tishixinxi").text("提交失败" + data.msg)
+
+						} else {
+							//   开始提交全名网后台
+							console.log("开始提交")
+							$(".mask .tishixinxi").text("开始提交......")
+							StartUp();
+							
+						}
+
+					}
+				})
+
+			}
+
+			//  全名网后台提交  分店注册
+			var information = JSON.parse(localStorage.information);
+			console.log(information)
+
+			function StartUp() {
+
+				var branch = {
+					'branch_name': $("#shopName").val(), //分店名称
+					'province': "1", //省
+					'city': "1", //市
+					'county': "1", //县
+					'address': $("#addressMap").text(), //地址
+					'full_name': $("#person").val(), //负责人姓名
+					'tel': $("#personNumber").val(), //负责人电话
+					'person_id': $("#user_Number").val(), //负责人身份证号
+					'alipay_account': $("#idNums").val(), //支付宝帐户
+					'bank_id': $("#idNum").val(), //银行卡
+					'description': $("#textarea").val(), //描述
+					'measure_of_area': $("#measuer").val(), //面积
+					'branch_level': $("#grades").val(), //分店等级
+					'member_id': information.m_id //会员id
+				};
+
+				//    修改接口地址
+				console.log(branch);
+				$.ajax({
+					url: "http://api.qmwjj.cc/index.php?r=branch/branch/regbranch",
+
+					data: {
+						branch: branch
+					},
+					async: false,
+					type: "get",
+					//					dataType: 'JSON',
+					success: function(data) {
+						console.log("提交成功")
+						console.log(data);
+
+						if(data.info == "此帐户已注册过") {
+							$(".tishixinxi").text(data.info);
+						} else {
+							$(".tishixinxi").text("资料提交成功、保持电话畅通、请在1-5个工作日内等待客服回复。");
+							setTimeout(function() {
+
+								$("input").val(" ");
+								$("textarea").val(" ");
+								$(".mask").hide();
+								window.location.assign("../home.html")
+							}, 5000)
+						}
+
+					},
+				})
+
+			}
+
+  
+       
+			
+		</script>
+
+	</body>
+
+</html>

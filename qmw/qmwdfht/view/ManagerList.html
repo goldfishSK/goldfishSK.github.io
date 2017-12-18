@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>业务经理订单列表</title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<link rel="stylesheet" type="text/css" href="../css/list.css" />
+		<link rel="stylesheet" type="text/css" href="../css/jquery-weui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/weui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/nomore.css" />
+
+		<style type="text/css">
+			.header {
+				width: 100%;
+				left: 0;
+				right: 0;
+				position: fixed;
+				top: 0;
+				z-index: 33;
+				height: 50px;
+			}
+			
+			.back,
+			.name {
+				display: inline-block;
+				position: absolute;
+				top: 0;
+				height: 50px;
+				/* left: 4%; */
+				z-index: 666;
+				text-align: center;
+			}
+			
+			.back {
+				width: 40px;
+			}
+			
+			.back img {
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				z-index: 44;
+				position: relative;
+				top: 16px;
+				margin: 0 auto;
+			}
+			
+			.back:active {
+				background-color: #red !important;
+			}
+			
+			.name {
+				right: 3%;
+				max-width: 37%;
+				color: #333;
+			}
+			
+			.name p {
+				padding: 13px 0;
+				font-size: 15px;
+			}
+			
+			.weui-actionsheet__cell {
+				color: #333333;
+			}
+			
+			.content {
+				margin-top: 52px;
+			}
+			
+			.weui-navbar__item {
+				color: #666666;
+			}
+			
+			.weui-notification .weui-notification__media {
+				position: absolute;
+				right: 0;
+				height: 47px;
+				width: 70px;
+			}
+			
+			.weui-notification .weui-notification__media img {
+				width: 70%;
+			}
+			#product_img img{
+				display: inline-block;
+    width: 50%;
+			}
+			@-webkit-keyframes myfirst
+
+
+{
+	0% {
+		right: -100%;
+	}
+	100% {
+		right: 0%;
+	}
+}
+		</style>
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="weui-navbar">
+				<div class="weui-navbar__item weui_bar__item_on">
+					<span class="titles">订单查看</span>
+				</div>
+
+			</div>
+			<div class="back">
+				<img src="../img/back.png" />
+			</div>
+			<!-- 店铺名称 -->
+			<div class="name">
+				<p id="name_title">店铺名称</p>
+			</div>
+		</div>
+		<div class="content">
+			<section class="g-scrollview">
+
+				<article class="m-list list-theme4" id="ListShow">
+
+				</article>
+
+			</section>
+		</div>
+
+		<div class="ddmask">
+
+			<div class="ddmask1">
+				<div class="ddmask2 show">
+					<header class="m-navbar">
+						<a href="javascript:;" class="navbar-item" id="hideMask">
+							<img src="../img/back.png" />
+						</a>
+						<div class="navbar-center">
+							<span class="navbar-title" id="getID">订单汇总</span>
+						</div>
+
+					</header>
+					<div class="m-cell">
+						<div class="cell-item">
+							<div class="cell-left">订单号</div>
+							<div class="cell-right" id="order_id">1359</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">产品编号</div>
+							<div class="cell-right" id="p">376</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">数量</div>
+							<div class="cell-right" id="product_number">1</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">会员ID</div>
+							<div class="cell-right" id="m_id">10</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">规格</div>
+							<div class="cell-right" id="spec">ccc</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">颜色</div>
+							<div class="cell-right" id="color">ffff</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">产品名称</div>
+							<div class="cell-right" id="product_name">hth</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">产品等级</div>
+							<div class="cell-right" id="product_level">A2</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">订单总额</div>
+							<div class="cell-right" id="price_total">230.77</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">商品主图</div>
+							<div class="cell-right" id="product_img"><img src=""/></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">卖价</div>
+							<div class="cell-right" id="buyer">230.77</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">运费</div>
+							<div class="cell-right" id="shipping">10.00</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">运费小计</div>
+							<div class="cell-right" id="shipping_total">10.00</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">平台编号</div>
+							<div class="cell-right" id="platform_person_id">0</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">入驻商编号</div>
+							<div class="cell-right" id="merchant_id">0</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">税率</div>
+							<div class="cell-right" id="tax">0</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">服务费</div>
+							<div class="cell-right" id="service">2.31</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">税费</div>
+							<div class="cell-right" id="tax_price">0</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">订单创建时间</div>
+							<div class="cell-right" id="order_create_time"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">订单支付时间</div>
+							<div class="cell-right" id="order_pay_time"></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">发货状态</div>
+							<div class="cell-right" id="order_deliver_status">1</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">发货时间</div>
+							<div class="cell-right" id="order_deliver_time">1509430703</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">支付方式</div>
+							<div class="cell-right" id="pay_method">alipay</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">支付成功</div>
+							<div class="cell-right" id="pay_status">0</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">收货人地址</div>
+							<div class="cell-right" id="order_address">陕西&nbsp;&nbsp;西安&nbsp;&nbsp;未央区&nbsp;&nbsp;fe&nbsp;&nbsp;gregr&nbsp;&nbsp;htrhrth&nbsp;&nbsp;形</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">服务体验店编号</div>
+							<div class="cell-right" id="branch_id">6</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">退货</div>
+							<div class="cell-right" id="order_return_product">0</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">退款</div>
+							<div class="cell-right" id="order_return_money">0</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				get_branch_ids()
+
+				$.notification({
+					title: "全名网",
+					text: "点击右上角可以切换分店",
+					media: "<img src='../img/heads.png'>",
+					data: "",
+					onClick: function(data) {
+						$.closeNotification()
+					},
+					onClose: function(data) {
+
+					}
+				});
+			})
+
+			function get_branch_ids() {
+				var information = JSON.parse(localStorage.information)
+
+				var recommend = {
+					business_id: information.business_id
+				}
+				$.ajax({
+					url: "http://api.qmwjj.cc/index.php?r=business/recommend/recommend_branch_list",
+					data: {
+						recommend: recommend
+					},
+					type: "get",
+					dataType: 'JSON',
+					success: function(data) {
+
+						console.log(data)
+
+						if(data.branch_count == 0) {
+							nomore()
+							alerts('全名网', '您的旗下没有推荐分店，快去推广吧');
+
+						} else {
+							var list = data.branch_list
+							console.log(list)
+							$("#name_title").text(list[0].branch_name)
+							//  默认显示第一个的订单列表
+
+							getIDs(list[0])
+						}
+
+					},
+				})
+			}
+		</script>
+
+		<script src="../js/jquery-weui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var information = JSON.parse(localStorage.information)
+			console.log(information)
+
+			function nomore() {
+				var html = "";
+
+				html += '<div id="nomore"><img src="../img/nomore.png"><p>抱歉、暂无订单</p></div>'
+				$('body #nomore').remove();
+				$('body #ListShow a').remove();
+				$('body').append(html)
+			}
+
+			//     $.showLoading();
+			//
+			//      setTimeout(function() {
+			//        $.hideLoading();
+			//      }, 3000)
+
+			//   店铺名称Click
+			$(document).on("click", ".name", function() {
+				//   获得旗下分店ID和name
+				//   获得分店ID
+				$.showLoading();
+				get_branch_id()
+
+			});
+
+			//   获得旗下分店
+			function get_branch_id() {
+				var recommend = {
+					business_id: information.business_id
+				}
+				console.log(recommend)
+
+				$.ajax({
+					url: "http://api.qmwjj.cc/index.php?r=business/recommend/recommend_branch_list",
+					data: {
+						recommend: recommend
+					},
+					type: "get",
+					dataType: 'JSON',
+					success: function(data) {
+
+						console.log(data)
+						$.hideLoading()
+						if(data.branch_count == 0) {
+							nomore()
+							alerts('全名网', '您的旗下没有推荐分店，快去推广吧');
+						} else {
+							var list = data.branch_list
+							console.log(list)
+							getActions(list)
+						}
+
+					},
+				})
+			}
+
+			//   提示框
+			function alerts(title, text) {
+				$.alert({
+					title: title,
+					text: text,
+					onOK: function() {
+						//点击确认
+					}
+				});
+			}
+
+			//   getActions   上拉菜单
+			function getActions(list) {
+				var list = list;
+				console.log(list)
+
+				var ObjectArray = [];
+				for(var i = 0; i < list.length; i++) {
+					var parameter = (list[i])
+					console.log(parameter)
+					var Object = {
+						text: list[i].branch_name,
+						className: list[i].branch_id,
+						onClick: function() {
+
+							var parameters = {};
+							parameters.branch_id = $(this)[0].className
+							console.log(parameters)
+							getIDs(parameters)
+						}
+					}
+					ObjectArray.push(Object)
+				}
+				console.log(ObjectArray)
+				$.actions({
+					title: "选择分店名称",
+					onClose: function() {
+						console.log("close");
+					},
+					actions: ObjectArray
+				});
+			}
+
+			//   根据ID查订单
+			function QueryOrder(ID) {
+
+			}
+			//   
+			function getIDs(parameter) {
+				var parameters = parameter;
+				console.log(parameters)
+				//   根据ID查询订单
+				var recommend = {
+					branch_id: parameters.branch_id,
+				}
+
+				$.ajax({
+					url: "http://api.qmwjj.cc/index.php?r=business/order/recommend_order_list",
+					data: {
+						recommend: recommend
+					},
+					type: "get",
+					dataType: 'JSON',
+					success: function(data) {
+						console.log(data);
+
+						//   没有订单的时候
+						if(data.order == "") {
+							nomore()
+							$.hideLoading()
+						} else {
+
+							var date = data.order
+							var html = "";
+							for(var i = 0; i < date.length; i++) {
+								if(date[i].product_img == "") {
+									date[i].product_img = "http://img1.shikee.com/try/2016/06/23/14381920926024616259.jpg"
+								}
+								html += "<a href='javascript:;' class='list-item'><div class='list-img'><img src='" + date[i].product_img + "' data-url='" + date[i].product_img + "'></div><div class='list-mes'><h3 class='list-title'>" + date[i].product_name + "</h3><h3 class='list-title order_number'>" + date[i].order_number + "</h3><div class='list-mes-item'><div><span class='list-price'><em>¥</em>" + date[i].order_total + "</span> <span class='list-del-price'>¥" + date[i].pay_status + "</span></div><div>" + date[i].m_name + "</div></div><p>" + date[i].order_address + "</p></div></a>"
+							}
+							//  滚动条回到顶点
+							window.scrollTo(0, 0)
+							$("#ListShow a").remove()
+							$("#ListShow").append(html)
+							$.hideLoading()
+
+						}
+					},
+				})
+
+			}
+
+			$(document).on("click", ".back", function() {
+
+				window.location.assign('../home.html')
+
+			});
+			
+			$(document).on("click", "#hideMask", function() {
+
+				$(".ddmask").hide()
+
+			});
+			
+			
+			//  根据订单查看订单详情
+
+			$(document).on("click", "#ListShow .list-item", function() {
+
+				var order_number =$(this).find(".order_number").text().trim();
+
+				var order = {
+					order_number: order_number
+				}
+				console.log(order);
+				$.ajax({
+					url: "http://api.qmwjj.cc/index.php?r=recommend/order/order_detail",
+					data: {
+						order: order
+					},
+					type: "get",
+					//dataType: 'JSON',
+					success: function(data) {
+//						console.log(data);
+						var d =JSON.parse(data)
+						console.log(d)
+						if(d.product_img == "") {
+								d.product_img = "http://img1.shikee.com/try/2016/06/23/14381920926024616259.jpg";
+							}
+							if(d.order_deliver_status == 0) {
+								d.order_deliver_status = "已发货";
+							}
+							if(d.order_deliver_status == 1) {
+								d.order_deliver_status = "未发货";
+							}
+							if(d.pay_status == 0) {
+								d.pay_status = "支付成功";
+							}
+							if(d.pay_status == 1) {
+								d.pay_status = "支付失败";
+							}
+							if(d.pay_method == "alipay") {
+								d.pay_method = "支付宝";
+							}
+
+							$("#order_id").text(d.order_id);
+							$("#p").text(d.p);
+							$("#product_number").text(d.product_number);
+							$("#m_id").text(d.m_id);
+							$("#spec").text(d.spec);
+							$("#color").text(d.color);
+							$("#product_name").text(d.product_name);
+							$("#product_level").text(d.product_level);
+							$("#price_total").text(d.price_total);
+							$("#product_img img").attr("src", d.product_img);
+							$("#buyer").text(d.buyer);
+							$("#shipping").text(d.shipping);
+							$("#shipping_total").text(d.shipping_total);
+							$("#platform_person_id").text(d.platform_person_id);
+							$("#merchant_id").text(d.merchant_id);
+							$("#tax").text(d.tax);
+							$("#service").text(d.service);
+							$("#tax_price").text(d.tax_price);
+							$("#order_create_time").text(d.order_create_time);
+							$("#order_pay_time").text(d.order_pay_time);
+							$("#order_deliver_status").text(d.order_deliver_status);
+							$("#order_deliver_time").text(d.order_deliver_time);
+							$("#pay_method").text(d.pay_method);
+							$("#pay_status").text(d.pay_status);
+							$("#order_address").html(d.order_address);
+							$("#branch_id").text(d.branch_id);
+							$("#order_return_product").text(d.order_return_product);
+							$("#order_return_money").text(d.order_return_money);
+						
+						
+						$(".ddmask").show()
+					},
+				})
+
+			});
+		</script>
+
+		
+	</body>
+
+</html>

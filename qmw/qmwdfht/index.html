@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<link rel="stylesheet" type="text/css" href="css/jquery-weui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/weui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/private/homepage.css" />
+		<title>全名网分店</title>
+
+		<div class="weui-search-bar" id="searchBar">
+			<span class="title">全名网</span>
+		</div>
+		<div class="brand">
+			<img src="img/background_img.png" />
+		</div>
+		<div class="content">
+			<div class="weui-cell">
+				<div class="weui-cell__hd"><label class="weui-label">账号:</label></div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" type="text" id="account" placeholder="请输入账号">
+				</div>
+			</div>
+			<div class="weui-cell">
+				<div class="weui-cell__hd"><label class="weui-label">密码:</label></div>
+				<div class="weui-cell__bd were_top-3">
+					<input class="weui-input password_input" id="passwords" type="password" placeholder="请输入密码">
+
+				</div>
+			</div>
+
+		</div>
+		<div class="sign">
+			<div class="put">
+				<a class="putong">注册会员</a>
+			</div>
+			<div class="sign_div">
+				<ul>
+					<li><button id="manager" class="weui-btn weui-btn_mini weui-btn_default sign_btn">业务经理</button></li>
+					<li><button id="branch" class="weui-btn weui-btn_mini weui-btn_default sign_btn">推荐分店</button></li>
+					<li><button id="user" class="weui-btn weui-btn_mini weui-btn_default sign_btn password_button">普通会员</button></li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="weui-footer">
+			<p class="weui-footer__text">Copyright © 2008-2016 quanmingwang.com</p>
+		</div>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-weui.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- android -->
+		<script type="text/javascript">
+			document.addEventListener('plusready', function() {
+				//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+
+			});
+			//   如果账号密码有一个值为空的话
+			$("input").blur(function() {
+				if($(this).val() == "") {
+					$(this).parents(".weui-cell").css({
+						"border": '1px solid red'
+					})
+				} else {
+					$(this).parents(".weui-cell").css({
+						"border": '0'
+					})
+				}
+			})
+
+			//   检查几个值是否为空
+			function inspectNP() {
+
+				if($("#account").val() == "" || $("#passwords").val() == "") {
+					$.modal({
+						title: "全名网",
+						text: "请检查您的账号密码输入是否有问题",
+						buttons: [{
+								text: "取消",
+								className: "default",
+								onClick: function() {
+									console.log(2)
+								}
+							},
+							{
+								text: "确认",
+
+								onClick: function() {
+									console.log(3)
+								}
+							},
+						]
+					});
+
+					return false;
+				} else {
+					return true;
+				}
+
+			}
+
+			//   普通会员登录
+			function ordinary(name, passd) {
+
+				var member = {
+					username: name,
+					password: passd,
+				}
+				$.ajax({
+					url: "http://api.qmwjj.cc/index.php?r=member/member/login",
+
+					data: {
+						member: member
+					},
+					type: "get",
+					//dataType: 'JSON',
+					success: function(data) {
+						console.log(data);
+						var d = JSON.parse(data);
+						if(d.msg == "无此会员帐户") {
+
+							$.alert(d.msg, "全名网", function() {
+								//点击确认后的回调函数
+							});
+						} else {
+
+							$.alert("登录成功，请完成分店认证获得更好的用户体验", "全名网", function() {
+								//点击确认后的回调函数
+
+							});
+
+							d.branch = 2;
+							console.log(d)
+							window.localStorage.information = JSON.stringify(d);
+							setTimeout(function() {
+								window.location.assign('./home.html')
+							}, 1000)
+
+						}
+
+					},
+
+				});
+			}
+			//   普通会员登录  2
+			$("#user").click(function() {
+
+				//  检查账号密码是否为空
+				inspectNP()
+				if(inspectNP() == true) {
+					var name = $("#account").val();
+					var pwd = $("#passwords").val();
+					ordinary(name, pwd)
+				} else {
+					//  账号或密码等于空
+				}
+			})
+
+			//   推荐分店登录
+
+			function branch(name, passwd) {
+				var member = {
+					user_name: name,
+					password: passwd
+				}
+				$.ajax({
+					url: "http://api.qmwjj.cc/index.php?r=recommend/member/login",
+
+					data: {
+						member: member
+					},
+					type: "get",
+					dataType: 'JSON',
+					success: function(data) {
+						console.log(data);
+
+						if(data.m_id == "") {
+
+							$.alert('登录失败', "全名网", function() {
+								//点击确认后的回调函数
+							});
+							return true;
+						}
+						if(data.error == "") {
+
+							$.alert('网络错误', "全名网", function() {
+								//点击确认后的回调函数
+							});
+							return true;
+						}
+						if(data.error == "没有此会员信息") {
+							$.alert('没有此会员信息', "全名网", function() {
+								//点击确认后的回调函数
+							});
+							return true;
+						}
+
+						if(data.branch_type == "0") {
+
+							console.log("登录失败")
+
+							$.alert('分店审核中、请等待', "全名网", function() {
+								//点击确认后的回调函数
+							});
+							return true;
+
+						}
+
+						if(data.branch_id != "") {
+
+							$.toast("登录成功");
+							setTimeout(function() {
+
+								data.branch = 1;
+								console.log(data)
+								window.localStorage.information = JSON.stringify(data)
+
+								window.location.assign("./home.html")
+							}, 1000)
+						}
+					},
+				})
+			}
+			//   推荐分店登录  1
+			$("#branch").click(function() {
+				//  检查账号密码是否为空
+				inspectNP()
+				if(inspectNP() == true) {
+					var name = $("#account").val();
+					var pwd = $("#passwords").val();
+					branch(name, pwd)
+				} else {
+					//  账号或密码等于空
+				}
+			})
+
+			function Manager(name, passd) {
+				var member = {
+					user_name: name,
+					password: passd
+				}
+				$.ajax({
+					url: "http://api.qmwjj.cc/index.php?r=business/member/login",
+					data: {
+						member: member
+					},
+					type: "get",
+					//dataType: 'JSON',
+					success: function(data) {
+						var d = JSON.parse(data);
+						console.log(d)
+						if(d.msg == "无此业务经理") {
+							$.modal({
+								title: "全名网",
+								text: d.msg,
+								buttons: [{
+									text: "确认",
+									onClick: function() {
+										console.log(3)
+									}
+								}, ]
+							});
+						} else {
+							$.toast("登录成功");
+							setTimeout(function() {
+								d.branch = 0;
+								//   业务经理是0     推荐分店是1  普通会员是2
+								console.log(d)
+								window.localStorage.information = JSON.stringify(d)
+								//									var information = JSON.parse(localStorage.information);
+								//									console.log(information)
+								window.location.assign("home.html")
+							}, 1000)
+						}
+
+					},
+				})
+
+			}
+
+			//   业务经理登录   0  
+			$("#manager").click(function() {
+				//  检查账号密码是否为空
+				inspectNP()
+				if(inspectNP() == true) {
+					var name = $("#account").val();
+					var pwd = $("#passwords").val();
+					Manager(name, pwd)
+				} else {
+					//  账号或密码等于空
+				}
+
+			})
+		</script>
+
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//首页返回键处理
+			//处理逻辑：1秒内，连续两次按返回键，则退出应用；
+			var first = null;
+			mui.back = function() {
+				//首次按键，提示‘再按一次退出应用’
+				if(!first) {
+					first = new Date().getTime();
+					mui.toast('再按一次退出应用');
+					setTimeout(function() {
+						first = null;
+					}, 1000);
+				} else {
+					if(new Date().getTime() - first < 1000) {
+						plus.runtime.quit();
+					}
+				}
+
+			};
+		</script>
+
+	</head>
+
+	<body>
+
+	</body>
+
+</html>

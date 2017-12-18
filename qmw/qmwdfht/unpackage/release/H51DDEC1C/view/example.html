@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+			<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+
+	<title>Document</title>
+	<style type="text/css">
+*{margin:0;padding: 0}
+.box{width: 100px;margin-left: 100px}
+.h_5{height: 50px}
+.h_10{height: 100px}
+.overflow{overflow: hidden;}		
+.b{border:1px solid #ccc;}
+.login{width: 182px;height: 100%}
+
+
+
+	</style>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+	<div class="box h_5">
+		<button type="button" id="person_id">身份认证</button>
+		
+	</div>
+
+	<div class="box h_5">
+		<button type="button" id="regbranch">分店注册</button>
+		
+	</div>
+
+	<div class="box h_5">
+		
+		<button type="button" id="reg_person">会员注册</button>
+	</div>
+	<div class="box h_10">
+		<input type="text" id="tel" placeholder="手机号"><button type="button" id="send_mms">短信发送</button>
+	</div>
+	<div class="box overflow login">
+		<div class="overflow b">
+			<div class="username">
+				<input type="text" name="username" placeholder="用户名">	
+			</div>
+			<div class="username">
+				<input type="password" name="pwd" placeholder="密码">
+			</div>
+			<button type="button" id="login_member">会员登录</button>
+		</div>
+	</div>
+	
+	
+前面
+	<div>
+			<h3>推荐分店</h3>
+		<button id="login" type="button">会员登陆</button>
+		<button id="recommend_member_list" type="button">推荐分店(会员列表)</button>
+		<button id="order_list" type="button">订单列表(推荐分店)</button>
+		<button id="order_detail" type="button">订单详情(推荐分店)</button>
+		<button id="reommend_branch_order_divided" type="button">[时间区域]订单/分成汇总</button>
+	</div>
+	<div>
+			<h3>业务经理</h3>
+		<button id="business_login" type="button">登陆</button>
+		<button id="recommend_branch_list" type="button">推荐分店列表</button>
+		<button id="business_order_list" type="button">订单列表(推荐分店)</button>
+		
+		
+	</div>
+	<div>
+			<h3>会员</h3>
+		<button id="member_login" type="button">会员登陆</button>
+	</div>
+后面
+	<script type="text/javascript">
+		//身份认证           银行卡三要素
+		jQuery("#person_id").click(function(){
+			
+			var person={
+				'address':'ii',//地址
+				'branch_name':'ii',//分店
+				'people_name':'李小姐',//人名
+				'people_id':'330184199412251154',//身份证
+				'bank_id':'6212261202011111111'//银行卡
+			};
+
+
+			$.ajax({
+				url: "http://api.qmwjj.cc/index.php?r=branch/branch/settledbranch",
+				data:{person:person},
+				type: "get",
+				 dataType: 'JSON',
+				success:function(data){
+					console.log(data);
+					// var d=JSON.parse(data);
+					// console.log(d);
+				},
+			})
+
+		})
+//    用户注册
+		jQuery("#reg_person").click(function(){
+			
+			var member={
+				'full_name':'ii',//用户名
+				'pwd':'ii',//密码
+				'tel':'13571921107',//手机号
+				'verify_code':'159758'//验证码
+			};
+		
+			
+		
+			$.ajax({
+				url: "http://api.qmwjj.cc/index.php?r=member/member/regmember",
+				data:{member:member},
+				type: "get",
+				  dataType: 'JSON',
+				success:function(data){
+					console.log(data);
+					// var d=JSON.parse(data);
+					// console.log(d);
+				},
+			})
+
+		})
+		//短信发送
+		jQuery("#send_mms").click(function(){
+			
+			var mms={
+				'tel':jQuery("#tel").val(),//手机号
+			};
+		
+			console.log(mms);
+		
+			$.ajax({
+				url: "http://api.qmwjj.cc/index.php?r=member/member/send_mms",
+				data:{mms:mms},
+				type: "get",
+				  dataType: 'JSON',
+				success:function(data){
+					console.log(data);
+					// var d=JSON.parse(data);
+					// console.log(d);
+				},
+			})
+
+		})
+		//会员登录
+		jQuery("#login_member").click(function(){
+			var login={
+				'username':jQuery("input[name='username']").val(),
+				'pwd':jQuery("input[name='pwd']").val()
+			};
+
+			$.ajax({
+				url: "http://api.qmwjj.cc/index.php?r=member/member/login",
+				data:{login:login},
+				type: "get",
+				dataType: 'JSON',
+				success:function(data){
+					console.log(data);
+					// var d=JSON.parse(data);
+					// console.log(d);
+				},
+			})
+		});
+		//分店注册
+		//
+		jQuery("#regbranch").click(function(){
+			var branch={
+				'branch_name':'aaa',//分店名称
+				'province':'1',//省
+				'city':'2',//市
+				'county':'3',//县
+				'address':'aaa',//地址
+				'full_name':'aaa',//负责人姓名
+				'tel':'tel',//负责人电话
+				'person_id':'fefe',//负责人身份证号
+				'alipay_account':'dfefef',//支付宝帐户
+				'bank_id':'fefef',//银行卡
+				'description':'fefef',//描述
+				'measure_of_area':'fefefef',//面积
+				'branch_level':'fefeff',//分店等级
+				'description':'feggregre',
+				'member_id':'1100'//会员id
+			};
+			//console.log(branch);
+			$.ajax({
+				//url: "http://api.branch.qmwjj.cc/index.php?r=branch/regbranch",
+				url: "http://api.qmwjj.cc/index.php?r=branch/branch/regbranch",
+				data:{branch:branch},
+				type: "get",
+				//dataType: 'JSON',
+				success:function(data){
+					console.log(data);
+					 var d=JSON.parse(data);
+					 console.log(d);
+				},
+			})
+
+		});
+
+		
+		
+		
+		
+		
+		
+		
+		jQuery("#login").click(function(){
+			//不是推荐分店时返回的信息
+			// var member={
+			// 	user_name:'13012345679',
+			// 	password:'13012345679'
+			//}
+			//推荐分店时返回的信息
+			var member={
+				user_name:'15291908600',
+				password:'15291908600'
+			}
+			$.ajax({
+				url: "http://api.qmwjj.cc/index.php?r=recommend/member/login",
+				data:{member:member},
+				type: "get",
+				dataType: 'JSON',
+				success:function(data){
+					console.log(data);
+					// var d=JSON.parse(data);
+					// console.log(d);
+				},
+			})
+		});	
+
+
+
+//   推荐分店会员查询
+		jQuery("#recommend_member_list").click(function(){
+			
+			var recommend={
+				branch_id:'4'
+			}
+			console.log(recommend);
+			$.ajax({
+				url: "http://api.qmwjj.cc/index.php?r=recommend/member/member_list",
+				data:{recommend:recommend},
+				type: "get",
+				//dataType: 'JSON',
+				success:function(data){
+					console.log(data);
+					 var d=JSON.parse(data);
+					 console.log(d);
+				},
+			})
+		});	
+
+
+
+//    订单查询 推荐分店
+		jQuery("#order_list").click(function(){
+			
+			var order={
+				branch_id:'4'
+			}
+			console.log(order);
+			$.ajax({
+				url: "http://api.qmwjj.cc/index.php?r=recommend/order/order_list",
+				data:{order:order},
+				type: "get",
+				//dataType: 'JSON',
+				success:function(data){
+					console.log(data);
+					 var d=JSON.parse(data);
+					 console.log(d);
+				},
+			})
+		});	
+//        订单详情(推荐分店)
+		jQuery("#order_detail").click(function(){
+			
+			var order={
+				order_number:'2017102182152207344'
+			}
+			console.log(order);
+			$.ajax({
+				url: "http://api.qmwjj.cc/index.php?r=recommend/order/order_detail",
+				data:{order:order},
+				type: "get",
+				//dataType: 'JSON',
+				success:function(data){
+					console.log(data);
+					 //var d=JSON.parse(data);
+					 //console.log(d);
+				},
+			})
+		});	
+
+
+
+		
+
+		//以下为业务经理部分
+		//
+		jQuery("#business_login").click(function(){
+			
+			var member={
+				user_name:'15291908600',
+				password:'15291908600'
+			}
+			$.ajax({
+				url: "http://api.qmwjj.cc/index.php?r=business/member/login",
+				data:{member:member},
+				type: "get",
+				//dataType: 'JSON',
+				success:function(data){
+					console.log(data);
+					 //var d=JSON.parse(data);
+					 //console.log(d);
+				},
+			})
+		});	
+
+//        推 荐分店列表
+		jQuery("#recommend_branch_list").click(function(){
+			
+			var recommend={
+				business_id:'5',
+			}
+			$.ajax({
+				url: "http://api.qmwjj.cc/index.php?r=business/recommend/recommend_branch_list",
+				data:{recommend:recommend},
+				type: "get",
+				//dataType: 'JSON',
+				success:function(data){
+					console.log(data);
+					 //var d=JSON.parse(data);
+					 //console.log(d);
+				},
+			})
+		});	
+
+//订单列表(推荐分店)
+		jQuery("#business_order_list").click(function(){
+			
+			var recommend={
+				branch_id:'41',
+			}
+			$.ajax({
+				url: "http://api.qmwjj.cc/index.php?r=business/order/recommend_order_list",
+				data:{recommend:recommend},
+				type: "get",
+				//dataType: 'JSON',
+				success:function(data){
+					console.log(data);
+					 //var d=JSON.parse(data);
+					 //console.log(d);
+				},
+			})
+		});	
+
+
+
+
+
+//[时间区域]订单/分成汇总
+		jQuery("#reommend_branch_order_divided").click(function(){
+			
+			var reommend_branch={
+				branch_id:'4',
+			}
+			$.ajax({
+				url: "http://api.qmwjj.cc/index.php?r=business/order/order_divided",
+				data:{reommend_branch:reommend_branch},
+				type: "get",
+				//dataType: 'JSON',
+				success:function(data){
+					console.log(data);
+					 //var d=JSON.parse(data);
+					// console.log(d);
+					 /**
+					  * ratio比率
+					  * money提现钱数
+					  * total 订单总数
+					  * order_sum 订单合计
+					  */
+					// var d=JSON.parse(data);
+					// console.log(d);
+					//  for(var i in d){
+					//  	console.log(i);
+					//  }
+				},
+			})
+		});	
+		//会员登录
+		jQuery("#member_login").click(function(){
+			
+			var member={
+				username:'13012345678',
+				password:'13012345678',
+			}
+			$.ajax({
+				url: "http://api.qmwjj.cc/index.php?r=member/member/login",
+				data:{member:member},
+				type: "get",
+				//dataType: 'JSON',
+				success:function(data){
+					console.log(data);
+
+				},
+			})
+		});	
+
+
+		
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+body{
+	width: 100%;
+	min-width: 320px;
+	max-width: 640px;
+	margin: 0 auto;
+}
+.weui-search-bar{
+	  background: #FFFFFF;
+	      box-shadow: 0px 3px 4px #eee;
+}
+.title{
+	display: inline-block;
+	margin: 0  auto;
+}
+.brand{
+	width: 100%;
+}
+.brand img{
+	display: block;
+	width: 100%;
+	max-height: 230px;
+}
+.weui-cell{
+	border-radius: 5px;
+}
+.were_top-3{
+	position: relative;
+	top: 3px;
+}
+
+.content{
+	margin-top: 1rem ;
+	border-top: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+}
+.weui-label{
+	text-align: center;
+	text-indent: 5px;
+	width: 70px;
+}
+.weui-cell:before {
+    
+    border-top: 1px solid #ddd !important;
+    color: #ddd !important;
+   
+}
+
+.putong{
+	    display: block;
+    position: relative;
+    float: right;
+    top: 5px;
+    background: #fff;
+    border: 0;
+    padding: 4px 8px;
+    border-radius: 0;
+    right: 10%;
+    color: blue;
+    text-decoration: underline;
+    font-size: 0.26rem;
+    font-size: 13px;
+}
+.sign{
+	
+}
+.weui-btn:after{
+	border: 1px solid rgba(0,0,0,0);
+}
+.sign_btn{
+	    width: 99% !important;
+   height: 1.7rem;
+    line-height: 1.7rem;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD !important;
+}
+
+.sign_div ul {
+	width: 100%;
+	text-align: center;
+}
+.sign_div ul li{
+	display: inline-block;
+	width: 28%;
+	margin: 0 1%;
+}
+.put{
+	width: 100%;
+	height: 2rem;
+}
+/*footer */
+.weui-footer{
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	right: 0;
+}

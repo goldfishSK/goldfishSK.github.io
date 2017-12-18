@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/ydui.css" />
+		<script src="../js/ydui.flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/Manger.css" />
+	</head>
+
+	<body>
+
+		<section class="g-flexview">
+
+			<header class="m-navbar">
+				<a href="../home.html" class="navbar-item"><i class="back-ico"></i></a>
+				<div class="navbar-center"><span class="navbar-title" data-branch_id="" id="J_ShowActionSheet"></span></div>
+			</header>
+
+			<section class="g-scrollview">
+
+				<article class="m-list list-theme4">
+
+				</article>
+
+			</section>
+
+		</section>
+
+		<div class="ddmask">
+
+			<div class="ddmask1">
+				<div class="ddmask2">
+					<header class="m-navbar">
+						<a href="#" class="navbar-item">
+							<i class="back-ico"></i>
+						</a>
+						<div class="navbar-center">
+							<span class="navbar-title" id="getID">订单汇总</span>
+						</div>
+
+					</header>
+					<div class="m-cell">
+						<div class="cell-item">
+							<div class="cell-left">订单号</div>
+							<div class="cell-right" id="order_id">右边内容一</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">产品编号</div>
+							<div class="cell-right" id="p">右边内容一</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">数量</div>
+							<div class="cell-right" id="product_number">右边内容一</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">会员ID</div>
+							<div class="cell-right" id="m_id">右边内容一</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">规格</div>
+							<div class="cell-right" id="spec">右边内容一</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">颜色</div>
+							<div class="cell-right" id="color">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">产品名称</div>
+							<div class="cell-right" id="product_name">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">产品等级</div>
+							<div class="cell-right" id="product_level">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">订单总额</div>
+							<div class="cell-right" id="price_total">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">商品主图</div>
+							<div class="cell-right" id="product_img"><img src=""/></div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">卖价</div>
+							<div class="cell-right" id="buyer">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">运费</div>
+							<div class="cell-right" id="shipping">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">运费小计</div>
+							<div class="cell-right" id="shipping_total">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">平台编号</div>
+							<div class="cell-right" id="platform_person_id">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">入驻商编号</div>
+							<div class="cell-right" id="merchant_id">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">税率</div>
+							<div class="cell-right" id="tax">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">服务费</div>
+							<div class="cell-right" id="service">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">税费</div>
+							<div class="cell-right" id="tax_price">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">订单创建时间</div>
+							<div class="cell-right" id="order_create_time">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">订单支付时间</div>
+							<div class="cell-right" id="order_pay_time">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">发货状态</div>
+							<div class="cell-right" id="order_deliver_status">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">发货时间</div>
+							<div class="cell-right" id="order_deliver_time">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">支付方式</div>
+							<div class="cell-right" id="pay_method">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">支付成功</div>
+							<div class="cell-right" id="pay_status">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">收货人地址</div>
+							<div class="cell-right" id="order_address">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">服务体验店编号</div>
+							<div class="cell-right" id="branch_id">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">退货</div>
+							<div class="cell-right" id="order_return_product">右边内容二</div>
+						</div>
+						<div class="cell-item">
+							<div class="cell-left">退款</div>
+							<div class="cell-right" id="order_return_money">右边内容二</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/ydui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			! function(win, $) {
+				var information = JSON.parse(localStorage.information);
+				console.log(information)
+				var dialog = win.YDUI.dialog;
+				/* 加载中提示框 */
+				dialog.loading.open('加载中');
+
+				$(document).ready(function() {
+
+					$("#J_ShowActionSheet").text(information.m_name)
+
+					if(information.branch_id == "") {
+						dialog.loading.open('加载失败')
+						stop()
+					} else {
+						AccordingID(information.branch_id);
+					}
+
+				})
+
+				//  根据分店ID查询订单列表
+				function AccordingID(Object) {
+					var recommend = {
+						branch_id: Object,
+					}
+
+					$.ajax({
+						url: "http://api.qmwjj.cc/index.php?r=business/order/recommend_order_list",
+						data: {
+							recommend: recommend
+						},
+						type: "get",
+						//dataType: 'JSON',
+						success: function(data) {
+						var html = "";
+						var dates = JSON.parse(data);
+					
+						console.log(dates)
+							if(dates.order_count != "") {
+								//  解析
+								var date = dates.order
+								for(var i = 0; i < date.length; i++) {
+									//  商品主图
+
+									if(date[i].product_img == "") {
+										date[i].product_img = "../img/02.jpg"
+									}
+									html += "<a href='javascript:;' class='list-item'><div class='list-img'><img src='" + date[i].product_img + "' data-url='" + date[i].product_img + "'></div><div class='list-mes'><h3 class='list-title'>" + date[i].product_name + "</h3><h3 class='list-title order_number'>" + date[i].order_number + "</h3><div class='list-mes-item'><div><span class='list-price'><em>¥</em>" + date[i].order_total + "</span> <span class='list-del-price'>¥" + date[i].pay_status + "</span></div><div>" + date[i].m_name + "</div></div><p>" + date[i].order_address + "</p></div></a>"
+								}
+								$(".m-list a").remove();
+								setTimeout(function() {
+									$(".m-list").append(html);
+									dialog.loading.close();
+								}, 200)
+							} else {
+								//  订单为空
+								html += "<div id='nomore'><img src='../img/nomore.png'><p>抱歉、暂无订单</p></div>";
+								$(".m-list a").remove();
+								setTimeout(function() {
+									$(".m-list").append(html);
+									dialog.loading.close();
+								}, 200)
+							}
+
+						},
+						error: function(data) {
+							dialog.loading.close();
+							dialog.toast('加载失败！', 'error', 3000, function() {
+								dialog.alert('重新加载！');
+
+							});
+						}
+					})
+
+				}
+
+				$(".list-theme4").on('click', '.list-item', function() {
+					$(".ddmask").show();
+					$('.ddmask2').addClass("show")
+
+					order_detail($($(this)).find(".order_number").text());
+				})
+
+				$(".ddmask2 .navbar-item").click(function() {
+					$(".ddmask").hide();
+					$('.ddmask2').removeClass("show")
+				})
+				//   根据订单列表查看订单详情
+				function order_detail(Object) {
+
+					var order = {
+						order_number: Object
+					}
+					console.log(order);
+					$.ajax({
+						url: "http://api.qmwjj.cc/index.php?r=recommend/order/order_detail",
+						data: {
+							order: order
+						},
+						type: "get",
+						//dataType: 'JSON',
+						success: function(data) {
+							console.log(data);
+							var d = JSON.parse(data);
+							console.log(d);
+							// 赋值
+							if(d.product_img == "") {
+								d.product_img = "../img/02.jpg";
+								//								http://bpic.588ku.com/element_origin_min_pic/17/11/17/9a7dae236a449819f60763cb0cf867fa.jpg
+							}
+
+							$("#order_id").text(d.order_id);
+							$("#p").text(d.p);
+							$("#product_number").text(d.product_number);
+							$("#m_id").text(d.m_id);
+							$("#spec").text(d.spec);
+							$("#color").text(d.color);
+							$("#product_name").text(d.product_name);
+							$("#product_level").text(d.product_level);
+							$("#price_total").text(d.price_total);
+							$("#product_img img").attr("src", d.product_img);
+							$("#buyer").text(d.buyer);
+							$("#shipping").text(d.shipping);
+							$("#shipping_total").text(d.shipping_total);
+							$("#platform_person_id").text(d.platform_person_id);
+							$("#merchant_id").text(d.merchant_id);
+							$("#tax").text(d.tax);
+							$("#service").text(d.service);
+							$("#tax_price").text(d.tax_price);
+							$("#order_create_time").text(d.order_create_time);
+							$("#order_pay_time").text(d.order_pay_time);
+							$("#order_deliver_status").text(d.order_deliver_status);
+							$("#order_deliver_time").text(d.order_deliver_time);
+							$("#pay_method").text(d.pay_method);
+							$("#pay_status").text(d.pay_status);
+							$("#order_address").html(d.order_address);
+							$("#branch_id").text(d.branch_id);
+							$("#order_return_product").text(d.order_return_product);
+							$("#order_return_money").text(d.order_return_money);
+
+						},
+						error: function(data) {
+							dialog.toast('加载失败！', 'error', 3000, function() {
+								//								dialog.alert('给你一次重来的机会！');
+							});
+						}
+					})
+				}
+
+				// H5 plus事件处理
+				function plusReady() {
+					// 监听键按下事件
+					plus.key.addEventListener("keydown", function(e) {
+						console.log("keydown: " + e.keyCode);
+
+						if(e.keyCode == 4) {
+							//  这个按下的返回按键
+							window.location.assign("../home.html")
+
+						}
+					}, false);
+					// 监听键松开事件
+					plus.key.addEventListener("keyup", function(e) {
+						console.log("keyup: " + e.keyCode);
+
+					}, false);
+					// 监听长按键事件
+					plus.key.addEventListener("longpressed", function(e) {
+						console.log("longpressed: " + e.keyCode);
+
+					}, false);
+				}
+				if(window.plus) {
+					plusReady();
+				} else {
+					document.addEventListener("plusready", plusReady, false);
+				}
+
+				dialog.notify('点击商品可以进入商品详情页', 10000, function() {
+
+				});
+
+			}(window, jQuery);
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,374 @@
+.g-flexview,
+.tabbar-item {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+}
+
+a {
+	color: #666666;
+	font-family: arial, sans-serif;
+}
+
+.g-flexview,
+.g-view {
+	margin: 0 auto;
+	max-width: 750px;
+	min-width: 320px;
+}
+
+.g-scrollview:after,
+.g-view:after,
+.g-view:before {
+	content: '';
+	width: 100%;
+}
+
+.g-scrollview:after {
+	display: block;
+	height: 25px;
+}
+
+.hairline .g-scrollview {
+	margin-top: .5px;
+}
+
+.g-scrollview {
+	width: 100%;
+	height: 100%;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	overflow-y: auto;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+	position: relative;
+	margin-bottom: -1px;
+}
+
+.list-theme4 {
+	padding: 0 7px;
+}
+
+.list-theme4 .list-item {
+	overflow: hidden;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 7px 0 8px;
+	position: relative;
+}
+
+.list-theme4 .list-item .list-img {
+	width: 100px;
+	padding: 10px 0;
+	border: 1px solid #ddd;
+}
+
+.list-img img {
+	width: 100%;
+	/* margin-top: -50%; */
+	border: none;
+	position: relative;
+	top: 5%;
+}
+
+.list-theme4 .list-item .list-mes {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	padding-left: 7px;
+}
+
+.list-theme4 .list-item .list-mes .list-title {
+	line-height: 25px;
+	max-height: 55px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
+	width: 100%;
+	max-width: 210px;
+	font-size: 14px;
+}
+
+.list-theme4 .list-item .list-mes .list-mes-item {
+	padding-top: 5px;
+}
+
+.list-mes .list-mes-item {
+	overflow: hidden;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: end;
+	-webkit-align-items: flex-end;
+	-ms-flex-align: end;
+	align-items: flex-end;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	color: #999;
+}
+
+.list-mes p {
+	padding-top: 5px;
+	color: #666;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
+	width: 100%;
+	max-width: 210px;
+	font-size: 14px;
+}
+
+.list-theme4 .list-item:not(:last-child):after {
+	position: absolute;
+	z-index: 0;
+	width: 100%;
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	-webkit-transform-origin: 0 100%;
+	transform-origin: 0 100%;
+}
+
+.list-price {
+	font-size: 15px;
+	color: #EB5211;
+}
+
+.list-price>em {
+	font-size: 13px;
+}
+
+.list-del-price {
+	padding-left: 3px;
+	font-size: 14px;
+	margin-left: 3px;
+	position: relative;
+	color: #8C8C8C;
+}
+
+.list-del-price:after {
+	border-top: 0;
+}
+
+
+/* 订单详情 */
+
+.ddmask {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: #FDFDFD;
+	display: none;
+}
+
+.ddmask1 {
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+}
+
+.show {
+	display: block;
+}
+
+.show {
+	animation: myfirst 1s;
+	-moz-animation: myfirst 1s;
+	-webkit-animation: myfirst 1s;
+	-o-animation: myfirst 1s;
+}
+
+.ddmask2 {
+	position: relative;
+	overflow: scroll;
+	height: 100%;
+}
+
+::-webkit-scrollbar {
+	width: 1px;
+	float: right;
+}
+
+.ddmask2 .m-navbar {
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	display: inline-block;
+	width: 100%;
+	left: 0;
+	right: 0;
+}
+
+.m-navbar {
+	height: 50px;
+	position: relative;
+	display: flex;
+	background-color: rgba(255, 255, 255, .98);
+}
+
+.navbar-center {
+	-webkit-box-ordinal-group: 3;
+	-webkit-order: 2;
+	-ms-flex-order: 2;
+	order: 2;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	height: 50px;
+	width: 50%;
+	margin-left: 25%;
+}
+
+.ddmask2 .navbar-center {
+	position: absolute;
+	top: 0;
+}
+
+.navbar-center .navbar-title {
+	text-align: center;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	display: block;
+	text-overflow: ellipsis;
+	font-size: 18px;
+	color: #5C5C5C;
+}
+
+.m-navbar:after {
+	content: "";
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	border-bottom: 1px solid #B2B2B2;
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	-webkit-transform-origin: 0 100%;
+	transform-origin: 0 100%;
+}
+
+.m-navbar:after {
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	border-bottom: 1px solid #B2B2B2;
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	-webkit-transform-origin: 0 100%;
+	transform-origin: 0 100%;
+}
+
+.m-cell {
+	position: relative;
+	z-index: 1;
+	margin-bottom: 7px;
+}
+
+.cell-item {
+	display: flex;
+	position: relative;
+	padding-left: 12px;
+	overflow: hidden;
+}
+
+.m-cell .cell-item:first-child {
+	margin-top: 42px;
+}
+
+.cell-left {
+	color: #333;
+	font-size: 17px;
+	white-space: nowrap;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.cell-right {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	width: 100%;
+	min-height: 50px;
+	color: #525252;
+	text-align: right;
+	font-size: 14px;
+	padding-right: 12px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+}
+
+.cell-item:not(:last-child):after {
+	margin-left: 5px;
+	position: absolute;
+	border-bottom: 1px solid #D9D9D9;
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	-webkit-transform-origin: 0 100%;
+	transform-origin: 0 100%;
+}
+
+.cell-item:not(:last-child):after,
+.m-cell:after {
+	content: '';
+	z-index: 0;
+	left: 0;
+	height: 1px;
+	width: 100%;
+	bottom: 0;
+}
+
+.navbar-item {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	height: 48px;
+	min-width: 14%;
+}
+
+.navbar-item img {
+	display: block;
+	width: 25px;
+	height: 25px;
+	position: relative;
+	margin: 0 auto;
+	top: 30%;
+}
