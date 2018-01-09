@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html >
+
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<link rel="" type="" href="../css/init.css">
+		<link rel="stylesheet" href="../css/city.css">
+		<script src="../js/city.js"></script>
+		<script src="../js/jquery.js"></script>
+		<style>
+			@font-face {
+				font-family: "iconfont";
+				src: url('../icon/iconfont.eot');
+				/* IE9*/
+				src: url('../icon/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../icon/iconfont.woff') format('woff'), /* chrome, firefox */
+				url('../icon/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+				url('../icon/iconfont.svg#iconfont') format('svg');
+				/* iOS 4.1- */
+			}
+			
+			.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 16px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="management">
+			<div class="head">
+				<span class="haed_span"><i class="iconfont">&#xe65e;</i></span>
+				<h3>地址管理</h3>
+				<span class="head_right_span"></span>
+			</div>
+			<div class="content">
+				<ul class="cont_ul">
+					<li class="con_li ByClick">
+						<div class="con_left">
+							<div class="con_top"><span class="con_name">佘坤1</span> <span class="con_phone">18629361234</span></div>
+							<div class="con_down">陕西省西安市未央区凤城十二路</div>
+						</div>
+						<div class="con_right"><img class="con_img" src="../img/right.png" class="chioce" alt=""></div>
+					</li>
+					<li class="con_li ">
+						<div class="con_left">
+							<div class="con_top"><span class="con_name">佘坤2</span> <span class="con_phone">18629362345</span></div>
+							<div class="con_down">陕西省西安市未央区凤城十二路</div>
+						</div>
+						<div class="con_right"><img class="con_img" src="../img/111.png" class="chioce" alt=""></div>
+					</li>
+					<li class="con_li ">
+						<div class="con_left">
+							<div class="con_top"><span class="con_name">佘坤3</span> <span class="con_phone">18629364567</span></div>
+							<div class="con_down">陕西省西安市未央区凤城十二路</div>
+						</div>
+						<div class="con_right"><img class="con_img" src="../img/111.png" class="chioce" alt=""></div>
+					</li>
+					<li class="con_li ">
+						<div class="con_left">
+							<div class="con_top"><span class="con_name">佘坤4</span> <span class="con_phone">18629366789</span></div>
+							<div class="con_down">陕西省西安市未央区凤城十二路</div>
+						</div>
+						<div class="con_right"><img class="con_img" src="../img/111.png" class="chioce" alt=""></div>
+					</li>
+				</ul>
+			</div>
+			<div class="footer">
+				<button type="" class="addMap">添加新地址</button>
+			</div>
+			<div class="mask">
+				<form class="mask_form">
+					<ul class="f_ul">
+						<li class="f_li">
+							<span>收货人姓名</span>
+							<input type="text" class="consigen" placeholder="收货人姓名">
+						</li>
+						<li class="f_li">
+							<span>联系方式</span>
+							<input type="text" class="phoneNum" placeholder="手机(必填)">
+						</li>
+						<li class="f_li">
+							<div id="addAddress">
+								<div class="address_input"><input class="address_input1" type="text" placeholder="选择您的所在地" id="shengshi" onClick="getProvinceBuy()" readonly="readonly"></div>
+							</div>
+						</li>
+						<li class="f_li">
+							<div id="addAddress">
+								<div class="address_input"><input class="address_input2" type="text" placeholder="選擇體驗店地址" id="tiyandian" onClick="getProvinceBuy()" readonly="readonly"></div>
+							</div>
+						</li>
+						<li class="f_li">
+
+							<textarea name="" id="" cols="30" rows="3" placeholder="详细地址"></textarea>
+						</li>
+
+					</ul>
+					<div class="ma_foot">
+						<div class="hideBtn">保存</div>
+					</div>
+					<div class="me_foot">
+						<!--<a href="javascript:void(0);" class="dotm_btn2">删除</a>
+                    <a href="javascript:void(0);" class="dotm_btn3">设置默认地址</a>-->
+						<div class="baocun">保存</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<script>
+			//    城市选择
+			function getProvinceBuy() {
+				$("body .dqld_div").remove();
+				var province = eval(proStr);
+				var newStr = new Array();
+				newStr.push("<div class=\"dqld_div\" style=\"\"><ul>");
+				for(var i = 0, psize = province.length; i < psize; i++) {
+					province[i].NAME;
+					newStr.push("<li onclick=\"getCityBuy(" + i + ")\">" + province[i].NAME + "</li>");
+				}
+				newStr.push("</ul></div>");
+				$("body").append(newStr.join(""));
+			}
+
+			function getCityBuy(val) {
+				var province = eval(proStr);
+				var city = eval(province[val].ITEMS);
+				var newStr = new Array();
+				newStr.push("<div class=\"dqld_div\"><ul>");
+				newStr.push("<li onclick=\"getProvinceBuy()\" style=\"background-color:#808080;\">" + province[val].NAME + "</li>");
+				for(var j = 0, csize = city.length; j < csize; j++) {
+					newStr.push("<li onclick=\"getAreaBuy(" + j + "," + val + ")\"  style=\"padding-left:20px;\">" + city[j].NAME + "</li>");
+				}
+				newStr.push("</ul></div>");
+				$("body .dqld_div").remove();
+				$("body").append(newStr.join(""));
+			}
+
+			function getAreaBuy(val, val1) {
+				var province = eval(proStr);
+				var city = eval(province[val1].ITEMS);
+				var area = eval(city[val].ITEMS);
+				var newStr = new Array();
+				newStr.push("<div class=\"dqld_div\"><ul>");
+				newStr.push("<li onclick=\"getProvinceBuy()\" style=\"background-color:#999999;\">" + province[val1].NAME + "</li>");
+				newStr.push("<li onclick=\"getCityBuy(" + val1 + ")\" style=\"background-color:#ccc;padding-left:10px;\">" + city[val].NAME + "</li>");
+				for(var t = 0, asize = area.length; t < asize; t++) {
+					area[t].NAME;
+					newStr.push("<li  style=\"padding-left:25px;\" onclick=\"getallArea(" + val1 + "," + val + "," + t + ")\">" + area[t].NAME + "</li>");
+				}
+				newStr.push("</ul></div>");
+				if(asize == 0) {
+					var allarea = province[val1].NAME + city[val].NAME;
+					$("#shengshi").attr({
+						"SS": province[val1].NAME,
+						"SQ": city[val].NAME,
+						"XS": ""
+					});
+					$("#shengshi").val(allarea);
+					$("body .dqld_div").remove();
+				} else {
+					$("body .dqld_div").remove();
+					$("body").append(newStr.join(""));
+				}
+			}
+
+			function getallArea(val, val1, val2) {
+				var province = eval(proStr);
+				var city = eval(province[val].ITEMS);
+				var area = eval(city[val1].ITEMS);
+				var allarea = province[val].NAME + city[val1].NAME + area[val2].NAME;
+				$("#shengshi").attr({
+					"SS": province[val].NAME,
+					"SQ": city[val1].NAME,
+					"XS": area[val2].NAME
+				});
+				$("#shengshi").val(allarea);
+				$("body .dqld_div").remove();
+			}
+		</script>
+		<script src="../js/pivate/citys.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

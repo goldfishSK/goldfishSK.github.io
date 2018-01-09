@@ -51,30 +51,30 @@
 				display: block;
 				position: fixed;
 				top: 0;
-				height: 60px;
+				height: 40px;
 				width: 100%;
 				text-align: center;
-				background-color: #efefef;
+				background-color: #fff;
 			}
 			
 			.back {
 				display: block;
 				position: absolute;
-				line-height: 60px;
+				line-height: 40px;
 				margin-left: 1rem;
 			}
 			
 			.head_title {
 				display: inline-block;
-				height: 60px;
-				line-height: 60px;
+				height: 40px;
+				line-height: 40px;
 			}
 			
 			.head_right {
 				display: inline-block;
 				float: right;
-				height: 60px;
-				line-height: 50px;
+				height: 40px;
+				line-height: 40px;
 				margin-right: 1rem;
 			}
 			
@@ -142,56 +142,7 @@
 				height: 500px;
 				width: 100%;
 			}
-			/*  地图倒计时 */
 			
-			.alert-box {
-				display: none;
-				position: absolute;
-				margin: 96px auto 0;
-				padding: 180px 85px 22px;
-				border-radius: 10px 10px 0 0;
-				background: #FFF;
-				box-shadow: 5px 9px 17px rgba(102, 102, 102, 0.75);
-				width: 286px;
-				color: #FFF;
-				text-align: center;
-				z-index: 999;
-				top: 10%;
-				left: 25%;
-			}
-			
-			.alert-circle {
-				position: absolute;
-				top: -50px;
-				left: 111px;
-			}
-			
-			.alert-sec-circle {
-				stroke-dasharray: 735;
-				transition: stroke-dashoffset 1s linear;
-			}
-			
-			.alert-sec-unit {
-				font-size: 34px;
-			}
-			
-			.alert-sec-text {
-				position: absolute;
-				top: 11px;
-				left: 190px;
-				width: 76px;
-				color: #000;
-				font-size: 68px;
-			}
-			
-			.alert-body {
-				margin: 35px 0;
-			}
-			
-			.alert-head {
-				color: #242424;
-				font-size: 28px;
-			}
 		</style>
 
 	</head>
@@ -202,24 +153,13 @@
 			<span class="head_title">体验馆</span>
 			<span class="head_right"><i class="iconfont" style="font-size: 1.5rem;">&#xe637;</i></span>
 		</div>
-		<div style="width: 100%;display: block;height: 60px;"></div>
+		<div style="width: 100%;display: block;height: 40px;"></div>
 
 		<div id="allmap">
 
 		</div>
 		<!--// 倒计时加载地图-->
-		<div id="js-alert-box" class="alert-box">
-			<svg class="alert-circle" width="234" height="234">
-				<circle cx="117" cy="117" r="108" fill="#FFF" stroke="#43AEFA" stroke-width="17"></circle>
-				<circle id="js-sec-circle" class="alert-sec-circle" cx="117" cy="117" r="108" fill="transparent" stroke="#F4F1F1" stroke-width="18" transform="rotate(-90 117 117)"></circle>
-				<text class="alert-sec-unit" x="82" y="172" fill="#BDBDBD">secs</text>
-			</svg>
-			<div id="js-sec-text" class="alert-sec-text"></div>
-			<div class="alert-body">
-				<div id="js-alert-head" class="alert-head">
-				</div>
-			</div>
-		</div>
+		
 		<div class="fication">
 			<ul>
 				<li class="walk" onclick="walk()">

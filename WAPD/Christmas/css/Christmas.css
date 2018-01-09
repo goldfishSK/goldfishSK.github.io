@@ -1,0 +1,48 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	width: 100%;
+	
+	background: #FFFFFF;
+}
+#backgroun_images{
+	width: 100%;
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.header{
+	width: 100%;
+
+}
+.content{
+	width: 100%;
+	position: relative;
+    bottom: 2px;
+}
+.con_left,.con_center,.con_right{
+	display: inline-block;
+	height: 100%;
+}
+
+.con_right{
+	position: absolute;
+	right: 0;
+}
+.img-4{
+	display: block;
+	width: 100%;
+}
+.img-5{
+	width: 100%;
+	
+}
+.img-7{
+	width: 100%;
+    
+}

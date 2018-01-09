@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/ydui.css" />
+		<script src="../js/ydui.flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/Manger.css" />
+		<style type="text/css">
+			.g-flexview {
+				height: auto !important;
+			}
+			
+			#start,
+			#renzheng {
+				max-width: 75%;
+				height: 0.8rem !important;
+				line-height: 0.8rem !important;
+				margin: 0 auto;
+			}
+			
+			#renzheng {
+				margin-top: 0.7rem;
+				font-size: 0.3rem;
+			}
+			
+			.navbar-center .navbar-title {
+				font-size: 0.35rem;
+			}
+			
+			.cell-input {
+				/*text-indent: 22px;*/
+			}
+			
+			#phoneNum {
+				text-indent: 0;
+			}
+			
+			#veriCode {
+				text-indent: 0;
+			}
+			
+			.cell-left {
+				z-index: 33;
+				min-width: 70px;
+			}
+			
+			.badge {
+				display: none;
+				border-radius: 3px;
+				min-width: 1.7rem;
+				text-align: center;
+				height: 0.7rem;
+				line-height: 0.65rem;
+				background-color: #CCC;
+				color: #F0F0F0;
+				font-size: 0.26rem;
+				padding: 3px 5px;
+			}
+			
+			.badge:after {
+				width: 200%;
+				height: 200%;
+				border: 1px solid #D0D0D0;
+				position: absolute;
+				top: 0;
+				border-radius: 0rem;
+				-webkit-transform-origin: 0 0;
+				transform-origin: 0 0;
+				-webkit-transform: scale(.5);
+				transform: scale(.5);
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<section class="g-flexview">
+
+			<header class="m-navbar">
+				<a href="javascript:;" class="navbar-item" id="back"><i class="back-ico"></i></a>
+				<div class="navbar-center"><span class="navbar-title" data-branch_id="" id="J_ShowActionSheet">全名网账户注册</span></div>
+			</header>
+
+		</section>
+
+		<div class="m-cell">
+			<div class="cell-item">
+				<div class="cell-left">用 户 名：</div>
+				<div class="cell-right"><input type="text" id="username" class="cell-input" id="username" name="username" maxlength="16" placeholder="手机/邮箱/账号" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" />
+					<span class="badge ">请输入用户名</span>
+				</div>
+			</div>
+			<div class="cell-item">
+				<div class="cell-left">登录密码：</div>
+				<div class="cell-right"><input type="password" class="cell-input" id="password" name="password" maxlength="16" placeholder="请输入密码" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" />
+					<span class="badge ">请输入密码</span>
+				</div>
+			</div>
+			<div class="cell-item">
+				<div class="cell-left">重复密码：</div>
+				<div class="cell-right"><input type="password" class="cell-input" id="password1" name="password" maxlength="16" placeholder="请输入密码" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" />
+					<span class="badge ">请输入密码</span>
+				</div>
+			</div>
+			<div class="cell-item">
+				<div class="cell-left">手 机 号：</div>
+				<div class="cell-right">
+
+					<input type="text" class="cell-input" id="phoneNum" name="username" maxlength="16" placeholder="手机号" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" />
+					<span class="badge ">请输入手机号</span>
+				</div>
+			</div>
+			<div class="cell-item">
+				<div class="cell-left">验 证 码：</div>
+				<div class="cell-right"><input type="text" class="cell-input" id="veriCode" name="username" maxlength="6" placeholder="验证码" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" />
+					<button class="getcode btn btn-danger btn-disabled" disabled="disabled" id="J_GetCode">获取验证码</button>
+				</div>
+			</div>
+
+		</div>
+		<button type="submit" id="start" class="btn-block btn-danger zhuce">注册</button>
+
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/ydui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			! function(win, $) {
+
+				var dialog = win.YDUI.dialog;
+				//   账号
+				var ok1 = false;
+
+				//       第一次密码的位数
+				var ok2 = false;
+
+				//      第二次密碼的檢驗
+				var ok3 = false;
+
+				//      手機號驗證
+				var ok4 = false;
+
+				//     驗證碼驗證
+				var ok5 = false;
+
+				//   账号位数
+				/* 加载中提示框 */
+				//				dialog.loading.open('加载中');
+
+				// H5 plus事件处理
+				function plusReady() {
+					// 监听键按下事件
+					plus.key.addEventListener("keydown", function(e) {
+						console.log("keydown: " + e.keyCode);
+
+						if(e.keyCode == 4) {
+							//  这个按下的返回按键
+							window.location.assign("../index.html")
+
+						}
+					}, false);
+					// 监听键松开事件
+					plus.key.addEventListener("keyup", function(e) {
+						console.log("keyup: " + e.keyCode);
+
+					}, false);
+					// 监听长按键事件
+					plus.key.addEventListener("longpressed", function(e) {
+						console.log("longpressed: " + e.keyCode);
+
+					}, false);
+				}
+				if(window.plus) {
+					plusReady();
+				} else {
+					document.addEventListener("plusready", plusReady, false);
+				}
+
+				//  发送验证码
+				var $getCode = $('#J_GetCode');
+
+				/* 定义参数 */
+				$getCode.sendCode({
+					disClass: 'btn-disabled',
+					secs: 60,
+					run: false,
+					runStr: '{%s}秒后重新获取',
+					resetStr: '重新获取验证码'
+				});
+
+				//   发送验证码
+				$getCode.on('click', function() {
+					/* ajax 成功发送验证码后调用【start】 */
+
+					Agen()
+					if(Agen() == false) {
+
+					} else {
+
+						var tel = $("#phoneNum").val()
+						if((/^1[34578]\d{9}$/.test(tel))) {
+							console.log("true")
+
+							YDUI.dialog.loading.open('发送中');
+							//     發送驗證碼
+							var mms = {
+								'tel': tel, //手机号
+							};
+
+							console.log("发送验证码的手机号是" + mms.tel + ok5);
+
+							$.ajax({
+								url: "http://api.qmwjj.cc/index.php?r=member/member/send_mms",
+								data: {
+									mms: mms
+								},
+								type: "get",
+								//						dataType: 'JSON',
+								success: function(data) {
+									console.log(data);
+									ok5 = true;
+									if(data == 'frequently') { //频繁
+
+										dialog.alert('你发送验证码太频繁，请停一会再发送');
+
+									}
+									if(data == 'register') {
+
+										dialog.alert("你已注册过会员")
+										YDUI.dialog.loading.close()
+
+									} else {
+										setTimeout(function() {
+
+											YDUI.dialog.loading.close();
+
+											$getCode.sendCode('start');
+											YDUI.dialog.toast('已发送', 'success', 1500);
+										}, 1500);
+									}
+
+								},
+							})
+
+						} else {
+							dialog.alert('手机号码不正确')
+							$("#phoneNum").parents(".cell-item").css({
+								'border': '1px solid red'
+							})
+						}
+					}
+				});
+
+				$("#back").click(function() {
+					dialog.confirm('全名网提示您', '确定要放弃注册吗？', function() {
+						dialog.toast('返回中', 'none', function() {
+							window.location.assign("../index.html")
+						}, 100);
+					});
+				})
+
+				$('#username').bind('input propertychange', function() {
+					//      账号位数检测
+					if($(this).val() == "") {
+						$(this).parents(".cell-item").find(".badge").show()
+						$(this).parents(".cell-item").find(".badge").text("请填写账号");
+						ok1 = false;
+					}
+					if($(this).val().length < 6) {
+						$(this).parents(".cell-item").find(".badge").show()
+						$(this).parents(".cell-item").find(".badge").text("账号不能小于6位数");
+						ok1 = false;
+
+					} else {
+						$(this).parents(".cell-item").find(".badge").hide()
+						$(this).parents(".cell-item").find(".badge").text("");
+						ok1 = true;
+
+					}
+					console.log(ok1 + $(this).val() + "ok1")
+
+				});
+				//   密码位数
+				$("#password").blur(function() {
+					if($(this).val() == "") {
+						$(this).parents(".cell-item").find(".badge").show()
+						$(this).parents(".cell-item").find(".badge").text("请填写密码");
+						ok2 = false;
+					}
+					if($(this).val().length < 6) {
+						$(this).parents(".cell-item").find(".badge").show()
+						$(this).parents(".cell-item").find(".badge").text("密码不能小于6位数");
+						ok2 = false;
+
+					} else {
+						$(this).parents(".cell-item").find(".badge").text("");
+						ok2 = true;
+						if(ok2 == true) {
+
+							if($(this).val() == "123456" || $(this).val() == "654321" || $(this).val() == "112233" || $(this).val() == "aabbcc" || $(this).val() == "123456789") {
+								ok2 = false;
+								$(this).parents(".cell-item").find(".badge").show()
+								$(this).parents(".cell-item").find(".badge").text("密码不能过于简单");
+							}
+
+						} else {
+
+							ok2 = true;
+							$(this).parents(".cell-item").find(".badge").hide()
+							$(this).parents(".cell-item").find(".badge").text("")
+							console.log("密码是" + $(this).val() + ok2);
+						}
+
+					}
+					console.log(ok2 + "ok2")
+
+				});
+
+				//     二次密碼驗證
+				$("#password1").blur(function() {
+					console.log($(this).val())
+					console.log($("#password").val())
+					if($(this).val() == $("#password").val()) {
+						$(this).parents(".cell-item").find(".badge").hide()
+						$(this).parents(".cell-item").find(".badge").text("")
+						ok3 = true;
+						console.log("重复的密码是" + $(this).val() + ok3)
+					}
+					if($(this).val().length < 6) {
+						$(this).parents(".cell-item").find(".badge").show()
+						$(this).parents(".cell-item").find(".badge").text("密码不能小于6位数");
+						ok3 = false;
+					}
+					if($(this).val() == "") {
+						$(this).parents(".cell-item").find(".badge").show()
+						$(this).parents(".cell-item").find(".badge").text("请输入密码");
+						ok3 = false;
+					}
+					if($(this).val() != $("#password").val()) {
+						$(this).parents(".cell-item").find(".badge").show()
+						$(this).parents(".cell-item").find(".badge").text("两次密码不一致");
+						ok3 = false;
+						//						break;
+
+					}
+					if($(this).val() == "" && $("#password").val() == "") {
+						$(this).parents(".cell-item").find(".badge").show()
+						$(this).parents(".cell-item").find(".badge").text("请填写密码");
+						ok3 = false;
+					}
+					console.log(ok3 + "ok3")
+
+				});
+				//     手机号
+
+				$('#phoneNum').bind('input propertychange', function() {
+
+					var phone = $(this).val()
+					if(!(/^1[34578]\d{9}$/.test(phone))) {
+						$(this).parents(".cell-item").find(".badge").show()
+						$("#phoneNum").parents(".cell-item").find(".badge ").text("手机号码有误");
+
+						ok4 = false;
+					} else {
+						$(this).parents(".cell-item").find(".badge").hide()
+						$("#phoneNum").parents(".cell-item").find(".badge").text("");
+
+						$("#J_GetCode").removeClass("btn-disabled")
+						$("#J_GetCode").removeAttr("disabled");
+						console.log("拿到的手机号是" + $(this).val() + ok4);
+
+						ok4 = true;
+					}
+
+				});
+
+				//   检测账号是否已经被注册
+				function Agen() {
+
+					var member = {
+						username: $("#username").val(),
+						tel: $("#phoneNum").val(),
+					}
+					console.log(member)
+					$.ajax({
+						url: "http://api.qmwjj.cc/index.php?r=member/member/regcheck",
+						data: {
+							member: member
+						},
+						type: "get",
+						dataType: 'JSON',
+						success: function(data) {
+							console.log(data);
+							if(data.register == 1) {
+								dialog.alert('此帐户已注册过')
+								return false;
+							} else {
+								return true;
+							}
+						},
+					})
+				}
+
+				//   注册  
+				$("#start").click(function() {
+
+					//     验证用户名  密码 和 重复密码  
+					console.log(ok1, ok2, ok3, ok4, ok5);
+
+					setTimeout(function() {
+
+						dialog.notify('网络连接超时', 5000, function() {
+
+						});
+
+					}, 15000)
+
+					if(ok1 == true && ok2 == true && ok3 == true && ok4 == true && ok5 == true) {
+
+						Agen()
+						if(Agen() == false) {
+
+						} else {
+
+							$(".mask").show();
+							var member = {
+								'full_name': $("#username").val(), //姓名
+								'pwd': $("#password1").val(), //密码
+								'tel': $("#phoneNum").val(), //手机号
+								'verify_code': $("#veriCode").val()
+							};
+
+							$.ajax({
+								url: "http://api.qmwjj.cc/index.php?r=member/member/regmember",
+
+								data: {
+									member: member
+								},
+								type: "get",
+								dataType: 'JSON',
+								success: function(data) {
+									console.log(data);
+									//   注册成功或者失败的信息
+
+									if(data.msg == "注册成功") {
+
+										//   储存 返回的Data   var newData=JSON.parse(localStorage.User_data);     下次用的时候是用这个方法提取；
+										data.branch = 0;
+										window.localStorage.information = JSON.stringify(data)
+
+										dialog.notify('注册成功', 5000, function() {});
+
+										dialog.confirm('全名网', '注册成功，现在去认证分店', function() {
+											window.location.assign('./fdsubmit.html')
+										});
+
+									} else {
+										console.log(data)
+										dialog.notify('信息不正确或者验证码已过期', 3000, function() {
+
+										});
+
+									}
+
+								},
+							})
+						}
+
+					} else {
+						dialog.confirm('全名网提示您', '请检查提交资料是否正确', function() {
+
+						});
+
+					}
+
+				})
+
+			}(window, jQuery);
+		</script>
+	</body>
+
+</html>

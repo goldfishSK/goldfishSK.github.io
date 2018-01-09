@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<link rel="" type="" href="../css/init.css">
+		<link rel="stylesheet" href="../css/city.css">
+		<script src="../js/city.js"></script>
+		<script src="../js/jquery.js"></script>
+		<style>
+			@font-face {
+				font-family: "iconfont";
+				src: url('../icon/iconfont.eot');
+				/* IE9*/
+				src: url('../icon/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../icon/iconfont.woff') format('woff'), /* chrome, firefox */
+				url('../icon/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+				url('../icon/iconfont.svg#iconfont') format('svg');
+				/* iOS 4.1- */
+			}
+			
+			.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 16px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="management">
+			<div class="head">
+				<span class="haed_span"><i class="iconfont">&#xe65e;</i></span>
+				<h3>地址管理</h3>
+				<span class="head_right_span"></span>
+			</div>
+			<div class="content">
+				<ul class="cont_ul">
+					<li class="con_li ByClick">
+						<div class="con_left">
+							<div class="con_top"><span class="con_name">佘坤</span></div>
+							<div class="con_down">陕西省西安市未央区凤城十二路</div>
+						</div>
+						<div class="con_right"><img class="con_img" src="../img/right.png" class="chioce" alt=""></div>
+					</li>
+					<li class="con_li">
+						<div class="con_left">
+							<div class="con_top"><span class="con_name">佘bgf坤</span></div>
+							<div class="con_down">陕西省西fdsf安市未央区凤城十二路</div>
+						</div>
+						<div class="con_right"><img class="con_img" src="../img/.png" class="chioce" alt=""></div>
+					</li>
+					<li class="con_li">
+						<div class="con_left">
+							<div class="con_top"><span class="con_name">佘sad坤</span></div>
+							<div class="con_down">陕西省西安sadsa市未央区凤城十二路</div>
+						</div>
+						<div class="con_right"><img class="con_img" src="../img/.png" class="chioce" alt=""></div>
+					</li>
+					<li class="con_li">
+						<div class="con_left">
+							<div class="con_top"><span class="con_name">佘sad坤</span></div>
+							<div class="con_down">陕西省西安市未adsad央区凤城十二路</div>
+						</div>
+						<div class="con_right"><img class="con_img" src="../img/.png" class="chioce" alt=""></div>
+					</li>
+				</ul>
+			</div>
+			<div class="footer">
+				<button type="" class="addMap">添加新地址</button>
+			</div>
+			<div class="mask">
+				<form class="mask_form">
+					<ul class="f_ul">
+						<li class="f_li">
+							<span>收货人姓名</span>
+							<input type="text" class="consigen" placeholder="收货人姓名">
+						</li>
+						<li class="f_li">
+							<span>联系方式</span>
+							<input type="text" class="phoneNum" placeholder="手机(必填)">
+						</li>
+						<li class="f_li">
+							<div id="addAddress">
+								<div class="address_input"><input class="address_input1" type="text" placeholder="选择您的所在地" id="shengshi" onClick="getProvinceBuy()" readonly="readonly"></div>
+							</div>
+						</li>
+						<li class="f_li">
+
+							<textarea name="" id="" cols="30" rows="3" placeholder="详细地址"></textarea>
+						</li>
+
+					</ul>
+					<div class="ma_foot">
+						<div class="hideBtn">保存</div>
+					</div>
+					<div class="me_foot">
+						<a href="javascript:void(0);" class="dotm_btn2">删除</a>
+						<a href="javascript:void(0);" class="dotm_btn3">设置默认地址</a>
+						<div class="dotm_btn1">保存</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script>
+			var _index = "";
+			var li1;
+			var _tag = 1;
+			var ok1 = false;
+			$("textarea").focus(function() {
+				$(this).text("");
+				$(this).css("color", "#333");
+			})
+			$(".addMap").click(function() {
+				_tag = 1;
+				$(".mask").show();
+				$(".ma_foot").show();
+				$(".me_foot").hide();
+			});
+			//     liClick
+			function ulliClick() {
+				$(".cont_ul li").click(function() {
+					_index = $(this).index();
+					console.log(_index);
+					if($(this).hasClass("ByClick")) {
+
+						Byclick();
+					} else {
+
+						con_liClick();
+					}
+				});
+			};
+			ulliClick();
+			//     非默认地址
+			function con_liClick() {
+				var _thisName = $($(".cont_ul li")[_index]).find(".con_name").text();
+				var _thisMap = $($($(".cont_ul li")[_index])).find(".con_down").text();
+				$(".consigen").val(_thisName);
+				$(".phoneNum").val();
+				$(".address_input1").val(_thisMap);
+				$(".mask").show();
+				$(".me_foot").show();
+			}
+			//  默认地址
+			function Byclick() {
+
+				var _thisName = $($($(".cont_ul li")[_index])).find(".con_name").text();
+				console.log(_index)
+				var _thisMap = $($($(".cont_ul li")[_index])).find(".con_down").text();
+				$(".consigen").val(_thisName);
+				$(".phoneNum").val();
+				$(".address_input1").val(_thisMap);
+				$(".mask").show();
+				$(".ma_foot").show();
+				_tag = 2;
+			}
+			//    保存默认地址
+			$(".dotm_btn3").click(function() {
+				var NewDiv = $($(".con_li")[_index]);
+				var oldDiv = $(".ByClick");
+				var _src = oldDiv.find("img").attr("src");
+				oldDiv.removeClass("ByClick");
+				NewDiv.find("img").attr("src", _src);
+
+				oldDiv.find("img").attr("src", $($(".con_img")[1]).attr("src"));
+				NewDiv.addClass("ByClick");
+				NewDiv.remove();
+				$($(".con_li")[0]).before(NewDiv);
+				$(".mask").find("input").val("");
+				$("textarea").val("");
+				ulliClick();
+				$(".mask").hide();
+			});
+			//   普通的保存
+			$(".dotm_btn1").click(function() {
+				getName();
+
+				$(".me_foot").hide();
+				$(".mask").hide();
+			});
+
+			function getName() {
+				var _name = $(".consigen").val();
+				var _map = $(".address_input1").val();
+				$($(".con_li")[_index]).find(".con_name").text(_name);
+				$($(".con_li")[_index]).find(".con_down").text(_map);
+				$(".consigen").val("");
+				$(".address_input1").val("");
+			};
+
+			//   保存 / 默认和新建
+			$(".hideBtn").click(function() {
+
+				if(_tag == 1) {
+					$(".cont_ul").append(creaDiv(li1));
+					ulliClick()
+					$(".mask").hide();
+				}
+				if(_tag == 2) {
+					getName();
+					ulliClick()
+					$(".mask").hide();
+				}
+
+			})
+
+			function creaDiv(li1) {
+				var _name = $(".consigen").val();
+				var _map = $(".address_input1").val();
+				var _li = document.createElement("li");
+				_li.className = "con_li";
+				var _divleft = document.createElement("div");
+				_divleft.className = "con_left";
+				var _divtop = document.createElement("div");
+				_divtop.className = "con_top";
+				var _span = document.createElement("span");
+				_span.className = "con_name";
+				_span.innerHTML = _name;
+				var _divdown = document.createElement("div");
+				_divdown.className = "con_down";
+				_divdown.innerHTML = _map;
+				var _divright = document.createElement("div");
+				_divright.className = "con_right";
+				var _img = document.createElement("img");
+				_img.className = "con_img";
+				_img.src = "../img/111.png";
+				_divright.appendChild(_img);
+				_divtop.appendChild(_span);
+				_divleft.appendChild(_divtop);
+				_divleft.appendChild(_divdown);
+				_li.appendChild(_divleft);
+				_li.appendChild(_divright);
+				li1 = _li;
+				$(".mask").find("input").val("");
+				$("textarea").val("");
+				return li1;
+			}
+			$(".dotm_btn2").click(function() {
+				removeDiv();
+			});
+			//   删除
+			function removeDiv() {
+				var NewDiv = $($(".con_li")[_index]);
+				alert("删除成功");
+				NewDiv.remove();
+				$(".mask").find("input").val("");
+				$("textarea").val("");
+				$(".mask").hide();
+				$(".me_foot").hide();
+			}
+			//   返回
+			$(".iconfont").click(function() {
+				if($(".mask").show()) {
+					$(".mask").hide();
+				} else {
+					history.back();
+				}
+			});
+
+			//   表单验证
+			function yanzheng(ok1) {
+				//    收货人姓名 
+				$(".consigen").val();
+				//      收货人电话
+				$(".phoneNum").val();
+				//   地址
+				$(".address_input1").val();
+				//   详细地址
+				$(".textarea").val();
+				//   验证手机
+				function checkPhone(ok1) {
+					reg = "/^(1\d{10})$/";
+					var tel = $(".phoneNum").val();
+					if(!(reg.test(tel))) {
+						alert("手机号格式不正确")
+					} else {
+						console.log("验证通过");
+						if($(".consigen").val().length >= 1 && $(".address_input1").val().length >= 1) {
+							return ok1 = true;
+						}
+
+					}
+				}
+
+			}
+		</script>
+
+		<script>
+			//    城市选择
+			function getProvinceBuy() {
+				$("body .dqld_div").remove();
+				var province = eval(proStr);
+				var newStr = new Array();
+				newStr.push("<div class=\"dqld_div\" style=\"\"><ul>");
+				for(var i = 0, psize = province.length; i < psize; i++) {
+					province[i].NAME;
+					newStr.push("<li onclick=\"getCityBuy(" + i + ")\">" + province[i].NAME + "</li>");
+				}
+				newStr.push("</ul></div>");
+				$("body").append(newStr.join(""));
+			}
+
+			function getCityBuy(val) {
+				var province = eval(proStr);
+				var city = eval(province[val].ITEMS);
+				var newStr = new Array();
+				newStr.push("<div class=\"dqld_div\"><ul>");
+				newStr.push("<li onclick=\"getProvinceBuy()\" style=\"background-color:#808080;\">" + province[val].NAME + "</li>");
+				for(var j = 0, csize = city.length; j < csize; j++) {
+					newStr.push("<li onclick=\"getAreaBuy(" + j + "," + val + ")\"  style=\"padding-left:20px;\">" + city[j].NAME + "</li>");
+				}
+				newStr.push("</ul></div>");
+				$("body .dqld_div").remove();
+				$("body").append(newStr.join(""));
+			}
+
+			function getAreaBuy(val, val1) {
+				var province = eval(proStr);
+				var city = eval(province[val1].ITEMS);
+				var area = eval(city[val].ITEMS);
+				var newStr = new Array();
+				newStr.push("<div class=\"dqld_div\"><ul>");
+				newStr.push("<li onclick=\"getProvinceBuy()\" style=\"background-color:#999999;\">" + province[val1].NAME + "</li>");
+				newStr.push("<li onclick=\"getCityBuy(" + val1 + ")\" style=\"background-color:#ccc;padding-left:10px;\">" + city[val].NAME + "</li>");
+				for(var t = 0, asize = area.length; t < asize; t++) {
+					area[t].NAME;
+					newStr.push("<li  style=\"padding-left:25px;\" onclick=\"getallArea(" + val1 + "," + val + "," + t + ")\">" + area[t].NAME + "</li>");
+				}
+				newStr.push("</ul></div>");
+				if(asize == 0) {
+					var allarea = province[val1].NAME + city[val].NAME;
+					$("#shengshi").attr({
+						"SS": province[val1].NAME,
+						"SQ": city[val].NAME,
+						"XS": ""
+					});
+					$("#shengshi").val(allarea);
+					$("body .dqld_div").remove();
+				} else {
+					$("body .dqld_div").remove();
+					$("body").append(newStr.join(""));
+				}
+			}
+
+			function getallArea(val, val1, val2) {
+				var province = eval(proStr);
+				var city = eval(province[val].ITEMS);
+				var area = eval(city[val1].ITEMS);
+				var allarea = province[val].NAME + city[val1].NAME + area[val2].NAME;
+				$("#shengshi").attr({
+					"SS": province[val].NAME,
+					"SQ": city[val1].NAME,
+					"XS": area[val2].NAME
+				});
+				$("#shengshi").val(allarea);
+				$("body .dqld_div").remove();
+			}
+		</script>
+		<script src="../js/pivate/citys.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title>店铺首页</title>
+		<link rel="stylesheet" href="../css/newshops.css" />
+
+		<style type="text/css">
+			@media only screen and (min-width: 310px) and (max-width: 355px) {
+				.leabel {
+					margin-left: -21px;
+				}
+			}
+			
+			@media only screen and (min-width: 355px) and (max-width: 370px) {
+				.leabel {
+					margin-left: -12px;
+				}
+			}
+			
+			@media only screen and (min-width: 371px) and (max-width: 375px) {
+				.leabel {
+					margin-left: -8px;
+				}
+			}
+			
+			@media only screen and (min-width: 376px) and (max-width: 450px) {
+				.leabel {
+					margin-left: 2px;
+				}
+			}
+			
+			@media only screen and (min-width: 750px) and (max-width: 770px) {
+				.leabel {
+					margin-left: 57px;
+				}
+			}
+			
+			@media only screen and (min-width: 790px) {
+				.leabel {
+					margin-left: 57px;
+				}
+			}
+			
+			.tilte_ul li:last-child {
+				font-size: 12px;
+				padding: 1px 5px;
+				position: relative;
+				bottom: 28px;
+				background: #ff3344;
+				color: #fff;
+				border-radius: 3px;
+				margin-left: 5px;
+			}
+			
+			.center_div {
+				width: 100%;
+			}
+			
+			.center_ul {
+				display: block;
+				width: 100%;
+				text-align: center;
+				margin-top: 5px;
+			}
+			
+			.center_ul li {
+				display: inline-block;
+				width: 30%;
+				text-align: center;
+			}
+			
+			.center_ul li span {
+				display: block;
+				margin: 4px 0px;
+			}
+			
+			.center_ul li:first-child {
+				border-right: 1px solid #DDDDDD;
+			}
+			
+			.center_ul li:last-child {
+				border-left: 1px solid #DDDDDD;
+			}
+			
+			.cen_top {
+				font-weight: 600;
+				font-size: 19px;
+				color: #000;
+			}
+			
+			.cen_down {
+				color: #999;
+				font-size: 13px;
+			}
+		</style>
+	</head>
+
+	<body onscroll="getTop()">
+		<div class="header">
+			<!--  最上面一排没什么用的-->
+			<div class="head_div">
+				<span class="back"><img src="../img/cli.png" alt="" /></span>
+				<h3>商家店铺</h3>
+				<span class="home_page"><img src="../img/ddd.png" alt="" /></span>
+				<div class="goto_home">
+					<div class="mui-global-nav-arr"></div>
+					<ul>
+						<li>
+							<a href="">首页</a>
+						</li>
+						<li>
+							<a href="">购物车</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="head_content">
+				<div class="haed_til_cont">
+
+					<div class="head_sign">
+						<img src="../img/aaa.jpg" alt="" />
+					</div>
+					<div class="head_title">
+						<p class="haed_title_p">全名网陕西总店</p>
+					</div>
+					<div class="head_follow">
+						<span class="icon"><img src="../img/xxx.png" alt="" />收藏</span>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- 内容 -->
+		<div class="content_head">
+			<div class="con_title">
+
+				<div class="center_div">
+					<ul class="center_ul">
+						<li>
+							<span class="cen_top">12345</span>
+							<span class="cen_down">关注人数</span>
+						</li>
+						<li>
+							<span class="cen_top">59</span>
+							<span class="cen_down">全部商品</span>
+						</li>
+						<li>
+							<span class="cen_top">9</span>
+							<span class="cen_down">热销商品</span>
+						</li>
+
+					</ul>
+				</div>
+
+			</div>
+
+		</div>
+		<!-- 排序 -->
+		<div class="sort">
+			<ul class="sort_ul">
+				<li><span class="sort_click">默认</span></li>
+				<li><span>销量</span></li>
+				<li class="sort_money"><span>价格</span></li>
+				<li>
+					<a href="select.html" style="display: inline-block;width: 100%;height: 40px;"><span>筛选</span></a>
+				</li>
+			</ul>
+			<!-- 假的搜索框 -->
+			<div class="server">
+				<form action="" method="post">
+
+					<div class="serv_div">
+						<img src="../img/sousuo.png" alt="" /> <input type="text" placeholder="搜索本店商品" />
+					</div>
+					<a href="" class="sever_a"><button type="submit">搜本店</button></a>
+				</form>
+			</div>
+		</div>
+		<!-- 队列组合-->
+
+		<div class="gd_toshow">
+
+			<ul class="con_ul">
+
+				<li class="conall_li">
+					<div class="conl_all">
+
+						<div class="con_li_con">
+							<div class="clc_left"><img src="../img/1470078278376232149.png" alt=""></div>
+							<div class="clc_cent">
+								<p class="gs_miaoshu">你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了</p>
+								<p class="gs_caizhi">99</p>
+								<p class="xiaoliang"><span class="xnumber">4545</span> <span class="danwei">件</span><span class="cource">自营</span></p>
+							</div>
+
+						</div>
+
+					</div>
+				</li>
+				<li class="conall_li">
+					<div class="conl_all">
+
+						<div class="con_li_con">
+							<div class="clc_left"><img src="../img/1470078278376232149.png" alt=""></div>
+							<div class="clc_cent">
+								<p class="gs_miaoshu">你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了</p>
+								<p class="gs_caizhi">99</p>
+								<p class="xiaoliang"><span class="xnumber">4545</span> <span class="danwei">件</span><span class="cource">自营</span></p>
+							</div>
+
+						</div>
+
+					</div>
+				</li>
+				<li class="conall_li">
+					<div class="conl_all">
+
+						<div class="con_li_con">
+							<div class="clc_left"><img src="../img/1470078278376232149.png" alt=""></div>
+							<div class="clc_cent">
+								<p class="gs_miaoshu">你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了</p>
+								<p class="gs_caizhi">99</p>
+								<p class="xiaoliang"><span class="xnumber">4545</span> <span class="danwei">件</span><span class="cource">自营</span></p>
+							</div>
+
+						</div>
+
+					</div>
+				</li>
+				<li class="conall_li">
+					<div class="conl_all">
+
+						<div class="con_li_con">
+							<div class="clc_left"><img src="../img/1470078278376232149.png" alt=""></div>
+							<div class="clc_cent">
+								<p class="gs_miaoshu">你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了</p>
+								<p class="gs_caizhi">99</p>
+								<p class="xiaoliang"><span class="xnumber">4545</span> <span class="danwei">件</span><span class="cource">自营</span></p>
+							</div>
+
+						</div>
+
+					</div>
+				</li>
+				<li class="conall_li">
+					<div class="conl_all">
+
+						<div class="con_li_con">
+							<div class="clc_left"><img src="../img/1470078278376232149.png" alt=""></div>
+							<div class="clc_cent">
+								<p class="gs_miaoshu">你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了</p>
+								<p class="gs_caizhi">99</p>
+								<p class="xiaoliang"><span class="xnumber">4545</span> <span class="danwei">件</span><span class="cource">自营</span></p>
+							</div>
+
+						</div>
+
+					</div>
+				</li>
+				<li class="conall_li">
+					<div class="conl_all">
+
+						<div class="con_li_con">
+							<div class="clc_left"><img src="../img/1470078278376232149.png" alt=""></div>
+							<div class="clc_cent">
+								<p class="gs_miaoshu">你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了</p>
+								<p class="gs_caizhi">99</p>
+								<p class="xiaoliang"><span class="xnumber">4545</span> <span class="danwei">件</span><span class="cource">自营</span></p>
+							</div>
+
+						</div>
+
+					</div>
+				</li>
+				<li class="conall_li">
+					<div class="conl_all">
+
+						<div class="con_li_con">
+							<div class="clc_left"><img src="../img/1470078278376232149.png" alt=""></div>
+							<div class="clc_cent">
+								<p class="gs_miaoshu">你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了</p>
+								<p class="gs_caizhi">99</p>
+								<p class="xiaoliang"><span class="xnumber">4545</span> <span class="danwei">件</span><span class="cource">自营</span></p>
+							</div>
+
+						</div>
+
+					</div>
+				</li>
+
+				<li class="conall_li">
+					<div class="conl_all">
+
+						<div class="con_li_con">
+							<div class="clc_left"><img src="../img/1470078278376232149.png" alt=""></div>
+							<div class="clc_cent">
+								<p class="gs_miaoshu">你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了你的优雅我包了</p>
+								<p class="gs_caizhi">99</p>
+								<p class="xiaoliang"><span class="xnumber">4545</span> <span class="danwei">件</span><span class="cource">自营</span></p>
+							</div>
+
+						</div>
+
+					</div>
+				</li>
+			</ul>
+			<div class="footer">
+				-宝贝这么多有喜欢的就抓紧下手啦-
+			</div>
+		</div>
+		<div class="foot">
+			<ul class="foot_ul">
+				<li>
+					<a href="">本店分类</a>
+				</li>
+				<li>
+					<a href="">联系商家</a>
+
+				</li>
+			</ul>
+		</div>
+
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(".home_page img").click(function() {
+				$(".goto_home").toggle(300);
+			});
+			for(var _i = 0; _i < $(".content ul li").length; _i++) {
+				if(_i % 2 == 0) {
+					$($(".content ul li")[_i]).css("float", "left");
+				} else {
+					$($(".content ul li")[_i]).css("float", "right");
+				}
+			}
+
+			//  页面滚动 
+
+			var b = $(".sort").offset().top;
+			console.log(b)
+
+			function getTop() {
+				var a = $('body').scrollTop();
+				if(a < b) {
+					$(".sort").removeClass("getTop");
+				} else {
+					$(".sort").addClass("getTop");
+				}
+			}
+
+			//  选择
+			$(".sort_ul li").click(function() {
+				$(".sort_ul li").find("span").removeClass("sort_click");
+				$(this).find("span").addClass("sort_click");
+
+				if($(this).index() == 3) {
+					//  跳转到筛选页面
+					window.location.assign("")
+				}
+			})
+		</script>
+		<script type="text/javascript">
+			$($(".center_ul li")[1]).click(function() {
+
+				var json = [({
+					"title": "时代峰峻看不出V型台湾去处",
+					"money": "123",
+					"number": "4512",
+					"cource": "自营",
+					"src": "../img/cizhuan2.png"
+				}), ({
+					"title": "逝去的绕",
+					"money": "123",
+					"number": "4512",
+					"cource": "自营",
+					"src": "../img/goods.png"
+				}), ({
+					"title": "撒大声地",
+					"money": "123",
+					"number": "4512",
+					"cource": "自营",
+					"src": "../img/aaa.jpg"
+				}), ({
+					"title": "多撒差重新注册",
+					"money": "123",
+					"number": "4512",
+					"cource": "自营",
+					"src": "../img/aaa.jpg"
+				}), ({
+					"title": "去问问企鹅请问",
+					"money": "123",
+					"number": "4512",
+					"cource": "自营",
+					"src": "../img/dianzhang.png"
+				}), ({
+					"title": "王企鹅群翁群",
+					"money": "123",
+					"number": "4512",
+					"cource": "自营",
+					"src": "../img/cizhuan2.png"
+				}), ({
+					"title": "阿斯达所多群无多",
+					"money": "123",
+					"number": "4512",
+					"cource": "自营",
+					"src": "../img/2222222222.PNG"
+				})]
+				$(".conall_li").remove();
+				for(var i = 0; i < json.length; i++) {
+					var $li = "<li class='conall_li'><div class='conl_all'><div class='con_li_con'><div class='clc_left'><img src=" + json[i].src + " alt=''></div><div class='clc_cent' ><p class='gs_miaoshu'>" + json[i].title + "</p><p class='gs_caizhi'>" + json[i].number + "</p><p class='xiaoliang'><span class='xnumber'> " + json[i].number + "</span> <span class='danwei'>件</span><span class='cource'>" + json[i].cource + "</span></p></div></div></div></li>"
+
+					$(".con_ul").append($li);
+				}
+			})
+			$($(".center_ul li")[1]).click(function() {
+
+				var $ajaxJSON = [({
+					"title": "阿斯达所多群无多",
+					"money": "123",
+					"number": "4512",
+					"cource": "自营",
+					"src": "../img/2222222222.PNG"
+				}), ({
+					"title": "阿斯达所多群无多",
+					"money": "123",
+					"number": "4512",
+					"cource": "自营",
+					"src": "../img/2222222222.PNG"
+				}), ({
+					"title": "阿斯达所多群无多",
+					"money": "123",
+					"number": "4512",
+					"cource": "自营",
+					"src": "../img/2222222222.PNG"
+				})]
+
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title></title>
+		<link rel="stylesheet" href="../css/ydui.css" />
+		<script src="../js/ydui.flexible.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.m-cell{
+				margin-top: 1.5rem;
+			}
+			.btn-danger{
+				width: 75%;
+				height: 0.8rem;
+				line-height: 0.8rem;
+				margin:  0 auto;
+				margin-top: 1rem;
+			}
+			.navbar-title{
+				font-size: 0.33rem !important;
+			}
+			.btn-warning{
+				background: #EF4F4F !important;
+			}
+			.cell-left{
+				min-width: 20%;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<header class="m-navbar">
+			<a href="#" class="navbar-item">
+				<i class="back-ico"></i>
+			</a>
+			<div class="navbar-center">
+				<span class="navbar-title">修改手机号</span>
+			</div>
+
+		</header>
+		
+		<div class="m-cell">
+			<div class="cell-item">
+				<div class="cell-left">新    密    码  ：</div>
+				<div class="cell-right"><input type="password" id=""  class="cell-input" placeholder="请输入密码" autocomplete="off" />
+					
+				</div>
+			</div>
+			<div class="cell-item">
+				<div class="cell-left">重复密码：</div>
+				<div class="cell-right"><input type="password" id=""  class="cell-input" placeholder="请输入密码" autocomplete="off" />
+				</div>
+			</div>
+			<div class="cell-item">
+				<div class="cell-left">新手机号：</div>
+				<div class="cell-right"><input type="number" id="phone" pattern="[0-9]*" class="cell-input" placeholder="请输入手机号" autocomplete="off" />
+					<button type="button" class="btn btn-warning" id="J_GetCode">获取短信验证码</button>
+				</div>
+			</div>
+			<div class="cell-item">
+				<div class="cell-left">验  证  码  ：</div>
+				<div class="cell-right"><input type="number" id="code" pattern="[0-9]*" class="cell-input" placeholder="请输入验证码" autocomplete="off" />
+
+				</div>
+			</div>
+		</div>
+        <button type="submit" class="btn-block btn-danger" disabled="disabled">确认</button>
+
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/ydui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/pivate/modify.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

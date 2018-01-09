@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	min-width: 320px;
+	max-width: 640px;
+	margin: 0 auto;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.haed_nav {
+        display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    z-index: 999;
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    margin:   0 auto;
+    text-align: center;
+    background-color: #efefef;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .35);
+}
+
+.back {
+    display: block;
+    position: absolute;
+    line-height: 40px;
+    margin-left: 1rem;
+}
+
+.head_title {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+}
+
+.head_right {
+    display: inline-block;
+    float: right;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 1rem;
+}
+
+.hall {
+    display: block;
+    width: 96%;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.hall_dt {
+    line-height: 40px;
+    margin-top: 2rem;
+
+   background: #F17F42;
+
+    border-radius: 8px 8px 0px 0px;
+    color: #FFFFFF;
+}
+
+.hall_dt:first-child {
+    margin-top: 0rem;
+}
+
+.hall_dt_a {
+    display: inline-block;
+    width: 70%;
+    max-width: 270px;
+    text-indent: 1.3rem;
+    color: #FFFFFF;
+}
+
+.hall_dd {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #FFFFFF;
+    background-color: #F2F2F2;
+    border-radius: 8px;
+   
+}
+
+.hall_dt_a span i {
+    color: #FFFFFF;
+}
+
+.hall_dd_p {
+    width: 90%;
+    margin: 0 auto;
+    line-height: 2rem;
+    font-size: 14px;
+    
+}
+
+
+
+.hall_dd a {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #F17F42;
+    margin: 0 5%;
+    border-radius: 4px 4px 4px 4px;
+    color: #F17F42;
+    font-size: 14px;
+}
+.hall_dt_a  .iconfont{
+	position: relative;
+	top: 1px;
+}
+
+.bottom_2{
+	position: relative;
+	bottom: 1px;
+}
+.hall_dd_item2 .iconfont{
+	position: relative;
+	top: 1px;
+	padding: 0px 3px;
+}
+
+
+/*  地图展示   */
+#map_show{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 60%;
+	background: #FFFFFF;
+	width: 100%;
+	z-index: 9999;
+}

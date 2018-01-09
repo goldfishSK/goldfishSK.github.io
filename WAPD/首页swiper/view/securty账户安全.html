@@ -118,37 +118,8 @@
 			<p class="mf_o4">© 2005-2017 全名网 版权所有，并保留所有权利。</p>
 		</div>
 
-		<script type="text/javascript">
-			$(".header i").click(function() {
-				console.log($(this))
-				if($(this).hasClass("back")) {
-					history.back();
-				} else {
-					$(".mask").hide();
-					$(".mask .maskone").hide();
-					$(this).addClass("back");
-				}
-			})
-		</script>
-		<script type="text/javascript">
-			hidePhone()
-			//    隐藏手机号中间四位
-			function hidePhone() {
-				var text = $(".modiPhone").text();
-
-				var arr = [];
-				for(var i = 0; i < text.length; i++) {
-
-					if(i >= 3 && i <= 7) {
-						arr.push("*")
-					} else {
-						arr.push(text[i]);
-					}
-				}
-				var str = arr.join("");
-				$(".modiPhone").text(str)
-			}
-		</script>
+		
+		<script src="../js/pivate/securty.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/ydui.css" />
+		<script src="../js/ydui.flexible.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+
+		<input type="text" readonly id="J_Address" placeholder="体验店地址">
+
+		<!--   选择完省市区之后  进行分店列表的选择  -->
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/ydui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="//static.ydcss.com/uploads/ydui/ydui.citys.js"></script>
+		<script>
+			var citys ={};
+			var $address = $('#J_Address');
+
+			$address.citySelect();
+
+			$address.on('click', function() {
+				$address.citySelect('open');
+			});
+
+			$address.on('done.ydui.cityselect', function(ret) {
+				/* 省：ret.provance */
+				/* 市：ret.city */
+				/* 县：ret.area */
+				$(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+				
+				//   把省市县存下；   用省市县筛选分店列表
+				citys.provance = ret.provance;
+				citys.city = ret.city;
+				citys.area = ret.area;
+				console.log(citys)
+			});
+			
+		</script>
+	</body>
+
+</html>
