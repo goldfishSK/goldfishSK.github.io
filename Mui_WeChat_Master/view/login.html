@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			body {
+				background: #FFFFFF;
+				font-family: "微软雅黑";
+			}
+			
+			header i {
+				font-size: 33px !important;
+				color: #000000;
+			}
+			
+			.head_title h1 {
+				font-size: 17px;
+				font-weight: 200;
+				color: #333;
+				text-indent: 6%;
+			}
+			
+			.mui-content {
+				width: 100%;
+				margin: 0 auto;
+				background: #FFFFFF;
+			}
+			
+			.head_title {
+				padding-top: 30px;
+			}
+			
+			.mui-input-group:before {
+				background: #FFFFFF;
+			}
+			
+			.logn_form {
+				font-size: 13px;
+				color: #555;
+				margin-top: 30px;
+			}
+			
+			.mui-input-group:after {
+				background: #FFFFFF;
+			}
+			
+			.mui-input-row input {
+				font-size: 12px;
+			}
+			
+			.mui-input-row label {
+				font-family: 'Helvetica Neue', Helvetica, sans-serif;
+				line-height: 1.1;
+				float: left;
+				width: 18%;
+				padding: 11px 15px;
+				margin-top: 3px;
+				text-indent: 8px;
+			}
+			
+			.mui-input-row label~input,
+			.mui-input-row label~select,
+			.mui-input-row label~textarea {
+				float: right;
+				width: 82%;
+				margin-bottom: 0;
+				padding-left: 0;
+				border: 0;
+			}
+			
+			.button_s {
+				color: #66789E;
+				font-size: 12px;
+				margin-top: 13px;
+				margin-left: 22px;
+			}
+			
+			.submits {
+				border: 0;
+				background: #1AAD19;
+				color: #fff;
+				font-size: 12px;
+				width: 95%;
+				height: 38px;
+				border-radius: 4px;
+				margin-left: 3%;
+				margin-top: 25px;
+			}
+			
+			.submits:disabled {
+				background: #A3DEA3;
+			}
+			
+			.footer_title .button_s {
+				display: inline-block;
+				margin: 0 auto;
+			}
+			
+			.footer_title {
+				position: absolute;
+				bottom: 13px;
+				width: 100%;
+				text-align: center;
+				justify-content: center;
+			}
+			
+			.footer_title .button_s:first-child:after,
+			.footer_title .button_s:last-child:before {
+				content: "";
+				position: relative;
+				width: 1px;
+				height: 14px;
+				display: inline-block;
+				background: #666;
+				top: 2px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+
+			<i class="mui-icon mui-icon-closeempty"></i>
+
+		</header>
+
+		<div class="mui-content">
+			<div class="head_title">
+				<h1>微信号/QQ/邮箱登录</h1>
+			</div>
+
+			<div class="logn_form">
+
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label>账号</label>
+						<input type="text" id="sign_name" class="mui-input-clear" placeholder="请输入用户名">
+					</div>
+					<div class="mui-input-row">
+						<label>密码</label>
+						<input type="password" id="sign_password" class="mui-input-password" placeholder="请输入密码">
+					</div>
+
+					<div class="button_s">
+						用手机号登录
+					</div>
+
+					<button type="button" disabled="disabled" class="mui-btn submits">登录</button>
+
+				</form>
+
+			</div>
+
+		</div>
+
+		<div class="footer_title">
+			<div class="button_s">
+				找回密码
+			</div>
+			<div class="button_s">
+				紧急冻结
+			</div>
+			<div class="button_s">
+				微信安全中心
+			</div>
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui("body").on('tap', '.button_s', function() {
+				console.log(this)
+				//  进入登录部分
+				mui.alert("这些功能还没做", "")
+
+			})
+			mui("body").on('tap', 'header i', function() {
+				console.log(this)
+				//  进入登录部分
+				window.location.assign('../index.html')
+
+			})
+
+			//  监听密码框
+			$('#sign_password').bind('input propertychange', function() {
+
+				console.log($(this).val().length)
+				if($(this).val().length >= 1) {
+					$(".submits").removeAttr('disabled')
+
+				} else {
+					$(".submits").attr('disabled', 'disabled')
+				}
+			});
+
+			$(".submits").on('click', function() {
+				var sign_name = $("#sign_name").val();
+				var sign_password = $("#sign_password").val();
+				if(sign_name == ""  ||  sign_password == ""){
+					mui.alert("认真点!")
+				}
+				if(sign_name == "shekun" && sign_password == "shekun"){
+					mui.alert('可以登录、但是剩下的地方还没有写')
+				}else{
+					mui.alert("账号密码错误")
+				}
+
+			})
+
+			$(".mui-input-row input").focus(function() {
+				$(this).parents('.mui-input-row').css({
+					'border-bottom': '1px solid #74DE74'
+				})
+
+			})
+			$(".mui-input-row input").blur(function() {
+				$(this).parents('.mui-input-row').css({
+					'border': 0
+				})
+
+			})
+		</script>
+	</body>
+
+</html>
